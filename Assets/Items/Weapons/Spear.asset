@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
+  m_Name: Spear
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
+  itemName: Spear
+  modelPrefab: {fileID: 7801895825008717233, guid: ee4ada325f98c8a4d8c5d5d3ac7a04ff, type: 3}
+  isUnarmed: 0
+  isTwoHanded: 1
+  hasSpecial: 0
+  Right_Hand_Idle: 
+  Left_Hand_Idle: 
+  Two_Hand_Idle: Idle2H
+  OH_Light_Attack: LightAttack
+  OH_Heavy_Attack: HeavyAttackLunge
+  OH_Left_Attack: LeftAttack
+  baseStamina: 30
+  damageAmount: 35
+  heavyAttackMultiplier: 2
