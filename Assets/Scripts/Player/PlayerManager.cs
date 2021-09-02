@@ -58,7 +58,6 @@ public class PlayerManager : MonoBehaviour
         {
             if(hit.collider.tag == "Interactable")
             {
-                Debug.Log("Ray");
                 Interactable interactableObject = hit.collider.GetComponent<Interactable>();
 
                 if(interactableObject != null)

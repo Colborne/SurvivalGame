@@ -18,6 +18,7 @@ MonoBehaviour:
   isUnarmed: 1
   isTwoHanded: 0
   hasSpecial: 0
+  canCharge: 0
   Right_Hand_Idle: Right Arm Empty
   Left_Hand_Idle: Left Arm Empty
   Two_Hand_Idle: 
@@ -25,5 +26,4 @@ MonoBehaviour:
   OH_Heavy_Attack: HeavyAttack
   OH_Left_Attack: LeftAttack
   baseStamina: 5
-  damageAmount: 10
   heavyAttackMultiplier: 1.5

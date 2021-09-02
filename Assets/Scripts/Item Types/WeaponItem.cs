@@ -5,12 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Weapon Item")]
 public class WeaponItem : Item
 {
-    public GameObject modelPrefab;
     [Header("Item Settings")]
     public bool isUnarmed;
     public bool isTwoHanded;
     public bool hasSpecial;
-
+    public bool canCharge;
 
     [Header("Idle Animations")]
     public string Right_Hand_Idle;

@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Collect.Containers;
+using Collect.Items;
 
 public class PlayerInventory : MonoBehaviour
 {
-    WeaponSlotManager weaponSlotManager;
-    HelmetSlotManager helmetSlotManager;
+
+    public WeaponSlotManager weaponSlotManager;
+    public HelmetSlotManager helmetSlotManager;
     public WeaponItem rightWeapon;
     public WeaponItem leftWeapon;
     public WeaponItem unarmed;
     public HelmetItem helmet;
-
-    public List<Item> Inventory;
+    public Container Inventory;
+    public GameObject ContainerObject;
 
     private void Awake() 
     {
+        Inventory = ContainerObject.GetComponent<Container>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         helmetSlotManager = GetComponentInChildren<HelmetSlotManager>();
     }

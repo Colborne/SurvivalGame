@@ -10,13 +10,13 @@ public class InputManager : MonoBehaviour
     PlayerAttacker playerAttacker;
     PlayerInventory playerInventory;
     AnimatorManager animatorManager;
-    UIManager uiManager;
     WeaponSlotManager weaponSlotManager;
     StatsManager stats;
     public Vector2 movementInput;
     public Vector2 cameraInput;
     public Vector2 mousePosition;
-
+    public GameObject InventoryWindow;
+    public GameObject EquipmentWindow;
     public float cameraInputX;
     public float cameraInputY;
     public float moveAmount;
@@ -30,6 +30,8 @@ public class InputManager : MonoBehaviour
     public bool middleMouseInput;
     public bool interactInput;
     public bool inventoryInput;
+    public bool modifierInput;
+    public float attackChargeTimer = 0f;
 
     public bool inventoryFlag;
 
@@ -41,7 +43,6 @@ public class InputManager : MonoBehaviour
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
-        uiManager = FindObjectOfType<UIManager>();
         weaponSlotManager = GetComponent<WeaponSlotManager>();
     }
     private void OnEnable() 
@@ -56,6 +57,8 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Inventory.canceled += i => inventoryInput = false;
             playerControls.PlayerActions.Shift.performed += i => shiftInput = true;
             playerControls.PlayerActions.Shift.canceled += i => shiftInput = false;
+            playerControls.PlayerActions.Shift.performed += i => modifierInput = true;
+            playerControls.PlayerActions.Shift.canceled += i => modifierInput = false;
             playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
             playerControls.PlayerActions.Jump.canceled += i => jumpInput = false;
             playerControls.PlayerActions.Ctrl.performed += i => ctrlInput = true;
@@ -79,13 +82,14 @@ public class InputManager : MonoBehaviour
 
     public void HandleAllInputs()
     {
-        if(!inventoryFlag)
+        if(!inventoryFlag){
             HandleMovementInput();
-        
-        HandleSprintingInput();
-        HandleSneakingInput();
-        HandleJumpingInput();
-        HandleAttackInput();
+            HandleSprintingInput();
+            HandleSneakingInput();
+            HandleJumpingInput();
+            HandleAttackInput();
+    }
+
         HandleMouse();
         HandleInteractingButtonInput();
         HandleInventoryInput();
@@ -141,34 +145,53 @@ public class InputManager : MonoBehaviour
 
     private void HandleAttackInput()
     {
-        if(leftMouseInput)
+        if(attackChargeTimer > 0f)
         {
-            if(!animatorManager.animator.GetBool("isAttacking") 
-                && !animatorManager.animator.GetBool("isInteracting") 
-                && !animatorManager.animator.GetBool("isJumping") )
+            attackChargeTimer += 1f * Time.deltaTime;
+            if(!leftMouseInput)
             {
-                leftMouseInput = false;
+                attackChargeTimer = 0f;
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
             }
         }
-        else if(middleMouseInput)
-        {            
-            if(!animatorManager.animator.GetBool("isAttacking") 
-                && !animatorManager.animator.GetBool("isInteracting") 
-                && !animatorManager.animator.GetBool("isJumping") )
+        else
+        {
+            if(leftMouseInput)
             {
-                middleMouseInput = false;
-                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                if(!animatorManager.animator.GetBool("isAttacking") 
+                    && !animatorManager.animator.GetBool("isInteracting") 
+                    && !animatorManager.animator.GetBool("isJumping") )
+                {
+                    if(!playerInventory.rightWeapon.canCharge)
+                    {
+                        leftMouseInput = false;
+                        playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                    }
+                    else
+                    {
+                        attackChargeTimer += 1f * Time.deltaTime;
+                    }
+                }
             }
-        }
-        else if(rightMouseInput)
-        {            
-            if(!animatorManager.animator.GetBool("isAttacking") 
-                && !animatorManager.animator.GetBool("isInteracting") 
-                && !animatorManager.animator.GetBool("isJumping") )
-            {
-                rightMouseInput = false;
-                playerAttacker.HandleLeftAction(playerInventory.leftWeapon);
+            else if(middleMouseInput)
+            {            
+                if(!animatorManager.animator.GetBool("isAttacking") 
+                    && !animatorManager.animator.GetBool("isInteracting") 
+                    && !animatorManager.animator.GetBool("isJumping") )
+                {
+                    middleMouseInput = false;
+                    playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                }
+            }
+            else if(rightMouseInput)
+            {            
+                if(!animatorManager.animator.GetBool("isAttacking") 
+                    && !animatorManager.animator.GetBool("isInteracting") 
+                    && !animatorManager.animator.GetBool("isJumping") )
+                {
+                    rightMouseInput = false;
+                    playerAttacker.HandleLeftAction(playerInventory.leftWeapon);
+                }
             }
         }
     }
@@ -201,14 +224,13 @@ public class InputManager : MonoBehaviour
         {
             inventoryFlag = !inventoryFlag;
             if(inventoryFlag){
-                uiManager.OpenInventoryUI();
-                uiManager.UpdateUI();
-                uiManager.HUD.SetActive(false);
+                InventoryWindow.SetActive(true);
+                EquipmentWindow.SetActive(true);
             }
             else
             {
-                uiManager.HUD.SetActive(true);
-                uiManager.CloseAllInventoryWindows();
+                InventoryWindow.SetActive(false);
+                EquipmentWindow.SetActive(false);
             }
         }
     }

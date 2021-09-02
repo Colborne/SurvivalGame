@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HelmetSlotManager : MonoBehaviour
 {
-    HelmetHolderSlot helmetSlot;
+    public HelmetHolderSlot helmetSlot;
     DamageCollider helmetDamageCollider;
     StatsManager stats;
     Animator animator;

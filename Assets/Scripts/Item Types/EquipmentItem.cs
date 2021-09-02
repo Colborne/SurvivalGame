@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EquipmentItem : Item
 {
-    public GameObject modelPrefab;
     [Header("Equipment Information")]
     public int BaseDefense;
     public float weight;
