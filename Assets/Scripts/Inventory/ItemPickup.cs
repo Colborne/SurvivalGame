@@ -23,7 +23,6 @@ public class ItemPickup : Interactable
     private void PickUpItem(PlayerManager playerManager)
     {
         pickedUp = true;
-        Destroy(gameObject);
         PlayerInventory playerInventory;
         PlayerLocomotion playerLocomotion;
         AnimatorManager animatorManager;
@@ -34,7 +33,7 @@ public class ItemPickup : Interactable
 
         playerLocomotion.GetComponent<Rigidbody>().velocity = Vector3.zero;
         animatorManager.PlayTargetAnimation("Landing", true);
-        GameObject inst = Instantiate(item, Vector3.zero, Quaternion.identity);
-        playerInventory.Inventory.Add(inst); 
+        GameObject inst = GameObject.Instantiate(item, Vector3.zero, Quaternion.identity) as GameObject;
+        playerInventory.Inventory.Add(inst);
     }
 }

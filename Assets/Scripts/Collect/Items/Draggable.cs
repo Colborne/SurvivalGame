@@ -70,13 +70,6 @@ namespace Collect.Items {
         public void Update() {
             if (beingDragged) {
                 followMouse(input.mousePosition);
-
-                //  this is for invalid location drops
-                if (input.leftMouseInput &&
-                    !EventSystem.current.IsPointerOverGameObject()) {
-                    //PointerEventData data = new PointerEventData(EventSystem.current);
-                    //OnEndDrag(data);
-                }
             }
         }
 
@@ -160,6 +153,13 @@ namespace Collect.Items {
             if (DraggedItem == null) {
                 return;
             }
+
+            if(!EventSystem.current.IsPointerOverGameObject())
+            {  
+                if(DraggedItem._item.modelPrefab.GetComponentInChildren<ItemPickup>() != null)
+                    Instantiate(DraggedItem._item.modelPrefab.GetComponentInChildren<ItemPickup>(), new Vector3(0,0,0),Quaternion.identity);
+                Destroy(gameObject);
+            }   
 
             DraggedItem = null;
 

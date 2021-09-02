@@ -52,7 +52,7 @@ namespace Collect.Items {
             }
 
             //  also destroy it if they hit escape
-            if (inputManager.jumpInput) {
+            if (inputManager.cancelInput) {
                 Destroy(gameObject);
             }
 
@@ -60,8 +60,7 @@ namespace Collect.Items {
             //  get the value of what was entered and
             //  retrieve that number of items from the
             //  current stack
-            if (inputManager.jumpInput || 
-                inputManager.ctrlInput) {
+            if (inputManager.confirmInput || inputManager.jumpInput) {
 
                 int numberToRemove = int.Parse(inputField.text);
                 if (numberToRemove == 0) {

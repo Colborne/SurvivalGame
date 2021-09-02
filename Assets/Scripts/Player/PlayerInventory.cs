@@ -24,8 +24,11 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private void Start() {
-        rightWeapon = unarmed;
-        leftWeapon = unarmed;
+        if(rightWeapon == null)
+            rightWeapon = unarmed;
+        if(leftWeapon == null)
+            leftWeapon = unarmed;
+
         weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
         weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
         helmetSlotManager.LoadHelmetOnSlot(helmet);

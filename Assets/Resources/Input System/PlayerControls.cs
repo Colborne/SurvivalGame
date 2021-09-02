@@ -125,6 +125,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""bbd4a082-5d7c-4df4-8f97-337b2eefb4d5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""d659bf0d-b31d-46d5-835e-1f1deb487866"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Inventory"",
                     ""type"": ""Button"",
                     ""id"": ""d73262a6-c872-4b4c-8037-8fcd8d6bc5e3"",
@@ -261,6 +277,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MiddleMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d739a72c-0b2a-4376-8b41-2c889a1b9267"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d42080a6-f583-4996-9358-274034ff160c"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -302,6 +340,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
         m_PlayerActions_Shift = m_PlayerActions.FindAction("Shift", throwIfNotFound: true);
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
+        m_PlayerActions_Cancel = m_PlayerActions.FindAction("Cancel", throwIfNotFound: true);
+        m_PlayerActions_Confirm = m_PlayerActions.FindAction("Confirm", throwIfNotFound: true);
         m_PlayerActions_Inventory = m_PlayerActions.FindAction("Inventory", throwIfNotFound: true);
         m_PlayerActions_Ctrl = m_PlayerActions.FindAction("Ctrl", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
@@ -403,6 +443,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
     private readonly InputAction m_PlayerActions_Shift;
     private readonly InputAction m_PlayerActions_Interact;
+    private readonly InputAction m_PlayerActions_Cancel;
+    private readonly InputAction m_PlayerActions_Confirm;
     private readonly InputAction m_PlayerActions_Inventory;
     private readonly InputAction m_PlayerActions_Ctrl;
     private readonly InputAction m_PlayerActions_Jump;
@@ -415,6 +457,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Shift => m_Wrapper.m_PlayerActions_Shift;
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
+        public InputAction @Cancel => m_Wrapper.m_PlayerActions_Cancel;
+        public InputAction @Confirm => m_Wrapper.m_PlayerActions_Confirm;
         public InputAction @Inventory => m_Wrapper.m_PlayerActions_Inventory;
         public InputAction @Ctrl => m_Wrapper.m_PlayerActions_Ctrl;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
@@ -436,6 +480,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInteract;
+                @Cancel.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCancel;
+                @Confirm.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnConfirm;
+                @Confirm.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnConfirm;
+                @Confirm.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnConfirm;
                 @Inventory.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
@@ -464,6 +514,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
+                @Confirm.started += instance.OnConfirm;
+                @Confirm.performed += instance.OnConfirm;
+                @Confirm.canceled += instance.OnConfirm;
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
@@ -528,6 +584,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnShift(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnCtrl(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);

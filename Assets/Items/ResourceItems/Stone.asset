@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
+  modelPrefab: {fileID: 3507446837237486185, guid: 915e50e7bf9183149927d87c2b7d6dbc, type: 3}
   itemIcon: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
   itemName: Stone
-  modelPrefab: {fileID: 0}
   resourceType: Ore

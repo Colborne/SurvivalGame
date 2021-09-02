@@ -49,12 +49,13 @@ public class DamageCollider : MonoBehaviour
             if(resource != null)
             {
                 Debug.Log("Resource");
-                if(isTool && canBreak == resource.resourceType && toolLevel > resource.toolRequiredLevel)
+                if(isTool && canBreak == resource.resourceType && toolLevel >= resource.toolRequiredLevel)
                 {
                     if (stats != null)
                     {
                         Debug.Log("Stats");
                         stats.TakeDamage(damageAmount);
+                        resource.checkHit();
                     }
 
                     if(tree != null)

@@ -31,6 +31,8 @@ public class InputManager : MonoBehaviour
     public bool interactInput;
     public bool inventoryInput;
     public bool modifierInput;
+    public bool confirmInput;
+    public bool cancelInput;
     public float attackChargeTimer = 0f;
 
     public bool inventoryFlag;
@@ -63,6 +65,10 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Jump.canceled += i => jumpInput = false;
             playerControls.PlayerActions.Ctrl.performed += i => ctrlInput = true;
             playerControls.PlayerActions.Ctrl.canceled += i => ctrlInput = false;
+            playerControls.PlayerActions.Confirm.performed += i => confirmInput = true;
+            playerControls.PlayerActions.Confirm.canceled += i => confirmInput = false;
+            playerControls.PlayerActions.Cancel.performed += i => cancelInput = true;
+            playerControls.PlayerActions.Cancel.canceled += i => cancelInput = false;
             playerControls.PlayerActions.Interact.performed += i => interactInput = true;
             playerControls.PlayerActions.Interact.canceled += i => interactInput = false;
             playerControls.PlayerActions.LeftMouse.performed += i => leftMouseInput = true;
@@ -92,6 +98,8 @@ public class InputManager : MonoBehaviour
 
         HandleMouse();
         HandleInteractingButtonInput();
+        HandleConfirmButtonInput();
+        HandleCancelButtonInput();
         HandleInventoryInput();
     }
     private void HandleMovementInput()
@@ -215,6 +223,20 @@ public class InputManager : MonoBehaviour
         if(interactInput)
         {
             interactInput = false;
+        }
+    }
+    private void HandleConfirmButtonInput()
+    {
+        if(confirmInput)
+        {
+            confirmInput = false;
+        }
+    }
+    private void HandleCancelButtonInput()
+    {
+        if(cancelInput)
+        {
+            cancelInput = false;
         }
     }
 

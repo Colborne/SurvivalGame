@@ -112,6 +112,22 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "bbd4a082-5d7c-4df4-8f97-337b2eefb4d5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Confirm",
+                    "type": "Button",
+                    "id": "d659bf0d-b31d-46d5-835e-1f1deb487866",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Inventory",
                     "type": "Button",
                     "id": "d73262a6-c872-4b4c-8037-8fcd8d6bc5e3",
@@ -246,6 +262,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MiddleMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d739a72c-0b2a-4376-8b41-2c889a1b9267",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d42080a6-f583-4996-9358-274034ff160c",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

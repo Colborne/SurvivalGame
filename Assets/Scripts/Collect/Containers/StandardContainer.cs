@@ -60,8 +60,8 @@ namespace Collect.Containers {
             } else if (emptySlot != null) {
                 emptySlot.AddItem(dragHandler);
             }
-
-            throw new NotStackableException("Unable to add item (" + dragHandler.name + ") to container ( " + name + ")");
+            else
+                throw new NotStackableException("Unable to add item (" + dragHandler.name + ") to container ( " + name + ")");
         }
 
         /// <summary>

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4936203117117804228}
   - component: {fileID: 4936203117118560136}
   - component: {fileID: 4936203117118553704}
-  - component: {fileID: 6544358305543112471}
+  - component: {fileID: 6746756880930022767}
+  - component: {fileID: 6034567595562584929}
   m_Layer: 5
   m_Name: Stone
   m_TagString: Untagged
@@ -90,7 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208d19f03a4a86743a5acc1439f5ad5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6544358305543112471
+  _item: {fileID: 11400000, guid: 5f79939acd9c4c944a1d885c815c6899, type: 2}
+--- !u!114 &6746756880930022767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,8 +104,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92161b16eb57e84ab6803e1c64ec708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 10
+  max: 5
   Stack: []
+--- !u!114 &6034567595562584929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936203117129224570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383c3d3bf0594a14c83e03341ae2595b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipPrefab: {fileID: 156888, guid: 74e1b9d102c21cf4bb6496c78d40bea3, type: 3}
+  text: Stone
 --- !u!1 &4936203117129246610
 GameObject:
   m_ObjectHideFlags: 0
