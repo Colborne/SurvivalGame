@@ -14,7 +14,13 @@ public class PlayerManager : MonoBehaviour
     
     InteractableUI interactableUI;
 
-    public Transform hand;
+    public Transform rightHand;
+    public Transform leftHand;
+    public Transform helmet;
+    public Transform chest;
+    public Transform legs;
+    public Transform boots;
+    public Transform back;
     public Transform body;
 
     public bool isInteracting;

@@ -20,15 +20,71 @@ public class InventoryDrop : MonoBehaviour, IDropHandler
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
                 GameManager.Instance.weaponID = -1;
-                GameManager.Instance.DestroyWeapon();
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedWeapon);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inArmourSlot)
+            else if (newItem.inHelmetSlot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.armourID = -1;
-                GameManager.Instance.DestroyArmour();
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inChestSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inHelmetSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inHelmetSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inHelmetSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inHelmetSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inHelmetSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.DropItem(newItem);
+            }
+            else if (newItem.inHelmetSlot)
+            {
+                OriginalSlot.currentItem = null;
+                OriginalSlot.isFull = false;
+                GameManager.Instance.helmetID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
                 GameManager.Instance.DropItem(newItem);
             }
             else
@@ -39,4 +95,5 @@ public class InventoryDrop : MonoBehaviour, IDropHandler
             }
         }
     }
+
 }
