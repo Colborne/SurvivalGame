@@ -14,6 +14,9 @@ public class PlayerManager : MonoBehaviour
     
     InteractableUI interactableUI;
 
+    public Transform hand;
+    public Transform body;
+
     public bool isInteracting;
 
     private void Awake() 
@@ -28,7 +31,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Update() 
     {
-        CheckForInteractableObject();
         inputManager.HandleAllInputs();
         statsManager.RegenerateStamina();
     }
@@ -48,42 +50,5 @@ public class PlayerManager : MonoBehaviour
         animator.SetBool("isGrounded", playerLocomotion.isGrounded);
         
         inputManager.inventoryInput = false; //do this for all inputs to check once per frame
-    }
-
-    private void CheckForInteractableObject()
-    {
-        RaycastHit hit;
-
-        if(Physics.SphereCast(transform.position, 1f, transform.forward, out hit, 3f))
-        {
-            if(hit.collider.tag == "Interactable")
-            {
-                Interactable interactableObject = hit.collider.GetComponent<Interactable>();
-
-                if(interactableObject != null)
-                {
-                    string interactableText = interactableObject.interactableText;
-                    interactableUI.interactableText.text = interactableText;
-                    interactableUIGameObject.SetActive(true);
-                
-                    if(inputManager.interactInput)
-                    {
-                        hit.collider.GetComponent<Interactable>().Interact(this);
-                    }
-                }
-            }
-        }
-        else
-        {
-            if(interactableUIGameObject != null)
-            {
-                interactableUIGameObject.SetActive(false);
-            }
-
-            if(itemInteractableUIGameObject != null && inputManager.interactInput)
-            {
-                itemInteractableUIGameObject.SetActive(false);
-            }
-        }
     }
 }

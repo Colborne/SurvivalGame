@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WeaponSlotManager : MonoBehaviour
 {
-    WeaponHolderSlot leftHandSlot;
-    WeaponHolderSlot rightHandSlot;
 
     DamageCollider leftHandDamageCollider;
     DamageCollider rightHandDamageCollider;
@@ -13,7 +11,7 @@ public class WeaponSlotManager : MonoBehaviour
     StatsManager stats;
     public WeaponItem weapon;
     Animator animator;
-
+/*
     private void Awake() 
     {
         animator = GetComponent<Animator>();
@@ -121,4 +119,5 @@ public class WeaponSlotManager : MonoBehaviour
     {
         stats.UseStamina(Mathf.RoundToInt(weapon.baseStamina));
     }
+    */
 }
