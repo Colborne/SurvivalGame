@@ -25,6 +25,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool isGrounded;
     public bool isJumping;
     public bool isAttacking;
+    public bool isFalling;
 
     [Header("Movement Speeds")]
     public float sneakingSpeed = 1.5f;
@@ -63,6 +64,8 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if(isJumping)
             return;
+        if(isFalling)
+            return;
 
         moveDirection = cameraObject.forward * inputManager.verticalInput;
         moveDirection = moveDirection + cameraObject.right * inputManager.horizontalInput;
@@ -97,6 +100,8 @@ public class PlayerLocomotion : MonoBehaviour
     private void HandleRotation()
     {
         if(isJumping)
+            return;
+        if(isFalling)
             return;
 
         Vector3 targetDirection = Vector3.zero;
@@ -137,6 +142,7 @@ public class PlayerLocomotion : MonoBehaviour
             if(!isGrounded && !playerManager.isInteracting)
             {
                 animatorManager.PlayTargetAnimation("Landing", true);
+
             }
 
             Vector3 rayCastHitPoint = hit.point;
@@ -149,8 +155,9 @@ public class PlayerLocomotion : MonoBehaviour
             isGrounded = false;
         } 
 
-        if(isGrounded && !isJumping)
+        if(isGrounded && !isJumping )
         {
+            isFalling = false;
             if(playerManager.isInteracting || inputManager.moveAmount > 0)
             {
                 transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime / 0.1f);
@@ -160,6 +167,7 @@ public class PlayerLocomotion : MonoBehaviour
                 transform.position = targetPosition;
             }
         }    
+        isFalling = !isGrounded;
     }
 
     public void HandleJumping()
