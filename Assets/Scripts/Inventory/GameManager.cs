@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public GameObject spawnedAccessory3;
 
     public PlayerManager PM;
+    public EquipmentManager equipmentManager;
 
     public InventorySlot[] inventorySlots;
     public Canvas interfaceCanvas;
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         GameManager.Instance = this;
+        equipmentManager = FindObjectOfType<EquipmentManager>();
     }
 
     public void DestroyItem(GameObject item)
@@ -67,11 +69,15 @@ public class GameManager : MonoBehaviour
         if(type == "Weapon" && weaponID != -1)
         {
             spawnedWeapon = Instantiate(equipment[weaponID].prefab, PM.rightHand);
+            equipmentManager.rightWeapon = spawnedWeapon.GetComponent<weaponItemLoader>().item;
+            equipmentManager.LoadWeaponOnSlot(equipmentManager.rightWeapon, false);
         }
 
         if(type == "Shield" && shieldID != -1)
         {
-            spawnedHelmet = Instantiate(equipment[shieldID].prefab, PM.leftHand);
+            spawnedShield = Instantiate(equipment[shieldID].prefab, PM.leftHand);
+            equipmentManager.leftWeapon = spawnedWeapon.GetComponent<weaponItemLoader>().item;
+            equipmentManager.LoadWeaponOnSlot(equipmentManager.leftWeapon, true);
         }
 
         if(type == "Helmet" && helmetID != -1)
@@ -81,37 +87,37 @@ public class GameManager : MonoBehaviour
          
         if(type == "Chest" && chestID != -1)
         {
-            spawnedHelmet = Instantiate(equipment[chestID].prefab, PM.chest);
+            spawnedChest = Instantiate(equipment[chestID].prefab, PM.chest);
         }
         
         if(type == "Legs" && legsID != -1)
         {
-            spawnedWeapon = Instantiate(equipment[legsID].prefab, PM.legs);
+            spawnedLegs = Instantiate(equipment[legsID].prefab, PM.legs);
         }
         
         if(type == "Boots" && bootsID != -1)
         {
-            spawnedHelmet = Instantiate(equipment[bootsID].prefab, PM.boots);
+            spawnedBoots = Instantiate(equipment[bootsID].prefab, PM.boots);
         }
         
         if(type == "Back" && backID != -1)
         {
-            spawnedWeapon = Instantiate(equipment[backID].prefab, PM.back);
+            spawnedBack = Instantiate(equipment[backID].prefab, PM.back);
         }
         
         if(type == "Accessory1" && accessory1ID != -1)
         {
-            spawnedHelmet = Instantiate(equipment[accessory1ID].prefab, PM.body);
+            spawnedAccessory1 = Instantiate(equipment[accessory1ID].prefab, PM.body);
         }
         
         if(type == "Accessory2" && accessory2ID != -1)
         {
-            spawnedWeapon = Instantiate(equipment[accessory2ID].prefab, PM.body);
+            spawnedAccessory2 = Instantiate(equipment[accessory2ID].prefab, PM.body);
         }
         
         if(type == "Accessory3" && accessory3ID != -1)
         {
-            spawnedWeapon = Instantiate(equipment[accessory3ID].prefab, PM.body);
+            spawnedAccessory3 = Instantiate(equipment[accessory3ID].prefab, PM.body);
         }
     }
 
@@ -119,7 +125,7 @@ public class GameManager : MonoBehaviour
     {
         bool foundSlot = false;
 
-        for (int i = 2; i < inventorySlots.Length; i++)
+        for (int i = 10; i < inventorySlots.Length; i++)
         {
             if (!inventorySlots[i].isFull)
             {
@@ -137,8 +143,63 @@ public class GameManager : MonoBehaviour
             Instantiate(equipment[itemID].worldItem, PM.transform.position + new Vector3(0, 10, 0), Quaternion.identity);
         }
     }
+
+
+    #region PickUp Stack
+    public void PickUpItem(int itemID, int quantityIncrease)
+    {
+        // Searches for identical item ID in inventory //
+        for (int i = 10; i < inventorySlots.Length; i++)
+        {    
+            //Found an empty slot
+            if (!inventorySlots[i].isFull)
+            {
+                Debug.Log("Empty Slot");
+                GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[i].gameObject.transform);
+                inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
+                inventorySlots[i].isFull = true;
+                inventorySlots[i].currentItem.currentAmount = quantityIncrease;
+                break;
+            }
+            //Found a full slot and the id matches
+            else if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == itemID)
+            {
+                int newAmount = inventorySlots[i].currentItem.currentAmount + quantityIncrease;
+                if(inventorySlots[i].currentItem.MaxAmount >= newAmount)
+                {
+                    Debug.Log(inventorySlots[i].currentItem.MaxAmount + " >= " + newAmount);
+                    inventorySlots[i].currentItem.currentAmount += quantityIncrease;
+                    break;
+                }
+                else
+                {
+                    Debug.Log(inventorySlots[i].currentItem.MaxAmount + " < " + newAmount);
+                    inventorySlots[i].currentItem.currentAmount = inventorySlots[i].currentItem.MaxAmount;
+
+                    int remainder = newAmount - inventorySlots[i].currentItem.MaxAmount;
+                    Debug.Log("Remainder that should be rounded over: " + remainder);
+                    //GameManager.Instance.PickUpItem(itemID, remainder); 
+                    break;              
+                }
+            }
+            //Found a full slot but the id does not match
+            else if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID != itemID)
+            {
+                Debug.Log("Can't Place here");
+            }
+            //No Slots Left
+            else
+            {
+                Debug.Log("noslot");
+                Instantiate(equipment[itemID].worldItem, PM.transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+            }
+        }
+    }
+    #endregion
+
     public void DropItem(InventoryItem item)
     {
+        //Add amount ????
         Instantiate(equipment[item.itemID].worldItem, PM.transform.position + new Vector3(1f, 0.5f, 0), Quaternion.identity);
         Destroy(item.gameObject);
     }

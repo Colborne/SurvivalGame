@@ -22,7 +22,7 @@ MonoBehaviour:
   Right_Hand_Idle: Idle
   Left_Hand_Idle: Idle
   Two_Hand_Idle: 
-  OH_Light_Attack: LightAttack
+  OH_Light_Attack: OverheadSwing
   OH_Heavy_Attack: HeavyAttack
   OH_Left_Attack: LeftAttack
   baseStamina: 10

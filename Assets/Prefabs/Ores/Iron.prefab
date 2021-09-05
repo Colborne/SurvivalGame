@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: Ore
   toolRequiredLevel: 2
+  drop: {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
 --- !u!114 &4866430839488441254
 MonoBehaviour:
   m_ObjectHideFlags: 0

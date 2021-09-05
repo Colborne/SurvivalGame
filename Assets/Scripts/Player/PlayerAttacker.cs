@@ -6,20 +6,20 @@ public class PlayerAttacker : MonoBehaviour
 {
     AnimatorManager animatorManager;
     SoundManager soundManager;
-    WeaponSlotManager weaponSlotManager;
+    EquipmentManager equipmentManager;
     StatsManager statsManager;
     private void Awake() 
     {
         animatorManager = GetComponent<AnimatorManager>();
         soundManager = GetComponent<SoundManager>();
-        weaponSlotManager = GetComponent<WeaponSlotManager>();
+        equipmentManager = GetComponent<EquipmentManager>();
         statsManager = GetComponent<StatsManager>();
     }
 
     public void HandleLightAttack(WeaponItem weaponItem)
     {
-        weaponSlotManager.weapon = weaponItem;
-        if(statsManager.currentStamina > weaponSlotManager.weapon.baseStamina)
+        equipmentManager.rightWeapon = weaponItem;
+        if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
         {
             animatorManager.PlayTargetAnimation(weaponItem.OH_Light_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
@@ -28,8 +28,8 @@ public class PlayerAttacker : MonoBehaviour
     }
     public void HandleHeavyAttack(WeaponItem weaponItem)
     {
-        weaponSlotManager.weapon = weaponItem;
-        if(statsManager.currentStamina > weaponSlotManager.weapon.baseStamina * weaponSlotManager.weapon.heavyAttackMultiplier)
+        equipmentManager.rightWeapon = weaponItem;
+        if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina * equipmentManager.rightWeapon.heavyAttackMultiplier)
         {
             animatorManager.PlayTargetAnimation(weaponItem.OH_Heavy_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
@@ -38,8 +38,8 @@ public class PlayerAttacker : MonoBehaviour
     }
     public void HandleLeftAction(WeaponItem weaponItem)
     {
-        weaponSlotManager.weapon = weaponItem;
-        if(statsManager.currentStamina > weaponSlotManager.weapon.baseStamina)
+        equipmentManager.leftWeapon = weaponItem;
+        if(statsManager.currentStamina > equipmentManager.leftWeapon.baseStamina)
         {
             animatorManager.PlayTargetAnimation(weaponItem.OH_Left_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);

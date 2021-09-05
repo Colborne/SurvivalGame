@@ -9,13 +9,12 @@ public class InputManager : MonoBehaviour
     PlayerLocomotion playerLocomotion;
     PlayerAttacker playerAttacker;
     AnimatorManager animatorManager;
-    WeaponSlotManager weaponSlotManager;
+    EquipmentManager equipmentManager;
     StatsManager stats;
     public Vector2 movementInput;
     public Vector2 cameraInput;
     public Vector2 mousePosition;
     public GameObject InventoryWindow;
-    public GameObject EquipmentWindow;
     public float cameraInputX;
     public float cameraInputY;
     public float moveAmount;
@@ -43,7 +42,7 @@ public class InputManager : MonoBehaviour
         stats = GetComponent<StatsManager>();
         playerAttacker = GetComponent<PlayerAttacker>();
         playerManager = GetComponent<PlayerManager>();
-        weaponSlotManager = GetComponent<WeaponSlotManager>();
+        equipmentManager = GetComponent<EquipmentManager>();
     }
     private void OnEnable() 
     {
@@ -149,14 +148,14 @@ public class InputManager : MonoBehaviour
     }
 
     private void HandleAttackInput()
-    {/*
+    {
         if(attackChargeTimer > 0f)
         {
             attackChargeTimer += 1f * Time.deltaTime;
             if(!leftMouseInput)
             {
                 attackChargeTimer = 0f;
-                //playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
             }
         }
         else
@@ -167,10 +166,10 @@ public class InputManager : MonoBehaviour
                     && !animatorManager.animator.GetBool("isInteracting") 
                     && !animatorManager.animator.GetBool("isJumping") )
                 {
-                    if(!playerInventory.rightWeapon.canCharge)
+                    if(!equipmentManager.rightWeapon.canCharge)
                     {
                         leftMouseInput = false;
-                        //playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                        playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
                     }
                     else
                     {
@@ -185,7 +184,7 @@ public class InputManager : MonoBehaviour
                     && !animatorManager.animator.GetBool("isJumping") )
                 {
                     middleMouseInput = false;
-                    //playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                    playerAttacker.HandleHeavyAttack(equipmentManager.rightWeapon);
                 }
             }
             else if(rightMouseInput)
@@ -195,10 +194,10 @@ public class InputManager : MonoBehaviour
                     && !animatorManager.animator.GetBool("isJumping") )
                 {
                     rightMouseInput = false;
-                    //playerAttacker.HandleLeftAction(playerInventory.leftWeapon);
+                    playerAttacker.HandleLeftAction(equipmentManager.leftWeapon);
                 }
             }
-        }*/
+        }
     }
 
     private void HandleMouse()

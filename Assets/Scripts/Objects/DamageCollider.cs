@@ -41,10 +41,11 @@ public class DamageCollider : MonoBehaviour
 
         if(collision.tag == "Hittable")
         {
-
             ObjectStats stats = collision.GetComponent<ObjectStats>();
             ResourceObject resource = collision.GetComponent<ResourceObject>();
+            AudioSource sound = collision.GetComponent<AudioSource>();
             Tree tree = collision.GetComponent<Tree>();
+            CameraShake shake = FindObjectOfType<CameraShake>();
 
             if(resource != null)
             {
@@ -54,7 +55,11 @@ public class DamageCollider : MonoBehaviour
                     if (stats != null)
                     {
                         Debug.Log("Stats");
+                        sound.Play();
+                        shake.Shake();
                         stats.TakeDamage(damageAmount);
+                        for(int i = 0; i < Random.Range(1,3); i++)
+                            Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
                         resource.checkHit();
                     }
 

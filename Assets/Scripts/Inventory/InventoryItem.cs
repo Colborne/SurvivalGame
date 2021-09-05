@@ -37,12 +37,20 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public int itemID;
     public int equipType = 0; // 0 = None | 1 = Weapon | 2 = Helmet //
 
-    public int MaxAmount = 1;
+    public int MaxAmount = 10;
+    public int currentAmount = 1;
+    public Text textAmount;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        textAmount = GetComponentInChildren<Text>();
+    }
+
+    private void Update() {
+        if(currentAmount > 1)
+            textAmount.text = currentAmount.ToString();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -75,7 +83,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the weapon slot
             if (currentSlot.weaponSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -102,7 +110,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the helmet slot
             else if (currentSlot.helmetSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -129,7 +137,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the chest slot
             else if (currentSlot.chestSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -156,7 +164,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the legs slot
             else if (currentSlot.legsSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -183,7 +191,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the boots slot
             else if (currentSlot.bootsSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -210,7 +218,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the back slot
             else if (currentSlot.backSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -237,7 +245,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the shield slot
             else if (currentSlot.shieldSlot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -264,7 +272,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the accessory1 slot
             else if (currentSlot.accessory1Slot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -291,7 +299,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the accessory2 slot
             else if (currentSlot.accessory2Slot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -318,7 +326,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             // If this item is in the accessory 3 slot
             else if (currentSlot.accessory3Slot)
             {
-                for (int i = 2; i < GameManager.Instance.inventorySlots.Length; i++)
+                for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
                 {
                     Debug.Log("Searching for Slot...");
                     if (GameManager.Instance.inventorySlots[i].isFull == false)
@@ -342,7 +350,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     }
                 }
             }
-            // If this item is NOT in the weapon slot and Equip Type == Weapon
             else if (!currentSlot.weaponSlot && equipType == (int)equipment.Weapon)
             {
                 if (GameManager.Instance.inventorySlots[0].isFull)
@@ -374,7 +381,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);
                 }
             }
-            // If this item is NOT in the helmet slot and Equip Type == Helmet
             else if (!currentSlot.helmetSlot && equipType == (int)equipment.Helmet)
             {
                 if (GameManager.Instance.inventorySlots[1].isFull)

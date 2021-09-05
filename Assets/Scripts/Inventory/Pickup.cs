@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     public int itemID;
+    public int amount;
     InputManager inputManager;
 
     private void Awake() {
@@ -14,11 +15,10 @@ public class Pickup : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
-        {
-
-            GameManager.Instance.PickupItem(itemID);
+        {        
+            GameManager.Instance.PickUpItem(itemID, amount);
             Destroy(gameObject);
-            
+            return;
         }
     }
 }

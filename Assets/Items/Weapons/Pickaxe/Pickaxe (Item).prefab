@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Barbarian Helmet (Item)
+  m_Name: Pickaxe (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 0
-  equipType: 1
-  MaxAmount: 2
+  itemID: 2
+  equipType: 5
+  MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}

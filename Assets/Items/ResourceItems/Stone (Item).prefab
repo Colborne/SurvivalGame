@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Barbarian Helmet (Item)
+  m_Name: Stone (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44ad0e024aa875d48bf007c92541a4b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -193,8 +193,8 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 0
-  equipType: 1
-  MaxAmount: 2
+  itemID: 3
+  equipType: 0
+  MaxAmount: 10
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}

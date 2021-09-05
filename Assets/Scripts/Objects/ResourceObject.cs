@@ -6,8 +6,8 @@ public class ResourceObject : MonoBehaviour
 {
     public string resourceType;
     public int toolRequiredLevel;
+    public GameObject fx;
     public GameObject drop;
-
     ObjectStats objectStats;
     private void Awake() {
         objectStats = GetComponent<ObjectStats>();
@@ -17,7 +17,11 @@ public class ResourceObject : MonoBehaviour
     {
         if(objectStats.currentHealth <= 0)
         {
-            Instantiate(drop, transform.position, transform.rotation);
+            for(int i = 0; i < Random.Range(2f,6f); i++)
+            {
+                var _drop = Instantiate(drop, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(-.5f,.5f),Random.Range(-.5f,.5f)), Random.rotation);
+                _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
+            }
             Destroy(gameObject);
         }
     }
