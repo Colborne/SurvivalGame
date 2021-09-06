@@ -8,12 +8,15 @@ public class PlayerAttacker : MonoBehaviour
     SoundManager soundManager;
     EquipmentManager equipmentManager;
     StatsManager statsManager;
+    
+    InputManager input;
     private void Awake() 
     {
         animatorManager = GetComponent<AnimatorManager>();
         soundManager = GetComponent<SoundManager>();
         equipmentManager = GetComponent<EquipmentManager>();
         statsManager = GetComponent<StatsManager>();
+        input = FindObjectOfType<InputManager>();
     }
 
     public void HandleLightAttack(WeaponItem weaponItem)
@@ -44,6 +47,18 @@ public class PlayerAttacker : MonoBehaviour
             animatorManager.PlayTargetAnimation(weaponItem.OH_Left_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/drawKnife2");
+        }
+    }
+
+    public void HandleRangedAction(WeaponItem weaponItem)
+    {
+        equipmentManager.rightWeapon = weaponItem;
+        if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
+        {
+            animatorManager.PlayTargetAnimation(weaponItem.Ranged_Attack, true);
+            animatorManager.animator.SetBool("isAttacking", true);
+            soundManager.PlaySound("Sounds/drawKnife2");
+            Instantiate(weaponItem.projectile, transform.position + new Vector3(2,2,0), transform.rotation);
         }
     }
 }

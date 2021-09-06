@@ -21,6 +21,12 @@ public class WeaponItem : Item
     public string OH_Heavy_Attack;
     public string OH_Left_Attack;
 
+    [Header("Speacialty Attack Animations")]
+    public string Ranged_Attack;
+    public string Magic_Attack;
+
+    public GameObject projectile;
+
     [Header("Stamina Costs")]
     public int baseStamina;
 

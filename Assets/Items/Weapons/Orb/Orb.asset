@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
-  m_Name: Pickaxe
+  m_Name: Orb
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 3969463676409318601, guid: c57ea6af99f75a948bb4bec3f8a4ba94, type: 3}
-  itemIcon: {fileID: 21300000, guid: 19e554e2b3fddec4a943f9043e3d85a8, type: 3}
-  itemName: Pickaxe
+  modelPrefab: {fileID: 1884747205189362, guid: 6de117ac352b34e458aec9d417c2b545, type: 3}
+  itemIcon: {fileID: 21300000, guid: 8b544bb7538c42f4cacafa58eab7b0ba, type: 3}
+  itemName: Orb
   isUnarmed: 0
   isTwoHanded: 0
   hasSpecial: 0
-  canCharge: 0
-  Right_Hand_Idle: Idle
-  Left_Hand_Idle: Idle
+  canCharge: 1
+  Right_Hand_Idle: 
+  Left_Hand_Idle: 
   Two_Hand_Idle: 
-  OH_Light_Attack: OverheadSwing
-  OH_Heavy_Attack: HeavyAttack
-  OH_Left_Attack: LeftAttack
-  Ranged_Attack: 
+  OH_Light_Attack: LightAttack
+  OH_Heavy_Attack: 
+  OH_Left_Attack: 
+  Ranged_Attack: Charging
   Magic_Attack: 
-  projectile: {fileID: 0}
+  projectile: {fileID: 2959667684836456750, guid: 319487a2b76fc68408786b03b3360827, type: 3}
   baseStamina: 10
   heavyAttackMultiplier: 1.5

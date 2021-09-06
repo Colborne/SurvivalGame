@@ -151,11 +151,13 @@ public class InputManager : MonoBehaviour
     {
         if(attackChargeTimer > 0f)
         {
-            attackChargeTimer += 1f * Time.deltaTime;
+            if(attackChargeTimer < 1f)
+                attackChargeTimer += 1f * Time.deltaTime;
+            
+            animatorManager.PlayTargetAnimation("Charging", true);
             if(!leftMouseInput)
             {
-                attackChargeTimer = 0f;
-                playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
+                playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
             }
         }
         else

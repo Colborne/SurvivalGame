@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         if(type == "Shield" && shieldID != -1)
         {
             spawnedShield = Instantiate(equipment[shieldID].prefab, PM.leftHand);
-            equipmentManager.leftWeapon = spawnedWeapon.GetComponent<weaponItemLoader>().item;
+            equipmentManager.leftWeapon = spawnedShield.GetComponent<weaponItemLoader>().item;
             equipmentManager.LoadWeaponOnSlot(equipmentManager.leftWeapon, true);
         }
 
