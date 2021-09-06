@@ -19,10 +19,8 @@ public class Tree : ResourceObject
 
     public float timeSinceInitialization;
     public float timer;
-    SoundManager soundManager;
     ObjectStats objectStats;
     private void Awake() {
-        soundManager = GetComponent<SoundManager>();
         objectStats = GetComponent<ObjectStats>();
         int healthAmount;
 
@@ -68,6 +66,13 @@ public class Tree : ResourceObject
                 break;
             case Type.LogHalf:
                 Instantiate(fxTreeLogDestroyed, transform.position, transform.rotation);
+
+                for(int i = 0; i < Random.Range(2f,6f); i++)
+                {
+                    var _drop = Instantiate(drop, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(-.5f,.5f),Random.Range(-.5f,.5f)), Random.rotation);
+                    _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
+                }
+                
                 break;
             case Type.Stump:
                 break;
@@ -76,10 +81,8 @@ public class Tree : ResourceObject
     }
 
     public void CheckHit(bool axe) {
-        if(axe)
-            soundManager.PlaySound("Sounds/chop"); 
-        else
-            soundManager.PlaySound("Sounds/footstep08");  
+        if(!axe)
+            GetComponent<AudioSource>().Play();  
 
         if(objectStats.currentHealth <= 0)
         {
@@ -95,5 +98,4 @@ public class Tree : ResourceObject
             }
         }
     }
-    
 }

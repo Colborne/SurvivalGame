@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4661515921446155677}
   - component: {fileID: 7417874836205428656}
   - component: {fileID: -2715114139002397119}
-  - component: {fileID: -1135779814484425613}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Hittable
@@ -115,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: Tree
   toolRequiredLevel: 0
+  fx: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
+  drop: {fileID: 0}
   treeType: 0
   fxTreeDestroyed: {fileID: 1408080632602542178, guid: 319beebd4e446db4c99d7c1fcfa8eee3, type: 3}
   fxTreeLogDestroyed: {fileID: 1408080632602542178, guid: f0389c2f70408d249bc85a77e330538e, type: 3}
@@ -147,8 +148,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: fbf20bcde9391664d95231a2eaaace40, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -233,15 +234,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-1135779814484425613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910646186869756628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cb742d32e67494684105caf2c12466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

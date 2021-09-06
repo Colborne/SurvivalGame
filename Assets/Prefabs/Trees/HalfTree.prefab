@@ -132,6 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: Tree
   toolRequiredLevel: 0
+  fx: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
+  drop: {fileID: 7533301453620370007, guid: 616bed89722443042acc54e4e437e383, type: 3}
   treeType: 2
   fxTreeDestroyed: {fileID: 1408080632602542178, guid: 319beebd4e446db4c99d7c1fcfa8eee3, type: 3}
   fxTreeLogDestroyed: {fileID: 1408080632602542178, guid: f0389c2f70408d249bc85a77e330538e, type: 3}
@@ -164,8 +166,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: fbf20bcde9391664d95231a2eaaace40, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
