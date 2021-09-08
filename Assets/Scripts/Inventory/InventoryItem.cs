@@ -55,7 +55,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             textAmount.text = currentAmount.ToString();
         else
             textAmount.text = "";
-    
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -89,10 +89,20 @@ public class InventoryDrop : MonoBehaviour, IDropHandler
             }
             else
             {
-                int amount = OriginalSlot.currentItem.currentAmount;
-                OriginalSlot.currentItem = null;
-                OriginalSlot.isFull = false;
-                GameManager.Instance.DropItem(newItem, amount);
+                if(OriginalSlot.currentItem.currentAmount <= 1)
+                    GameManager.Instance.DropItem(newItem);
+                else
+                    GameManager.Instance.DropItem(newItem, newItem.currentAmount);
+
+                if(OriginalSlot.GetComponentInChildren<InventoryItem>() == null)
+                {
+                    OriginalSlot.currentItem = null;
+                    OriginalSlot.isFull = false;
+                }
+                else
+                {
+                    OriginalSlot.isFull = true;
+                }
             }
         }
     }

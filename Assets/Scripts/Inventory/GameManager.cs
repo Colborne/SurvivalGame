@@ -185,9 +185,8 @@ public class GameManager : MonoBehaviour
                 inventorySlots[i].isFull = true;
                 inventorySlots[i].currentItem.currentAmount = quantityIncrease;
 
-
                 if(inventorySlots[i].currentItem.MaxAmount >= inventorySlots[i].currentItem.currentAmount)
-                     return;
+                    return;
                 else
                 {
                     Debug.Log(inventorySlots[i].currentItem.MaxAmount + " < " + quantityIncrease);
