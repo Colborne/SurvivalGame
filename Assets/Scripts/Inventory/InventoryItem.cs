@@ -53,6 +53,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     private void Update() {
         if(currentAmount > 1)
             textAmount.text = currentAmount.ToString();
+        else
+            textAmount.text = "";
+    
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -73,16 +76,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             OriginalSlot.currentItem = _item;
 
             currentAmount -= _item.currentAmount;
-            canvasGroup.blocksRaycasts = false;
-            rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
-            originalSlot = transform.parent.transform;
         }
-        else
-        {
-            canvasGroup.blocksRaycasts = false;
-            rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
-            originalSlot = transform.parent.transform;
-        }
+ 
+        canvasGroup.blocksRaycasts = false;
+        rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+        originalSlot = transform.parent.transform;  
     } 
     public void OnEndDrag(PointerEventData eventData)
     {

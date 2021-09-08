@@ -453,11 +453,19 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         if(OriginalSlot.currentItem.itemID == newItem.itemID)
                         {
                             // Filling This Slot
-                            currentItem.currentAmount += newItem.currentAmount;
-                            //Give remainder
-
-                            eventData.pointerDrag.transform.SetParent(gameObject.transform);
-                            currentItem.originalSlot = this.transform;
+                            int newAmount = currentItem.currentAmount + newItem.currentAmount;
+                            if(newAmount <= currentItem.MaxAmount)
+                            {
+                                currentItem.currentAmount += newItem.currentAmount;
+                                eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                                currentItem.originalSlot = this.transform;
+                            }
+                            else
+                            {
+                                currentItem.currentAmount = currentItem.MaxAmount;
+                                int remainder = newAmount - currentItem.currentAmount;
+                                GameManager.Instance.PickUpItem(currentItem.itemID, remainder);
+                            }
 
                             if(OriginalSlot.GetComponentInChildren<InventoryItem>() == null)
                             {

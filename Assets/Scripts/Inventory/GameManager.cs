@@ -151,11 +151,11 @@ public class GameManager : MonoBehaviour
         // Searches for identical item ID in inventory //
         for (int i = 10; i < inventorySlots.Length; i++)
         {    
+            GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[i].gameObject.transform);
             //Found an empty slot
             if (!inventorySlots[i].isFull)
             {
-                Debug.Log("Empty Slot");
-                GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[i].gameObject.transform);
+                Debug.Log("Empty Slot");   
                 inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
                 inventorySlots[i].isFull = true;
                 inventorySlots[i].currentItem.currentAmount = quantityIncrease;
@@ -169,6 +169,7 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log(inventorySlots[i].currentItem.MaxAmount + " >= " + newAmount);
                     inventorySlots[i].currentItem.currentAmount += quantityIncrease;
+                    //inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
                     break;
                 }
                 else
@@ -178,7 +179,7 @@ public class GameManager : MonoBehaviour
 
                     int remainder = newAmount - inventorySlots[i].currentItem.MaxAmount;
                     Debug.Log("Remainder that should be rounded over: " + remainder);
-                    //GameManager.Instance.PickUpItem(itemID, remainder); 
+                    //try{GameManager.Instance.PickUpItem(itemID, remainder);}catch{}
                     break;              
                 }
             }
