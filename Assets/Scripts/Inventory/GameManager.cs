@@ -151,36 +151,23 @@ public class GameManager : MonoBehaviour
         // Searches for identical item ID in inventory //
         for (int i = 10; i < inventorySlots.Length; i++)
         {    
-            GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[i].gameObject.transform);
-            //Found an empty slot
-            if (!inventorySlots[i].isFull)
-            {
-                Debug.Log("Empty Slot");   
-                inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
-                inventorySlots[i].isFull = true;
-                inventorySlots[i].currentItem.currentAmount = quantityIncrease;
-                break;
-            }
             //Found a full slot and the id matches
-            else if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == itemID)
+            if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == itemID)
             {
                 int newAmount = inventorySlots[i].currentItem.currentAmount + quantityIncrease;
                 if(inventorySlots[i].currentItem.MaxAmount >= newAmount)
                 {
                     Debug.Log(inventorySlots[i].currentItem.MaxAmount + " >= " + newAmount);
                     inventorySlots[i].currentItem.currentAmount += quantityIncrease;
-                    //inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
-                    break;
+                    return;
                 }
                 else
                 {
                     Debug.Log(inventorySlots[i].currentItem.MaxAmount + " < " + newAmount);
                     inventorySlots[i].currentItem.currentAmount = inventorySlots[i].currentItem.MaxAmount;
 
-                    int remainder = newAmount - inventorySlots[i].currentItem.MaxAmount;
-                    Debug.Log("Remainder that should be rounded over: " + remainder);
-                    //try{GameManager.Instance.PickUpItem(itemID, remainder);}catch{}
-                    break;              
+                    quantityIncrease = newAmount - inventorySlots[i].currentItem.MaxAmount;
+                    Debug.Log("Remainder that should be rounded over: " + quantityIncrease);          
                 }
             }
             //Found a full slot but the id does not match
@@ -188,11 +175,35 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Can't Place here");
             }
+            //Found an empty slot
+            else if (!inventorySlots[i].isFull)
+            { 
+                Debug.Log("Empty Slot");   
+                GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[i].gameObject.transform);
+                GO.GetComponent<InventoryItem>().originalSlot = inventorySlots[i].transform;
+                inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
+                inventorySlots[i].isFull = true;
+                inventorySlots[i].currentItem.currentAmount = quantityIncrease;
+
+
+                if(inventorySlots[i].currentItem.MaxAmount >= inventorySlots[i].currentItem.currentAmount)
+                     return;
+                else
+                {
+                    Debug.Log(inventorySlots[i].currentItem.MaxAmount + " < " + quantityIncrease);
+                    inventorySlots[i].currentItem.currentAmount = inventorySlots[i].currentItem.MaxAmount;
+
+                    quantityIncrease -= inventorySlots[i].currentItem.MaxAmount;
+                    Debug.Log("Remainder that should be rounded over: " + quantityIncrease);      
+                }
+            }
             //No Slots Left
             else
             {
                 Debug.Log("noslot");
-                Instantiate(equipment[itemID].worldItem, PM.transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+                var obj = Instantiate(equipment[itemID].worldItem, PM.transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+                obj.GetComponent<Pickup>().amount = quantityIncrease;
+                return;
             }
         }
     }

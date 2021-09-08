@@ -450,7 +450,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                     && !currentItem.inShieldSlot )
                     {
                         //Stack
-                        if(OriginalSlot.currentItem.itemID == newItem.itemID)
+                        if(currentItem.itemID == newItem.itemID)
                         {
                             // Filling This Slot
                             int newAmount = currentItem.currentAmount + newItem.currentAmount;
