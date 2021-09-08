@@ -125,7 +125,9 @@ public class PlayerLocomotion : MonoBehaviour
         else
         {
             Ray ray = Camera.main.ScreenPointToRay(inputManager.mousePosition);
-            transform.rotation = Quaternion.LookRotation(ray.direction);
+            var look = ray.direction;
+            look.y = 0;
+            transform.rotation = Quaternion.LookRotation(look);
         }
     }
     private void HandleFallingAndLanding()

@@ -453,8 +453,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         if(currentItem.itemID == newItem.itemID)
                         {
                             // Filling This Slot
-                            int newAmount = currentItem.currentAmount + newItem.currentAmount;
-                            if(newAmount <= currentItem.MaxAmount)
+                            int remainder = currentItem.currentAmount + newItem.currentAmount;
+                            if(remainder <= currentItem.MaxAmount)
                             {
                                 currentItem.currentAmount += newItem.currentAmount;
                                 eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -463,8 +463,9 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                             else
                             {
                                 currentItem.currentAmount = currentItem.MaxAmount;
-                                int remainder = newAmount - currentItem.currentAmount;
-                                GameManager.Instance.PickUpItem(currentItem.itemID, remainder);
+                                remainder -= currentItem.currentAmount;
+                                Debug.Log("Stack Rounding");
+                                GameManager.Instance.StackRounding(newItem.itemID, remainder, OriginalSlot.currentItem.originalSlot);
                             }
 
                             if(OriginalSlot.GetComponentInChildren<InventoryItem>() == null)
