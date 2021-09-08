@@ -23,6 +23,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     RectTransform rectTransform;
     public CanvasGroup canvasGroup;
     public Transform originalSlot;
+    InputManager inputManager;
 
     public bool inHelmetSlot = false;
     public bool inWeaponSlot = false;
@@ -46,6 +47,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         textAmount = GetComponentInChildren<Text>();
+        inputManager = FindObjectOfType<InputManager>();
     }
 
     private void Update() {
@@ -60,9 +62,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false;
-        rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
-        originalSlot = transform.parent.transform;
+        if(currentAmount > 1 && inputManager.modifierInput)
+        {
+            InventoryItem newItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+            InventorySlot OriginalSlot = newItem.originalSlot.GetComponent<InventorySlot>();
+            InventoryItem _item  = Instantiate(newItem, transform.position, transform.rotation);
+            
+            _item.currentAmount = (int)Mathf.Floor(currentAmount/2);
+            _item.transform.SetParent(originalSlot);
+            OriginalSlot.currentItem = _item;
+
+            currentAmount -= _item.currentAmount;
+            canvasGroup.blocksRaycasts = false;
+            rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+            originalSlot = transform.parent.transform;
+        }
+        else
+        {
+            canvasGroup.blocksRaycasts = false;
+            rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+            originalSlot = transform.parent.transform;
+        }
     } 
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -71,9 +91,16 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         rectTransform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
         if (transform.parent == GameManager.Instance.draggables)
         {
+            if(originalSlot.GetComponentInChildren<InventoryItem>() != null)
+            {
+                int amount = originalSlot.GetComponentInChildren<InventoryItem>().currentAmount;
+                Destroy(originalSlot.GetComponentInChildren<InventoryItem>().gameObject);
+                currentAmount += amount;
+            }
             transform.SetParent(originalSlot);
         }
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right && !eventData.dragging)
@@ -383,7 +410,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             }
             else if (!currentSlot.helmetSlot && equipType == (int)equipment.Helmet)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[1].isFull) //ALL OF THESE NEED TO CHANGE TO THE CORRECT NUMBER
                 {
                     // Setting Inventory Slot
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;

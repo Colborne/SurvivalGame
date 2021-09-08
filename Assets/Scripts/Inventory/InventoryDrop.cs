@@ -89,9 +89,10 @@ public class InventoryDrop : MonoBehaviour, IDropHandler
             }
             else
             {
+                int amount = OriginalSlot.currentItem.currentAmount;
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.DropItem(newItem);
+                GameManager.Instance.DropItem(newItem, amount);
             }
         }
     }

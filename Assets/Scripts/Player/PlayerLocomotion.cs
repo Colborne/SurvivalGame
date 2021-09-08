@@ -51,10 +51,11 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleFallingAndLanding();
 
-        if(playerManager.isInteracting || inputManager.inventoryFlag)
-        {
+        if(inputManager.inventoryFlag)
             return;
-        }
+        
+        if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f)
+            return;
 
         HandleMovement();
         HandleRotation();
@@ -104,19 +105,28 @@ public class PlayerLocomotion : MonoBehaviour
         if(isFalling)
             return;
 
-        Vector3 targetDirection = Vector3.zero;
-        targetDirection = cameraObject.forward * inputManager.verticalInput;
-        targetDirection = targetDirection + cameraObject.right * inputManager.horizontalInput;
-        targetDirection.Normalize();
-        targetDirection.y = 0;
 
-        if(targetDirection == Vector3.zero)
-            targetDirection = transform.forward;
-        
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        if(inputManager.attackChargeTimer == 0f)
+        {
+            Vector3 targetDirection = Vector3.zero;
+            targetDirection = cameraObject.forward * inputManager.verticalInput;
+            targetDirection = targetDirection + cameraObject.right * inputManager.horizontalInput;
+            targetDirection.Normalize();
+            targetDirection.y = 0;
 
-        transform.rotation = playerRotation;
+            if(targetDirection == Vector3.zero)
+                targetDirection = transform.forward;
+            
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            transform.rotation = playerRotation;
+        }
+        else
+        {
+            Ray ray = Camera.main.ScreenPointToRay(inputManager.mousePosition);
+            transform.rotation = Quaternion.LookRotation(ray.direction);
+        }
     }
     private void HandleFallingAndLanding()
     {

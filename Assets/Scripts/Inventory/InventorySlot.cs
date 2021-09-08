@@ -449,17 +449,33 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                     && !currentItem.inAccessory3Slot 
                     && !currentItem.inShieldSlot )
                     {
-                        //if(type != type)
-                        Debug.Log("Dropped Item: Full Inventory Slot");
+                        //Stack
+                        if(OriginalSlot.currentItem.itemID == newItem.itemID)
+                        {
+                            // Filling This Slot
+                            currentItem.currentAmount += newItem.currentAmount;
+                            //Give remainder
 
-                        Swap(newItem, OriginalSlot);
+                            eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                            currentItem.originalSlot = this.transform;
 
-                        // Swapping Parent
-                        eventData.pointerDrag.transform.SetParent(gameObject.transform);
-                        OriginalSlot.currentItem.transform.SetParent(OriginalSlot.transform);
-                        OriginalSlot.currentItem.originalSlot = OriginalSlot.transform;
-                        //else stack
-                        //if too many give reaminder
+                            if(OriginalSlot.GetComponentInChildren<InventoryItem>() == null)
+                            {
+                                // Emptying Original Slot
+                                OriginalSlot.isFull = false;
+                                OriginalSlot.currentItem = null;
+                            }
+                            Destroy(newItem.gameObject);
+                        }
+                        else
+                        {
+                            Swap(newItem, OriginalSlot);
+
+                            // Swapping Parent
+                            eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                            OriginalSlot.currentItem.transform.SetParent(OriginalSlot.transform);
+                            OriginalSlot.currentItem.originalSlot = OriginalSlot.transform;
+                        }
                     }
                     // Returning To Original Slot
                     else
@@ -913,9 +929,12 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                           && !OriginalSlot.backSlot && !backSlot && !OriginalSlot.accessory1Slot && !accessory1Slot
                           && !OriginalSlot.accessory2Slot && !accessory2Slot && !OriginalSlot.accessory3Slot && !accessory3Slot)
                     {
-                        // Emptying Original Slot
-                        OriginalSlot.isFull = false;
-                        OriginalSlot.currentItem = null;
+                        if(OriginalSlot.GetComponentInChildren<InventoryItem>() == null)
+                        {
+                            // Emptying Original Slot
+                            OriginalSlot.isFull = false;
+                            OriginalSlot.currentItem = null;
+                        }
 
                         // Filling This Slot
                         isFull = true;
