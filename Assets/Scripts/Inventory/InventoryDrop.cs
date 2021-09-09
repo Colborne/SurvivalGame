@@ -35,56 +35,56 @@ public class InventoryDrop : MonoBehaviour, IDropHandler
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.chestID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedChest);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inHelmetSlot)
+            else if (newItem.inLegsSlot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.legsID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedLegs);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inHelmetSlot)
+            else if (newItem.inBootsSlot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.bootsID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedBoots);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inHelmetSlot)
+            else if (newItem.inBackSlot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.backID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedBack);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inHelmetSlot)
+            else if (newItem.inAccessory1Slot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.accessory1ID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory1);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inHelmetSlot)
+            else if (newItem.inAccessory2Slot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.accessory2ID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory2);
                 GameManager.Instance.DropItem(newItem);
             }
-            else if (newItem.inHelmetSlot)
+            else if (newItem.inAccessory3Slot)
             {
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
-                GameManager.Instance.helmetID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
+                GameManager.Instance.accessory3ID = -1;
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory3);
                 GameManager.Instance.DropItem(newItem);
             }
             else
