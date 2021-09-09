@@ -71,7 +71,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             InventoryItem _item  = Instantiate(newItem, transform.position, transform.rotation);
             
             _item.currentAmount = (int)Mathf.Floor(currentAmount/2);
-            _item.transform.SetParent(originalSlot);
+            _item.transform.SetParent(newItem.originalSlot);
             OriginalSlot.currentItem = _item;
 
             currentAmount -= _item.currentAmount;

@@ -229,50 +229,14 @@ public class GameManager : MonoBehaviour
         // Searches for identical item ID in inventory //
         for (int i = 10; i < inventorySlots.Length; i++)
         {    
-            //Found a full slot and the id matches
-            if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == itemID)
-            {
-                int newAmount = inventorySlots[i].currentItem.currentAmount + quantityIncrease;
-                if(inventorySlots[i].currentItem.MaxAmount >= newAmount)
-                {
-                    if(originalSlot != inventorySlots[i].currentItem.originalSlot)
-                    {
-                        inventorySlots[i].currentItem.currentAmount += quantityIncrease;
-                        return;
-                    }
-                }
-                else
-                {      
-                    inventorySlots[i].currentItem.currentAmount = inventorySlots[i].currentItem.MaxAmount;
-                    quantityIncrease = newAmount - inventorySlots[i].currentItem.MaxAmount;
-                }
-            }
-            //Found a full slot but the id does not match
-            else if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID != itemID)
-            {
-                Debug.Log("Can't Place here");
-            }
-            //Found an empty slot
-            else if (!inventorySlots[i].isFull)
+            if (!inventorySlots[i].isFull)
             { 
-                Debug.Log("Empty Slot");   
                 GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[i].gameObject.transform);
                 GO.GetComponent<InventoryItem>().originalSlot = inventorySlots[i].transform;
                 inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
                 inventorySlots[i].isFull = true;
                 inventorySlots[i].currentItem.currentAmount = quantityIncrease;
-                Debug.Log(quantityIncrease);
-
-                if(inventorySlots[i].currentItem.MaxAmount >= inventorySlots[i].currentItem.currentAmount)
-                    return;
-                else
-                {
-                    Debug.Log(inventorySlots[i].currentItem.MaxAmount + " < " + quantityIncrease);
-                    inventorySlots[i].currentItem.currentAmount = inventorySlots[i].currentItem.MaxAmount;
-
-                    quantityIncrease -= inventorySlots[i].currentItem.MaxAmount;
-                    Debug.Log("empty remainder: " + quantityIncrease);      
-                }
+                return;
             }
         }
     }
