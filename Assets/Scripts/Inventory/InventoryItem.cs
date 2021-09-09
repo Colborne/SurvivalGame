@@ -376,17 +376,17 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             }
             else if (!currentSlot.weaponSlot && equipType == (int)equipment.Weapon)
             {
-                if (GameManager.Instance.inventorySlots[0].isFull)
+                if (GameManager.Instance.inventorySlots[3].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[0].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[3].currentItem;
                     currentSlot.currentItem.inWeaponSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[0].currentItem = this;
+                    GameManager.Instance.inventorySlots[3].currentItem = this;
                     inWeaponSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[0].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[3].transform);
                     GameManager.Instance.weaponID = itemID;
                     GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);
                 } 
@@ -397,10 +397,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[0].currentItem = this;
-                    GameManager.Instance.inventorySlots[0].isFull = true;
+                    GameManager.Instance.inventorySlots[3].currentItem = this;
+                    GameManager.Instance.inventorySlots[3].isFull = true;
                     inWeaponSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[0].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[3].transform);
                     GameManager.Instance.weaponID = itemID;
                     GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);
                 }
@@ -438,17 +438,17 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             }
             else if (!currentSlot.chestSlot && equipType == (int)equipment.Chest)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[2].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[2].currentItem;
                     currentSlot.currentItem.inChestSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[2].currentItem = this;
                     inChestSlot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[2].transform);
                     GameManager.Instance.chestID = itemID;
                     GameManager.Instance.SpawnItem("Chest", GameManager.Instance.spawnedChest);
                 }
@@ -459,27 +459,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[2].currentItem = this;
+                    GameManager.Instance.inventorySlots[2].isFull = true;
                     inChestSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[2].transform);
                     GameManager.Instance.chestID = itemID;
                     GameManager.Instance.SpawnItem("Chest", GameManager.Instance.spawnedChest);
                 }
             }
             else if (!currentSlot.legsSlot && equipType == (int)equipment.Legs)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[5].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[5].currentItem;
                     currentSlot.currentItem.inLegsSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[5].currentItem = this;
                     inLegsSlot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[5].transform);
                     GameManager.Instance.legsID = itemID;
                     GameManager.Instance.SpawnItem("Legs", GameManager.Instance.spawnedLegs);
                 }
@@ -490,27 +490,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[5].currentItem = this;
+                    GameManager.Instance.inventorySlots[5].isFull = true;
                     inLegsSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[5].transform);
                     GameManager.Instance.legsID = itemID;
                     GameManager.Instance.SpawnItem("Legs", GameManager.Instance.spawnedLegs);
                 }
             }
             else if (!currentSlot.bootsSlot && equipType == (int)equipment.Boots)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[6].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[6].currentItem;
                     currentSlot.currentItem.inBootsSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[6].currentItem = this;
                     inBootsSlot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[6].transform);
                     GameManager.Instance.bootsID = itemID;
                     GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
                 }
@@ -521,27 +521,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[6].currentItem = this;
+                    GameManager.Instance.inventorySlots[6].isFull = true;
                     inBootsSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[6].transform);
                     GameManager.Instance.bootsID = itemID;
                     GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
                 }
             }
             else if (!currentSlot.backSlot && equipType == (int)equipment.Back)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[0].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[0].currentItem;
                     currentSlot.currentItem.inBackSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[0].currentItem = this;
                     inBackSlot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[0].transform);
                     GameManager.Instance.backID = itemID;
                     GameManager.Instance.SpawnItem("Back", GameManager.Instance.spawnedBack);
                 }
@@ -552,27 +552,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[0].currentItem = this;
+                    GameManager.Instance.inventorySlots[0].isFull = true;
                     inBackSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[0].transform);
                     GameManager.Instance.backID = itemID;
                     GameManager.Instance.SpawnItem("Back", GameManager.Instance.spawnedBack);
                 }
             }
             else if (!currentSlot.shieldSlot && equipType == (int)equipment.Shield)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[4].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[4].currentItem;
                     currentSlot.currentItem.inShieldSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[4].currentItem = this;
                     inShieldSlot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[4].transform);
                     GameManager.Instance.shieldID = itemID;
                     GameManager.Instance.SpawnItem("Shield", GameManager.Instance.spawnedShield);
                 }
@@ -583,27 +583,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[4].currentItem = this;
+                    GameManager.Instance.inventorySlots[4].isFull = true;
                     inShieldSlot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[4].transform);
                     GameManager.Instance.shieldID = itemID;
                     GameManager.Instance.SpawnItem("Shield", GameManager.Instance.spawnedShield);
                 }
             }
             else if (!currentSlot.accessory1Slot && equipType == (int)equipment.Accessory)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[7].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[7].currentItem;
                     currentSlot.currentItem.inAccessory1Slot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[7].currentItem = this;
                     inAccessory1Slot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[7].transform);
                     GameManager.Instance.accessory1ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory1", GameManager.Instance.spawnedAccessory1);
                 }
@@ -614,27 +614,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[7].currentItem = this;
+                    GameManager.Instance.inventorySlots[7].isFull = true;
                     inAccessory1Slot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[7].transform);
                     GameManager.Instance.accessory1ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory1", GameManager.Instance.spawnedAccessory1);
                 }
             }
             else if (!currentSlot.accessory2Slot && equipType == (int)equipment.Accessory)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[8].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[8].currentItem;
                     currentSlot.currentItem.inAccessory2Slot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[8].currentItem = this;
                     inAccessory2Slot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[8].transform);
                     GameManager.Instance.accessory2ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory2", GameManager.Instance.spawnedAccessory2);
                 }
@@ -645,27 +645,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[8].currentItem = this;
+                    GameManager.Instance.inventorySlots[8].isFull = true;
                     inAccessory2Slot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[8].transform);
                     GameManager.Instance.accessory2ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory2", GameManager.Instance.spawnedAccessory2);
                 }
             }
             else if (!currentSlot.accessory3Slot && equipType == (int)equipment.Accessory)
             {
-                if (GameManager.Instance.inventorySlots[1].isFull)
+                if (GameManager.Instance.inventorySlots[9].isFull)
                 {
                     // Setting Inventory Slot
-                    currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
+                    currentSlot.currentItem = GameManager.Instance.inventorySlots[9].currentItem;
                     currentSlot.currentItem.inAccessory3Slot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[9].currentItem = this;
                     inAccessory3Slot = true;
-                    transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    transform.SetParent(GameManager.Instance.inventorySlots[9].transform);
                     GameManager.Instance.accessory3ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory3", GameManager.Instance.spawnedAccessory3);
                 }
@@ -676,10 +676,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.isFull = false;
 
                     // Setting Weapon Slot
-                    GameManager.Instance.inventorySlots[1].currentItem = this;
-                    GameManager.Instance.inventorySlots[1].isFull = true;
+                    GameManager.Instance.inventorySlots[9].currentItem = this;
+                    GameManager.Instance.inventorySlots[9].isFull = true;
                     inAccessory3Slot = true;
-                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
+                    gameObject.transform.SetParent(GameManager.Instance.inventorySlots[9].transform);
                     GameManager.Instance.accessory3ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory3", GameManager.Instance.spawnedAccessory3);
                 }

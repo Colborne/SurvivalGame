@@ -53,11 +53,10 @@ public class DamageCollider : MonoBehaviour
                 {
                     if (stats != null)
                     {
+                        Debug.Log("Chop");
                         if(resource.resourceType == "Ore")
                             sound.PlaySound("Sounds/metalLatch");
-                        
-                        if(resource.resourceType == "Tree"){
-                            Debug.Log("Chop");
+                        else if(resource.resourceType == "Tree"){
                             sound.PlaySound("Sounds/chop"); 
                         }
                         
@@ -77,9 +76,7 @@ public class DamageCollider : MonoBehaviour
                     }
                 }
             }
-    
-        }
-    
+        } 
 
         if(collision.tag == "Enemy")
         {

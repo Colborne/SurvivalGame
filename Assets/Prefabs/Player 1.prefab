@@ -166,7 +166,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3135553241162879735}
-  - component: {fileID: 6708311386944697299}
   m_Layer: 9
   m_Name: L_Hand_end
   m_TagString: Untagged
@@ -188,22 +187,6 @@ Transform:
   m_Father: {fileID: 151959392938688793}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6708311386944697299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2903409020773869034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3880fc837cb469a419ef8d67ffd32a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentOverride: {fileID: 3135553241162879735}
-  isLeftHandSlot: 1
-  isRightHandSlot: 0
-  currentWeaponModel: {fileID: 0}
 --- !u!1 &3905840494302579610
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,18 +387,15 @@ GameObject:
   - component: {fileID: 6708311387600673052}
   - component: {fileID: 6708311387600673027}
   - component: {fileID: 6708311387600673040}
-  - component: {fileID: 6708311387600673026}
   - component: {fileID: 6708311387600673053}
   - component: {fileID: 6708311387600673054}
   - component: {fileID: 6708311387600673055}
   - component: {fileID: 6708311387600673048}
   - component: {fileID: 6708311387600673049}
-  - component: {fileID: 6708311387600673050}
   - component: {fileID: 6708311387600673045}
-  - component: {fileID: 6708311387600673046}
   - component: {fileID: 6708311387600673047}
   - component: {fileID: 6708311387600673041}
-  - component: {fileID: 6708311387600673042}
+  - component: {fileID: 451664722}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -430,7 +410,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5897987611358159953}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.52, z: -5.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -499,7 +479,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -584,25 +564,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6708311387600673026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5897987611358159953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033fcb047c51d8042af6f1c91d521f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSlotManager: {fileID: 0}
-  helmetSlotManager: {fileID: 0}
-  rightWeapon: {fileID: 11400000, guid: 577103751d7dedc4a97d2ce26a08e062, type: 2}
-  leftWeapon: {fileID: 11400000, guid: 30035dea490255b4c8fa06f18845830b, type: 2}
-  unarmed: {fileID: 11400000, guid: 187523df334aad54ea950177f63efeea, type: 2}
-  helmet: {fileID: 0}
-  ContainerObject: {fileID: 0}
 --- !u!114 &6708311387600673053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,13 +587,14 @@ MonoBehaviour:
   isGrounded: 1
   isJumping: 0
   isAttacking: 0
-  sneakingSpeed: 2.5
-  walkingSpeed: 5
+  isFalling: 0
+  sneakingSpeed: 4
+  walkingSpeed: 7.5
   runningSpeed: 10
-  sprintingSpeed: 20
-  rotationSpeed: 15
-  jumpHeight: 7
-  gravityIntensity: -15
+  sprintingSpeed: 13
+  rotationSpeed: 10
+  jumpHeight: 6
+  gravityIntensity: -20
 --- !u!114 &6708311387600673054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +634,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableUIGameObject: {fileID: 0}
   itemInteractableUIGameObject: {fileID: 0}
+  rightHand: {fileID: 3865329891785043358}
+  leftHand: {fileID: 3135553241162879735}
+  helmet: {fileID: 3025248887727209117}
+  chest: {fileID: 1541522008526596020}
+  legs: {fileID: 3753464579845205186}
+  boots: {fileID: 3753464579845205186}
+  back: {fileID: 5587007020061816230}
+  body: {fileID: 2747997891069210229}
   isInteracting: 0
 --- !u!114 &6708311387600673049
 MonoBehaviour:
@@ -689,7 +659,6 @@ MonoBehaviour:
   cameraInput: {x: 0, y: 0}
   mousePosition: {x: 0, y: 0}
   InventoryWindow: {fileID: 0}
-  EquipmentWindow: {fileID: 0}
   cameraInputX: 0
   cameraInputY: 0
   moveAmount: 0
@@ -704,21 +673,10 @@ MonoBehaviour:
   interactInput: 0
   inventoryInput: 0
   modifierInput: 0
+  confirmInput: 0
+  cancelInput: 0
   attackChargeTimer: 0
   inventoryFlag: 0
---- !u!114 &6708311387600673050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5897987611358159953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6802749a14f27b468d6ec87a7505785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
 --- !u!114 &6708311387600673045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,19 +689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0876be65153e61a478b88cda5d175dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6708311387600673046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5897987611358159953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c516dabe291e2428c882df857be0bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helmetSlot: {fileID: 0}
 --- !u!114 &6708311387600673047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,7 +722,7 @@ MonoBehaviour:
   staminaRegenAmount: 30
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
---- !u!114 &6708311387600673042
+--- !u!114 &451664722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -789,8 +734,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc88d6a2331cda24784638bef42f9546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipment: {fileID: 0}
-  playerInventory: {fileID: 6708311387600673026}
+  rightWeapon: {fileID: 0}
+  leftWeapon: {fileID: 0}
+  leftHandDamageCollider: {fileID: 0}
+  rightHandDamageCollider: {fileID: 0}
 --- !u!1 &6238846843336747876
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +908,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3025248887727209117}
-  - component: {fileID: 6708311387905425991}
   m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
@@ -984,20 +930,6 @@ Transform:
   m_Father: {fileID: 5587007020061816230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.079096, y: -9.499091, z: 0.074514054}
---- !u!114 &6708311387905425991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6635323819861758308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44e5f462cd944549af7d232a257eb03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentOverride: {fileID: 3025248887727209117}
-  currentEquipmentModel: {fileID: 0}
 --- !u!1 &7122786724735003130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1030,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3865329891785043358}
-  - component: {fileID: 6708311387298964543}
   m_Layer: 9
   m_Name: R_Hand_end
   m_TagString: Untagged
@@ -1120,22 +1051,6 @@ Transform:
   m_Father: {fileID: 3831431264087865050}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6708311387298964543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8068823109908642605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3880fc837cb469a419ef8d67ffd32a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentOverride: {fileID: 3865329891785043358}
-  isLeftHandSlot: 0
-  isRightHandSlot: 1
-  currentWeaponModel: {fileID: 0}
 --- !u!1 &8812125329690615547
 GameObject:
   m_ObjectHideFlags: 0

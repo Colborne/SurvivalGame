@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7729571093655356790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7729571093655356788}
+  - component: {fileID: 7729571093655356789}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7729571093655356788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729571093655356790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7729571093655356789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729571093655356790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d14591d36359240860b9430a910abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: -1
+  shieldID: -1
+  helmetID: -1
+  chestID: -1
+  legsID: -1
+  bootsID: -1
+  backID: -1
+  accessory1ID: -1
+  accessory2ID: -1
+  accessory3ID: -1
+  spawnedWeapon: {fileID: 0}
+  spawnedShield: {fileID: 0}
+  spawnedHelmet: {fileID: 0}
+  spawnedChest: {fileID: 0}
+  spawnedLegs: {fileID: 0}
+  spawnedBoots: {fileID: 0}
+  spawnedBack: {fileID: 0}
+  spawnedAccessory1: {fileID: 0}
+  spawnedAccessory2: {fileID: 0}
+  spawnedAccessory3: {fileID: 0}
+  PM: {fileID: 0}
+  equipmentManager: {fileID: 0}
+  inventorySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  interfaceCanvas: {fileID: 0}
+  draggables: {fileID: 0}
+  equipment:
+  - name: Barbarian Helmet
+    prefab: {fileID: 5641967266906390293, guid: 57f28ac272b1b644a95e994aa7ef9214, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 14b70fa9f32954948ad2d15322a1c49a, type: 3}
+    worldItem: {fileID: 7558423823927205890, guid: 6613c9cf44da7b64e852aa19b2dbc179, type: 3}
+  - name: King's Helmet
+    prefab: {fileID: 7656005128227235175, guid: 840cefbb9c6db044f88895b4de8e494e, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: ff086e5e75a22614cb36d63b000d886e, type: 3}
+    worldItem: {fileID: 3011067269695563952, guid: f92e11f596139f347b3e6605148ea10a, type: 3}
+  - name: PIckaxe
+    prefab: {fileID: 3969463676409318601, guid: c57ea6af99f75a948bb4bec3f8a4ba94, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 7e24f9afb83ac1e4b8acc2b2abaa4e61, type: 3}
+    worldItem: {fileID: 226731530782889640, guid: 17322d86ff69a2a4d9d366c006cc863e, type: 3}
+  - name: Stone
+    prefab: {fileID: 5661465243346986886, guid: 38b29d24c1c634e4da8241f194d3dee0, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 5448bb8c423ab8841998bca6bed71b11, type: 3}
+    worldItem: {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
+  - name: Axe
+    prefab: {fileID: 5788834242575343590, guid: 03526b213544cea42b2534fba0329d10, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 8f4e4449cd428ca4e9c27330f115e541, type: 3}
+    worldItem: {fileID: 7702343382569876462, guid: 1720727f06e42c94aadd458c31f9cf9a, type: 3}
+  - name: Wood
+    prefab: {fileID: 3660335092435102687, guid: 14d483a8643da714c98a8d367d345287, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
+    worldItem: {fileID: 7533301453620370007, guid: 616bed89722443042acc54e4e437e383, type: 3}
+  - name: Arrow
+    prefab: {fileID: 2534627881802186693, guid: 14c0201907b47884fada16f4103427ac, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 8a2e752db34f56c49a92eb6721d3c462, type: 3}
+    worldItem: {fileID: 38027748407976022, guid: 78d036a98f0bb3c4f83e36a29c6a2011, type: 3}
+  - name: Bow
+    prefab: {fileID: 5788834242575343590, guid: 6bb69f13d5fabc345a2e336779f25fcc, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 789e218675f16554d9ee696db3f02c9d, type: 3}
+    worldItem: {fileID: 5800992215068357160, guid: 57576939900ac5440bed98562ee5f86c, type: 3}
+  - name: Orb
+    prefab: {fileID: 6828057363955970889, guid: fc8b884f9e71d18438d3bdb0507d82ff, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 50e60c26ebf2cfb458094c5cce9ffcdb, type: 3}
+    worldItem: {fileID: 5800992215068357160, guid: d1650d45a2ee98f419af76b301216e5e, type: 3}
