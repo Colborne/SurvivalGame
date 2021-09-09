@@ -22,8 +22,11 @@ MonoBehaviour:
   Right_Hand_Idle: Idle
   Left_Hand_Idle: Idle
   Two_Hand_Idle: 
-  OH_Light_Attack: LightAttack
+  OH_Light_Attack: Chop
   OH_Heavy_Attack: HeavyAttack
   OH_Left_Attack: LeftAttack
+  Ranged_Attack: 
+  Magic_Attack: 
+  projectile: {fileID: 0}
   baseStamina: 10
   heavyAttackMultiplier: 1.5

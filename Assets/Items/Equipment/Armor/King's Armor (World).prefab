@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 1
+  amount: 1
 --- !u!1001 &3011067269043292579
 PrefabInstance:
   m_ObjectHideFlags: 0

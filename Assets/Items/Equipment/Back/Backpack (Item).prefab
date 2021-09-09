@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: King's Armor (Item)
+  m_Name: Backpack (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 1
-  equipType: 2
+  itemID: 10
+  equipType: 7
   MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 0}
