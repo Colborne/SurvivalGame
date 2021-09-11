@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public Vector2 cameraInput;
     public Vector2 mousePosition;
     public GameObject InventoryWindow;
+    public GameObject TooltipCanvas;
     public float cameraInputX;
     public float cameraInputY;
     public float moveAmount;
@@ -245,10 +246,12 @@ public class InputManager : MonoBehaviour
             inventoryFlag = !inventoryFlag;
             if(inventoryFlag){
                 InventoryWindow.SetActive(true);
+                TooltipCanvas.SetActive(true);
             }
             else
             {
                 InventoryWindow.SetActive(false);
+                TooltipCanvas.SetActive(false);
             }
         }
     }

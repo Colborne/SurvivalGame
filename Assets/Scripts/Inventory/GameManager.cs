@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
                 inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
                 inventorySlots[i].isFull = true;
                 foundSlot = true;
+                inventorySlots[i].GetComponent<TooltipTrigger>().header = inventorySlots[i].currentItem.itemID.ToString();
                 break;
             }
         }
@@ -161,12 +162,14 @@ public class GameManager : MonoBehaviour
                     Debug.Log(inventorySlots[i].currentItem.MaxAmount + " >= " + newAmount);
 
                     inventorySlots[i].currentItem.currentAmount += quantityIncrease;
+                    inventorySlots[i].GetComponent<TooltipTrigger>().header = inventorySlots[i].currentItem.itemID.ToString();
                     return;
                 }
                 else
                 {
                     Debug.Log(inventorySlots[i].currentItem.MaxAmount + " < " + newAmount);
                     inventorySlots[i].currentItem.currentAmount = inventorySlots[i].currentItem.MaxAmount;
+                    inventorySlots[i].GetComponent<TooltipTrigger>().header = inventorySlots[i].currentItem.itemID.ToString();
 
                     quantityIncrease = newAmount - inventorySlots[i].currentItem.MaxAmount;
                     Debug.Log("Remainder that should be rounded over: " + quantityIncrease);          
@@ -186,6 +189,7 @@ public class GameManager : MonoBehaviour
                 inventorySlots[i].currentItem = GO.GetComponent<InventoryItem>();
                 inventorySlots[i].isFull = true;
                 inventorySlots[i].currentItem.currentAmount = quantityIncrease;
+                inventorySlots[i].GetComponent<TooltipTrigger>().header = inventorySlots[i].currentItem.itemID.ToString();
 
                 if(inventorySlots[i].currentItem.MaxAmount >= inventorySlots[i].currentItem.currentAmount)
                     return;

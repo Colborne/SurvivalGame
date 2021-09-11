@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1282543122518770135}
   - component: {fileID: 3303417628827046695}
   - component: {fileID: -7561973977605207829}
+  - component: {fileID: -2087864968138804445}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -89,8 +91,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentItem: {fileID: 0}
+  helmetSlot: 0
+  chestSlot: 0
+  legsSlot: 0
+  bootsSlot: 0
+  backSlot: 0
+  accessory1Slot: 0
+  accessory2Slot: 0
+  accessory3Slot: 0
   weaponSlot: 0
-  armourSlot: 0
+  shieldSlot: 0
   isFull: 0
 --- !u!114 &-7561973977605207829
 MonoBehaviour:
@@ -116,3 +126,17 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &-2087864968138804445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141072047274096567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e1e3287a24ebe4a806df164d6097e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
