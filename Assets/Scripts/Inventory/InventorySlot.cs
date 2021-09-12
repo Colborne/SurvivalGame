@@ -512,6 +512,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inWeaponSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -536,6 +538,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inHelmetSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -560,6 +564,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inChestSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -584,6 +590,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inLegsSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -608,6 +616,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inBootsSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -632,6 +642,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inBackSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -656,6 +668,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inShieldSlot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -680,6 +694,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inAccessory1Slot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -704,6 +720,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inAccessory2Slot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -728,6 +746,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inAccessory3Slot = true;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -754,6 +774,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         isFull = true;
                         currentItem = newItem;
                         currentItem.inWeaponSlot = false;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -1011,6 +1033,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
              // Swapping InventoryItem:currentItem 
             InventoryItem swapCurrent = currentItem;
             currentItem = newItem;
-            OriginalSlot.currentItem = swapCurrent;
+            OriginalSlot.currentItem = swapCurrent;            
+            OriginalSlot.GetComponent<TooltipTrigger>().header = OriginalSlot.currentItem.item.itemName;
+            OriginalSlot.GetComponent<TooltipTrigger>().content = OriginalSlot.currentItem.item.GetTooltipInfoText();
+            GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+            GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
         }
 }

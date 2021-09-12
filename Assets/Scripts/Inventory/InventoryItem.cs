@@ -422,9 +422,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[3].currentItem;
                     currentSlot.currentItem.inWeaponSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[3].currentItem = this;
+                    GameManager.Instance.inventorySlots[3].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[3].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inWeaponSlot = true;
                     gameObject.transform.SetParent(GameManager.Instance.inventorySlots[3].transform);
                     GameManager.Instance.weaponID = itemID;
@@ -456,9 +460,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[1].currentItem;
                     currentSlot.currentItem.inHelmetSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[1].currentItem = this;
+                    GameManager.Instance.inventorySlots[1].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[1].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inHelmetSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[1].transform);
                     GameManager.Instance.helmetID = itemID;
@@ -491,8 +499,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem.inChestSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
+
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[2].currentItem = this;
+                    GameManager.Instance.inventorySlots[2].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[2].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inChestSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[2].transform);
                     GameManager.Instance.chestID = itemID;
@@ -524,9 +537,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[5].currentItem;
                     currentSlot.currentItem.inLegsSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[5].currentItem = this;
+                    GameManager.Instance.inventorySlots[5].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[5].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inLegsSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[5].transform);
                     GameManager.Instance.legsID = itemID;
@@ -559,8 +576,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem.inBootsSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
+
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[6].currentItem = this;
+                    GameManager.Instance.inventorySlots[6].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[6].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inBootsSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[6].transform);
                     GameManager.Instance.bootsID = itemID;
@@ -592,9 +614,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[0].currentItem;
                     currentSlot.currentItem.inBackSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                  currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[0].currentItem = this;
+                    GameManager.Instance.inventorySlots[0].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[0].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inBackSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[0].transform);
                     GameManager.Instance.backID = itemID;
@@ -627,8 +653,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem.inShieldSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
 
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
+
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[4].currentItem = this;
+                    GameManager.Instance.inventorySlots[4].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[4].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inShieldSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[4].transform);
                     GameManager.Instance.shieldID = itemID;
@@ -660,9 +691,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[7].currentItem;
                     currentSlot.currentItem.inAccessory1Slot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[7].currentItem = this;
+                    GameManager.Instance.inventorySlots[7].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[7].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inAccessory1Slot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[7].transform);
                     GameManager.Instance.accessory1ID = itemID;
@@ -694,9 +729,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[8].currentItem;
                     currentSlot.currentItem.inAccessory2Slot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[8].currentItem = this;
+                    GameManager.Instance.inventorySlots[8].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[8].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inAccessory2Slot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[8].transform);
                     GameManager.Instance.accessory2ID = itemID;
@@ -728,9 +767,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[9].currentItem;
                     currentSlot.currentItem.inAccessory3Slot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot
                     GameManager.Instance.inventorySlots[9].currentItem = this;
+                    GameManager.Instance.inventorySlots[9].GetComponent<TooltipTrigger>().header = this.item.itemName;
+                    GameManager.Instance.inventorySlots[9].GetComponent<TooltipTrigger>().content = this.item.GetTooltipInfoText();
                     inAccessory3Slot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[9].transform);
                     GameManager.Instance.accessory3ID = itemID;
