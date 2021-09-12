@@ -11,6 +11,8 @@ public class Item : ScriptableObject
     public string itemName;
     [Multiline()]
     public string description;
+    
+    public float weight;
 
     public string GetTooltipInfoText()
     {

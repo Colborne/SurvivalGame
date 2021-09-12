@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 7
   amount: 1
+  name: Bow
 --- !u!1001 &3422479451328979980
 PrefabInstance:
   m_ObjectHideFlags: 0

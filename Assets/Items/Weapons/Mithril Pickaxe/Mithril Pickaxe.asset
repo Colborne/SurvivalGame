@@ -13,17 +13,24 @@ MonoBehaviour:
   m_Name: Mithril Pickaxe
   m_EditorClassIdentifier: 
   modelPrefab: {fileID: 3969463676409318601, guid: 890c357afe0d7954c9076890efc92c30, type: 3}
-  itemIcon: {fileID: 21300000, guid: 35f64f9b279faec4092d72c4ddf491f1, type: 3}
-  itemName: Pickaxe
+  itemIcon: {fileID: 21300000, guid: 19e554e2b3fddec4a943f9043e3d85a8, type: 3}
+  itemName: Mithril Pickaxe
+  description: A Mithril Pickaxe
   isUnarmed: 0
   isTwoHanded: 0
+  isOffhandable: 0
   hasSpecial: 0
-  canCharge: 1
+  canCharge: 0
   Right_Hand_Idle: Idle
   Left_Hand_Idle: Idle
   Two_Hand_Idle: 
-  OH_Light_Attack: LightAttack
+  OH_Light_Attack: OverheadSwing
   OH_Heavy_Attack: HeavyAttack
   OH_Left_Attack: LeftAttack
+  Ranged_Attack: 
+  Magic_Attack: 
+  projectile: {fileID: 0}
   baseStamina: 10
+  manaCost: 0
   heavyAttackMultiplier: 1.5
+  attackSpeed: 0

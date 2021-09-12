@@ -5,6 +5,7 @@ using UnityEngine;
 public class EquipmentItem : Item
 {
     [Header("Equipment Information")]
-    public int BaseDefense;
-    public float weight;
+    public int baseDefense;
+    public string resistanceType;
+    public int specialDefense;
 }

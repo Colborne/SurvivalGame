@@ -198,3 +198,4 @@ MonoBehaviour:
   MaxAmount: 2
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
+  item: {fileID: 11400000, guid: 042afbebb55635749bc21cb8a377f9ea, type: 2}

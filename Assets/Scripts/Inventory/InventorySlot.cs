@@ -8,7 +8,6 @@ using System.Text;
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public InventoryItem currentItem;
-
     public bool helmetSlot = false;
     public bool chestSlot = false;
     public bool legsSlot = false;
@@ -474,6 +473,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                                 OriginalSlot.isFull = false;
                                 OriginalSlot.currentItem = null;
                                 OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                                OriginalSlot.GetComponent<TooltipTrigger>().content = null;
                             }
                             Destroy(newItem.gameObject);
                         }
@@ -506,6 +506,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -529,6 +530,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -552,6 +554,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -575,6 +578,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -598,6 +602,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -621,6 +626,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -644,6 +650,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -667,6 +674,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -690,6 +698,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -713,6 +722,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -738,6 +748,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -760,6 +771,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -782,6 +794,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -804,6 +817,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -826,6 +840,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -848,6 +863,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -870,6 +886,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -892,6 +909,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -914,6 +932,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -936,6 +955,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         OriginalSlot.isFull = false;
                         OriginalSlot.currentItem = null;
                         OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                        OriginalSlot.GetComponent<TooltipTrigger>().content = null;
 
                         // Filling This Slot
                         isFull = true;
@@ -965,11 +985,14 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                             OriginalSlot.isFull = false;
                             OriginalSlot.currentItem = null;
                             OriginalSlot.GetComponent<TooltipTrigger>().header = null;
+                            OriginalSlot.GetComponent<TooltipTrigger>().content = null;
                         }
 
                         // Filling This Slot
                         isFull = true;
                         currentItem = newItem;
+                        GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
+                        GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
 
                         // Swapping Parents
                         eventData.pointerDrag.transform.SetParent(gameObject.transform);
@@ -982,8 +1005,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                     }
                 }
             }
-            GetComponent<TooltipTrigger>().header = currentItem.item.itemName;
-            GetComponent<TooltipTrigger>().content = currentItem.item.GetTooltipInfoText();
         }
     }
         public void Swap(InventoryItem newItem, InventorySlot OriginalSlot) {

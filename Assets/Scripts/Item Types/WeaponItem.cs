@@ -5,9 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Weapon Item")]
 public class WeaponItem : Item
 {
-    [Header("Item Settings")]
+    [Header("Weapon Settings")]
     public bool isUnarmed;
     public bool isTwoHanded;
+    public bool isOffhandable;
     public bool hasSpecial;
     public bool canCharge;
 
@@ -25,12 +26,14 @@ public class WeaponItem : Item
     public string Ranged_Attack;
     public string Magic_Attack;
 
+    [Header("If Ranged")]
     public GameObject projectile;
 
     [Header("Stamina Costs")]
     public int baseStamina;
+    public int manaCost;
 
     [Header("Damage")]
     public float heavyAttackMultiplier;
-
+    public float attackSpeed;
 }

@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelPrefab: {fileID: 5788834242575343590, guid: 03526b213544cea42b2534fba0329d10, type: 3}
   itemIcon: {fileID: 21300000, guid: 35f64f9b279faec4092d72c4ddf491f1, type: 3}
-  itemName: Axe
+  itemName: Sone Axe
+  description: A Woodcutting Axe
   isUnarmed: 0
   isTwoHanded: 0
+  isOffhandable: 0
   hasSpecial: 0
   canCharge: 0
   Right_Hand_Idle: Idle
@@ -29,4 +31,6 @@ MonoBehaviour:
   Magic_Attack: 
   projectile: {fileID: 0}
   baseStamina: 10
+  manaCost: 0
   heavyAttackMultiplier: 1.5
+  attackSpeed: 0

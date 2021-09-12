@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 8
   amount: 1
+  name: Orb
 --- !u!1001 &3600431078092085200
 PrefabInstance:
   m_ObjectHideFlags: 0

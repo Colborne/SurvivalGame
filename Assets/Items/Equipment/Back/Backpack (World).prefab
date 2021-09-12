@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 10
   amount: 1
+  name: Backpack

@@ -15,8 +15,10 @@ MonoBehaviour:
   modelPrefab: {fileID: 5788834242575343590, guid: 6bb69f13d5fabc345a2e336779f25fcc, type: 3}
   itemIcon: {fileID: 21300000, guid: 8b544bb7538c42f4cacafa58eab7b0ba, type: 3}
   itemName: Bow
+  description: A Wooden Bow
   isUnarmed: 0
   isTwoHanded: 0
+  isOffhandable: 0
   hasSpecial: 0
   canCharge: 1
   Right_Hand_Idle: 
@@ -29,4 +31,6 @@ MonoBehaviour:
   Magic_Attack: 
   projectile: {fileID: 2959667684836456750, guid: 14c0201907b47884fada16f4103427ac, type: 3}
   baseStamina: 10
+  manaCost: 0
   heavyAttackMultiplier: 1.5
+  attackSpeed: 0

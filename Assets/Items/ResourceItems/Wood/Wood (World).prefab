@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 5
   amount: 1
+  name: Wood
 --- !u!1001 &8903150619432000658
 PrefabInstance:
   m_ObjectHideFlags: 0

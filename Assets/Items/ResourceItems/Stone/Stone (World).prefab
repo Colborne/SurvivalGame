@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3
   amount: 11
+  name: Stone
 --- !u!54 &4263675671397318247
 Rigidbody:
   m_ObjectHideFlags: 0

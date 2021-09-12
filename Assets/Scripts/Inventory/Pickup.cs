@@ -15,23 +15,29 @@ public class Pickup : MonoBehaviour
         ui = FindObjectOfType<InteractableUI>();
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) 
+    {
         if (other.gameObject == GameManager.Instance.PM.gameObject)
         {
-            ui.interactableText.text = "Press 'E' to Pickup " + name;
+            if(amount > 1)
+                ui.interactableText.text = "Press 'E' to pickup " + name + " x" + amount;
+            else
+                ui.interactableText.text = "Press 'E' to pickup " + name;
+                
             ui.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
-    private void OnTriggerExit(Collider other) {
-        if (other.gameObject == GameManager.Instance.PM.gameObject){
+    private void OnTriggerExit(Collider other) 
+    {
+        if (other.gameObject == GameManager.Instance.PM.gameObject)
+        {
             ui.interactableText.text = null;
             ui.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
     void OnTriggerStay(Collider other)
     {
-       
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
             GameManager.Instance.PickUpItem(itemID, amount);

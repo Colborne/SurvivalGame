@@ -31,7 +31,15 @@ public class Tooltip : MonoBehaviour
             headerField.text = header;
         }
 
-        contentField.text = content;
+        if(string.IsNullOrEmpty(content))
+        {
+            contentField.gameObject.SetActive(false);
+        }
+        else
+        {
+            contentField.gameObject.SetActive(true);
+            contentField.text = content;
+        }
 
         int headerLength = headerField.text.Length;
         int contentLength = contentField.text.Length;

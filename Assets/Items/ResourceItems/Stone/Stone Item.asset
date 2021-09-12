@@ -15,4 +15,5 @@ MonoBehaviour:
   modelPrefab: {fileID: 5661465243346986886, guid: 38b29d24c1c634e4da8241f194d3dee0, type: 3}
   itemIcon: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
   itemName: Stone
+  description: Stone
   resourceType: Ore

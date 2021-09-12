@@ -15,4 +15,5 @@ MonoBehaviour:
   modelPrefab: {fileID: 6622351163201918693, guid: bbac15e242d9e34419bf954a5eddcfba, type: 3}
   itemIcon: {fileID: 21300000, guid: b9c5bc6117fbb41499b64249ab1a6f7d, type: 3}
   itemName: Wood
+  description: A Hunk of Wood
   resourceType: Tree

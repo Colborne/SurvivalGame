@@ -89,6 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 0
   amount: 1
+  name: Barbarian Helmet
 --- !u!1 &9156607509036958659
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,8 +15,10 @@ MonoBehaviour:
   modelPrefab: {fileID: 1884747205189362, guid: 6de117ac352b34e458aec9d417c2b545, type: 3}
   itemIcon: {fileID: 21300000, guid: 8b544bb7538c42f4cacafa58eab7b0ba, type: 3}
   itemName: Orb
+  description: A Magical Orb
   isUnarmed: 0
   isTwoHanded: 0
+  isOffhandable: 0
   hasSpecial: 0
   canCharge: 1
   Right_Hand_Idle: 
@@ -29,4 +31,6 @@ MonoBehaviour:
   Magic_Attack: 
   projectile: {fileID: 2959667684836456750, guid: 319487a2b76fc68408786b03b3360827, type: 3}
   baseStamina: 10
+  manaCost: 0
   heavyAttackMultiplier: 1.5
+  attackSpeed: 0

@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 9
   amount: 1
+  name: Med Helm
 --- !u!65 &1065967115351176780
 BoxCollider:
   m_ObjectHideFlags: 0

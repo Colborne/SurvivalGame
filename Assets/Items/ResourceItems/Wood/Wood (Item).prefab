@@ -116,9 +116,10 @@ MonoBehaviour:
   inAccessory3Slot: 0
   itemID: 5
   equipType: 0
-  MaxAmount: 10
+  MaxAmount: 100
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
+  item: {fileID: 11400000, guid: 24f0aa03f9c4c464ca561d8f246245d2, type: 2}
 --- !u!1001 &8289484977406015820
 PrefabInstance:
   m_ObjectHideFlags: 0

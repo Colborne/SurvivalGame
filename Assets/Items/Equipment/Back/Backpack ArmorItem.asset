@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c59e9ccc0188404eb52b03016ce4fad, type: 3}
+  m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
   m_Name: Backpack ArmorItem
   m_EditorClassIdentifier: 
   modelPrefab: {fileID: 2704533726815840112, guid: f92e11f596139f347b3e6605148ea10a, type: 3}
   itemIcon: {fileID: 21300000, guid: 44ad0e024aa875d48bf007c92541a4b1, type: 3}
   itemName: Backpack
-  BaseDefense: 10
+  description: A Backpack
+  baseDefense: 0
+  resistanceType: None
+  specialDefense: 0
   weight: 10
