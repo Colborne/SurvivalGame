@@ -40,6 +40,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
+            inputManager.interactInput = false;
             GameManager.Instance.PickUpItem(itemID, amount);
             Destroy(gameObject);
             ui.interactableText.text = null;

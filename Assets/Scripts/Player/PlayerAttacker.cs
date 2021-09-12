@@ -61,4 +61,10 @@ public class PlayerAttacker : MonoBehaviour
             Instantiate(weaponItem.projectile, transform.position + new Vector3(2,2,0), transform.rotation);
         }
     }
+
+    public void HandleChargeAction(WeaponItem weaponItem)
+    {
+        animatorManager.PlayTargetAnimation("Charging", true);
+        animatorManager.animator.SetBool("isAttacking", true);    
+    }
 }

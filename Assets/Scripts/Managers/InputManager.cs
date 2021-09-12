@@ -92,8 +92,8 @@ public class InputManager : MonoBehaviour
             HandleSneakingInput();
             HandleJumpingInput();
             HandleAttackInput();
-            HandleInteractingButtonInput();
-    }
+        }
+        
         HandleMouse();
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
@@ -155,7 +155,6 @@ public class InputManager : MonoBehaviour
             if(attackChargeTimer < 1f)
                 attackChargeTimer += 1f * Time.deltaTime;
             
-            animatorManager.PlayTargetAnimation("Charging", true);
             if(!leftMouseInput)
             {
                 playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
@@ -177,6 +176,7 @@ public class InputManager : MonoBehaviour
                     else
                     {
                         attackChargeTimer += 1f * Time.deltaTime;
+                        playerAttacker.HandleChargeAction(equipmentManager.rightWeapon);
                     }
                 }
             }
@@ -214,14 +214,6 @@ public class InputManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        }
-    }
-
-    private void HandleInteractingButtonInput()
-    {
-        if(interactInput)
-        {
-            //interactInput = false;
         }
     }
     private void HandleConfirmButtonInput()

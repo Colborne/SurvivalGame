@@ -67,12 +67,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
-    m_FontStyle: 1
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 8
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Stone (Item)
+  m_Name: Shield (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,14 +140,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8211053675fd7014686bc8a1e4d42963, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -193,9 +193,9 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 3
-  equipType: 0
-  MaxAmount: 100
+  itemID: 13
+  equipType: 6
+  MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
-  item: {fileID: 11400000, guid: 5f79939acd9c4c944a1d885c815c6899, type: 2}
+  item: {fileID: 11400000, guid: fdd4003f1c4751d4aa4df819d549a655, type: 2}

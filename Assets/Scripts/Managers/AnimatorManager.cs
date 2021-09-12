@@ -20,6 +20,7 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool("isInteracting", isInteracting);
         animator.CrossFade(targetAnimation, 0.2f);
     }
+    
     public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement, bool isSprinting, bool isSneaking)
     {
         float snappedHorizontal;

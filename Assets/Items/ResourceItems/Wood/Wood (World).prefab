@@ -30,6 +30,34 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 289301614986012343, guid: ef1a39df5151fef438de946f6c7d93d4, type: 3}
+--- !u!114 &4756967522772774990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278859842083534669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 5
+  amount: 1
+  name: Wood
+--- !u!65 &1696571455701635269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278859842083534669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.015, z: 0.02}
+  m_Center: {x: 0, y: -0.033, z: 0}
 --- !u!1 &7533301453620370007
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,8 +67,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4101316894092857113}
-  - component: {fileID: 7485625027114413854}
-  - component: {fileID: 2334724637391097164}
   m_Layer: 0
   m_Name: Wood (World)
   m_TagString: Untagged
@@ -63,34 +89,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7485625027114413854
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7533301453620370007}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 3, z: 1.5}
-  m_Center: {x: 0.2, y: 2, z: 0}
---- !u!114 &2334724637391097164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7533301453620370007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 5
-  amount: 1
-  name: Wood
 --- !u!1001 &8903150619432000658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4145510624967651685, guid: 14d483a8643da714c98a8d367d345287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4145510624967651685, guid: 14d483a8643da714c98a8d367d345287, type: 3}
       propertyPath: m_LocalPosition.z
