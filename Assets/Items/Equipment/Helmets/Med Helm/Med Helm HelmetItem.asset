@@ -15,5 +15,6 @@ MonoBehaviour:
   modelPrefab: {fileID: 5641967266906390293, guid: d73e8d66a682324499a4abe38ac3a932, type: 3}
   itemIcon: {fileID: 21300000, guid: 44ad0e024aa875d48bf007c92541a4b1, type: 3}
   itemName: Med Helm
+  description: An Average Medium Helmet
   BaseDefense: 10
   weight: 10

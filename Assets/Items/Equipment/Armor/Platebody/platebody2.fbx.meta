@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 39c1c2a2f6ee3744eadeae23465ba7fd
+guid: dfbe8e05a2ead7f49a9e4e1efbc499a8
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
@@ -10,44 +10,8 @@ ModelImporter:
       74: 6200578666267062213
     second: run
   - first:
-      74: -6788532455012819382
-    second: Armature|Damage
-  - first:
-      74: 6881873686158965456
-    second: Armature|Falling
-  - first:
-      74: -6290864908766501146
-    second: Armature|HeavyAttack
-  - first:
-      74: -1978303741906493279
-    second: Armature|idle
-  - first:
-      74: 8970833319722948074
-    second: Armature|Jumping
-  - first:
-      74: 9218157010744241517
-    second: Armature|Landing
-  - first:
-      74: -3234426715471232965
-    second: Armature|LeftLight
-  - first:
-      74: -1190153381714521441
-    second: Armature|LightAttack
-  - first:
-      74: -2250041716697307616
-    second: Armature|Mining
-  - first:
-      74: 1303299601406483602
-    second: Armature|run
-  - first:
-      74: -8079800386460014158
-    second: Armature|sprint
-  - first:
       74: -4032558703003846388
     second: Armature|Stand
-  - first:
-      74: 8349542763059015795
-    second: Armature|Walk
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -98,7 +62,7 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
-    weldVertices: 0
+    weldVertices: 1
     bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
@@ -115,7 +79,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 59
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
@@ -135,7 +99,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

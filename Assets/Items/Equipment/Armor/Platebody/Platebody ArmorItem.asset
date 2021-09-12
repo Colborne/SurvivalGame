@@ -15,5 +15,6 @@ MonoBehaviour:
   modelPrefab: {fileID: 3749380191955315042, guid: 2185cf768cc30f845b50c14fae45aea2, type: 3}
   itemIcon: {fileID: 21300000, guid: 60795c2e339804645a56db66d1e92f7f, type: 3}
   itemName: Platebody
+  description: A Basic Platebody
   BaseDefense: 10
   weight: 10
