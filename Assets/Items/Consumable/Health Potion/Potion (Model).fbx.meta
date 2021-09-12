@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5407947b95833b4f96ff51f42a55015
+guid: 0e03805135e57f54bacb4360f94680fa
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
+      name: Bottle
+    second: {fileID: 2100000, guid: 0d603c33a352cbb47ba230b34e6309cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cork
+    second: {fileID: 2100000, guid: f69b868ad3a65724abe2f8660011301a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Filling
+    second: {fileID: 2100004, guid: a79996ba2a6fcd5419c6ea33366c5f63, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -78,7 +88,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

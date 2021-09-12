@@ -17,6 +17,7 @@ public class StatsManager : MonoBehaviour
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
+    public GameObject FloatingText;
     AnimatorManager animatorManager;
     PlayerManager playerManager;
     PlayerLocomotion playerLocomotion;
@@ -60,6 +61,7 @@ public class StatsManager : MonoBehaviour
         currentHealth = currentHealth - damage;
         healthBar.SetCurrentHealth(currentHealth);
         animatorManager.PlayTargetAnimation("Damage", true);
+        ShowDamage(damage.ToString());
 
         if(currentHealth <= 0)
         {
@@ -88,6 +90,16 @@ public class StatsManager : MonoBehaviour
                 currentStamina += staminaRegenAmount * Time.deltaTime;
                 staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
             }
+        }
+    }
+
+    void ShowDamage(string text)
+    {
+        if(FloatingText)
+        {
+            GameObject prefab = Instantiate(FloatingText, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+            Destroy(prefab, .8f);
         }
     }
 }

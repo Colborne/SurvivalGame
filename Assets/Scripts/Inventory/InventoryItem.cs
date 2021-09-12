@@ -25,6 +25,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public CanvasGroup canvasGroup;
     public Transform originalSlot;
     InputManager inputManager;
+    StatsManager stats;
 
     public bool inHelmetSlot = false;
     public bool inWeaponSlot = false;
@@ -50,6 +51,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         canvasGroup = GetComponent<CanvasGroup>();
         textAmount = GetComponentInChildren<Text>();
         inputManager = FindObjectOfType<InputManager>();
+        stats = FindObjectOfType<StatsManager>();
     }
 
     private void Update() {
@@ -136,7 +138,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inWeaponSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedWeapon);
-
                         break;
                     }
                 }
@@ -797,6 +798,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.accessory3ID = itemID;
                     GameManager.Instance.SpawnItem("Accessory3", GameManager.Instance.spawnedAccessory3);
                 }
+            }
+            else if(this.item is ConsumableItem)
+            {
+                currentSlot.isFull = false;
+                currentSlot.currentItem = null;
+                currentSlot.GetComponent<TooltipTrigger>().header = null;
+                currentSlot.GetComponent<TooltipTrigger>().content = null;
+                stats.TakeDamage(10);
+                Destroy(gameObject);
             }
         }
     }

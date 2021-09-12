@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   currentHealth: 0
+  FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
 --- !u!82 &235437089882192694
 AudioSource:
   m_ObjectHideFlags: 0
