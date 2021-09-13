@@ -187,6 +187,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Build"",
+                    ""type"": ""Button"",
+                    ""id"": ""da67c6e9-8a32-43c7-9c3c-a68932e8f118"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -299,6 +307,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20b0a8de-f1c4-47bd-9f0e-ed0e38d19d74"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Build"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -348,6 +367,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_LeftMouse = m_PlayerActions.FindAction("LeftMouse", throwIfNotFound: true);
         m_PlayerActions_RightMouse = m_PlayerActions.FindAction("RightMouse", throwIfNotFound: true);
         m_PlayerActions_MiddleMouse = m_PlayerActions.FindAction("MiddleMouse", throwIfNotFound: true);
+        m_PlayerActions_Build = m_PlayerActions.FindAction("Build", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MousePosition = m_UI.FindAction("MousePosition", throwIfNotFound: true);
@@ -451,6 +471,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_LeftMouse;
     private readonly InputAction m_PlayerActions_RightMouse;
     private readonly InputAction m_PlayerActions_MiddleMouse;
+    private readonly InputAction m_PlayerActions_Build;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -465,6 +486,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @LeftMouse => m_Wrapper.m_PlayerActions_LeftMouse;
         public InputAction @RightMouse => m_Wrapper.m_PlayerActions_RightMouse;
         public InputAction @MiddleMouse => m_Wrapper.m_PlayerActions_MiddleMouse;
+        public InputAction @Build => m_Wrapper.m_PlayerActions_Build;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -504,6 +526,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MiddleMouse.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMiddleMouse;
                 @MiddleMouse.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMiddleMouse;
                 @MiddleMouse.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMiddleMouse;
+                @Build.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBuild;
+                @Build.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBuild;
+                @Build.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBuild;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -538,6 +563,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MiddleMouse.started += instance.OnMiddleMouse;
                 @MiddleMouse.performed += instance.OnMiddleMouse;
                 @MiddleMouse.canceled += instance.OnMiddleMouse;
+                @Build.started += instance.OnBuild;
+                @Build.performed += instance.OnBuild;
+                @Build.canceled += instance.OnBuild;
             }
         }
     }
@@ -592,6 +620,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnLeftMouse(InputAction.CallbackContext context);
         void OnRightMouse(InputAction.CallbackContext context);
         void OnMiddleMouse(InputAction.CallbackContext context);
+        void OnBuild(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

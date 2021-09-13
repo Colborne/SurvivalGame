@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
-  m_Name: Backpack ArmorItem
+  m_Name: Cloak (Equipment)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 2704533726815840112, guid: f92e11f596139f347b3e6605148ea10a, type: 3}
-  itemIcon: {fileID: 21300000, guid: 44ad0e024aa875d48bf007c92541a4b1, type: 3}
-  itemName: Backpack
-  description: A Backpack
+  modelPrefab: {fileID: 2704533726815840112, guid: 7ab240f8e33526440a415652d705227c, type: 3}
+  itemIcon: {fileID: 21300000, guid: b41e7d1f95ee6fc43987f5851852b2dc, type: 3}
+  itemName: Cloak
+  description: Edgy
+  weight: 10
   baseDefense: 0
   resistanceType: None
   specialDefense: 0
-  weight: 10

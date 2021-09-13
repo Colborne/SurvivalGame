@@ -32,9 +32,11 @@ public class InputManager : MonoBehaviour
     public bool modifierInput;
     public bool confirmInput;
     public bool cancelInput;
+    public bool buildInput;
     public float attackChargeTimer = 0f;
 
     public bool inventoryFlag;
+    public bool buildFlag;
 
     private void Awake() 
     {
@@ -75,6 +77,8 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.RightMouse.canceled += i => rightMouseInput = false;
             playerControls.PlayerActions.MiddleMouse.performed += i => middleMouseInput = true;
             playerControls.PlayerActions.MiddleMouse.canceled += i => middleMouseInput = false;
+            playerControls.PlayerActions.Build.performed += i => buildInput = true;
+            playerControls.PlayerActions.Build.canceled += i => buildInput = false;
         }
         playerControls.Enable();
     }
@@ -91,7 +95,8 @@ public class InputManager : MonoBehaviour
             HandleSprintingInput();
             HandleSneakingInput();
             HandleJumpingInput();
-            HandleAttackInput();
+            if(!buildFlag)
+                HandleAttackInput();
         }
         
         HandleMouse();
@@ -162,42 +167,46 @@ public class InputManager : MonoBehaviour
         }
         else
         {
-            if(leftMouseInput)
-            {
-                if(!animatorManager.animator.GetBool("isAttacking") 
-                    && !animatorManager.animator.GetBool("isInteracting") 
-                    && !animatorManager.animator.GetBool("isJumping") )
+            if(equipmentManager.rightWeapon != null){
+                if(leftMouseInput)
                 {
-                    if(!equipmentManager.rightWeapon.canCharge)
+                    if(!animatorManager.animator.GetBool("isAttacking") 
+                        && !animatorManager.animator.GetBool("isInteracting") 
+                        && !animatorManager.animator.GetBool("isJumping") )
                     {
-                        leftMouseInput = false;
-                        playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
+                        if(!equipmentManager.rightWeapon.canCharge)
+                        {
+                            leftMouseInput = false;
+                            playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
+                        }
+                        else
+                        {
+                            attackChargeTimer += 1f * Time.deltaTime;
+                            playerAttacker.HandleChargeAction(equipmentManager.rightWeapon);
+                        }
                     }
-                    else
+                }
+                if(middleMouseInput)
+                {            
+                    if(!animatorManager.animator.GetBool("isAttacking") 
+                        && !animatorManager.animator.GetBool("isInteracting") 
+                        && !animatorManager.animator.GetBool("isJumping") )
                     {
-                        attackChargeTimer += 1f * Time.deltaTime;
-                        playerAttacker.HandleChargeAction(equipmentManager.rightWeapon);
+                        middleMouseInput = false;
+                        playerAttacker.HandleHeavyAttack(equipmentManager.rightWeapon);
                     }
                 }
             }
-            else if(middleMouseInput)
-            {            
-                if(!animatorManager.animator.GetBool("isAttacking") 
-                    && !animatorManager.animator.GetBool("isInteracting") 
-                    && !animatorManager.animator.GetBool("isJumping") )
-                {
-                    middleMouseInput = false;
-                    playerAttacker.HandleHeavyAttack(equipmentManager.rightWeapon);
-                }
-            }
-            else if(rightMouseInput)
-            {            
-                if(!animatorManager.animator.GetBool("isAttacking") 
-                    && !animatorManager.animator.GetBool("isInteracting") 
-                    && !animatorManager.animator.GetBool("isJumping") )
-                {
-                    rightMouseInput = false;
-                    playerAttacker.HandleLeftAction(equipmentManager.leftWeapon);
+            if(equipmentManager.leftWeapon != null){
+                if(rightMouseInput)
+                {            
+                    if(!animatorManager.animator.GetBool("isAttacking") 
+                        && !animatorManager.animator.GetBool("isInteracting") 
+                        && !animatorManager.animator.GetBool("isJumping") )
+                    {
+                        rightMouseInput = false;
+                        playerAttacker.HandleLeftAction(equipmentManager.leftWeapon);
+                    }
                 }
             }
         }
@@ -236,7 +245,8 @@ public class InputManager : MonoBehaviour
         if(inventoryInput)
         {
             inventoryFlag = !inventoryFlag;
-            if(inventoryFlag){
+            if(inventoryFlag)
+            {
                 InventoryWindow.SetActive(true);
                 TooltipCanvas.SetActive(true);
             }

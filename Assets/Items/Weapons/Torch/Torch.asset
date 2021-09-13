@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
-  m_Name: Axe
+  m_Name: Torch
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5788834242575343590, guid: 03526b213544cea42b2534fba0329d10, type: 3}
-  itemIcon: {fileID: 21300000, guid: 35f64f9b279faec4092d72c4ddf491f1, type: 3}
-  itemName: Stone Axe
-  description: A Woodcutting Axe
+  modelPrefab: {fileID: 5788834242575343590, guid: cc1f8bd7f268dc741a6674245fdb9635, type: 3}
+  itemIcon: {fileID: 21300000, guid: 8211053675fd7014686bc8a1e4d42963, type: 3}
+  itemName: Torch
+  description: It's a Torch
   weight: 0
   isUnarmed: 0
   isTwoHanded: 0
@@ -25,8 +25,8 @@ MonoBehaviour:
   Right_Hand_Idle: Idle
   Left_Hand_Idle: Idle
   Two_Hand_Idle: 
-  OH_Light_Attack: Chop
-  OH_Heavy_Attack: HeavyAttack
+  OH_Light_Attack: 
+  OH_Heavy_Attack: 
   OH_Left_Attack: LeftAttack
   Ranged_Attack: 
   Magic_Attack: 
