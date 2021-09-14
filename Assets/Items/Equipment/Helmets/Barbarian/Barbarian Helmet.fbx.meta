@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Helmet
-    second: {fileID: 2100008, guid: af043257944da7f4cba7a0cbaf741bbc, type: 3}
+    second: {fileID: 2100000, guid: f9496b7579aaea240ac7bf5969b9e50e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Horns.001
-    second: {fileID: 2100000, guid: 49be0992de3b4554981a81689efeb20e, type: 2}
+    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
