@@ -11,6 +11,8 @@ public class BuildSystem : MonoBehaviour
     [SerializeField] Transform FloorPrefab;
     [SerializeField] Transform WallPrefab;
 
+    Transform built;
+
     RaycastHit Hit;
     int prefab = 0;
 
@@ -22,6 +24,7 @@ public class BuildSystem : MonoBehaviour
                 prefab = 0;
             else
                 prefab = 1;
+            FindObjectOfType<InputManager>().buildInput = !FindObjectOfType<InputManager>().buildInput;
         }
 
         if(prefab == 0)
@@ -37,7 +40,7 @@ public class BuildSystem : MonoBehaviour
             FloorBuild.gameObject.SetActive(false);
         }
 
-        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 40f))
+        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 22f))
         {
             Builder.position = new Vector3(
             Mathf.RoundToInt(Hit.point.x)  != 0 ? Mathf.RoundToInt(Hit.point.x/4) * 4: 3,
@@ -49,10 +52,17 @@ public class BuildSystem : MonoBehaviour
             if(FindObjectOfType<InputManager>().leftMouseInput)
             {
                 FindObjectOfType<InputManager>().leftMouseInput = false;
+                
                 if (prefab == 0)
-                    Instantiate(FloorPrefab, Builder.position, Builder.rotation);
+                {
+                    if (checkIfPosEmpty(Builder.position, Builder.rotation))
+                        Instantiate(FloorPrefab, Builder.position, Builder.rotation);
+                }
                 else
-                    Instantiate(WallPrefab, Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0));
+                {
+                    if (checkIfPosEmpty(Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0)))
+                        Instantiate(WallPrefab, Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0));
+                }
             }
 
             /*            
@@ -61,5 +71,15 @@ public class BuildSystem : MonoBehaviour
             Mathf.RoundToInt(Hit.point.z));
             */
         }
+    }
+    public bool checkIfPosEmpty(Vector3 targetPos, Quaternion targetRot)
+    {
+        GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Build");
+        foreach(GameObject current in allMovableThings)
+        {
+            if(current.transform.position == targetPos && current.transform.rotation == targetRot)
+                return false;
+        }
+        return true;
     }
 }

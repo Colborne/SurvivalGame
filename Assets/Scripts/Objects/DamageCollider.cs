@@ -49,16 +49,15 @@ public class DamageCollider : MonoBehaviour
 
             if(resource != null)
             {
-                if(isTool && canBreak == resource.resourceType && toolLevel >= resource.toolRequiredLevel)
+                if (stats != null)
                 {
-                    if (stats != null)
+                    if(isTool && canBreak == resource.resourceType && toolLevel >= resource.toolRequiredLevel)
                     {
-                        Debug.Log("Chop");
+
                         if(resource.resourceType == "Ore")
                             sound.PlaySound("Sounds/metalLatch");
-                        else if(resource.resourceType == "Tree"){
+                        else if(resource.resourceType == "Tree")
                             sound.PlaySound("Sounds/chop"); 
-                        }
                         
                         shake.Shake();
                         stats.TakeDamage(damageAmount);
@@ -67,6 +66,11 @@ public class DamageCollider : MonoBehaviour
                         
                         if(!tree)
                             resource.checkHit();
+                    }
+                    else
+                    {
+                        sound.PlaySound("Sounds/cloth4");
+                        stats.TakeDamage(0); 
                     }
 
                     if(tree != null)
