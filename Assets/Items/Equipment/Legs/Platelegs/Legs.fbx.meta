@@ -1,19 +1,23 @@
 fileFormatVersion: 2
-guid: d2581f6a3ababd843b852bb3004e0259
+guid: 1f57057118406964aa1fc30a49a1142a
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -5252816984213320552
+    second: idle
+  - first:
+      74: 6200578666267062213
+    second: run
+  - first:
+      74: -4374668924334883536
+    second: Armature|DrawBow
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hair
-    second: {fileID: 2100000, guid: 06b4a295d0767174597609f6721cc07b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mask
-    second: {fileID: 2100000, guid: 0e1f19761100c3d4dbc81a4f8d80c4c7, type: 2}
+      name: Legs
+    second: {fileID: 2100004, guid: a79996ba2a6fcd5419c6ea33366c5f63, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -83,7 +87,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -95,7 +99,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
