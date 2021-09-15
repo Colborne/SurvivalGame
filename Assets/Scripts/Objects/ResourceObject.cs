@@ -17,7 +17,7 @@ public class ResourceObject : MonoBehaviour
     {
         if(objectStats.currentHealth <= 0)
         {
-            for(int i = 0; i < Random.Range(2f,6f); i++)
+            for(int i = 0; i < Random.Range(2f,15f); i++)
             {
                 var _drop = Instantiate(drop, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(-.5f,.5f),Random.Range(-.5f,.5f)), Random.rotation);
                 _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);

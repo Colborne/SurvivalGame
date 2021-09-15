@@ -16,7 +16,7 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 60795c2e339804645a56db66d1e92f7f, type: 3}
   itemName: Platebody
   description: A Basic Platebody
-  baseDefense: 0
+  weight: 10
+  baseDefense: 50
   resistanceType: 
   specialDefense: 0
-  weight: 10

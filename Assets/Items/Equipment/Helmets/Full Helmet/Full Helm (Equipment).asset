@@ -17,6 +17,6 @@ MonoBehaviour:
   itemName: Full Helm
   description: A True Knight's Helmet
   weight: 10
-  baseDefense: 0
+  baseDefense: 25
   resistanceType: 
   specialDefense: 0

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
   m_Name: Iron Boots (Equipment)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 2704533726815840112, guid: 5c7ea55e0f950914e81aca5336d33b70, type: 3}
+  modelPrefab: {fileID: 6791188629304234182, guid: 5c7ea55e0f950914e81aca5336d33b70, type: 3}
   itemIcon: {fileID: 21300000, guid: 170b8a30f19bc7841b9804b4de5a5d84, type: 3}
   itemName: Iron Boots
   description: Boots Made Of Iron
   weight: 10
-  baseDefense: 0
+  baseDefense: 10
   resistanceType: None
   specialDefense: 0

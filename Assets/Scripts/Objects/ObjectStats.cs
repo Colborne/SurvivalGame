@@ -23,7 +23,7 @@ public class ObjectStats : MonoBehaviour
         }
     }
 
-        void ShowDamage(string text)
+    void ShowDamage(string text)
     {
         if(FloatingText)
         {

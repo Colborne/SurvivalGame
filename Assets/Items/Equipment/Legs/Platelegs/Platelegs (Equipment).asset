@@ -17,6 +17,6 @@ MonoBehaviour:
   itemName: Platelegs
   description: Basic Platelegs
   weight: 10
-  baseDefense: 0
+  baseDefense: 40
   resistanceType: 
   specialDefense: 0

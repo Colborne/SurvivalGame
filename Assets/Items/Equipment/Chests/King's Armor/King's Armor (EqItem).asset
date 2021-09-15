@@ -16,7 +16,7 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: b41e7d1f95ee6fc43987f5851852b2dc, type: 3}
   itemName: King's Armor
   description: The King's Golden Armor
-  baseDefense: 0
+  weight: 10
+  baseDefense: 15
   resistanceType: 
   specialDefense: 0
-  weight: 10

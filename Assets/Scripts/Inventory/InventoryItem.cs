@@ -44,6 +44,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public int currentAmount = 1;
     public Text textAmount;
     public Item item;
+    public float totalWeight = 0;
 
     void Awake()
     {
@@ -54,7 +55,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         stats = FindObjectOfType<StatsManager>();
     }
 
-    private void Update() {
+    public void Update() 
+    {
+        totalWeight = item.weight * currentAmount;
         if(textAmount != null)
         {
             if(currentAmount > 1)

@@ -16,7 +16,7 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 44ad0e024aa875d48bf007c92541a4b1, type: 3}
   itemName: Med Helm
   description: An Average Medium Helmet
-  baseDefense: 0
+  weight: 10
+  baseDefense: 15
   resistanceType: 
   specialDefense: 0
-  weight: 10

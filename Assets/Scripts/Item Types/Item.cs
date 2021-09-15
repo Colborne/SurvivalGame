@@ -14,10 +14,11 @@ public class Item : ScriptableObject
     
     public float weight;
 
-    public string GetTooltipInfoText()
+    public virtual string GetTooltipInfoText()
     {
         StringBuilder builder = new StringBuilder();
-        builder.Append(description);
+        builder.Append(description).AppendLine();
+        builder.Append("Weight: ").Append(weight);
         
         return builder.ToString();
     }

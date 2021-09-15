@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a79996ba2a6fcd5419c6ea33366c5f63, type: 3}
+  - {fileID: 2100000, guid: 81e96640fa078754ca9cfb0eb9ee0576, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f69b868ad3a65724abe2f8660011301a, type: 2}
+  - {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  FloatingText: {fileID: 0}
 --- !u!114 &7689546079045253845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,4 +240,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: Ore
   toolRequiredLevel: 1
+  fx: {fileID: 0}
   drop: {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}

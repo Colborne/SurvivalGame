@@ -7,10 +7,11 @@ using System.Text;
 public class ResourceItem : Item
 {
     public string resourceType;
-    public string GetTooltipInfoText()
+    public override string GetTooltipInfoText()
     {
         StringBuilder builder = new StringBuilder();
         builder.Append(description).AppendLine();
+        builder.Append("Weight: ").Append(weight).AppendLine();
         builder.Append("Resource Type: ").Append(resourceType);
         
         return builder.ToString();

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerManager PM;
     public EquipmentManager equipmentManager;
+    StatsManager statsManager;
 
     public InventorySlot[] inventorySlots;
     public Canvas interfaceCanvas;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
     {
         GameManager.Instance = this;
         equipmentManager = FindObjectOfType<EquipmentManager>();
+        statsManager = FindObjectOfType<StatsManager>();
     }
 
     public void DestroyItem(GameObject item)
@@ -135,8 +137,7 @@ public class GameManager : MonoBehaviour
                 foundSlot = true;
                 
                 inventorySlots[i].GetComponent<TooltipTrigger>().header =  inventorySlots[i].currentItem.item.itemName;
-                inventorySlots[i].GetComponent<TooltipTrigger>().content =  inventorySlots[i].currentItem.item.GetTooltipInfoText();
-                
+                inventorySlots[i].GetComponent<TooltipTrigger>().content =  inventorySlots[i].currentItem.item.GetTooltipInfoText();       
                 break;
             }
         }

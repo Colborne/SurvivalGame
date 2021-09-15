@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StatsManager : MonoBehaviour
 {
+    public float inventoryWeight;
     public int healthLevel = 1;
     public int maxHealth;
     public int currentHealth;
@@ -14,6 +16,8 @@ public class StatsManager : MonoBehaviour
 
     public float staminaRegenAmount = 30f;
     private float staminaRegenTimer = 0f;
+
+    public float baseDefense = 0;
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
@@ -43,7 +47,11 @@ public class StatsManager : MonoBehaviour
         staminaBar.SetMaxStamina(maxStamina);
         staminaBar.SetCurrentStamina(currentStamina);
     }
-
+    private void Update() 
+    { 
+        UpdateWeight();
+        UpdateStats();
+    }
     private int SetMaxHealthFromLevel()
     {
         maxHealth = healthLevel * 100;
@@ -101,5 +109,45 @@ public class StatsManager : MonoBehaviour
             prefab.GetComponentInChildren<TextMesh>().text = text;
             Destroy(prefab, .8f);
         }
+    }
+
+    void UpdateWeight()
+    {        
+        float newWeight = 0;
+        for (int i = 0; i < GameManager.Instance.inventorySlots.Length; i++)
+        {
+            if ( GameManager.Instance.inventorySlots[i].isFull)
+            {
+                GameManager.Instance.inventorySlots[i].currentItem.Update();
+                newWeight +=  GameManager.Instance.inventorySlots[i].currentItem.totalWeight;
+            }
+        }
+
+        if(inventoryWeight != newWeight)
+            inventoryWeight = newWeight;
+        GameObject weight = GameObject.Find("/Player UI/Inventory Window/Equipment/Weight");
+        weight.GetComponent<TextMeshProUGUI>().text = inventoryWeight.ToString();
+    }
+
+    void UpdateStats()
+    {
+        float newDefense = 0;
+        for (int i = 0; i < 11; i++)
+        {
+            if ( GameManager.Instance.inventorySlots[i].isFull)
+            {
+                if(GameManager.Instance.inventorySlots[i].currentItem.item is EquipmentItem){
+                    EquipmentItem eq = GameManager.Instance.inventorySlots[i].currentItem.item as EquipmentItem;
+                    newDefense += eq.baseDefense;
+                }
+            }
+        }
+        Debug.Log(newDefense);
+
+        if(baseDefense != newDefense)
+            baseDefense = newDefense;
+
+        GameObject defense = GameObject.Find("/Player UI/Inventory Window/Equipment/Defense");
+        defense.GetComponent<TextMeshProUGUI>().text = baseDefense.ToString();
     }
 }

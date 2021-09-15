@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100008, guid: af043257944da7f4cba7a0cbaf741bbc, type: 3}
+  - {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: Ore
   toolRequiredLevel: 2
+  fx: {fileID: 0}
   drop: {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
 --- !u!114 &4866430839488441254
 MonoBehaviour:
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  FloatingText: {fileID: 0}
 --- !u!1 &6165046035024608884
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +188,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: af043257944da7f4cba7a0cbaf741bbc, type: 3}
+  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
