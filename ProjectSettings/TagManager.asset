@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - FxTemporaire
   - Build
+  - Ground
   layers:
   - Default
   - TransparentFX

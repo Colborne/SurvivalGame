@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
         transform.rotation = Quaternion.LookRotation(ray.direction);
         speed = input.attackChargeTimer;
-        rb.AddForce(transform.forward * 5000f * speed);
+        rb.AddForce(transform.forward * 2500f * speed);
         input.attackChargeTimer = 0f;
     }
 
@@ -35,10 +35,12 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision) 
     {
-        if(collision.tag == "Hittable")
+        if(collision.tag == "Hittable" || collision.tag == "Ground")
         {
-            if (fx != null)
-                Instantiate(fx, transform.position, transform.rotation);
+            if (fx != null){
+                GameObject _fx = Instantiate(fx, transform.position, transform.rotation);
+                _fx.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            }
             Destroy(gameObject);
         }
     }

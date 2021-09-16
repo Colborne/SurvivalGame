@@ -49,8 +49,7 @@ public class StatsManager : MonoBehaviour
     }
     private void Update() 
     { 
-        UpdateWeight();
-        //UpdateStats();
+        UpdateStats();
     }
     private int SetMaxHealthFromLevel()
     {
@@ -125,11 +124,9 @@ public class StatsManager : MonoBehaviour
 
         if(inventoryWeight != newWeight)
             inventoryWeight = newWeight;
-        
-        GameObject.Find("Player UI").GetComponentInChildren<TextMeshProUGUI>(true).text = inventoryWeight.ToString();
     }
 
-    void UpdateStats()
+    void UpdateDefense()
     {
         float newDefense = 0;
         for (int i = 0; i < 11; i++)
@@ -145,8 +142,14 @@ public class StatsManager : MonoBehaviour
 
         if(baseDefense != newDefense)
             baseDefense = newDefense;
+    }
 
-        GameObject defense = GameObject.Find("/Player UI/Inventory Window/Equipment/Defense");
-        defense.GetComponent<TextMeshProUGUI>().text = baseDefense.ToString();
+    void UpdateStats()
+    {
+        UpdateWeight();
+        UpdateDefense();
+        TextMeshProUGUI[] stats = GameObject.Find("Player UI").GetComponentsInChildren<TextMeshProUGUI>(true);
+        stats[0].text = inventoryWeight.ToString();
+        stats[1].text = baseDefense.ToString();
     }
 }
