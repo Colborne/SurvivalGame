@@ -67,6 +67,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         }
     }
 
+    public void WeightCalculation() 
+    {
+        totalWeight = item.weight * currentAmount;
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / GameManager.Instance.interfaceCanvas.scaleFactor;

@@ -7,12 +7,15 @@ public class Projectile : MonoBehaviour
     InputManager input;
     Rigidbody rb;
     public GameObject fx;
+    public InventoryItem item;
 
     public float speed;
-    private void Awake() {
+    private void Awake() 
+    {
         input = FindObjectOfType<InputManager>();
         rb = GetComponent<Rigidbody>();
     }
+    
     // Start is called before the first frame update
     void Start()
     {

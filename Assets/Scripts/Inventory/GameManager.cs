@@ -255,4 +255,26 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+
+    public bool CheckInventoryForItem(InventoryItem item)
+    {
+        // Searches for identical item ID in inventory //
+        for (int i = 10; i < inventorySlots.Length; i++)
+        {
+            if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == item.itemID)
+            {
+                inventorySlots[i].currentItem.currentAmount--;
+                if(inventorySlots[i].currentItem.currentAmount == 0)
+                {
+                    inventorySlots[i].currentItem = null;
+                    inventorySlots[i].isFull = false;
+                    inventorySlots[i].GetComponent<TooltipTrigger>().header = null;
+                    inventorySlots[i].GetComponent<TooltipTrigger>().content = null;
+                    Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 }

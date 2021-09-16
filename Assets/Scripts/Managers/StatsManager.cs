@@ -5,7 +5,6 @@ using TMPro;
 
 public class StatsManager : MonoBehaviour
 {
-    public float inventoryWeight;
     public int healthLevel = 1;
     public int maxHealth;
     public int currentHealth;
@@ -18,6 +17,7 @@ public class StatsManager : MonoBehaviour
     private float staminaRegenTimer = 0f;
 
     public float baseDefense = 0;
+    public float inventoryWeight = 0;
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
@@ -50,7 +50,7 @@ public class StatsManager : MonoBehaviour
     private void Update() 
     { 
         UpdateWeight();
-        UpdateStats();
+        //UpdateStats();
     }
     private int SetMaxHealthFromLevel()
     {
@@ -118,15 +118,15 @@ public class StatsManager : MonoBehaviour
         {
             if ( GameManager.Instance.inventorySlots[i].isFull)
             {
-                GameManager.Instance.inventorySlots[i].currentItem.Update();
+                GameManager.Instance.inventorySlots[i].currentItem.WeightCalculation();
                 newWeight +=  GameManager.Instance.inventorySlots[i].currentItem.totalWeight;
             }
         }
 
         if(inventoryWeight != newWeight)
             inventoryWeight = newWeight;
-        GameObject weight = GameObject.Find("/Player UI/Inventory Window/Equipment/Weight");
-        weight.GetComponent<TextMeshProUGUI>().text = inventoryWeight.ToString();
+        
+        GameObject.Find("Player UI").GetComponentInChildren<TextMeshProUGUI>(true).text = inventoryWeight.ToString();
     }
 
     void UpdateStats()
@@ -134,7 +134,7 @@ public class StatsManager : MonoBehaviour
         float newDefense = 0;
         for (int i = 0; i < 11; i++)
         {
-            if ( GameManager.Instance.inventorySlots[i].isFull)
+            if (GameManager.Instance.inventorySlots[i].isFull)
             {
                 if(GameManager.Instance.inventorySlots[i].currentItem.item is EquipmentItem){
                     EquipmentItem eq = GameManager.Instance.inventorySlots[i].currentItem.item as EquipmentItem;
@@ -142,7 +142,6 @@ public class StatsManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log(newDefense);
 
         if(baseDefense != newDefense)
             baseDefense = newDefense;

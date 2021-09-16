@@ -128,17 +128,11 @@ public class InputManager : MonoBehaviour
     }
 
     private void HandleSneakingInput()
-    {
-        
+    {  
         if(ctrlInput && moveAmount > 0.5f)
-        {
-            playerLocomotion.isSneaking = true;
-        }
+            playerLocomotion.isSneaking = true;   
         else
-        {
-            playerLocomotion.isSneaking = false;
-        }
-        
+            playerLocomotion.isSneaking = false; 
     }
 
     private void HandleJumpingInput()
@@ -162,7 +156,8 @@ public class InputManager : MonoBehaviour
             
             if(!leftMouseInput)
             {
-                playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
+                if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item))
+                    playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
             }
         }
         else
