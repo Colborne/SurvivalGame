@@ -95,6 +95,7 @@ public class InputManager : MonoBehaviour
             HandleSprintingInput();
             HandleSneakingInput();
             HandleJumpingInput();
+            
             if(!buildFlag)
                 HandleAttackInput();
         }
@@ -156,7 +157,7 @@ public class InputManager : MonoBehaviour
             
             if(!leftMouseInput)
             {
-                if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item))
+                if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1))
                     playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
             }
         }

@@ -256,24 +256,45 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public bool CheckInventoryForItem(InventoryItem item)
+    public bool CheckInventoryForItem(InventoryItem item, int amount)
     {
-        // Searches for identical item ID in inventory //
+        int amountFound = 0;
+        List<int> foundSlots = new List<int>();
+
         for (int i = 10; i < inventorySlots.Length; i++)
         {
             if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == item.itemID)
             {
-                inventorySlots[i].currentItem.currentAmount--;
-                if(inventorySlots[i].currentItem.currentAmount == 0)
-                {
-                    inventorySlots[i].currentItem = null;
-                    inventorySlots[i].isFull = false;
-                    inventorySlots[i].GetComponent<TooltipTrigger>().header = null;
-                    inventorySlots[i].GetComponent<TooltipTrigger>().content = null;
-                    Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
-                }
-                return true;
+                foundSlots.Add(i);
+                amountFound += inventorySlots[i].currentItem.currentAmount; 
             }
+            
+            if(amountFound >= amount)
+                break;     
+        }
+
+        if(amountFound < amount)
+            return false;
+
+        foreach(int i in foundSlots)
+        {
+            amountFound -= inventorySlots[i].currentItem.currentAmount;
+            if(inventorySlots[i].currentItem.currentAmount > amount)
+                inventorySlots[i].currentItem.currentAmount -= amount;
+            else
+                inventorySlots[i].currentItem.currentAmount = 0;
+
+            if(inventorySlots[i].currentItem.currentAmount == 0)
+            {
+                inventorySlots[i].currentItem = null;
+                inventorySlots[i].isFull = false;
+                inventorySlots[i].GetComponent<TooltipTrigger>().header = null;
+                inventorySlots[i].GetComponent<TooltipTrigger>().content = null;
+                Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
+            }   
+            
+            if(amountFound <= 0)
+                return true;
         }
         return false;
     }

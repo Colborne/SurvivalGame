@@ -49,13 +49,13 @@ public class BuildSystem : MonoBehaviour
 
             Builder.eulerAngles = new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0);
 
-            if(FindObjectOfType<InputManager>().leftMouseInput)
+            if(FindObjectOfType<InputManager>().leftMouseInput && !FindObjectOfType<InputManager>().inventoryFlag)
             {
                 FindObjectOfType<InputManager>().leftMouseInput = false;
                 
                 if (prefab == 0)
                 {
-                    if (checkIfPosEmpty(Builder.position, Builder.rotation))
+                    if (checkIfPosEmpty(Builder.position, Builder.rotation) && GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired))
                         Instantiate(FloorPrefab, Builder.position, Builder.rotation);
                 }
                 else
@@ -64,12 +64,6 @@ public class BuildSystem : MonoBehaviour
                         Instantiate(WallPrefab, Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0));
                 }
             }
-
-            /*            
-            Mathf.RoundToInt(Hit.point.x),
-            Mathf.RoundToInt(Hit.point.y) + FloorBuild.localScale.y ,
-            Mathf.RoundToInt(Hit.point.z));
-            */
         }
     }
     public bool checkIfPosEmpty(Vector3 targetPos, Quaternion targetRot)
