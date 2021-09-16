@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
+  m_Name: Earth Rune (Resource)
+  m_EditorClassIdentifier: 
+  modelPrefab: {fileID: 4681870709151682556, guid: c20820fd9873db84abce196bca018e22, type: 3}
+  itemIcon: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
+  itemName: Earth Rune
+  description: A Rune Infused With Nature Magic
+  weight: 1.2
+  resourceType: Rune

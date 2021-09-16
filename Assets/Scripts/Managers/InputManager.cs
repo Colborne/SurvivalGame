@@ -159,6 +159,10 @@ public class InputManager : MonoBehaviour
             {
                 if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1))
                     playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
+                //else
+                    //animatorManager.PlayTargetAnimation("Landing", true);
+                    
+                
             }
         }
         else

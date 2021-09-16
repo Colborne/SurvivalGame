@@ -657,7 +657,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Override
     m_StateMachine: {fileID: 413607177824382216}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 29f56e3f3c681fd49aa3d943f90a8f84, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
