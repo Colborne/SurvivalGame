@@ -44,7 +44,7 @@ public class BuildSystem : MonoBehaviour
 
             orientation *= Quaternion.Euler(0,0, 45 * buildRotation);
             
-            Builder.eulerAngles = new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0) + orientation.eulerAngles;           
+            Builder.eulerAngles = orientation.eulerAngles; //new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0) + orientation.eulerAngles;           
 
             if(FindObjectOfType<InputManager>().leftMouseInput && !FindObjectOfType<InputManager>().inventoryFlag && !FindObjectOfType<InputManager>().buildWindowFlag)
             {
