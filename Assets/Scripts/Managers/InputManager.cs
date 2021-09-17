@@ -157,12 +157,7 @@ public class InputManager : MonoBehaviour
             
             if(!leftMouseInput)
             {
-                if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1))
-                    playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
-                //else
-                    //animatorManager.PlayTargetAnimation("Landing", true);
-                    
-                
+                playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
             }
         }
         else
@@ -179,7 +174,7 @@ public class InputManager : MonoBehaviour
                             leftMouseInput = false;
                             playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
                         }
-                        else
+                        else if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1, true))
                         {
                             attackChargeTimer += 1f * Time.deltaTime;
                             playerAttacker.HandleChargeAction(equipmentManager.rightWeapon);

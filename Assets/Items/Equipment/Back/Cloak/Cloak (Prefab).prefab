@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369669348822832444}
   - component: {fileID: 3643007225579985561}
-  - component: {fileID: 1543178368255569491}
+  - component: {fileID: 6935632781570518967}
   m_Layer: 0
   m_Name: Cloak
   m_TagString: Untagged
@@ -40,8 +40,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038788886062370694}
   m_Mesh: {fileID: 4493585093827132993, guid: b4038aa99b9f2ed468f5ed5e4e8b8adf, type: 3}
---- !u!23 &1543178368255569491
-MeshRenderer:
+--- !u!137 &6935632781570518967
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54,7 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -80,7 +80,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4493585093827132993, guid: b4038aa99b9f2ed468f5ed5e4e8b8adf, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0, y: 0.0071935626, z: -0.0023740814}
+    m_Extent: {x: 0.010555771, y: 0.012193563, z: 0.004291651}
+  m_DirtyAABB: 0
 --- !u!1 &1553366437284539963
 GameObject:
   m_ObjectHideFlags: 0

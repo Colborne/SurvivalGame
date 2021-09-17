@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public bool CheckInventoryForItem(InventoryItem item, int amount)
+    public bool CheckInventoryForItem(InventoryItem item, int amount, bool remove)
     {
         int amountFound = 0;
         List<int> foundSlots = new List<int>();
@@ -279,19 +279,23 @@ public class GameManager : MonoBehaviour
         foreach(int i in foundSlots)
         {
             amountFound -= inventorySlots[i].currentItem.currentAmount;
-            if(inventorySlots[i].currentItem.currentAmount > amount)
-                inventorySlots[i].currentItem.currentAmount -= amount;
-            else
-                inventorySlots[i].currentItem.currentAmount = 0;
-
-            if(inventorySlots[i].currentItem.currentAmount == 0)
+            
+            if(remove)
             {
-                inventorySlots[i].currentItem = null;
-                inventorySlots[i].isFull = false;
-                inventorySlots[i].GetComponent<TooltipTrigger>().header = null;
-                inventorySlots[i].GetComponent<TooltipTrigger>().content = null;
-                Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
-            }   
+                if(inventorySlots[i].currentItem.currentAmount > amount)
+                    inventorySlots[i].currentItem.currentAmount -= amount;
+                else
+                    inventorySlots[i].currentItem.currentAmount = 0;
+
+                if(inventorySlots[i].currentItem.currentAmount == 0)
+                {
+                    inventorySlots[i].currentItem = null;
+                    inventorySlots[i].isFull = false;
+                    inventorySlots[i].GetComponent<TooltipTrigger>().header = null;
+                    inventorySlots[i].GetComponent<TooltipTrigger>().content = null;
+                    Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
+                }   
+            }
             
             if(amountFound <= 0)
                 return true;

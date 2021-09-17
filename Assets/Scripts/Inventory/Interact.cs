@@ -36,7 +36,7 @@ public class Interact : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
-            if(GameManager.Instance.CheckInventoryForItem(item, 1))
+            if(GameManager.Instance.CheckInventoryForItem(item, 1, true))
                 GameManager.Instance.PickUpItem(outItem, 1);
             inputManager.interactInput = false;
             //ui.interactableText.text = null;

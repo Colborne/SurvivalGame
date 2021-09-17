@@ -55,7 +55,7 @@ public class BuildSystem : MonoBehaviour
                 
                 if (prefab == 0)
                 {
-                    if (checkIfPosEmpty(Builder.position, Builder.rotation) && GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired))
+                    if (checkIfPosEmpty(Builder.position, Builder.rotation) && GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
                         Instantiate(FloorPrefab, Builder.position, Builder.rotation);
                 }
                 else
