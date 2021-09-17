@@ -34,6 +34,9 @@ public class Interact : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
+        if(GameManager.Instance.CheckAmount(item) > 0)
+            ui.interactableText.text = "Press 'E' to " + interaction + " x" + GameManager.Instance.CheckAmount(item);
+            
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
             int convert = GameManager.Instance.ReplaceStack(item);

@@ -339,6 +339,18 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    public int CheckAmount(InventoryItem item)
+    {
+        for (int i = 10; i < inventorySlots.Length; i++)
+        {
+            if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == item.itemID)
+            {
+                return inventorySlots[i].currentItem.currentAmount;
+            }
+        }
+        return 0;
+    }
+
     public void Craft(InventoryItem[] items, int[] amounts) 
     {
         //Checks Entire Inventory For Possible Craftable Items

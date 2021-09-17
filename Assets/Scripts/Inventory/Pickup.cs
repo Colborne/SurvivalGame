@@ -26,6 +26,7 @@ public class Pickup : MonoBehaviour
                 
             ui.transform.GetChild(0).gameObject.SetActive(true);
         }
+        
     }
 
     private void OnTriggerExit(Collider other) 
@@ -38,14 +39,18 @@ public class Pickup : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
-        {   
-            inputManager.interactInput = false;
-            GameManager.Instance.PickUpItem(itemID, amount);
-            Destroy(gameObject);
-            ui.interactableText.text = null;
-            ui.transform.GetChild(0).gameObject.SetActive(false);
-            return;
+        if (other.gameObject == GameManager.Instance.PM.gameObject) 
+        {
+            //transform.position = Vector3.MoveTowards(transform.position, other.transform.position , 1 * Time.deltaTime); use this for auto pickup
+            if(inputManager.interactInput)
+            {   
+                inputManager.interactInput = false;
+                GameManager.Instance.PickUpItem(itemID, amount);
+                Destroy(gameObject);
+                ui.interactableText.text = null;
+                ui.transform.GetChild(0).gameObject.SetActive(false);
+                return;
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ public class BuildSystem : MonoBehaviour
 
     private void Update() 
     {
-        if(FindObjectOfType<InputManager>().rightMouseInput)
+        if(FindObjectOfType<InputManager>().rightMouseInput && !FindObjectOfType<InputManager>().inventoryFlag )
         {
             FindObjectOfType<InputManager>().rightMouseInput = !FindObjectOfType<InputManager>().rightMouseInput;
             CloseWindow();
