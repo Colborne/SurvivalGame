@@ -296,10 +296,45 @@ public class GameManager : MonoBehaviour
                     Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
                 }   
             }
-            
+
             if(amountFound <= 0)
                 return true;
         }
         return false;
+    }
+
+    public int ReplaceStack(InventoryItem item)
+    {
+        for (int i = 10; i < inventorySlots.Length; i++)
+        {
+            if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == item.itemID)
+            {
+                int amount = inventorySlots[i].currentItem.currentAmount;
+                inventorySlots[i].currentItem = null;
+                inventorySlots[i].isFull = false;
+                inventorySlots[i].GetComponent<TooltipTrigger>().header = null;
+                inventorySlots[i].GetComponent<TooltipTrigger>().content = null;
+                Destroy(inventorySlots[i].transform.GetChild(0).gameObject);
+                return amount;
+            }
+        }
+        return 0;
+    }
+
+    public bool CraftingCheck(InventoryItem[] items, int[] amounts) 
+    {
+        for(int x = 0; x < items.Length; x++)
+        {
+            int amountFound = 0;
+            for (int i = 10; i < inventorySlots.Length; i++)
+            {
+                if (inventorySlots[i].isFull && inventorySlots[i].currentItem.itemID == items[x].itemID)
+                    amountFound += inventorySlots[i].currentItem.currentAmount; 
+            }
+
+            if(amountFound < amounts[x])
+                return false;     
+        }
+        return true;
     }
 }

@@ -6494,6 +6494,7 @@ GameObject:
   - component: {fileID: 976651573}
   - component: {fileID: 976651572}
   - component: {fileID: 976651574}
+  - component: {fileID: 976651575}
   m_Layer: 0
   m_Name: BuildSystem
   m_TagString: Untagged
@@ -6550,6 +6551,23 @@ MonoBehaviour:
   name: Wood
   item: {fileID: 7680765855121683962, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
   amountRequired: 2
+--- !u!114 &976651575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976651571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2053717d4b34fd647b36bc934b8eb11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Required Items
+  items:
+  - {fileID: 7680765855121683962, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
+  - {fileID: 7680765855121683962, guid: f830757aa70adf9489cf626883be6782, type: 3}
+  amountRequired: 0200000001000000
 --- !u!1 &997209614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5897987611358159953, guid: d489290e02fc0f1429f7b6210326df57, type: 3}

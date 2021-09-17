@@ -36,11 +36,12 @@ public class Interact : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
-            if(GameManager.Instance.CheckInventoryForItem(item, 1, true))
-                GameManager.Instance.PickUpItem(outItem, 1);
+            int convert = GameManager.Instance.ReplaceStack(item);
+
+            if(convert > 0)
+                GameManager.Instance.PickUpItem(outItem, convert);
+  
             inputManager.interactInput = false;
-            //ui.interactableText.text = null;
-            //ui.transform.GetChild(0).gameObject.SetActive(false);
             return;
         }
     }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildRecipe : MonoBehaviour
+public class CraftingRecipe : MonoBehaviour
 {
     public string name = "Required Items";
-    public InventoryItem item;
-    public int amountRequired;
+    public InventoryItem[] items;
+    public int[] amountRequired;
 }
