@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
     public float moveAmount;
     public float verticalInput;
     public float horizontalInput;
+    public float scrollInput;
     public bool shiftInput;
     public bool ctrlInput;
     public bool jumpInput;
@@ -34,7 +35,6 @@ public class InputManager : MonoBehaviour
     public bool cancelInput;
     public bool buildInput;
     public float attackChargeTimer = 0f;
-
     public bool inventoryFlag;
     public bool buildFlag;
     public bool buildWindowFlag;
@@ -56,6 +56,7 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             playerControls.UI.MousePosition.performed += i => mousePosition = i.ReadValue<Vector2>();
+            playerControls.PlayerActions.MouseWheel.performed += i => scrollInput = i.ReadValue<float>();
             playerControls.PlayerActions.Inventory.performed += i => inventoryInput = true;
             playerControls.PlayerActions.Inventory.canceled += i => inventoryInput = false;
             playerControls.PlayerActions.Shift.performed += i => shiftInput = true;
