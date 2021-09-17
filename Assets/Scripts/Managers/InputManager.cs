@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour
 
     public bool inventoryFlag;
     public bool buildFlag;
+    public bool buildWindowFlag;
 
     private void Awake() 
     {
@@ -209,7 +210,7 @@ public class InputManager : MonoBehaviour
 
     private void HandleMouse()
     {
-        if(!inventoryFlag)
+        if(!inventoryFlag && !buildWindowFlag)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

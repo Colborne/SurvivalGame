@@ -34,10 +34,11 @@ public class CameraManager : MonoBehaviour
 
     public void HandleAllCameraMovement()
     {
-        if(!inputManager.inventoryFlag){
-        FollowTarget();
-        RotateCamera();
-        HandleCameraCollision();
+        if(!inputManager.inventoryFlag && !inputManager.buildWindowFlag)
+        {
+            FollowTarget();
+            RotateCamera();
+            HandleCameraCollision();
         }
     }
     

@@ -6,39 +6,24 @@ public class BuildSystem : MonoBehaviour
 {
     [SerializeField] Transform Cam;
     [SerializeField] Transform Builder;
-    [SerializeField] Transform FloorBuild;
-    [SerializeField] Transform WallBuild;
-    [SerializeField] Transform FloorPrefab;
-    [SerializeField] Transform WallPrefab;
+    [SerializeField] GameObject BuildWindow;
+    [SerializeField] Buildable[] buildables;
+    public int iteration = 0;
 
     Transform built;
-
+    
     RaycastHit Hit;
-    int prefab = 0;
 
     private void Update() 
     {
-        if(FindObjectOfType<InputManager>().buildInput)
+        if(FindObjectOfType<InputManager>().rightMouseInput)
         {
-            if(prefab == 1)
-                prefab = 0;
-            else
-                prefab = 1;
-            FindObjectOfType<InputManager>().buildInput = !FindObjectOfType<InputManager>().buildInput;
+            FindObjectOfType<InputManager>().rightMouseInput = !FindObjectOfType<InputManager>().rightMouseInput;
+            FindObjectOfType<InputManager>().buildWindowFlag = !FindObjectOfType<InputManager>().buildWindowFlag;
+            BuildWindow.SetActive(!BuildWindow.active);
         }
 
-        if(prefab == 0)
-        {
-            FloorBuild.gameObject.SetActive(true);
-            Builder = FloorBuild;
-            WallBuild.gameObject.SetActive(false);
-        }
-        else        
-        {
-            WallBuild.gameObject.SetActive(true);
-            Builder = WallBuild;
-            FloorBuild.gameObject.SetActive(false);
-        }
+        Builder.GetComponent<MeshFilter>().mesh = buildables[iteration].mesh;
 
         if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 22f))
         {
@@ -49,21 +34,18 @@ public class BuildSystem : MonoBehaviour
 
             Builder.eulerAngles = new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0);
 
-            if(FindObjectOfType<InputManager>().leftMouseInput && !FindObjectOfType<InputManager>().inventoryFlag)
+            if(FindObjectOfType<InputManager>().leftMouseInput && !FindObjectOfType<InputManager>().inventoryFlag && !FindObjectOfType<InputManager>().buildWindowFlag)
             {
                 FindObjectOfType<InputManager>().leftMouseInput = false;
+
+                if (checkIfPosEmpty(Builder.position, Builder.rotation) 
+                && GameManager.Instance.CraftingCheck(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired)){ //if(GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
+                        Instantiate(buildables[iteration].prefab, Builder.position, Builder.rotation);
+                        GameManager.Instance.Craft(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired);
+                }
                 
-                if (prefab == 0)
-                {
-                    if (checkIfPosEmpty(Builder.position, Builder.rotation) 
-                    && GameManager.Instance.CraftingCheck(GetComponent<CraftingRecipe>().items, GetComponent<CraftingRecipe>().amountRequired)) //if(GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
-                        Instantiate(FloorPrefab, Builder.position, Builder.rotation);
-                }
-                else
-                {
-                    if (checkIfPosEmpty(Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0)))
-                        Instantiate(WallPrefab, Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0));
-                }
+                                    //if (checkIfPosEmpty(Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0)))
+                    //    Instantiate(WallPrefab, Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0));
             }
         }
     }

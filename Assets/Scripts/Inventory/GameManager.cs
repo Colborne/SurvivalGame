@@ -323,6 +323,7 @@ public class GameManager : MonoBehaviour
 
     public bool CraftingCheck(InventoryItem[] items, int[] amounts) 
     {
+        //Checks Entire Inventory For Possible Craftable Items
         for(int x = 0; x < items.Length; x++)
         {
             int amountFound = 0;
@@ -336,5 +337,14 @@ public class GameManager : MonoBehaviour
                 return false;     
         }
         return true;
+    }
+
+    public void Craft(InventoryItem[] items, int[] amounts) 
+    {
+        //Checks Entire Inventory For Possible Craftable Items
+        for(int x = 0; x < items.Length; x++)
+        {
+            CheckInventoryForItem(items[x], amounts[x], true);
+        }
     }
 }
