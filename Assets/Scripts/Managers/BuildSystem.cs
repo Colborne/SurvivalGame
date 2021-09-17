@@ -9,9 +9,7 @@ public class BuildSystem : MonoBehaviour
     [SerializeField] GameObject BuildWindow;
     [SerializeField] Buildable[] buildables;
     public int iteration = 0;
-
     Transform built;
-    
     RaycastHit Hit;
 
     private void Update() 
@@ -19,8 +17,7 @@ public class BuildSystem : MonoBehaviour
         if(FindObjectOfType<InputManager>().rightMouseInput)
         {
             FindObjectOfType<InputManager>().rightMouseInput = !FindObjectOfType<InputManager>().rightMouseInput;
-            FindObjectOfType<InputManager>().buildWindowFlag = !FindObjectOfType<InputManager>().buildWindowFlag;
-            BuildWindow.SetActive(!BuildWindow.active);
+            CloseWindow();
         }
 
         Builder.GetComponent<MeshFilter>().mesh = buildables[iteration].mesh;
@@ -58,5 +55,11 @@ public class BuildSystem : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    public void CloseWindow()
+    {
+        FindObjectOfType<InputManager>().buildWindowFlag = !FindObjectOfType<InputManager>().buildWindowFlag;
+        BuildWindow.SetActive(!BuildWindow.active);
     }
 }

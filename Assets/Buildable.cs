@@ -25,6 +25,7 @@ public class Buildable : MonoBehaviour, IPointerClickHandler
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             buildSystem.iteration = value;
+            buildSystem.CloseWindow();
         }  
     }      
 }

@@ -104,7 +104,9 @@ public class InputManager : MonoBehaviour
         HandleMouse();
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
-        HandleInventoryInput();
+        
+        if(!buildWindowFlag)
+            HandleInventoryInput();
     }
     private void HandleMovementInput()
     {
