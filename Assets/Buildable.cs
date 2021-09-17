@@ -12,6 +12,7 @@ public class Buildable : MonoBehaviour, IPointerClickHandler
     public GameObject prefab;
     public Mesh mesh;
     public int value;
+    public Quaternion orientation;
 
     BuildSystem buildSystem;
 

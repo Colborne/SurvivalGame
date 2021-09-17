@@ -4953,6 +4953,7 @@ MonoBehaviour:
   prefab: {fileID: 9219699227820891734, guid: cda11e3827b360242b455b34a4be9bbf, type: 3}
   mesh: {fileID: 0}
   value: 1
+  orientation: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
 --- !u!114 &655766258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7485,6 +7486,7 @@ MonoBehaviour:
   prefab: {fileID: 7323644100048024859, guid: fd6cb31b07524bb49bd69a191f2987a9, type: 3}
   mesh: {fileID: 0}
   value: 0
+  orientation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1164871575
 MonoBehaviour:
   m_ObjectHideFlags: 0

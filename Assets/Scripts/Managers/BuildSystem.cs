@@ -11,6 +11,7 @@ public class BuildSystem : MonoBehaviour
     public int iteration = 0;
     Transform built;
     RaycastHit Hit;
+    Quaternion orientation;
 
     private void Update() 
     {
@@ -21,6 +22,7 @@ public class BuildSystem : MonoBehaviour
         }
 
         Builder.GetComponent<MeshFilter>().mesh = buildables[iteration].mesh;
+        orientation = buildables[iteration].orientation;
 
         if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 22f))
         {
@@ -29,7 +31,7 @@ public class BuildSystem : MonoBehaviour
             (Mathf.RoundToInt(Hit.point.y) != 0 ? Mathf.RoundToInt(Hit.point.y/4) * 4: 0), //+ Builder.localScale.y ,
             Mathf.RoundToInt(Hit.point.z)  != 0 ? Mathf.RoundToInt(Hit.point.z/4) * 4: 3);
 
-            Builder.eulerAngles = new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0);
+            Builder.eulerAngles = new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0) + orientation.eulerAngles;
 
             if(FindObjectOfType<InputManager>().leftMouseInput && !FindObjectOfType<InputManager>().inventoryFlag && !FindObjectOfType<InputManager>().buildWindowFlag)
             {
@@ -37,12 +39,9 @@ public class BuildSystem : MonoBehaviour
 
                 if (checkIfPosEmpty(Builder.position, Builder.rotation) 
                 && GameManager.Instance.CraftingCheck(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired)){ //if(GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
-                        Instantiate(buildables[iteration].prefab, Builder.position, Builder.rotation);
-                        GameManager.Instance.Craft(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired);
+                    Instantiate(buildables[iteration].prefab, Builder.position, Builder.rotation);
+                    GameManager.Instance.Craft(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired);
                 }
-                
-                                    //if (checkIfPosEmpty(Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0)))
-                    //    Instantiate(WallPrefab, Builder.position, Builder.rotation * Quaternion.Euler(-90,0,0));
             }
         }
     }
