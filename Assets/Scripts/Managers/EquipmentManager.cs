@@ -23,49 +23,13 @@ public class EquipmentManager : MonoBehaviour
     public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
     {
         if(weaponItem.isTwoHanded)
-        {
-            LoadRightWeaponDamageCollider();
-            #region Handle Two Hand Idles
-            if(weaponItem != null)
-            {
-                animator.CrossFade(weaponItem.Two_Hand_Idle, .2f);
-            }
-            else
-            {
-                animator.CrossFade("Both Arms Empty", .2f);
-            }
-            #endregion
-        }
+            LoadRightWeaponDamageCollider();      
         else
         {
             if(isLeft)
-            {
                 LoadLeftWeaponDamageCollider();
-                #region Handle Left Idles
-                if(weaponItem != null)
-                {
-                    animator.CrossFade(weaponItem.Left_Hand_Idle, .2f);
-                }
-                else
-                {
-                    animator.CrossFade("Left Arm Empty", .2f);
-                }
-                #endregion
-            }
             else
-            {
                 LoadRightWeaponDamageCollider();
-                #region Handle Right Idles
-                if(weaponItem != null)
-                {
-                    animator.CrossFade(weaponItem.Right_Hand_Idle, .2f);
-                }
-                else
-                {
-                    animator.CrossFade("Right Arm Empty", .2f);
-                }
-                #endregion
-            }
         }
     }
     #region Damage Colliders

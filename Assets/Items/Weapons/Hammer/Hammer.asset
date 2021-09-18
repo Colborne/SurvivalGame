@@ -16,22 +16,15 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 757d8d87139888a46b1dc1d19434ef4a, type: 3}
   itemName: Hammer
   description: A Builder's Tool
-  weight: 0
-  isUnarmed: 0
+  weight: 2
   isTwoHanded: 0
   isOffhandable: 0
-  hasSpecial: 0
   canCharge: 0
-  Right_Hand_Idle: Idle
-  Left_Hand_Idle: Idle
-  Two_Hand_Idle: 
-  OH_Light_Attack: LightAttack
-  OH_Heavy_Attack: 
-  OH_Left_Attack: 
-  Ranged_Attack: 
-  Magic_Attack: 
-  projectile: {fileID: 0}
-  baseStamina: 10
-  manaCost: 0
-  heavyAttackMultiplier: 1.5
+  Attack: 
+  Heavy_Attack: 
+  Left_Attack: 
+  baseStamina: 0
+  heavyAttackMultiplier: 0
+  attackDamage: 0
   attackSpeed: 0
+  projectile: {fileID: 0}

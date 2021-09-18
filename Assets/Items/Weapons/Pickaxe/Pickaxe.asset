@@ -15,18 +15,16 @@ MonoBehaviour:
   modelPrefab: {fileID: 3969463676409318601, guid: c57ea6af99f75a948bb4bec3f8a4ba94, type: 3}
   itemIcon: {fileID: 21300000, guid: 19e554e2b3fddec4a943f9043e3d85a8, type: 3}
   itemName: Pickaxe
-  isUnarmed: 0
+  description: Mining Tool
+  weight: 15
   isTwoHanded: 0
-  hasSpecial: 0
+  isOffhandable: 0
   canCharge: 0
-  Right_Hand_Idle: Idle
-  Left_Hand_Idle: Idle
-  Two_Hand_Idle: 
-  OH_Light_Attack: OverheadSwing
-  OH_Heavy_Attack: HeavyAttack
-  OH_Left_Attack: LeftAttack
-  Ranged_Attack: 
-  Magic_Attack: 
-  projectile: {fileID: 0}
-  baseStamina: 10
+  Attack: OverheadSwing
+  Heavy_Attack: 
+  Left_Attack: 
+  baseStamina: 15
   heavyAttackMultiplier: 1.5
+  attackDamage: 1.5
+  attackSpeed: 0.66
+  projectile: {fileID: 0}

@@ -24,7 +24,7 @@ public class PlayerAttacker : MonoBehaviour
         equipmentManager.rightWeapon = weaponItem;
         if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
         {
-            animatorManager.PlayTargetAnimation(weaponItem.OH_Light_Attack, true);
+            animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/handleSmallLeather2");
         }
@@ -34,7 +34,7 @@ public class PlayerAttacker : MonoBehaviour
         equipmentManager.rightWeapon = weaponItem;
         if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina * equipmentManager.rightWeapon.heavyAttackMultiplier)
         {
-            animatorManager.PlayTargetAnimation(weaponItem.OH_Heavy_Attack, true);
+            animatorManager.PlayTargetAnimation(weaponItem.Heavy_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/drawKnife2");
         }
@@ -44,7 +44,7 @@ public class PlayerAttacker : MonoBehaviour
         equipmentManager.leftWeapon = weaponItem;
         if(statsManager.currentStamina > equipmentManager.leftWeapon.baseStamina)
         {
-            animatorManager.PlayTargetAnimation(weaponItem.OH_Left_Attack, true);
+            animatorManager.PlayTargetAnimation(weaponItem.Left_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/drawKnife2");
         }
@@ -55,7 +55,7 @@ public class PlayerAttacker : MonoBehaviour
         equipmentManager.rightWeapon = weaponItem;
         if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
         {
-            animatorManager.PlayTargetAnimation(weaponItem.Ranged_Attack, true);
+            animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/drawKnife2");
 

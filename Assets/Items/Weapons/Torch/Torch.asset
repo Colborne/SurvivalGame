@@ -16,22 +16,15 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 8211053675fd7014686bc8a1e4d42963, type: 3}
   itemName: Torch
   description: It's a Torch
-  weight: 0
-  isUnarmed: 0
+  weight: 0.2
   isTwoHanded: 0
-  isOffhandable: 0
-  hasSpecial: 0
+  isOffhandable: 1
   canCharge: 0
-  Right_Hand_Idle: Idle
-  Left_Hand_Idle: Idle
-  Two_Hand_Idle: 
-  OH_Light_Attack: 
-  OH_Heavy_Attack: 
-  OH_Left_Attack: LeftAttack
-  Ranged_Attack: 
-  Magic_Attack: 
-  projectile: {fileID: 0}
+  Attack: 
+  Heavy_Attack: 
+  Left_Attack: LeftAttack
   baseStamina: 10
-  manaCost: 0
   heavyAttackMultiplier: 1.5
+  attackDamage: 0
   attackSpeed: 0
+  projectile: {fileID: 0}
