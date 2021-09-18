@@ -272,6 +272,17 @@
                 },
                 {
                     "name": "",
+                    "id": "69db4829-218e-4556-b96b-7d5b5fd242c7",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ceeec385-1e64-49e4-8144-6ee7ef89392c",
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
