@@ -58,7 +58,9 @@ public class PlayerAttacker : MonoBehaviour
             animatorManager.PlayTargetAnimation(weaponItem.Ranged_Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/drawKnife2");
-            Instantiate(weaponItem.projectile, transform.position + new Vector3(2,2,0), transform.rotation);
+
+            
+            Instantiate(weaponItem.projectile, transform.position + transform.forward + new Vector3(0,2,0), transform.rotation);
         }
     }
 
