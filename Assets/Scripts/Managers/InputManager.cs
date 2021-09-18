@@ -105,6 +105,7 @@ public class InputManager : MonoBehaviour
         HandleMouse();
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
+        HandleIdle();
         
         if(!buildWindowFlag)
             HandleInventoryInput();
@@ -254,6 +255,14 @@ public class InputManager : MonoBehaviour
                 InventoryWindow.SetActive(false);
                 TooltipCanvas.SetActive(false);
             }
+        }
+    }
+
+    private void HandleIdle()
+    {
+        if(animatorManager.animator.GetBool("isTwoHanded"))
+        {
+            animatorManager.PlayTargetAnimation("Idle2H", false);
         }
     }
 }

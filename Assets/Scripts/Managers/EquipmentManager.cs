@@ -11,21 +11,27 @@ public class EquipmentManager : MonoBehaviour
     public DamageCollider rightHandDamageCollider;
 
     StatsManager stats;
-    Animator animator;
+    AnimatorManager animatorManager;
+
+    public bool isTwoHanded = false;
 
     private void Awake() 
     {
+        animatorManager = GetComponent<AnimatorManager>();
         gameManager = FindObjectOfType<GameManager>();
-        animator = GetComponent<Animator>();
         stats = GetComponentInParent<StatsManager>();
     }
 
     public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
     {
         if(weaponItem.isTwoHanded)
-            LoadRightWeaponDamageCollider();      
+        {
+            LoadRightWeaponDamageCollider();
+            animatorManager.animator.SetBool("isTwoHanded", true);
+        }
         else
         {
+            animatorManager.animator.SetBool("isTwoHanded", false);
             if(isLeft)
                 LoadLeftWeaponDamageCollider();
             else

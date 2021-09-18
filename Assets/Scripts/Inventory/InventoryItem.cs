@@ -457,7 +457,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     else
                         return;       
                 }
-
                 if (GameManager.Instance.inventorySlots[3].isFull)
                 {
                     // Setting Inventory Slot

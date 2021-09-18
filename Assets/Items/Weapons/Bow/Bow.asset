@@ -17,7 +17,7 @@ MonoBehaviour:
   itemName: Bow
   description: A Wooden Bow
   weight: 3.2
-  isTwoHanded: 0
+  isTwoHanded: 1
   isOffhandable: 0
   canCharge: 1
   Attack: Chop

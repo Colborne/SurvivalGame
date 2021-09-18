@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
-  m_Name: Mithril Pickaxe
+  m_Name: Halberd (Weapon)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 3969463676409318601, guid: 890c357afe0d7954c9076890efc92c30, type: 3}
-  itemIcon: {fileID: 21300000, guid: 19e554e2b3fddec4a943f9043e3d85a8, type: 3}
-  itemName: Mithril Pickaxe
-  description: A Mithril Mining Tool
+  modelPrefab: {fileID: 1488641282898831735, guid: 8b5a69b43dbc4ef40bd5d74d20688d17, type: 3}
+  itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
+  itemName: Halberd
+  description: Bladed Spear
   weight: 20
   isTwoHanded: 1
   isOffhandable: 0
@@ -25,6 +25,6 @@ MonoBehaviour:
   Left_Attack: 
   baseStamina: 15
   heavyAttackMultiplier: 1.5
-  attackDamage: 1.5
-  attackSpeed: 0.66
+  attackDamage: 2.34
+  attackSpeed: 0.77
   projectile: {fileID: 0}
