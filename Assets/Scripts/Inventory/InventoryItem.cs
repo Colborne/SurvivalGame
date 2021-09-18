@@ -38,8 +38,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public bool inAccessory2Slot = false;
     public bool inAccessory3Slot = false;
     public int itemID;
-    public int equipType = 0; // 0 = None | 1 = Weapon | 2 = Helmet //
-
+    public int equipType = 0; //None = 0, Helmet = 1, Chest = 2, Legs = 3, Boots = 4, Weapon = 5, Shield = 6, Back = 7, Accessory = 8
     public int MaxAmount = 10;
     public int currentAmount = 1;
     public Text textAmount;
@@ -418,13 +417,47 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inAccessory3Slot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory3);
-
                         break;
                     }
                 }
             }
             else if (!currentSlot.weaponSlot && equipType == (int)equipment.Weapon)
-            {
+            {            
+                if(currentSlot.currentItem.item is WeaponItem  && (currentSlot.currentItem.item as WeaponItem).isTwoHanded && GameManager.Instance.inventorySlots[4].isFull) 
+                {
+                    if(GameManager.Instance.CheckIfEmpty())
+                    {
+                        for (int i = 10; i < GameManager.Instance.inventorySlots.Length; i++)
+                        {
+                            Debug.Log("Searching for Slot...");
+                            if (GameManager.Instance.inventorySlots[i].isFull == false)
+                            {
+                                Debug.Log("Found slot: " + GameManager.Instance.inventorySlots[i].name);
+
+                                // Occupying New Slot
+                                GameManager.Instance.inventorySlots[i].currentItem = GameManager.Instance.inventorySlots[4].currentItem;
+                                GameManager.Instance.inventorySlots[i].isFull = true;                    
+                                GameManager.Instance.inventorySlots[i].GetComponent<TooltipTrigger>().header = GameManager.Instance.inventorySlots[4].currentItem.item.itemName;
+                                GameManager.Instance.inventorySlots[i].GetComponent<TooltipTrigger>().content = GameManager.Instance.inventorySlots[4].currentItem.item.GetTooltipInfoText();
+
+                                // Changing 
+                                inShieldSlot = false;
+                                GameManager.Instance.inventorySlots[4].currentItem.transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
+                                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedShield);
+
+                                // Emptying Previous Slot
+                                GameManager.Instance.inventorySlots[4].isFull = false;
+                                GameManager.Instance.inventorySlots[4].currentItem = null;
+                                GameManager.Instance.inventorySlots[4].GetComponent<TooltipTrigger>().header = null;
+                                GameManager.Instance.inventorySlots[4].GetComponent<TooltipTrigger>().content = null;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                        return;       
+                }
+
                 if (GameManager.Instance.inventorySlots[3].isFull)
                 {
                     // Setting Inventory Slot
@@ -623,7 +656,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     currentSlot.currentItem = GameManager.Instance.inventorySlots[0].currentItem;
                     currentSlot.currentItem.inBackSlot = false;
                     currentSlot.currentItem.gameObject.transform.SetParent(currentSlot.transform);
-                  currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
+                    currentSlot.GetComponent<TooltipTrigger>().header = currentSlot.currentItem.item.itemName;
                     currentSlot.GetComponent<TooltipTrigger>().content = currentSlot.currentItem.item.GetTooltipInfoText();
 
                     // Setting Weapon Slot

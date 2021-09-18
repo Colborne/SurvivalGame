@@ -359,4 +359,16 @@ public class GameManager : MonoBehaviour
             CheckInventoryForItem(items[x], amounts[x], true);
         }
     }
+
+    public bool CheckIfEmpty()
+    {
+        for (int i = 10; i < inventorySlots.Length; i++)
+        {
+            if (!inventorySlots[i].isFull)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
