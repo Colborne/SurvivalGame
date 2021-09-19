@@ -20,7 +20,7 @@ MonoBehaviour:
   isTwoHanded: 1
   isOffhandable: 0
   canCharge: 1
-  Attack: Chop
+  Attack: Release
   Heavy_Attack: 
   Left_Attack: 
   baseStamina: 10
