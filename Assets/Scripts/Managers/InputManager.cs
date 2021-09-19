@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +35,7 @@ public class InputManager : MonoBehaviour
     public bool cancelInput;
     public bool buildInput;
     public float attackChargeTimer = 0f;
+    public float blockChargeTimer = 0f;
     public bool inventoryFlag;
     public bool buildFlag;
     public bool buildWindowFlag;
@@ -105,7 +106,6 @@ public class InputManager : MonoBehaviour
         HandleMouse();
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
-        HandleIdle();
         
         if(!buildWindowFlag)
             HandleInventoryInput();
@@ -165,6 +165,25 @@ public class InputManager : MonoBehaviour
                 playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
             }
         }
+        else if(blockChargeTimer > 0f)
+        {
+            if(blockChargeTimer < 1f)
+                blockChargeTimer += 1f * Time.deltaTime;
+            
+            if(!rightMouseInput)
+            {
+                playerAttacker.HandleEndBlock(equipmentManager.leftWeapon);
+            }
+            if(leftMouseInput)
+            {
+                playerAttacker.HandleEndBlock(equipmentManager.leftWeapon);
+                if(!equipmentManager.rightWeapon.canCharge)
+                {
+                    leftMouseInput = false;
+                    playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
+                }
+            }
+        }
         else
         {
             if(equipmentManager.rightWeapon != null){
@@ -204,8 +223,16 @@ public class InputManager : MonoBehaviour
                         && !animatorManager.animator.GetBool("isInteracting") 
                         && !animatorManager.animator.GetBool("isJumping") )
                     {
-                        rightMouseInput = false;
-                        playerAttacker.HandleLeftAction(equipmentManager.leftWeapon);
+                        if(!equipmentManager.leftWeapon.canCharge)
+                        {
+                            rightMouseInput = false;
+                            playerAttacker.HandleLeftAction(equipmentManager.leftWeapon);
+                        }
+                        else
+                        {
+                            blockChargeTimer += 1f * Time.deltaTime;
+                            playerAttacker.HandleBlockAction(equipmentManager.leftWeapon);
+                        }
                     }
                 }
             }

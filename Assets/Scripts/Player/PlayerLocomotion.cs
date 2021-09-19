@@ -54,7 +54,7 @@ public class PlayerLocomotion : MonoBehaviour
         if(inputManager.inventoryFlag)
             return;
         
-        if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f)
+        if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f && inputManager.blockChargeTimer == 0f)
             return;
 
         HandleMovement();

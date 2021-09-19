@@ -50,6 +50,14 @@ public class PlayerAttacker : MonoBehaviour
         }
     }
 
+        public void HandleEndBlock(WeaponItem weaponItem)
+    {
+        input.blockChargeTimer = 0f;
+        equipmentManager.leftWeapon = weaponItem;
+        animatorManager.PlayTargetAnimation(weaponItem.Left_Attack, true);
+        animatorManager.animator.SetBool("isAttacking", true);
+    }
+
     public void HandleRangedAction(WeaponItem weaponItem)
     {
         equipmentManager.rightWeapon = weaponItem;
@@ -58,7 +66,6 @@ public class PlayerAttacker : MonoBehaviour
             animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
             animatorManager.animator.SetBool("isAttacking", true);
             soundManager.PlaySound("Sounds/drawKnife2");
-
             
             Instantiate(weaponItem.projectile, transform.position + transform.forward + new Vector3(0,2,0), transform.rotation);
         }
@@ -68,5 +75,11 @@ public class PlayerAttacker : MonoBehaviour
     {
         animatorManager.PlayTargetAnimation("Charging", true);
         animatorManager.animator.SetBool("isAttacking", true);    
+    }
+
+    public void HandleBlockAction(WeaponItem weaponItem)
+    {
+        animatorManager.PlayTargetAnimation("Block", true);
+        animatorManager.animator.SetBool("isAttacking", true);  
     }
 }
