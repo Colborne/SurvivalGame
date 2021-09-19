@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Spear
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 7801895825008717233, guid: ee4ada325f98c8a4d8c5d5d3ac7a04ff, type: 3}
+  modelPrefab: {fileID: 5555158284736803174, guid: a5efb0ddf6ad0d243b7a1a91541ce848, type: 3}
   itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
   itemName: Spear
-  description: 
+  description: Pokey Stick
   weight: 8
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: OverheadSwing
-  Heavy_Attack: HeavyAttackLunge
+  Attack: HeavyAttackLunge
+  Heavy_Attack: OverheadSwing
   Left_Attack: 
   baseStamina: 25
   heavyAttackMultiplier: 1.2
