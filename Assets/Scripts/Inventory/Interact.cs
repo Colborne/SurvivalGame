@@ -11,11 +11,13 @@ public class Interact : MonoBehaviour
     InputManager inputManager;
     InteractableUI ui; 
     AnimatorManager animatorManager;
+    CraftingSystem craftingSystem;
 
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
+        craftingSystem = FindObjectOfType<CraftingSystem>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -37,19 +39,23 @@ public class Interact : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if(GameManager.Instance.CheckAmount(item) > 0)
+        if(item != null && GameManager.Instance.CheckAmount(item) > 0)
             ui.interactableText.text = "Press 'E' to " + interactionText + " x" + GameManager.Instance.CheckAmount(item);
             
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
-            int convert = GameManager.Instance.ReplaceStack(item);
-
-            if(convert > 0)
+            if(interactionType == 1)
             {
-                GameManager.Instance.PickUpItem(outItem, convert);
-  
-                if(interactionType == 2)
+                craftingSystem.WindowActive();
+            }
+            else if(interactionType == 2)
+            {
+                int convert = GameManager.Instance.ReplaceStack(item);
+                if(convert > 0)
+                {
+                    GameManager.Instance.PickUpItem(outItem, convert);
                     animatorManager.PlayTargetAnimation("Runecrafting", true);
+                }
             }
             
             inputManager.interactInput = false;

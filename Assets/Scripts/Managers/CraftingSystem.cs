@@ -19,4 +19,13 @@ public class CraftingSystem : MonoBehaviour
             
         }     
     }
+
+    public void WindowActive()
+    {
+        CraftingWindow.SetActive(!CraftingWindow.active);
+        FindObjectOfType<InputManager>().craftWindowFlag = !FindObjectOfType<InputManager>().craftWindowFlag;
+        FindObjectOfType<InputManager>().inventoryFlag = !FindObjectOfType<InputManager>().inventoryFlag;
+        FindObjectOfType<InputManager>().TooltipCanvas.SetActive(!FindObjectOfType<InputManager>().TooltipCanvas.active);    
+        FindObjectOfType<InputManager>().InventoryWindow.SetActive(!FindObjectOfType<InputManager>().InventoryWindow.active);
+    }
 }

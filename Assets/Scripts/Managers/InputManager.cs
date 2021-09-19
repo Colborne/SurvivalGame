@@ -39,6 +39,7 @@ public class InputManager : MonoBehaviour
     public bool inventoryFlag;
     public bool buildFlag;
     public bool buildWindowFlag;
+    public bool craftWindowFlag;
 
     private void Awake() 
     {
@@ -269,7 +270,7 @@ public class InputManager : MonoBehaviour
 
     private void HandleInventoryInput()
     {
-        if(inventoryInput)
+        if(inventoryInput && !craftWindowFlag)
         {
             inventoryFlag = !inventoryFlag;
             if(inventoryFlag)
