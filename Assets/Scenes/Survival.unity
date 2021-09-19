@@ -4375,6 +4375,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bab0e6608c028343aebd770819a1a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &540320711
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1733881025}
+    m_Modifications:
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.101818
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2301168
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.863387
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_RootOrder
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223211017169070915, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+      propertyPath: m_Name
+      value: Warhammer (World)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
 --- !u!1001 &544784781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6684,6 +6741,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3959730276042464366, guid: 64f9a078d61b8114ba36c9788378aed0, type: 3}
   m_PrefabInstance: {fileID: 952813606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &956585770 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1554232290163864057, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+  m_PrefabInstance: {fileID: 540320711}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
@@ -10394,6 +10456,7 @@ RectTransform:
   - {fileID: 1135995819}
   - {fileID: 631598714}
   - {fileID: 289931105}
+  - {fileID: 956585770}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12818,7 +12881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7729571093655356789, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
       propertyPath: equipment.Array.size
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7729571093655356789, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
       propertyPath: PM
@@ -13336,6 +13399,22 @@ PrefabInstance:
       propertyPath: equipment.Array.data[27].worldItem
       value: 
       objectReference: {fileID: 7099974987210732863, guid: 945acab4d13ea9c49a2acbc3ac3f5485, type: 3}
+    - target: {fileID: 7729571093655356789, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
+      propertyPath: equipment.Array.data[28].name
+      value: Warhammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729571093655356789, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
+      propertyPath: equipment.Array.data[28].prefab
+      value: 
+      objectReference: {fileID: 1488641282898831735, guid: 21aa2ea8179271c4db8caae5db8c9dfa, type: 3}
+    - target: {fileID: 7729571093655356789, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
+      propertyPath: equipment.Array.data[28].inventoryItem
+      value: 
+      objectReference: {fileID: 5642263798415338689, guid: 882fe3925d27ca840b43d934cc8e0b25, type: 3}
+    - target: {fileID: 7729571093655356789, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
+      propertyPath: equipment.Array.data[28].worldItem
+      value: 
+      objectReference: {fileID: 2223211017169070915, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
     - target: {fileID: 7729571093655356790, guid: 54229fd2da0c76c459b15ce26e65a88b, type: 3}
       propertyPath: m_Name
       value: GameManager
