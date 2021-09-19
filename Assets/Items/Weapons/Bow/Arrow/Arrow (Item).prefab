@@ -116,7 +116,7 @@ MonoBehaviour:
   inAccessory3Slot: 0
   itemID: 6
   equipType: 0
-  MaxAmount: 10
+  MaxAmount: 100
   currentAmount: 1
   textAmount: {fileID: 0}
   item: {fileID: 11400000, guid: 033bc637171c693459e852592cb69ce6, type: 2}
