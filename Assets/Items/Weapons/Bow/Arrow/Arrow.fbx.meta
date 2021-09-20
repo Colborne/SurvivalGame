@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Arrowhead
-    second: {fileID: 2100000, guid: 49be0992de3b4554981a81689efeb20e, type: 2}
+    second: {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Feathers
-    second: {fileID: 2100000, guid: 16d0ebcaec48835489d4c4adfc3eddc8, type: 2}
+    second: {fileID: 2100000, guid: 9155e5f5808abe14ea6fa7a7784a25ad, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shaft
-    second: {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
+    second: {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -1,28 +1,14 @@
 fileFormatVersion: 2
-guid: fb28b56550ef6ad449f5e6e1d4d932e3
+guid: 0870b6d50de6fab4c8f3fdbd52808e88
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable:
-  - first:
-      74: -5252816984213320552
-    second: idle
-  - first:
-      74: 6200578666267062213
-    second: run
-  - first:
-      74: -4374668924334883536
-    second: Armature|DrawBow
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boots
-    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boots.001
-    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+      name: Tree
+    second: {fileID: 2100000, guid: 0a0655186594580418d3e831a9cef688, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -53,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

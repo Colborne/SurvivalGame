@@ -117,5 +117,6 @@ MonoBehaviour:
   equipType: 7
   MaxAmount: 1
   currentAmount: 1
-  textAmount: {fileID: 0}
+  textAmount: {fileID: 8143374775445529326, guid: 78b8db0e7cf44144788685974c2d950f, type: 3}
   item: {fileID: 11400000, guid: a1375bf972aa0aa4e9b49227f836ee3a, type: 2}
+  totalWeight: 0

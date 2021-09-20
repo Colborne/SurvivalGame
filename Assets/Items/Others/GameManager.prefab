@@ -1,0 +1,233 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8814101643745254443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8814101643745254441}
+  - component: {fileID: 8814101643745254440}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8814101643745254441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814101643745254443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8814101643745254440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814101643745254443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d14591d36359240860b9430a910abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: -1
+  shieldID: -1
+  helmetID: -1
+  chestID: -1
+  legsID: -1
+  bootsID: -1
+  backID: -1
+  accessory1ID: -1
+  accessory2ID: -1
+  accessory3ID: -1
+  spawnedWeapon: {fileID: 0}
+  spawnedShield: {fileID: 0}
+  spawnedHelmet: {fileID: 0}
+  spawnedChest: {fileID: 0}
+  spawnedLegs: {fileID: 0}
+  spawnedBoots: {fileID: 0}
+  spawnedBack: {fileID: 0}
+  spawnedAccessory1: {fileID: 0}
+  spawnedAccessory2: {fileID: 0}
+  spawnedAccessory3: {fileID: 0}
+  PM: {fileID: 0}
+  equipmentManager: {fileID: 0}
+  inventorySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  interfaceCanvas: {fileID: 0}
+  draggables: {fileID: 0}
+  equipment:
+  - name: Barbarian Helmet
+    prefab: {fileID: 5641967266906390293, guid: 57f28ac272b1b644a95e994aa7ef9214, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 14b70fa9f32954948ad2d15322a1c49a, type: 3}
+    worldItem: {fileID: 7558423823927205890, guid: 6613c9cf44da7b64e852aa19b2dbc179, type: 3}
+  - name: King's Armor
+    prefab: {fileID: 7656005128227235175, guid: 81832a13c3026e049adfef148cfeec8e, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 7f07c48e3edf1504190b73880d684cc4, type: 3}
+    worldItem: {fileID: 3011067269695563952, guid: 6e0e20842a9812f44a6d04353912b587, type: 3}
+  - name: PIckaxe
+    prefab: {fileID: 3969463676409318601, guid: c57ea6af99f75a948bb4bec3f8a4ba94, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 7e24f9afb83ac1e4b8acc2b2abaa4e61, type: 3}
+    worldItem: {fileID: 226731530782889640, guid: 17322d86ff69a2a4d9d366c006cc863e, type: 3}
+  - name: Stone
+    prefab: {fileID: 5661465243346986886, guid: 38b29d24c1c634e4da8241f194d3dee0, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 5448bb8c423ab8841998bca6bed71b11, type: 3}
+    worldItem: {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
+  - name: Axe
+    prefab: {fileID: 5788834242575343590, guid: 03526b213544cea42b2534fba0329d10, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 8f4e4449cd428ca4e9c27330f115e541, type: 3}
+    worldItem: {fileID: 7702343382569876462, guid: 1720727f06e42c94aadd458c31f9cf9a, type: 3}
+  - name: Wood
+    prefab: {fileID: 3660335092435102687, guid: 14d483a8643da714c98a8d367d345287, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
+    worldItem: {fileID: 7734403499672578998, guid: f2a223846e3c54444b0d19265d5f6df3, type: 3}
+  - name: Arrow
+    prefab: {fileID: 2959667684836456750, guid: 14c0201907b47884fada16f4103427ac, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 8a2e752db34f56c49a92eb6721d3c462, type: 3}
+    worldItem: {fileID: 6518796521700374879, guid: 78d036a98f0bb3c4f83e36a29c6a2011, type: 3}
+  - name: Bow
+    prefab: {fileID: 5788834242575343590, guid: 6bb69f13d5fabc345a2e336779f25fcc, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 789e218675f16554d9ee696db3f02c9d, type: 3}
+    worldItem: {fileID: 5800992215068357160, guid: 57576939900ac5440bed98562ee5f86c, type: 3}
+  - name: Orb
+    prefab: {fileID: 6828057363955970889, guid: fc8b884f9e71d18438d3bdb0507d82ff, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 50e60c26ebf2cfb458094c5cce9ffcdb, type: 3}
+    worldItem: {fileID: 5800992215068357160, guid: d1650d45a2ee98f419af76b301216e5e, type: 3}
+  - name: Med Helm
+    prefab: {fileID: 5641967266906390293, guid: d73e8d66a682324499a4abe38ac3a932, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 1bac7d81b1ddbe44da425eedcdd64216, type: 3}
+    worldItem: {fileID: 226731530782889640, guid: 6dd82c28157e4334b948d8a28d0a836c, type: 3}
+  - name: Backpack
+    prefab: {fileID: 2704533726815840112, guid: f92e11f596139f347b3e6605148ea10a, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: ff086e5e75a22614cb36d63b000d886e, type: 3}
+    worldItem: {fileID: 5399501721033352878, guid: b3e2d9252230d4344af8c91e8a41bf28, type: 3}
+  - name: Platebody
+    prefab: {fileID: 3749380191955315042, guid: 2185cf768cc30f845b50c14fae45aea2, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 189e76c0eec1bbe45bf01e27b3b34a4f, type: 3}
+    worldItem: {fileID: 2468126280362736176, guid: 91fa1e7ef3dd3cb4cb69528951413145, type: 3}
+  - name: Mithril Pickaxe
+    prefab: {fileID: 3969463676409318601, guid: 890c357afe0d7954c9076890efc92c30, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 06a9aad7773f57e43aed52998e8e1e4f, type: 3}
+    worldItem: {fileID: 226731530782889640, guid: 44398c1bbe6820844a5e8320ace0d576, type: 3}
+  - name: Shield
+    prefab: {fileID: 5788834242575343590, guid: 4823d857e9e7d384cb0295a3dfca91af, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 0d5b90c25c5e7684192d954202464a1f, type: 3}
+    worldItem: {fileID: 8271487617502258915, guid: 07300e8e5c29062489ac77cd75f97a70, type: 3}
+  - name: Health Potion
+    prefab: {fileID: 919132149155446097, guid: 0e03805135e57f54bacb4360f94680fa, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 95e1667673189e349af32c62904dce55, type: 3}
+    worldItem: {fileID: 6058380433340147435, guid: e0e21bc78b81a5640acacf6a01210e64, type: 3}
+  - name: Hammer
+    prefab: {fileID: 5788834242575343590, guid: cf26d26308887ff478ba3ff9d9152994, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 44c860c889ba41b47ad9dcf3ed1659ae, type: 3}
+    worldItem: {fileID: 5823213483813883137, guid: 1ea020adcd866764a9bddbff8868252d, type: 3}
+  - name: Cloak
+    prefab: {fileID: 2704533726815840112, guid: 7ab240f8e33526440a415652d705227c, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 03f13a996cb341240aa14e50ad2a506d, type: 3}
+    worldItem: {fileID: 3605214745973717036, guid: 7d0532a52f402d945ad6bdfc8e3a0751, type: 3}
+  - name: Torch
+    prefab: {fileID: 5788834242575343590, guid: cc1f8bd7f268dc741a6674245fdb9635, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 903c49a911157f446a733d647f23e888, type: 3}
+    worldItem: {fileID: 5882930112995044379, guid: a3ed0733176229f48a7d9ef84b15d4ca, type: 3}
+  - name: Iron Boots
+    prefab: {fileID: 6791188629304234182, guid: 5c7ea55e0f950914e81aca5336d33b70, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 9455da2032edc854eaceb1f20c84a223, type: 3}
+    worldItem: {fileID: 285386989593545026, guid: d9f95a598c11df64f946892db243f6a9, type: 3}
+  - name: Platelegs
+    prefab: {fileID: 3749380191955315042, guid: c7eeae1ab834644428895e3de6c4748a, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: f2b374e929ac2cb4394f467769c0473d, type: 3}
+    worldItem: {fileID: 4549675994024008960, guid: fab62007ead798a4e94be21a2d1a7388, type: 3}
+  - name: Full Helm
+    prefab: {fileID: 266005722038605513, guid: d13b27e4fad7b4b4b9135d001c374db4, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 610043d237a43a242ad7eb3b9e4590cf, type: 3}
+    worldItem: {fileID: 2661766545738656407, guid: 06cfa119092153f459e983462f365867, type: 3}
+  - name: Rune Stone
+    prefab: {fileID: 4681870709151682556, guid: 0ee92e8ab69a8844c97c5d0c6aeda299, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: f830757aa70adf9489cf626883be6782, type: 3}
+    worldItem: {fileID: 4968665625565541622, guid: 1e2b2033d87c19849af9bd6708bd7949, type: 3}
+  - name: Earth Rune
+    prefab: {fileID: 4681870709151682556, guid: c20820fd9873db84abce196bca018e22, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 5421c60f86bee634da281e0f8b289a0a, type: 3}
+    worldItem: {fileID: 4968665625565541622, guid: 8a67f0e65f282794bb313690f9903ac4, type: 3}
+  - name: Water Rune
+    prefab: {fileID: 4681870709151682556, guid: bb82ab699a2cd7e44860dc637987c5d6, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 9aca9ced37927a04f910e6481d6ba0c7, type: 3}
+    worldItem: {fileID: 4968665625565541622, guid: 2f3d2bb708ecc884ba810884636f1e4d, type: 3}
+  - name: Barbarian Chestplate
+    prefab: {fileID: 3749380191955315042, guid: b6aff55ebd163b1478d7ace132ce0d1d, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: b3224f7fa92109247953f9584b954a49, type: 3}
+    worldItem: {fileID: 1474296339214900740, guid: 31c741f4c4200e44a85fc4ff5e5241cb, type: 3}
+  - name: Halberd
+    prefab: {fileID: 1488641282898831735, guid: 8b5a69b43dbc4ef40bd5d74d20688d17, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: d58d3b531e403a544ac66bd2b2d763a4, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: d660fb9942b2c7d4eac67d3aa0ff250e, type: 3}
+  - name: Spear
+    prefab: {fileID: 5555158284736803174, guid: a5efb0ddf6ad0d243b7a1a91541ce848, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 7685a7d795877e9448e6b56b44c989f2, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 9148bd3221b7b6f4092d16bd764e6b14, type: 3}
+  - name: Sword
+    prefab: {fileID: 5555158284736803174, guid: 002d97f2aaa06964199f90358031a5ab, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 2cae5bd9287672c4a9e06876e971216d, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: 945acab4d13ea9c49a2acbc3ac3f5485, type: 3}
+  - name: Warhammer
+    prefab: {fileID: 1488641282898831735, guid: 21aa2ea8179271c4db8caae5db8c9dfa, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 882fe3925d27ca840b43d934cc8e0b25, type: 3}
+    worldItem: {fileID: 2223211017169070915, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
+  - name: Kiteshield
+    prefab: {fileID: 5788834242575343590, guid: 355d76dcef725264a8a1d61cb45f3e85, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 0df5fd2ce2900dc4d9a904e81765ea01, type: 3}
+    worldItem: {fileID: 8271487617502258915, guid: a1925a08a092f1442b91de28153bf4f5, type: 3}
