@@ -34,8 +34,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 if (isFull)
                 {
                     // Dragging Into Weapon Slot From Normal Slot
-                    if (weaponSlot && newItem.equipType == (int)InventoryItem.equipment.Weapon && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Weapon)
+                    if (weaponSlot && newItem.equipType == InventoryItem.equipment.Weapon && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Weapon)
                     {
+                        if(GameManager.Instance.inventorySlots[4].isFull && (newItem.item as WeaponItem).isTwoHanded)
+                            return;
                         Debug.Log("Dropped Item: Full Weapon Slot");
 
                         Swap(newItem, OriginalSlot);
@@ -54,7 +56,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);                   
                     }
                     // Dragging Into Helmet Slot From Normal Slot
-                    else if (helmetSlot && newItem.equipType == (int)InventoryItem.equipment.Helmet && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Helmet)
+                    else if (helmetSlot && newItem.equipType == InventoryItem.equipment.Helmet && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Helmet)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -74,8 +76,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Helmet", GameManager.Instance.spawnedHelmet);
                     }
                     // Dragging Into Shield Slot From Normal Slot
-                    else if (shieldSlot && newItem.equipType == (int)InventoryItem.equipment.Shield && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Shield)
+                    else if (shieldSlot && newItem.equipType == InventoryItem.equipment.Shield && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Shield)
                     {
+                        if(GameManager.Instance.inventorySlots[3].isFull && (GameManager.Instance.inventorySlots[3].currentItem.item as WeaponItem).isTwoHanded)
+                            return;
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
                         Swap(newItem, OriginalSlot);
@@ -94,7 +98,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Shield", GameManager.Instance.spawnedShield);
                     }
                     // Dragging Into Chest Slot From Normal Slot
-                    else if (chestSlot && newItem.equipType == (int)InventoryItem.equipment.Chest && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Chest)
+                    else if (chestSlot && newItem.equipType == InventoryItem.equipment.Chest && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Chest)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -114,7 +118,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Chest", GameManager.Instance.spawnedChest);
                     }
                     // Dragging Into Legs Slot From Normal Slot
-                    else if (legsSlot && newItem.equipType == (int)InventoryItem.equipment.Legs && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Legs)
+                    else if (legsSlot && newItem.equipType == InventoryItem.equipment.Legs && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Legs)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -134,7 +138,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Legs", GameManager.Instance.spawnedLegs);
                     }
                     // Dragging Into Boots Slot From Normal Slot
-                    else if (bootsSlot && newItem.equipType == (int)InventoryItem.equipment.Boots && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Boots)
+                    else if (bootsSlot && newItem.equipType == InventoryItem.equipment.Boots && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Boots)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -154,7 +158,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
                     }
                     // Dragging Into Back Slot From Normal Slot
-                    else if (backSlot && newItem.equipType == (int)InventoryItem.equipment.Back && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Back)
+                    else if (backSlot && newItem.equipType == InventoryItem.equipment.Back && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Back)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -174,8 +178,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Back", GameManager.Instance.spawnedBack);
                     }
                     // Dragging Into Accessory Slot 1 From Normal Slot
-                    else if (accessory1Slot && newItem.equipType == (int)InventoryItem.equipment.Accessory 
-                        && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Accessory)
+                    else if (accessory1Slot && newItem.equipType == InventoryItem.equipment.Accessory 
+                        && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Accessory)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -195,8 +199,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory1", GameManager.Instance.spawnedAccessory1);
                     }
                     // Dragging Into Accessory Slot 2 From Normal Slot
-                    else if (accessory2Slot && newItem.equipType == (int)InventoryItem.equipment.Accessory 
-                        && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Accessory)
+                    else if (accessory2Slot && newItem.equipType == InventoryItem.equipment.Accessory 
+                        && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Accessory)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -216,8 +220,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory2", GameManager.Instance.spawnedAccessory2);
                     }
                     // Dragging Into Accessory Slot 3 From Normal Slot
-                    else if (accessory3Slot && newItem.equipType == (int)InventoryItem.equipment.Accessory 
-                        && OriginalSlot.currentItem.equipType == (int)InventoryItem.equipment.Accessory)
+                    else if (accessory3Slot && newItem.equipType == InventoryItem.equipment.Accessory 
+                        && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Accessory)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot");
 
@@ -237,7 +241,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory3", GameManager.Instance.spawnedAccessory3);
                     }
                     // Dragging Into Normal Slot From Weapon Slot
-                    else if (!weaponSlot && currentItem.equipType == (int)InventoryItem.equipment.Weapon && newItem.equipType == (int)InventoryItem.equipment.Weapon 
+                    else if (!weaponSlot && currentItem.equipType == InventoryItem.equipment.Weapon && newItem.equipType == InventoryItem.equipment.Weapon 
                         && newItem.inWeaponSlot)
                     {
                         Debug.Log("Dropped Item: Full Weapon Slot [Other]");
@@ -258,7 +262,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);
                     }
                     // Dragging Into Normal Slot From Helmet Slot
-                    else if (!helmetSlot && currentItem.equipType == (int)InventoryItem.equipment.Helmet && newItem.equipType == (int)InventoryItem.equipment.Helmet 
+                    else if (!helmetSlot && currentItem.equipType == InventoryItem.equipment.Helmet && newItem.equipType == InventoryItem.equipment.Helmet 
                         && newItem.inHelmetSlot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -279,7 +283,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Helmet", GameManager.Instance.spawnedHelmet);
                     }
                     // Dragging Into Normal Slot From Chest Slot
-                    else if (!chestSlot && currentItem.equipType == (int)InventoryItem.equipment.Chest && newItem.equipType == (int)InventoryItem.equipment.Chest 
+                    else if (!chestSlot && currentItem.equipType == InventoryItem.equipment.Chest && newItem.equipType == InventoryItem.equipment.Chest 
                         && newItem.inChestSlot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -300,7 +304,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Chest", GameManager.Instance.spawnedChest);
                     }
                     // Dragging Into Normal Slot From Legs Slot
-                    else if (!legsSlot && currentItem.equipType == (int)InventoryItem.equipment.Legs && newItem.equipType == (int)InventoryItem.equipment.Legs 
+                    else if (!legsSlot && currentItem.equipType == InventoryItem.equipment.Legs && newItem.equipType == InventoryItem.equipment.Legs 
                         && newItem.inLegsSlot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -321,7 +325,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Legs", GameManager.Instance.spawnedLegs);
                     }
                     // Dragging Into Normal Slot From Boots Slot
-                    else if (!bootsSlot && currentItem.equipType == (int)InventoryItem.equipment.Boots && newItem.equipType == (int)InventoryItem.equipment.Boots 
+                    else if (!bootsSlot && currentItem.equipType == InventoryItem.equipment.Boots && newItem.equipType == InventoryItem.equipment.Boots 
                         && newItem.inBootsSlot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -342,7 +346,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
                     }
                     // Dragging Into Normal Slot From Back Slot
-                    else if (!backSlot && currentItem.equipType == (int)InventoryItem.equipment.Back && newItem.equipType == (int)InventoryItem.equipment.Back 
+                    else if (!backSlot && currentItem.equipType == InventoryItem.equipment.Back && newItem.equipType == InventoryItem.equipment.Back 
                         && newItem.inBackSlot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -363,7 +367,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Back", GameManager.Instance.spawnedBack);
                     }
                     // Dragging Into Normal Slot From Accessory 1 Slot
-                    else if (!accessory1Slot && currentItem.equipType == (int)InventoryItem.equipment.Accessory && newItem.equipType == (int)InventoryItem.equipment.Accessory 
+                    else if (!accessory1Slot && currentItem.equipType == InventoryItem.equipment.Accessory && newItem.equipType == InventoryItem.equipment.Accessory 
                         && newItem.inAccessory1Slot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -384,7 +388,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory1", GameManager.Instance.spawnedAccessory1);
                     }
                     // Dragging Into Normal Slot From Accessory 1 Slot
-                    else if (!accessory2Slot && currentItem.equipType == (int)InventoryItem.equipment.Accessory && newItem.equipType == (int)InventoryItem.equipment.Accessory 
+                    else if (!accessory2Slot && currentItem.equipType == InventoryItem.equipment.Accessory && newItem.equipType == InventoryItem.equipment.Accessory 
                         && newItem.inAccessory2Slot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -405,7 +409,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory2", GameManager.Instance.spawnedAccessory2);
                     }
                     // Dragging Into Normal Slot From Accessory 1 Slot
-                    else if (!accessory3Slot && currentItem.equipType == (int)InventoryItem.equipment.Accessory && newItem.equipType == (int)InventoryItem.equipment.Accessory 
+                    else if (!accessory3Slot && currentItem.equipType == InventoryItem.equipment.Accessory && newItem.equipType == InventoryItem.equipment.Accessory 
                         && newItem.inAccessory3Slot)
                     {
                         Debug.Log("Dropped Item: Full Helmet Slot [Other]");
@@ -498,8 +502,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 {
                     #region Moving Into
                     // Moving Into Weapon Slot
-                    if (weaponSlot && newItem.equipType == (int)InventoryItem.equipment.Weapon)
+                    if (weaponSlot && newItem.equipType == InventoryItem.equipment.Weapon)
                     {
+                        if(GameManager.Instance.inventorySlots[4].isFull && (newItem.item as WeaponItem).isTwoHanded)
+                            return;
                         Debug.Log("Dropped Item: Empty Weapon Slot");
 
                         // Emptying Original Slot
@@ -524,7 +530,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);
                     }
                     // Moving Into Helmet Slot
-                    else if (helmetSlot && newItem.equipType == (int)InventoryItem.equipment.Helmet)
+                    else if (helmetSlot && newItem.equipType == InventoryItem.equipment.Helmet)
                     {
                         Debug.Log("Dropped Item: Empty Helmet Slot");
 
@@ -550,7 +556,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Helmet", GameManager.Instance.spawnedHelmet);
                     }
                     // Moving Into Chest Slot
-                    else if (chestSlot && newItem.equipType == (int)InventoryItem.equipment.Chest)
+                    else if (chestSlot && newItem.equipType == InventoryItem.equipment.Chest)
                     {
                         Debug.Log("Dropped Item: Empty Chest Slot");
 
@@ -576,7 +582,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Chest", GameManager.Instance.spawnedChest);
                     }
                     // Moving Into Legs Slot
-                    else if (legsSlot && newItem.equipType == (int)InventoryItem.equipment.Legs)
+                    else if (legsSlot && newItem.equipType == InventoryItem.equipment.Legs)
                     {
                         Debug.Log("Dropped Item: Empty Legs Slot");
 
@@ -602,7 +608,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Legs", GameManager.Instance.spawnedLegs);
                     }
                     // Moving Into Boots Slot
-                    else if (bootsSlot && newItem.equipType == (int)InventoryItem.equipment.Boots)
+                    else if (bootsSlot && newItem.equipType == InventoryItem.equipment.Boots)
                     {
                         Debug.Log("Dropped Item: Empty Boots Slot");
 
@@ -628,7 +634,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
                     }
                     // Moving Into Back Slot
-                    else if (backSlot && newItem.equipType == (int)InventoryItem.equipment.Back)
+                    else if (backSlot && newItem.equipType == InventoryItem.equipment.Back)
                     {
                         Debug.Log("Dropped Item: Empty Back Slot");
 
@@ -654,8 +660,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Back", GameManager.Instance.spawnedBack);
                     }
                     // Moving Into Shield Slot
-                    else if (shieldSlot && newItem.equipType == (int)InventoryItem.equipment.Shield)
+                    else if (shieldSlot && newItem.equipType == InventoryItem.equipment.Shield)
                     {
+                        if(GameManager.Instance.inventorySlots[3].isFull && (GameManager.Instance.inventorySlots[3].currentItem.item as WeaponItem).isTwoHanded)
+                            return;
                         Debug.Log("Dropped Item: Empty Shield Slot");
 
                         // Emptying Original Slot
@@ -680,7 +688,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Shield", GameManager.Instance.spawnedShield);
                     }
                     // Moving Into Accessory 1 Slot
-                    else if (accessory1Slot && newItem.equipType == (int)InventoryItem.equipment.Accessory)
+                    else if (accessory1Slot && newItem.equipType == InventoryItem.equipment.Accessory)
                     {
                         Debug.Log("Dropped Item: Empty Accesory1 Slot");
 
@@ -706,7 +714,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory1", GameManager.Instance.spawnedAccessory1);
                     }
                     // Moving Into Accessory 2 Slot
-                    else if (accessory2Slot && newItem.equipType == (int)InventoryItem.equipment.Accessory)
+                    else if (accessory2Slot && newItem.equipType == InventoryItem.equipment.Accessory)
                     {
                         Debug.Log("Dropped Item: Empty Accesory2 Slot");
 
@@ -732,7 +740,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.SpawnItem("Accessory2", GameManager.Instance.spawnedAccessory2);
                     }
                     // Moving Into Accessory 3 Slot
-                    else if (accessory3Slot && newItem.equipType == (int)InventoryItem.equipment.Accessory)
+                    else if (accessory3Slot && newItem.equipType == InventoryItem.equipment.Accessory)
                     {
                         Debug.Log("Dropped Item: Empty Accesory3 Slot");
 

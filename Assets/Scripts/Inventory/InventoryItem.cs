@@ -38,8 +38,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public bool inAccessory2Slot = false;
     public bool inAccessory3Slot = false;
     public int itemID;
-    public int equipType = 0; //None = 0, Helmet = 1, Chest = 2, Legs = 3, Boots = 4, Weapon = 5, Shield = 6, Back = 7, Accessory = 8
-    public int MaxAmount = 10;
+    public equipment equipType;
+    [Range(1,100)]
+    public int MaxAmount = 1;
     public int currentAmount = 1;
     public Text textAmount;
     public Item item;
@@ -421,7 +422,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     }
                 }
             }
-            else if (!currentSlot.weaponSlot && equipType == (int)equipment.Weapon)
+            else if (!currentSlot.weaponSlot && equipType == equipment.Weapon)
             {            
                 if(currentSlot.currentItem.item is WeaponItem  && (currentSlot.currentItem.item as WeaponItem).isTwoHanded && GameManager.Instance.inventorySlots[4].isFull) 
                 {
@@ -493,7 +494,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Weapon", GameManager.Instance.spawnedWeapon);
                 }
             }
-            else if (!currentSlot.helmetSlot && equipType == (int)equipment.Helmet)
+            else if (!currentSlot.helmetSlot && equipType == equipment.Helmet)
             {
                 if (GameManager.Instance.inventorySlots[1].isFull) //ALL OF THESE NEED TO CHANGE TO THE CORRECT NUMBER
                 {
@@ -531,7 +532,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Helmet", GameManager.Instance.spawnedHelmet);
                 }
             }
-            else if (!currentSlot.chestSlot && equipType == (int)equipment.Chest)
+            else if (!currentSlot.chestSlot && equipType == equipment.Chest)
             {
                 if (GameManager.Instance.inventorySlots[2].isFull)
                 {
@@ -570,7 +571,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Chest", GameManager.Instance.spawnedChest);
                 }
             }
-            else if (!currentSlot.legsSlot && equipType == (int)equipment.Legs)
+            else if (!currentSlot.legsSlot && equipType == equipment.Legs)
             {
                 if (GameManager.Instance.inventorySlots[5].isFull)
                 {
@@ -608,7 +609,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Legs", GameManager.Instance.spawnedLegs);
                 }
             }
-            else if (!currentSlot.bootsSlot && equipType == (int)equipment.Boots)
+            else if (!currentSlot.bootsSlot && equipType == equipment.Boots)
             {
                 if (GameManager.Instance.inventorySlots[6].isFull)
                 {
@@ -647,7 +648,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
                 }
             }
-            else if (!currentSlot.backSlot && equipType == (int)equipment.Back)
+            else if (!currentSlot.backSlot && equipType == equipment.Back)
             {
                 if (GameManager.Instance.inventorySlots[0].isFull)
                 {
@@ -685,8 +686,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Back", GameManager.Instance.spawnedBack);
                 }
             }
-            else if (!currentSlot.shieldSlot && equipType == (int)equipment.Shield)
+            else if (!currentSlot.shieldSlot && equipType == equipment.Shield) 
             {
+                if(GameManager.Instance.inventorySlots[3].isFull && (GameManager.Instance.inventorySlots[3].currentItem.item as WeaponItem).isTwoHanded)
+                    return;
                 if (GameManager.Instance.inventorySlots[4].isFull)
                 {
                     // Setting Inventory Slot
@@ -722,9 +725,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     gameObject.transform.SetParent(GameManager.Instance.inventorySlots[4].transform);
                     GameManager.Instance.shieldID = itemID;
                     GameManager.Instance.SpawnItem("Shield", GameManager.Instance.spawnedShield);
-                }
+                }       
             }
-            else if (!currentSlot.accessory1Slot && equipType == (int)equipment.Accessory)
+            else if (!currentSlot.accessory1Slot && equipType == equipment.Accessory)
             {
                 if (GameManager.Instance.inventorySlots[7].isFull)
                 {
@@ -762,7 +765,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Accessory1", GameManager.Instance.spawnedAccessory1);
                 }
             }
-            else if (!currentSlot.accessory2Slot && equipType == (int)equipment.Accessory)
+            else if (!currentSlot.accessory2Slot && equipType == equipment.Accessory)
             {
                 if (GameManager.Instance.inventorySlots[8].isFull)
                 {
@@ -800,7 +803,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     GameManager.Instance.SpawnItem("Accessory2", GameManager.Instance.spawnedAccessory2);
                 }
             }
-            else if (!currentSlot.accessory3Slot && equipType == (int)equipment.Accessory)
+            else if (!currentSlot.accessory3Slot && equipType == equipment.Accessory)
             {
                 if (GameManager.Instance.inventorySlots[9].isFull)
                 {
