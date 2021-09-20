@@ -131,9 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: Tree
-  toolRequiredLevel: 0
+  toolRequiredLevel: 4
   fx: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
-  drop: {fileID: 7734403499672578998, guid: f2a223846e3c54444b0d19265d5f6df3, type: 3}
+  drop: {fileID: 7734403499672578998, guid: 940ad92665a78654e8ab98d248b9a78b, type: 3}
   treeType: 2
   fxTreeDestroyed: {fileID: 1408080632602542178, guid: 319beebd4e446db4c99d7c1fcfa8eee3, type: 3}
   fxTreeLogDestroyed: {fileID: 1408080632602542178, guid: f0389c2f70408d249bc85a77e330538e, type: 3}

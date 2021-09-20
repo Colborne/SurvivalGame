@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Wood (Item)
+  m_Name: Maple Log (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.50980395, g: 0.3019608, b: 0.15686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -114,12 +114,13 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 5
+  itemID: 30
   equipType: 0
   MaxAmount: 100
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
-  item: {fileID: 11400000, guid: 24f0aa03f9c4c464ca561d8f246245d2, type: 2}
+  item: {fileID: 11400000, guid: 2e8606ed4b2511548beeb764315e356a, type: 2}
+  totalWeight: 0
 --- !u!1001 &8289484977406015820
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: Tree
-  toolRequiredLevel: 0
+  toolRequiredLevel: 1
   fx: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
   drop: {fileID: 7734403499672578998, guid: f2a223846e3c54444b0d19265d5f6df3, type: 3}
   treeType: 2
@@ -140,7 +140,7 @@ MonoBehaviour:
   treeLog: {fileID: 5333783608370816186, guid: 536ee1e20cfd3644da8f9929785eb8ab, type: 3}
   treeLogHalf: {fileID: 4587336339405856463}
   treeStump: {fileID: 4316459433290614995, guid: 55dd5782b42eb9945908427afac64d9f, type: 3}
-  type: Oak
+  type: 0
   timeSinceInitialization: 0
   timer: 0
 --- !u!114 &5176386498091071841

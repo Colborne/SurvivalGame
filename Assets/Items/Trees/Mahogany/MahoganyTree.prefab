@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: Tree
-  toolRequiredLevel: 0
+  toolRequiredLevel: 4
   fx: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
   drop: {fileID: 0}
   treeType: 0

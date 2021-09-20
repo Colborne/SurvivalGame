@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 885238155071244150}
   - component: {fileID: 3146899175383511996}
   - component: {fileID: 4354309593557806901}
-  - component: {fileID: 4354309593557806906}
   - component: {fileID: 7834654487839830069}
   - component: {fileID: 235437089882192694}
   - component: {fileID: -5289658556952509158}
+  - component: {fileID: 7892746003163618063}
   m_Layer: 8
   m_Name: MahoganyStump
   m_TagString: Hittable
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: Tree
-  toolRequiredLevel: 0
+  toolRequiredLevel: 4
   fx: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
-  drop: {fileID: 7734403499672578998, guid: f2a223846e3c54444b0d19265d5f6df3, type: 3}
+  drop: {fileID: 7734403499672578998, guid: 940ad92665a78654e8ab98d248b9a78b, type: 3}
   treeType: 3
   fxTreeDestroyed: {fileID: 1408080632602542178, guid: 319beebd4e446db4c99d7c1fcfa8eee3, type: 3}
   fxTreeLogDestroyed: {fileID: 1408080632602542178, guid: f0389c2f70408d249bc85a77e330538e, type: 3}
@@ -111,20 +111,6 @@ MonoBehaviour:
   type: 2
   timeSinceInitialization: 0
   timer: 0
---- !u!136 &4354309593557806906
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507446837237486185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 3.7
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &7834654487839830069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,3 +234,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cb742d32e67494684105caf2c12466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &7892746003163618063
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507446837237486185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 529442658752296213, guid: 1ba48849677c4f34ea245b9852971c90, type: 3}
