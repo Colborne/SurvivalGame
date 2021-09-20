@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339b0bde98f2b2343b747df5cea51c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction: Infuse Earth Rune
+  interactionText: 
   item: {fileID: 7680765855121683962, guid: f830757aa70adf9489cf626883be6782, type: 3}
+  interactionType: 0
   outItem: 22
 --- !u!1 &6800597341985985411
 GameObject:

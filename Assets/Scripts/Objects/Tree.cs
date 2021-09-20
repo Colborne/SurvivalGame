@@ -16,22 +16,48 @@ public class Tree : ResourceObject
     [SerializeField] private Transform treeLog;
     [SerializeField] private Transform treeLogHalf;
     [SerializeField] private Transform treeStump;
+    [SerializeField] private string type;
 
     public float timeSinceInitialization;
     public float timer;
     ObjectStats objectStats;
-    private void Awake() {
+    float logYPositionAboveFirstLogHalf = 0f;
+    
+    private void Awake() 
+    {
         objectStats = GetComponent<ObjectStats>();
         int healthAmount;
-
+        
         switch (treeType) {
             default:
-            case Type.Tree:     healthAmount = 30; break;
-            case Type.Log:      healthAmount = 50; break;
-            case Type.LogHalf:  healthAmount = 50; break;
-            case Type.Stump:    healthAmount = 50; break;
+                case Type.Tree:     healthAmount = 30; break;
+                case Type.Log:      healthAmount = 50; break;
+                case Type.LogHalf:  healthAmount = 50; break;
+                case Type.Stump:    healthAmount = 50; break;
         }
 
+        if(type == "Oak")
+        {
+            logYPositionAboveFirstLogHalf = 7f;
+            switch (treeType) {
+                default:
+                case Type.Tree:     healthAmount = 90; break;
+                case Type.Log:      healthAmount = 75; break;
+                case Type.LogHalf:  healthAmount = 50; break;
+                case Type.Stump:    healthAmount = 50; break;
+            }
+        }
+        else if(type == "Maple")
+        {
+            logYPositionAboveFirstLogHalf = 10f;
+            switch (treeType) {
+                default:
+                case Type.Tree:     healthAmount = 200; break;
+                case Type.Log:      healthAmount = 150; break;
+                case Type.LogHalf:  healthAmount = 100; break;
+                case Type.Stump:    healthAmount = 100; break;
+            }
+        }
         objectStats.maxHealth = healthAmount;
     }
     private void Start() {
@@ -43,38 +69,30 @@ public class Tree : ResourceObject
     }
     private void Dead()
     {
-        switch (treeType) {
+        switch (treeType) 
+        {
             default:
             case Type.Tree:
-                Instantiate(fxTreeDestroyed, transform.position - new Vector3(0,12,0), transform.rotation);
-                Vector3 treeLogOffset = transform.up - new Vector3(0,12,0);
-                Instantiate(treeLog, transform.position + treeLogOffset, Quaternion.Euler(Random.Range(-1.5f, +1.5f), 0, Random.Range(-1.5f, +1.5f)));
-
-                Instantiate(treeStump, transform.position - new Vector3(0,11,0), transform.rotation);
+                Instantiate(treeLog, transform.position + transform.up, Quaternion.Euler(Random.Range(-1.5f, +1.5f), 0, Random.Range(-1.5f, +1.5f)));
+                Instantiate(treeStump, transform.position, transform.rotation);
                 break;
             case Type.Log:
-
-                Instantiate(fxTreeLogDestroyed, transform.position, transform.rotation);
-
-                float logYPositionAboveStump = .5f;
-                treeLogOffset = transform.up * logYPositionAboveStump;
                 Instantiate(treeLogHalf, transform.position, transform.rotation);
-
-                float logYPositionAboveFirstLogHalf = 9.35f;
-                treeLogOffset = transform.up * logYPositionAboveFirstLogHalf;
-                Instantiate(treeLogHalf, transform.position + treeLogOffset, transform.rotation);
+                Instantiate(treeLogHalf, transform.position + transform.up * logYPositionAboveFirstLogHalf, transform.rotation);
                 break;
             case Type.LogHalf:
-                Instantiate(fxTreeLogDestroyed, transform.position, transform.rotation);
-
-                for(int i = 0; i < Random.Range(2f,6f); i++)
+                for(int i = 0; i < Random.Range(4,10); i++)
                 {
-                    var _drop = Instantiate(drop, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(-.5f,.5f),Random.Range(-.5f,.5f)), Random.rotation);
+                    var _drop = Instantiate(drop, transform.position + transform.up * logYPositionAboveFirstLogHalf * .75f, Random.rotation);
                     _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
-                }
-                
+                }    
                 break;
             case Type.Stump:
+                for(int i = 0; i < Random.Range(2,4); i++)
+                {
+                    var _drop = Instantiate(drop, transform.position + transform.up * 3, Random.rotation);
+                    _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
+                } 
                 break;
         }
         Destroy(gameObject);

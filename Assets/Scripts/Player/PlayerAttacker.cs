@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerAttacker : MonoBehaviour
 {
@@ -22,21 +23,27 @@ public class PlayerAttacker : MonoBehaviour
     public void HandleLightAttack(WeaponItem weaponItem)
     {
         equipmentManager.rightWeapon = weaponItem;
-        if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
+        if(!String.IsNullOrEmpty(weaponItem.Attack))
         {
-            animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
-            animatorManager.animator.SetBool("isAttacking", true);
-            soundManager.PlaySound("Sounds/handleSmallLeather2");
+            if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
+            {
+                animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
+                animatorManager.animator.SetBool("isAttacking", true);
+                soundManager.PlaySound("Sounds/handleSmallLeather2");
+            }
         }
     }
     public void HandleHeavyAttack(WeaponItem weaponItem)
     {
         equipmentManager.rightWeapon = weaponItem;
-        if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina * equipmentManager.rightWeapon.heavyAttackMultiplier)
+        if(!String.IsNullOrEmpty(weaponItem.Heavy_Attack))
         {
-            animatorManager.PlayTargetAnimation(weaponItem.Heavy_Attack, true);
-            animatorManager.animator.SetBool("isAttacking", true);
-            soundManager.PlaySound("Sounds/drawKnife2");
+            if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina * equipmentManager.rightWeapon.heavyAttackMultiplier)
+            {
+                animatorManager.PlayTargetAnimation(weaponItem.Heavy_Attack, true);
+                animatorManager.animator.SetBool("isAttacking", true);
+                soundManager.PlaySound("Sounds/drawKnife2");
+            }
         }
     }
     public void HandleLeftAction(WeaponItem weaponItem)
@@ -44,9 +51,12 @@ public class PlayerAttacker : MonoBehaviour
         equipmentManager.leftWeapon = weaponItem;
         if(statsManager.currentStamina > equipmentManager.leftWeapon.baseStamina)
         {
-            animatorManager.PlayTargetAnimation(weaponItem.Left_Attack, true);
-            animatorManager.animator.SetBool("isAttacking", true);
-            soundManager.PlaySound("Sounds/drawKnife2");
+            if(!String.IsNullOrEmpty(weaponItem.Left_Attack))
+            {
+                animatorManager.PlayTargetAnimation(weaponItem.Left_Attack, true);
+                animatorManager.animator.SetBool("isAttacking", true);
+                soundManager.PlaySound("Sounds/drawKnife2");
+            }
         }
     }
 
@@ -61,13 +71,16 @@ public class PlayerAttacker : MonoBehaviour
     public void HandleRangedAction(WeaponItem weaponItem)
     {
         equipmentManager.rightWeapon = weaponItem;
-        if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
+        if(!String.IsNullOrEmpty(weaponItem.Attack))
         {
-            animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
-            animatorManager.animator.SetBool("isAttacking", true);
-            soundManager.PlaySound("Sounds/drawKnife2");
-            
-            Instantiate(weaponItem.projectile, transform.position + transform.forward + new Vector3(0,2,0), transform.rotation);
+            if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
+            {
+                animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
+                animatorManager.animator.SetBool("isAttacking", true);
+                soundManager.PlaySound("Sounds/drawKnife2");
+                
+                Instantiate(weaponItem.projectile, transform.position + transform.forward + new Vector3(0,2,0), transform.rotation);
+            }
         }
     }
 

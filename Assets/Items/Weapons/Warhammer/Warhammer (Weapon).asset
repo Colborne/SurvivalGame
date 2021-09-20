@@ -17,11 +17,11 @@ MonoBehaviour:
   itemName: Hammer
   description: Smashy
   weight: 20
-  isTwoHanded: 1
+  isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: OverheadSwing
-  Heavy_Attack: 
+  Attack: Chop
+  Heavy_Attack: OverheadSwing
   Left_Attack: 
   baseStamina: 15
   heavyAttackMultiplier: 1.5
