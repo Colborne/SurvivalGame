@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+        public enum Type {
+            None,
+            Crafting,
+            Runecrafting
+    }
+
+    [SerializeField] private Type interactionType;
     public string interactionText;
     public InventoryItem item;
-    public int interactionType; //0 = nothing, 1 = crafting, 2 = alter
     public int outItem;
     InputManager inputManager;
     InteractableUI ui; 
@@ -44,11 +50,11 @@ public class Interact : MonoBehaviour
             
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
         {   
-            if(interactionType == 1)
+            if(interactionType == Type.Crafting)
             {
                 craftingSystem.WindowActive();
             }
-            else if(interactionType == 2)
+            else if(interactionType == Type.Runecrafting)
             {
                 int convert = GameManager.Instance.ReplaceStack(item);
                 if(convert > 0)
