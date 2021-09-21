@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
-  m_Name: Ingot (Resource) 1
+  m_Name: Iron Ingot (Resource)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 6010797225960032382, guid: 6bf06cc0a6108ba4885614934abc7d6e, type: 3}
+  modelPrefab: {fileID: 6010797225960032382, guid: dc5d63eacff48514591ec851e00c676b, type: 3}
   itemIcon: {fileID: 21300000, guid: c2359bb338a2d114784d06a0356b45d4, type: 3}
-  itemName: Ingot
-  description: An Ingot of Refined
-  weight: 1.2
+  itemName: Iron Ingot
+  description: An Ingot of Refined Iron
+  weight: 5
   resourceType: Metal

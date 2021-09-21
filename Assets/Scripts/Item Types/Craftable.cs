@@ -17,6 +17,7 @@ public class Craftable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float craftingTime;
     bool clicked;
     public Image fill;
+    public TooltipTrigger tooltipTrigger;
     
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -36,7 +37,22 @@ public class Craftable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }  
     }     
 
-    private void  Update() 
+    private void Start()
+    {
+        if(amount > 1)
+            tooltipTrigger.header = item.item.itemName + " x" + amount.ToString();
+        else
+            tooltipTrigger.header = item.item.itemName;
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i< recipe.items.Length; i++)
+        {
+            builder.Append(recipe.items[i].item.itemName);
+            builder.Append(" x");
+            builder.Append(recipe.amountRequired[i].ToString()).AppendLine();
+        }
+        tooltipTrigger.content = builder.ToString();
+    }
+    private void Update() 
     {
         if(clicked && GameManager.Instance.CraftingCheck(GetComponent<CraftingRecipe>().items, GetComponent<CraftingRecipe>().amountRequired))
             timer += 1f * Time.deltaTime;
