@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
+  m_Name: Copper Ore (Resource)
+  m_EditorClassIdentifier: 
+  modelPrefab: {fileID: 7533301453620370007, guid: eeac5556b97a2de47baadc9070d885ea, type: 3}
+  itemIcon: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
+  itemName: Copper Ore
+  description: A Chunk of Copper Ore
+  weight: 1.5
+  resourceType: Ore

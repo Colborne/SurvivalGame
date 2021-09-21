@@ -173,9 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339b0bde98f2b2343b747df5cea51c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: Craft
+  interactionType: 0
+  interactionText: Smelt
   item: {fileID: 0}
-  interactionType: 1
   outItem: 0
 --- !u!65 &-7955461550976699620
 BoxCollider:

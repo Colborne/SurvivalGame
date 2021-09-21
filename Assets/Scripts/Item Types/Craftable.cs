@@ -17,7 +17,11 @@ public class Craftable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float craftingTime;
     bool clicked;
     public Image fill;
-    public TooltipTrigger tooltipTrigger;
+    TooltipTrigger tooltipTrigger;
+
+    private void Awake() {
+        tooltipTrigger = GetComponent<TooltipTrigger>();
+    }
     
     public void OnPointerDown(PointerEventData eventData)
     {

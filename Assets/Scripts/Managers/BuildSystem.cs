@@ -9,7 +9,6 @@ public class BuildSystem : MonoBehaviour
     [SerializeField] GameObject BuildWindow;
     [SerializeField] Buildable[] buildables;
     public int iteration = 0;
-    Transform built;
     RaycastHit Hit;
     Quaternion orientation;
     int buildRotation = 0;
@@ -34,6 +33,7 @@ public class BuildSystem : MonoBehaviour
 
         Builder.GetComponent<MeshFilter>().mesh = buildables[iteration].mesh;
         orientation = buildables[iteration].orientation;
+        Builder.localScale = buildables[iteration].prefab.transform.localScale;
 
         if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 22f))
         {     
@@ -73,5 +73,7 @@ public class BuildSystem : MonoBehaviour
     {
         FindObjectOfType<InputManager>().buildWindowFlag = !FindObjectOfType<InputManager>().buildWindowFlag;
         BuildWindow.SetActive(!BuildWindow.active);
+        FindObjectOfType<InputManager>().TooltipCanvas.SetActive(!FindObjectOfType<InputManager>().TooltipCanvas.active);    
+
     }
 }

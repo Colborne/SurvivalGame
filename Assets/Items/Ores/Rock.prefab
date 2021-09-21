@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: Ore
-  toolRequiredLevel: 0
+  toolRequiredLevel: 1
   fx: {fileID: 1715429173108024, guid: dc1d5ca3304bfa943859960d5d1bb9b3, type: 3}
   drop: {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
 --- !u!114 &8413615563174806735
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca7430088db6b94883f229cdfcbed44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 35
+  maxHealth: 50
   currentHealth: 0
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
 --- !u!82 &1921437584

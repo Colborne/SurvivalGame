@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca7430088db6b94883f229cdfcbed44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2000
+  maxHealth: 2500
   currentHealth: 0
-  FloatingText: {fileID: 0}
+  FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}

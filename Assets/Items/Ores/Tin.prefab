@@ -112,8 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: Ore
   toolRequiredLevel: 1
-  fx: {fileID: 0}
-  drop: {fileID: 3653280439055063349, guid: 570e6cd558f20e340af7260ae6cd3a3c, type: 3}
+  fx: {fileID: 1931403661744594, guid: cd50a4d1576a7e74eb4bee69c0ccb283, type: 3}
+  drop: {fileID: 7533301453620370007, guid: 04b11bf4dcd8b61409663deefb87df3f, type: 3}
 --- !u!114 &7252608228484866572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca7430088db6b94883f229cdfcbed44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 150
   currentHealth: 0
-  FloatingText: {fileID: 0}
+  FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}

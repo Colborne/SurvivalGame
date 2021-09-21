@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 92954d1cd466acb429305bb165c8300d
+guid: 4ca8cfda192da684893d03f5d08e3220
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mithril
-    second: {fileID: 2100000, guid: cb9d5544dfd6982409dd86307f236721, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: 6a730f48ead666c4f92860f6c03f2acc, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -39,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.8
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.008
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
