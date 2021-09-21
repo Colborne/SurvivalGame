@@ -10,7 +10,7 @@ public class Craftable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public CraftingSystem craftingSystem;
     public CraftingRecipe recipe;
-    public int value;
+    public int iteration;
     public InventoryItem item;
     public int amount;
     public float timer = 0f;
@@ -23,7 +23,7 @@ public class Craftable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             clicked = true;
-            craftingSystem.iteration = value;
+            craftingSystem.iteration = iteration;
         }  
     }    
 
