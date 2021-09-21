@@ -9,12 +9,14 @@ public class DamageCollider : MonoBehaviour
     public bool isTool;
     public string canBreak;
     public int toolLevel;
+    public float range;
     private void Awake() 
     {
         damageCollider = GetComponent<Collider>();   
         damageCollider.gameObject.SetActive(true);
         damageCollider.isTrigger = true;
         damageCollider.enabled = false;
+        range = GetComponentInParent<weaponItemLoader>().item.attackDamage;
     }
 
     public void EnableDamageCollider()
@@ -60,7 +62,7 @@ public class DamageCollider : MonoBehaviour
                             sound.PlaySound("Sounds/chop"); 
                         
                         shake.Shake();
-                        stats.TakeDamage(damageAmount);
+                        stats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel)));
                         for(int i = 0; i < Random.Range(1,3); i++)
                             Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
                         
