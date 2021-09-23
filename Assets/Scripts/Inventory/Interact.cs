@@ -23,7 +23,7 @@ public class Interact : MonoBehaviour
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
-        craftingSystem = FindObjectOfType<CraftingSystem>();
+        craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
     }
 
     private void OnTriggerEnter(Collider other) 

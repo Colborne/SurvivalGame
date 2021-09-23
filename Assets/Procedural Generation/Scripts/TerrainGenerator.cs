@@ -29,6 +29,7 @@ public class TerrainGenerator : MonoBehaviour {
 
 	void Start() {
 
+		heightMapSettings.noiseSettings.seed = Random.Range(0,999999);
 		textureSettings.ApplyToMaterial (mapMaterial);
 		textureSettings.UpdateMeshHeights (mapMaterial, heightMapSettings.minHeight, heightMapSettings.maxHeight);
 
