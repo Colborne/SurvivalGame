@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
-  m_Name: Sword
+  m_Name: Seastone Sword
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 3293302755477568875, guid: 22a52fb81dfb1c6439d28509e1860a84, type: 3}
+  modelPrefab: {fileID: 5555158284736803174, guid: 9a3a35ffa10eb7644a38dfa030f8b9d9, type: 3}
   itemIcon: {fileID: 21300000, guid: 7a43ea1e1c9f4354fb97ba46dd31a92e, type: 3}
-  itemName: Sword
+  itemName: Seastone Sword
   description: A True Knight's Weapon
   weight: 5.2
   isTwoHanded: 0
@@ -23,8 +23,8 @@ MonoBehaviour:
   Attack: LightAttack
   Heavy_Attack: HeavyAttackLunge
   Left_Attack: 
-  baseStamina: 20
+  baseStamina: 10
   heavyAttackMultiplier: 1.5
-  attackDamage: 0
-  attackSpeed: 0
+  attackDamage: 1
+  attackSpeed: 1
   projectile: {fileID: 0}

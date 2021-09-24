@@ -5,6 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Weapon Item")]
 public class WeaponItem : Item
 {
+    public enum DamageType
+    {
+        crush,
+        stab,
+        slash,
+        magic,
+        ranged
+    }
+
     [Header("Weapon Settings")]
     public bool isTwoHanded;
     public bool isOffhandable;
@@ -20,6 +29,7 @@ public class WeaponItem : Item
     public float heavyAttackMultiplier;
     public float attackDamage;
     public float attackSpeed;
+    public DamageType damageType;
     
     [Header("If Ranged")]
     public GameObject projectile;

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 27
   amount: 1
-  name: Sword
+  name: Stone Sword
 --- !u!54 &5297676760649994894
 Rigidbody:
   m_ObjectHideFlags: 0

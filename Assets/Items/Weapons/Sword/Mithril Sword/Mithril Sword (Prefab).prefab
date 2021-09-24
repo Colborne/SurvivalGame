@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4103569955422867460}
   - component: {fileID: 8405274107003653817}
   m_Layer: 0
-  m_Name: Sword (Prefab)
+  m_Name: Mithril Sword (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ccec5e1b7fa642917d016e52db6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 7cfe5eebc7e25b2449c62324b246317a, type: 2}
+  item: {fileID: 11400000, guid: abec32a42638da745873c5238e1c991c, type: 2}
 --- !u!1 &7605618506603081924
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,8 +137,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
-  - {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
+  - {fileID: 2100000, guid: 0a0655186594580418d3e831a9cef688, type: 2}
+  - {fileID: 2100000, guid: cb9d5544dfd6982409dd86307f236721, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -169,7 +169,7 @@ BoxCollider:
   m_GameObject: {fileID: 7605618506603081924}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a363839941167034796ecdc4f08f3d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 15
+  damageAmount: 150
   isTool: 0
   canBreak: 
   toolLevel: 0
