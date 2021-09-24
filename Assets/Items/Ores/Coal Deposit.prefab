@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7342897000662446988}
   - component: {fileID: 5929251141694733353}
   - component: {fileID: 8479179919742191843}
-  - component: {fileID: 8128920990280318325}
   - component: {fileID: 1952627880020428444}
   - component: {fileID: 1311238811876399014}
+  - component: {fileID: 4645639266649886305}
   m_Layer: 0
   m_Name: Coal Deposit
   m_TagString: Hittable
@@ -53,7 +53,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8128920990280318325
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7975001130729236790}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4711208715938537054, guid: c4feb6617b28ab445bee0b1a0e7405fc, type: 3}
 --- !u!114 &1952627880020428444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +115,17 @@ MonoBehaviour:
   toolRequiredLevel: 1
   fx: {fileID: 1921325125401358, guid: 6fb79962b5722fb4a9958b904d7b53df, type: 3}
   drop: {fileID: 7533301453620370007, guid: 4fe83e659dc71bb429d563fd7b8f2f2e, type: 3}
+--- !u!64 &4645639266649886305
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975001130729236790}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 70948873267775455, guid: c4feb6617b28ab445bee0b1a0e7405fc, type: 3}

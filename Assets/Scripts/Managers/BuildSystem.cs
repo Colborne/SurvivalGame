@@ -11,13 +11,20 @@ public class BuildSystem : MonoBehaviour
     public int iteration = 0;
     RaycastHit Hit;
     Quaternion orientation;
-    int buildRotation = 0;
 
-    private void Update() 
+    InputManager input;
+    int buildRotation = 0;
+    public int last = -1;
+
+
+    private void Start() {
+        input = FindObjectOfType<InputManager>();
+    }
+    private void LateUpdate() 
     {
-        if(FindObjectOfType<InputManager>().scrollInput > 0)
+        if(input.scrollInput > 0)
             buildRotation++;
-        else if(FindObjectOfType<InputManager>().scrollInput < 0)
+        else if(input.scrollInput < 0)
             buildRotation--;
         
         if(buildRotation > 16)
@@ -25,15 +32,19 @@ public class BuildSystem : MonoBehaviour
         if(buildRotation < -16)
             buildRotation = 16;
 
-        if(FindObjectOfType<InputManager>().rightMouseInput && !FindObjectOfType<InputManager>().inventoryFlag )
+        if(input.rightMouseInput && !input.inventoryFlag )
         {
-            FindObjectOfType<InputManager>().rightMouseInput = !FindObjectOfType<InputManager>().rightMouseInput;
+            input.rightMouseInput = !input.rightMouseInput;
             CloseWindow();
         }
 
-        Builder.GetComponent<MeshFilter>().mesh = buildables[iteration].mesh;
-        orientation = buildables[iteration].orientation;
-        Builder.localScale = buildables[iteration].prefab.transform.localScale;
+        if(iteration != last)
+        {
+            Builder.GetComponent<MeshFilter>().mesh = buildables[iteration].mesh;
+            orientation = buildables[iteration].orientation;
+            Builder.localScale = buildables[iteration].prefab.transform.localScale;
+            last = iteration;
+        }
 
         if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 22f))
         {     
@@ -46,9 +57,9 @@ public class BuildSystem : MonoBehaviour
             
             Builder.eulerAngles = orientation.eulerAngles; //new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0) + orientation.eulerAngles;           
 
-            if(FindObjectOfType<InputManager>().leftMouseInput && !FindObjectOfType<InputManager>().inventoryFlag && !FindObjectOfType<InputManager>().buildWindowFlag)
+            if(input.leftMouseInput && !input.inventoryFlag && !input.buildWindowFlag)
             {
-                FindObjectOfType<InputManager>().leftMouseInput = false;
+                input.leftMouseInput = false;
 
                 if (checkIfPosEmpty(Builder.position, Builder.rotation) 
                 && GameManager.Instance.CraftingCheck(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired)){ //if(GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
@@ -57,6 +68,7 @@ public class BuildSystem : MonoBehaviour
                 }
             }
         }
+        
     }
     public bool checkIfPosEmpty(Vector3 targetPos, Quaternion targetRot)
     {
@@ -71,9 +83,9 @@ public class BuildSystem : MonoBehaviour
 
     public void CloseWindow()
     {
-        FindObjectOfType<InputManager>().buildWindowFlag = !FindObjectOfType<InputManager>().buildWindowFlag;
+        input.buildWindowFlag = !input.buildWindowFlag;
         BuildWindow.SetActive(!BuildWindow.active);
-        FindObjectOfType<InputManager>().TooltipCanvas.SetActive(!FindObjectOfType<InputManager>().TooltipCanvas.active);    
+        input.TooltipCanvas.SetActive(!input.TooltipCanvas.active);    
 
     }
 }
