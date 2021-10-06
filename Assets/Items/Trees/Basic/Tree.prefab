@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Hittable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &569867313107421294
 Transform:
@@ -122,6 +122,7 @@ MonoBehaviour:
   treeLog: {fileID: 5333783608370816186, guid: 68bae8e88c781b8438a869ddd09ef721, type: 3}
   treeLogHalf: {fileID: 4587336339405856463, guid: 4bdf2cb59a0f4a6439654d41d9b1724a, type: 3}
   treeStump: {fileID: 4316459433290614995, guid: 915e50e7bf9183149927d87c2b7d6dbc, type: 3}
+  type: 0
   timeSinceInitialization: 0
   timer: 0
 --- !u!114 &7417874836205428656

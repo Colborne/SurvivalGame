@@ -10,8 +10,7 @@ public class WeaponItem : Item
         crush,
         stab,
         slash,
-        magic,
-        ranged
+        magic
     }
 
     [Header("Weapon Settings")]

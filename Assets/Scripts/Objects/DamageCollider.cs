@@ -76,7 +76,8 @@ public class DamageCollider : MonoBehaviour
                     }
 
                     if(tree != null)
-                    {                   
+                    {   
+                        tree.timeSinceInitialization = Time.timeSinceLevelLoad - tree.timer;                
                         if(tree.timeSinceInitialization > 1f)
                             tree.CheckHit(true);
                     }

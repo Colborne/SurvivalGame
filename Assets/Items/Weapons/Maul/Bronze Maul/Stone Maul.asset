@@ -17,7 +17,7 @@ MonoBehaviour:
   itemName: Stone Maul
   description: A Crude Bludgeoning Weapon
   weight: 15
-  isTwoHanded: 0
+  isTwoHanded: 1
   isOffhandable: 0
   canCharge: 0
   Attack: Chop

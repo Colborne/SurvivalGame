@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2cfbc60f54a436c49b54be9a2003eb74
+guid: d8a0f4234b48182468b7a454edc32c0b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,13 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Handle
-    second: {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
+      name: Accent
+    second: {fileID: 2100000, guid: 6a730f48ead666c4f92860f6c03f2acc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Head
-    second: {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
+      name: Handle
+    second: {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spikes
+    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

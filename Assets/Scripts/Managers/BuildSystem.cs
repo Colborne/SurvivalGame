@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ public class BuildSystem : MonoBehaviour
     private void Start() {
         input = FindObjectOfType<InputManager>();
     }
-    private void LateUpdate() 
+    private void Update() 
     {
         if(input.scrollInput > 0)
             buildRotation++;

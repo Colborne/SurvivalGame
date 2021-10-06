@@ -9,6 +9,7 @@ public class Pickup : MonoBehaviour
     public string name;
     InputManager inputManager;
     InteractableUI ui; 
+    bool autoPickup = true;
 
     private void Awake() {
         inputManager = FindObjectOfType<InputManager>();
@@ -25,8 +26,7 @@ public class Pickup : MonoBehaviour
                 ui.interactableText.text = "Press 'E' to pickup " + name;
                 
             ui.transform.GetChild(0).gameObject.SetActive(true);
-        }
-        
+        }     
     }
 
     private void OnTriggerExit(Collider other) 
@@ -41,8 +41,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject) 
         {
-            //transform.position = Vector3.MoveTowards(transform.position, other.transform.position , 1 * Time.deltaTime); use this for auto pickup
-            if(inputManager.interactInput)
+            if(inputManager.interactInput || autoPickup)
             {   
                 inputManager.interactInput = false;
                 GameManager.Instance.PickUpItem(itemID, amount);

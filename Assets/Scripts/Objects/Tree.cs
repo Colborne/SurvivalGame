@@ -80,14 +80,9 @@ public class Tree : ResourceObject
             }
         }
         objectStats.maxHealth = healthAmount;
-    }
-    private void Start() {
         timer = Time.timeSinceLevelLoad;
     }
-    void Update () 
-    {
-        timeSinceInitialization = Time.timeSinceLevelLoad - timer;
-    }
+
     private void Dead()
     {
         switch (treeType) 
