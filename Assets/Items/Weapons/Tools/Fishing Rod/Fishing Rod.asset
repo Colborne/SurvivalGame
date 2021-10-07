@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
+  m_Name: Fishing Rod
+  m_EditorClassIdentifier: 
+  modelPrefab: {fileID: 5788834242575343590, guid: 74788a42e8274654890157a3c222955b, type: 3}
+  itemIcon: {fileID: 21300000, guid: 757d8d87139888a46b1dc1d19434ef4a, type: 3}
+  itemName: Fishing Rod
+  description: A Fisherman's Tool
+  weight: 2
+  isTwoHanded: 0
+  isOffhandable: 0
+  canCharge: 0
+  Attack: 
+  Heavy_Attack: 
+  Left_Attack: 
+  baseStamina: 0
+  heavyAttackMultiplier: 0
+  attackDamage: 0
+  attackSpeed: 0
+  damageType: 0
+  projectile: {fileID: 0}
