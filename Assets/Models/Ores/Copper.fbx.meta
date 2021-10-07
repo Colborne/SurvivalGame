@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Rock
-    second: {fileID: 2100002, guid: a79996ba2a6fcd5419c6ea33366c5f63, type: 3}
+      name: Copper
+    second: {fileID: 2100000, guid: d569e76df9289414485753deff15f61b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -90,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

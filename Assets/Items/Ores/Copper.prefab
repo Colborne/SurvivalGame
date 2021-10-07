@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6527244895159140875}
   - component: {fileID: 7870802531578695086}
   - component: {fileID: 5394822497905326436}
-  - component: {fileID: 6659940008576341734}
   - component: {fileID: 1233543649881440375}
   - component: {fileID: 2657869486403826517}
+  - component: {fileID: 2673783803071480839}
   m_Layer: 0
   m_Name: Copper
   m_TagString: Hittable
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5899361514799831217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.91244274, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 400, y: 400, z: 400}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6659940008576341734
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5899361514799831217}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3613567641014311022, guid: a219a84e1d42513428c44409416a241d, type: 3}
 --- !u!114 &1233543649881440375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +115,17 @@ MonoBehaviour:
   maxHealth: 200
   currentHealth: 0
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
+--- !u!64 &2673783803071480839
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899361514799831217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3613567641014311022, guid: a219a84e1d42513428c44409416a241d, type: 3}
