@@ -211,7 +211,7 @@ MonoBehaviour:
     prefab: {fileID: 3749380191955315042, guid: b6aff55ebd163b1478d7ace132ce0d1d, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: b3224f7fa92109247953f9584b954a49, type: 3}
     worldItem: {fileID: 1474296339214900740, guid: 31c741f4c4200e44a85fc4ff5e5241cb, type: 3}
-  - name: Halberd
+  - name: Stone Halberd
     prefab: {fileID: 1488641282898831735, guid: 8b5a69b43dbc4ef40bd5d74d20688d17, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: d58d3b531e403a544ac66bd2b2d763a4, type: 3}
     worldItem: {fileID: 5205778459530054705, guid: d660fb9942b2c7d4eac67d3aa0ff250e, type: 3}
@@ -367,3 +367,99 @@ MonoBehaviour:
     prefab: {fileID: 5788834242575343590, guid: 7a175c28479f6454890acc5b812ae9f3, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: 931a54d002be97b43aa11b180e0bd71e, type: 3}
     worldItem: {fileID: 1624659956748352869, guid: 8f8744a4c35be8b49a78ad67f82f9042, type: 3}
+  - name: Fishing Rod
+    prefab: {fileID: 5788834242575343590, guid: 74788a42e8274654890157a3c222955b, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: aafcf883575abcf44b08a6d27495dfa7, type: 3}
+    worldItem: {fileID: 5823213483813883137, guid: 88f4bcf792c11b345ae2525b7528e939, type: 3}
+  - name: Bronze Halberd
+    prefab: {fileID: 1488641282898831735, guid: 7599a28abf68cf64882337392890d2a4, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 091601b8ab298c146bca2c17dc5e31a4, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: 4bf2e18a6c23c7143bd302c79fab055b, type: 3}
+  - name: Iron Halberd
+    prefab: {fileID: 1488641282898831735, guid: 85ca5a53a19e3b745b8d0d593ddcff75, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 18be75f7d97eef142b473590bc0944c5, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: b13c9282db6e4504d8bd6d035a897f83, type: 3}
+  - name: Silver Halberd
+    prefab: {fileID: 1488641282898831735, guid: eee28de8816ada644be600ee2151cea8, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 81e2d7de72a6d0f40be710b9b4da4426, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: aa28885e393a3d341ab7e3a78482920f, type: 3}
+  - name: Seastone Halberd
+    prefab: {fileID: 1488641282898831735, guid: ad84660b143f6644199e05ac9cba2cfe, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 5491fd3bd8f566c4fb82cf815b5aa51d, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: 78b48b69250bbc14585be4b1d5171692, type: 3}
+  - name: Mithril Halberd
+    prefab: {fileID: 1488641282898831735, guid: 451b10993b60a3d4eb918aba62f0a8e3, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: b8d26bff1d6a9ca4f9ac492a33f04db7, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: ccb3abe46092a1c41ad4936ab9f58ffa, type: 3}
+  - name: Stone Knife
+    prefab: {fileID: 1488641282898831735, guid: 316279d1a4e380846b9300b43f011d50, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: f52ab9471d75a4e4bbd56497a157ac95, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: b1e87daf292c65a4791db8da323d1ff6, type: 3}
+  - name: Bronze Knife
+    prefab: {fileID: 1488641282898831735, guid: aaffc8190da02f04ab5109259dee3835, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 5382c6ae6cf285a4da96edb5b4ccedfc, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: be6ffe7923b2b0249a4b1a4aa6b8eb33, type: 3}
+  - name: Iron Knife
+    prefab: {fileID: 1488641282898831735, guid: 12489d67b9fb3fe4ba51a3814f6dd74a, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: d62f0237020e3df4787b7c4e8a251b76, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: 3dbf260816c52e64599806630a5d2dab, type: 3}
+  - name: Silver Knife
+    prefab: {fileID: 1488641282898831735, guid: 6c445b41ca85589419290a4506dd79e8, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 0fd60474fba28714c8eec08c46166fd6, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: 8c1c9306cdef4b44686a51b07586ddc0, type: 3}
+  - name: Seastone Knife
+    prefab: {fileID: 1488641282898831735, guid: eefec9752777364429b1c12867422357, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 79cd85f5f4b9cb94a954b2b6df6b4681, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: be45c27b199bc694a90a3ea85da1060b, type: 3}
+  - name: Mithril Knife
+    prefab: {fileID: 1488641282898831735, guid: 3b8f67e8093118f468f296e68e054dbb, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 2338c3956c427dc4fbf41f723c98f491, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: fbdb7f72803f5a64a9741afc9f66b25e, type: 3}
+  - name: Stone Longsword
+    prefab: {fileID: 1488641282898831735, guid: 10ecf2bc83c11e6498fbee9146848fb8, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 087dd4bf970c58649a14937a514cce67, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: e433f315cb67c6f4384e9976efd4dbf6, type: 3}
+  - name: Bronze Longsword
+    prefab: {fileID: 1488641282898831735, guid: 8cc178f3034e64946bdd25f536d423e1, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 635b662531edf2f4ba5365b9e026017e, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: 2bf4b618328ba71428537ac4a624be10, type: 3}
+  - name: Iron Longsword
+    prefab: {fileID: 1488641282898831735, guid: f3b5bd21f3bfc7841b36bb40de2ef12c, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: cd105d58f045118449633af96facd1c3, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: b5556daf4293c4d4586a78b33aab61e3, type: 3}
+  - name: Silver Longsword
+    prefab: {fileID: 1488641282898831735, guid: 7487cab78c192fb4d9b1b58b79a52d7a, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 489d73de21a9f9a40b92a143c05bbeab, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: e78c2c9b7263c3c44ac5b983e297d402, type: 3}
+  - name: Seastone Longsword
+    prefab: {fileID: 1488641282898831735, guid: 70f5e4d409ff2f841a1b4787cf920a45, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: b6c0591c2dda9cb4b912ce48984faedd, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: f2edb7e91fef4e144b4f8b7cf4d53da8, type: 3}
+  - name: Mithril Longsword
+    prefab: {fileID: 1488641282898831735, guid: 40dd19582727d174580fc9c38855333a, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: f2938d2b86285d24c83715d24e274a63, type: 3}
+    worldItem: {fileID: 5205778459530054705, guid: 2711fb722cc7a774880297928d824ae1, type: 3}
+  - name: Stone Mace
+    prefab: {fileID: 5788834242575343590, guid: 7f0a6f960c7083a489184fba81c71b9d, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: e5f88443cb63c7046ab2f784c65b37a2, type: 3}
+    worldItem: {fileID: 1624659956748352869, guid: 4c79f62700aaa0b448c8d3151b5dcad7, type: 3}
+  - name: Bronze Mace
+    prefab: {fileID: 5788834242575343590, guid: 08293564cfd38144684c43e6e52fba7b, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: c1f3e369e4962b149b48b8e3f0d43c85, type: 3}
+    worldItem: {fileID: 1624659956748352869, guid: 16cb1da4c33625e4ba8b001b7adfd59c, type: 3}
+  - name: Iron Mace
+    prefab: {fileID: 5788834242575343590, guid: 1946348e7340c1a4da65b542a5514357, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 4b6d1e49849d7b84ba6627b19999cab0, type: 3}
+    worldItem: {fileID: 1624659956748352869, guid: 1eb0d074d7df56b4e8ad859a5af13911, type: 3}
+  - name: Silver Mace
+    prefab: {fileID: 5788834242575343590, guid: 4acbb6c8e9a8626458e8cc58f3729950, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: db647aa3c50328543ac38ef61d320e9a, type: 3}
+    worldItem: {fileID: 1624659956748352869, guid: 871d1f0ac29d0e1429e5f20d598bc65e, type: 3}
+  - name: Seastone Mace
+    prefab: {fileID: 5788834242575343590, guid: 2e0aa44c52c737246ac7d67b213e69ca, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 3e8f1d00563874c48b2f52c1d0d29612, type: 3}
+    worldItem: {fileID: 1624659956748352869, guid: 9fce572f2f9ef5d48acaec7aa5bd064a, type: 3}
+  - name: Mithril Mace
+    prefab: {fileID: 5788834242575343590, guid: 803d06e0d5410344998550aebca26629, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 329ea76708d73294993eaa9bf7b385d5, type: 3}
+    worldItem: {fileID: 1624659956748352869, guid: 1bf26c2da656b444f9ebf4966a45291f, type: 3}
