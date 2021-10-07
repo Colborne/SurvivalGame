@@ -53,7 +53,9 @@ public class ObjectGenerator : MonoBehaviour
                         && hit.point.y > biomes[i].minHeight 
                         && hit.point.y < biomes[i].maxHeight)  //Check For Height to check what array to check
                         {
-                            GameObject placed = Instantiate(biomes[i].objectToSpawn[x], new Vector3(start.x, hit.point.y, start.z) , Quaternion.identity); //Random.Range(0,biomes[i].objectToSpawn.Length-1
+                            var randomRotation = Quaternion.Euler( Random.Range(0, 360) , 0 , 0);
+                            GameObject placed = Instantiate(biomes[i].objectToSpawn[x], new Vector3(start.x, hit.point.y, start.z) , randomRotation); //Random.Range(0,biomes[i].objectToSpawn.Length-1
+                            placed.transform.up = hit.normal;
                             place++;
                             break;
                         }
