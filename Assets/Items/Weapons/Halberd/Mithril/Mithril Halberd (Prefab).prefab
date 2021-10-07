@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4830286247227161215}
   - component: {fileID: 3605126940281627814}
   m_Layer: 0
-  m_Name: Halberd (Prefab)
+  m_Name: Mithril Halberd (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ccec5e1b7fa642917d016e52db6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: a202183d5f8ccfe4fbf4f6c9c2d34a3d, type: 2}
+  item: {fileID: 11400000, guid: 94c4c12ea63b9e943bb9a8fb726fa8e0, type: 2}
 --- !u!1 &8699829623716645315
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,8 +106,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
-  - {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
+  - {fileID: 2100000, guid: cb9d5544dfd6982409dd86307f236721, type: 2}
+  - {fileID: 2100000, guid: 0a0655186594580418d3e831a9cef688, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,7 +138,7 @@ BoxCollider:
   m_GameObject: {fileID: 8699829623716645315}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0018, y: 0.018, z: 0.015}
   m_Center: {x: 0, y: 0.04, z: 0}
@@ -154,10 +154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a363839941167034796ecdc4f08f3d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 50
+  damageAmount: 351
   isTool: 0
   canBreak: 
   toolLevel: 0
+  range: 0
 --- !u!1 &9215655360932992223
 GameObject:
   m_ObjectHideFlags: 0

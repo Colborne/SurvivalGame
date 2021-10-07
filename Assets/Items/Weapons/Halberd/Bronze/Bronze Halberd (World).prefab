@@ -63,8 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
-  - {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
+  - {fileID: 2100000, guid: f9496b7579aaea240ac7bf5969b9e50e, type: 2}
+  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 25
+  itemID: 65
   amount: 1
-  name: Halberd
+  name: Bronze Halberd
 --- !u!64 &-3086666480581143078
 MeshCollider:
   m_ObjectHideFlags: 0
