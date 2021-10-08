@@ -24,7 +24,7 @@ public class Pickup : MonoBehaviour
                 ui.interactableText.text = "Press 'E' to pickup " + name + " x" + amount;
             else
                 ui.interactableText.text = "Press 'E' to pickup " + name;
-                
+ 
             ui.transform.GetChild(0).gameObject.SetActive(true);
         }     
     }
@@ -41,7 +41,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject) 
         {
-            if(inputManager.interactInput || autoPickup)
+            if(inputManager.interactInput)// || autoPickup)
             {   
                 inputManager.interactInput = false;
                 GameManager.Instance.PickUpItem(itemID, amount);

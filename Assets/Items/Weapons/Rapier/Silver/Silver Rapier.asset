@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
+  m_Name: Silver Rapier
+  m_EditorClassIdentifier: 
+  modelPrefab: {fileID: 5555158284736803174, guid: ab34775805016434fa622e4a58bcd26c, type: 3}
+  itemIcon: {fileID: 21300000, guid: 7a43ea1e1c9f4354fb97ba46dd31a92e, type: 3}
+  itemName: Silver Rapier
+  description: Poke!
+  weight: 5.2
+  isTwoHanded: 0
+  isOffhandable: 0
+  canCharge: 0
+  Attack: HeavyAttackLunge
+  Heavy_Attack: 
+  Left_Attack: 
+  baseStamina: 10
+  heavyAttackMultiplier: 1.5
+  attackDamage: 0.83
+  attackSpeed: 1.2
+  damageType: 1
+  projectile: {fileID: 0}

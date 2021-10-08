@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class AutoPickup : MonoBehaviour
 {
-    /* 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.GetComponent<Pickup>()) 
-        {
-            Instantiate(Resources.Load("FX/PickupFX"), other.transform);
-        }
-    }
-    */
-    
     private void OnTriggerStay(Collider other) 
     {
         if (other.gameObject.GetComponent<Pickup>()) 

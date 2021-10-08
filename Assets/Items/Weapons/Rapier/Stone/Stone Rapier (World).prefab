@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1624659956748352869
+--- !u!1 &7099974987210732863
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2143752128478914527}
-  - component: {fileID: 3057936066783094906}
-  - component: {fileID: 975891264575036592}
-  - component: {fileID: 8988872410895747123}
-  - component: {fileID: 4722166422554697183}
-  - component: {fileID: 2363429324814963150}
-  - component: {fileID: 2222157232536249442}
+  - component: {fileID: 7621213233837961093}
+  - component: {fileID: 6803855588211417120}
+  - component: {fileID: 8757480175370048746}
+  - component: {fileID: 541518685640741373}
+  - component: {fileID: 5297676760649994894}
+  - component: {fileID: 1448804064652214617}
+  - component: {fileID: 459067874169973611}
   m_Layer: 0
-  m_Name: Iron Mace (World)
+  m_Name: Sword (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2143752128478914527
+--- !u!4 &7621213233837961093
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
+  m_GameObject: {fileID: 7099974987210732863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 75, y: 75, z: 75}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3057936066783094906
+--- !u!33 &6803855588211417120
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
-  m_Mesh: {fileID: -1291710161511281072, guid: d8a0f4234b48182468b7a454edc32c0b, type: 3}
---- !u!23 &975891264575036592
+  m_GameObject: {fileID: 7099974987210732863}
+  m_Mesh: {fileID: 8793110816996630780, guid: 25b07c19d3c8ca3468284b89fce8ecd0, type: 3}
+--- !u!23 &8757480175370048746
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
+  m_GameObject: {fileID: 7099974987210732863}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,10 +63,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
-  - {fileID: 2100000, guid: 6a730f48ead666c4f92860f6c03f2acc, type: 2}
-  - {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
-  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+  - {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
+  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
+  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +87,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8988872410895747123
+--- !u!114 &541518685640741373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099974987210732863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 88
+  amount: 1
+  name: Stone Rapier
+--- !u!54 &5297676760649994894
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
+  m_GameObject: {fileID: 7099974987210732863}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -104,45 +118,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4722166422554697183
+--- !u!65 &1448804064652214617
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099974987210732863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!64 &459067874169973611
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
+  m_GameObject: {fileID: 7099974987210732863}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -1291710161511281072, guid: d8a0f4234b48182468b7a454edc32c0b, type: 3}
---- !u!114 &2363429324814963150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 84
-  amount: 1
-  name: Iron Mace
---- !u!65 &2222157232536249442
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624659956748352869}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.03, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0.0215336}
+  m_Mesh: {fileID: 8793110816996630780, guid: 25b07c19d3c8ca3468284b89fce8ecd0, type: 3}
