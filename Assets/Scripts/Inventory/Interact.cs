@@ -7,17 +7,20 @@ public class Interact : MonoBehaviour
         public enum Type {
             None,
             Crafting,
-            Runecrafting
+            Runecrafting,
+            Smelting,
+            Alchemy,
+            Sharpening
     }
 
     [SerializeField] private Type interactionType;
     public string interactionText;
-    public InventoryItem item;
-    public int outItem;
+    public InventoryItem item; //Make this an array for smelting/Sharpening  (Also requires an array of amounts of each) or can add however many coal/ore is allowed then make furnace do the rest
+    public int outItem; //Make this an array to match ^ 
     InputManager inputManager;
     InteractableUI ui; 
     AnimatorManager animatorManager;
-    CraftingSystem craftingSystem;
+    CraftingSystem craftingSystem; //multiple crafting systems based on level? Visibility based on level? All are on, only show level available
 
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bronze Battleaxe
   m_EditorClassIdentifier: 
   modelPrefab: {fileID: 5788834242575343590, guid: ce990fade5eabc7409fc3fc090ce43d4, type: 3}
-  itemIcon: {fileID: 21300000, guid: 35f64f9b279faec4092d72c4ddf491f1, type: 3}
+  itemIcon: {fileID: 21300000, guid: f37d283b4bfff104daa56b1dafdf3208, type: 3}
   itemName: Bronze Battleaxe
   description: A Crude Battleaxe
   weight: 8

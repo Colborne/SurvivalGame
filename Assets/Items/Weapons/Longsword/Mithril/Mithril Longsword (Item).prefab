@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Bronze Longsword (Item)
+  m_Name: Mithril Longsword (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7a43ea1e1c9f4354fb97ba46dd31a92e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 781ad696fa31e5a4ba0034cdbc2077dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
