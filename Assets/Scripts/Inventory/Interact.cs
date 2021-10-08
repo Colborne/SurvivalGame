@@ -8,6 +8,7 @@ public class Interact : MonoBehaviour
             None,
             Crafting,
             Runecrafting,
+            Smithing,
             Smelting,
             Alchemy,
             Sharpening
@@ -17,16 +18,28 @@ public class Interact : MonoBehaviour
     public string interactionText;
     public InventoryItem item; //Make this an array for smelting/Sharpening  (Also requires an array of amounts of each) or can add however many coal/ore is allowed then make furnace do the rest
     public int outItem; //Make this an array to match ^ 
+    [Range(1,3)]
+	public int level;
     InputManager inputManager;
     InteractableUI ui; 
     AnimatorManager animatorManager;
     CraftingSystem craftingSystem; //multiple crafting systems based on level? Visibility based on level? All are on, only show level available
+    CraftingSystem smithingSystem;
+    CraftingSystem crafting2System;
+    CraftingSystem smithing2System;
+    CraftingSystem crafting3System;
+    CraftingSystem smithing3System;
 
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+        smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
+        //craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+        smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
+        //craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+        //smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -55,7 +68,21 @@ public class Interact : MonoBehaviour
         {   
             if(interactionType == Type.Crafting)
             {
-                craftingSystem.WindowActive();
+                if(level == 1)
+                    craftingSystem.WindowActive();
+                else if(level == 2)
+                    crafting2System.WindowActive();
+                else if(level == 3)
+                    crafting3System.WindowActive();
+            }
+            else if(interactionType == Type.Smithing)
+            {
+                if(level == 1)
+                    smithingSystem.WindowActive();
+                else if(level == 2)
+                    smithing2System.WindowActive();
+                else if(level == 3)
+                    smithing3System.WindowActive();
             }
             else if(interactionType == Type.Runecrafting)
             {

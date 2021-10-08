@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: -429296887544953051}
   - component: {fileID: -7955461550976699620}
   m_Layer: 0
-  m_Name: Furnace
+  m_Name: Forge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
+  - {fileID: 2100000, guid: 98cddcf98b5149f44a42dce47d6fd14f, type: 2}
   - {fileID: 2100000, guid: 81e96640fa078754ca9cfb0eb9ee0576, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   interactionText: Smelt
   item: {fileID: 0}
   outItem: 0
-  level: 1
+  level: 2
 --- !u!65 &-7955461550976699620
 BoxCollider:
   m_ObjectHideFlags: 0
