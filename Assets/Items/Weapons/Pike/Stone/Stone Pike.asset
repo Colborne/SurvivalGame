@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Stone Pike
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5555158284736803174, guid: a5efb0ddf6ad0d243b7a1a91541ce848, type: 3}
+  modelPrefab: {fileID: 5555158284736803174, guid: 0bf0ecd6663deb14088281cd6be79855, type: 3}
   itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
   itemName: Stone Pike
   description: Pokey Stick

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Bronze Pike
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5555158284736803174, guid: 7a9f3786352516a4b9221df0ae2f4969, type: 3}
+  modelPrefab: {fileID: 5555158284736803174, guid: 5b92536923ca5fb4b9d6591a1b4ec261, type: 3}
   itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
   itemName: Bronze Pike
   description: Pokey Stick

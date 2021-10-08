@@ -41,7 +41,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject) 
         {
-            if(inputManager.interactInput)// || autoPickup)
+            if(inputManager.interactInput || autoPickup)
             {   
                 inputManager.interactInput = false;
                 GameManager.Instance.PickUpItem(itemID, amount);
