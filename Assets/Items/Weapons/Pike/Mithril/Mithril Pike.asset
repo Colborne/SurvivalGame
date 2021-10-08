@@ -25,7 +25,7 @@ MonoBehaviour:
   Left_Attack: 
   baseStamina: 25
   heavyAttackMultiplier: 1.2
-  attackDamage: 1.2
+  attackDamage: 2.16
   attackSpeed: 0.8
-  damageType: 0
+  damageType: 1
   projectile: {fileID: 0}

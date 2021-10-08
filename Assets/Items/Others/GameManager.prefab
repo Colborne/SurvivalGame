@@ -215,7 +215,7 @@ MonoBehaviour:
     prefab: {fileID: 1488641282898831735, guid: 8b5a69b43dbc4ef40bd5d74d20688d17, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: d58d3b531e403a544ac66bd2b2d763a4, type: 3}
     worldItem: {fileID: 5205778459530054705, guid: d660fb9942b2c7d4eac67d3aa0ff250e, type: 3}
-  - name: Spear
+  - name: Stone Spear
     prefab: {fileID: 5555158284736803174, guid: a5efb0ddf6ad0d243b7a1a91541ce848, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: 7685a7d795877e9448e6b56b44c989f2, type: 3}
     worldItem: {fileID: 5439770216908109018, guid: 9148bd3221b7b6f4092d16bd764e6b14, type: 3}
@@ -223,7 +223,7 @@ MonoBehaviour:
     prefab: {fileID: 5555158284736803174, guid: 002d97f2aaa06964199f90358031a5ab, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: 2cae5bd9287672c4a9e06876e971216d, type: 3}
     worldItem: {fileID: 7099974987210732863, guid: 945acab4d13ea9c49a2acbc3ac3f5485, type: 3}
-  - name: Warhammer
+  - name: Stone Warhammer
     prefab: {fileID: 1488641282898831735, guid: 21aa2ea8179271c4db8caae5db8c9dfa, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: 882fe3925d27ca840b43d934cc8e0b25, type: 3}
     worldItem: {fileID: 2223211017169070915, guid: 30fe74738ac59a048b80e2f5776b7164, type: 3}
@@ -463,3 +463,91 @@ MonoBehaviour:
     prefab: {fileID: 5788834242575343590, guid: 803d06e0d5410344998550aebca26629, type: 3}
     inventoryItem: {fileID: 5642263798415338689, guid: 329ea76708d73294993eaa9bf7b385d5, type: 3}
     worldItem: {fileID: 1624659956748352869, guid: 1bf26c2da656b444f9ebf4966a45291f, type: 3}
+  - name: Stone Rapier
+    prefab: {fileID: 5555158284736803174, guid: a11cc5294c90f654abc84c33d0d5687d, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 1d948bac8a4f6a64093f123d10270227, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: 2abe82fe5d6e2f149b4e48cf3317796a, type: 3}
+  - name: Bronze Rapier
+    prefab: {fileID: 5555158284736803174, guid: 15d8de5216d72ea459017ffa504e46ae, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: beee4fad1357800478ca4e7d98404411, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: a5c22600b0924c248a3a50308d0de36d, type: 3}
+  - name: Iron Rapier
+    prefab: {fileID: 5555158284736803174, guid: abcdbbdcd5f92a648af002b61dff79f9, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 1073fcd892f76484aa3b8b9fb6daf0c8, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: 014ecd51f3e7bb74387b71b602c6e52f, type: 3}
+  - name: Silver Rapier
+    prefab: {fileID: 5555158284736803174, guid: ab34775805016434fa622e4a58bcd26c, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: c700000fcdfcd43428e99acd28345cba, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: 415b3cf7550bf79479032e247fc1f3ed, type: 3}
+  - name: Seastone Rapier
+    prefab: {fileID: 5555158284736803174, guid: cfd539f1db22fce458d805a956dd1209, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 596cd0a2027ae6146aae1e1424fb4519, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: c6643945fb585b44a9f236103d6e688a, type: 3}
+  - name: Mithril Rapier
+    prefab: {fileID: 5555158284736803174, guid: 628f87b4d0d0da34f9551f24b3b62524, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 5d61f34fc49bd7445bc751c8b90a290d, type: 3}
+    worldItem: {fileID: 7099974987210732863, guid: cc919459076d22648b864db3fecd5e64, type: 3}
+  - name: Bronze Spear
+    prefab: {fileID: 5555158284736803174, guid: 7a9f3786352516a4b9221df0ae2f4969, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 04319837b46f61944b734634203efd64, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 28ac96c43d0729243ad29b5ae1ac757d, type: 3}
+  - name: Iron Spear
+    prefab: {fileID: 5555158284736803174, guid: f0194cb24e36ec74a9f912844126d1b8, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 141ca1a0c84d69347855456d6baff295, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 9e2c5b1ac54f99f4a81a7de6173405de, type: 3}
+  - name: Silver Spear
+    prefab: {fileID: 5555158284736803174, guid: b95940eb17e738c46bc32d31a55f0a58, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 25fd6671cb36f7c41806cd63c468538d, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 483adf49deb2ba84b90e3a33da9846a8, type: 3}
+  - name: Seastone Spear
+    prefab: {fileID: 5555158284736803174, guid: 8026eb233cc4d5c43b7f1d47c1e2fda1, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 3771bd871bfff784995ab2fc428077d9, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: a832a133984fa5c42aa18933ad4c7b48, type: 3}
+  - name: Mithril Spear
+    prefab: {fileID: 5555158284736803174, guid: 347fbab9f0a31724483fc3776a78f8b9, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 6ce46ecc921dd67418cd0d9b1d8c6cb2, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 54d75e94c10cc3540badcb6ef5f5bea3, type: 3}
+  - name: Stone Pike
+    prefab: {fileID: 5555158284736803174, guid: 0bf0ecd6663deb14088281cd6be79855, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: c367f41d220b1664caa7e28f56866257, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 715bb655e26d03943907fcd8d8d95f01, type: 3}
+  - name: Bronze Pike
+    prefab: {fileID: 5555158284736803174, guid: 5b92536923ca5fb4b9d6591a1b4ec261, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 2972cb269cf8ff0418efd1c69e422325, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: b5d0fd4fb68b1a847a0465934dac5f24, type: 3}
+  - name: Iron Pike
+    prefab: {fileID: 5555158284736803174, guid: 16d23f8e5558bc24a954caa35d7af8de, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: f6212c3948a0ece4ab85e5c001766ad3, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: e9351b1f8d5f44943a77ffe2dd3b85e4, type: 3}
+  - name: Silver Pike
+    prefab: {fileID: 5555158284736803174, guid: 192d31a164868764b94b4f279e8b261c, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: a9b87b5afaf781c4aafd94399886c7c6, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: e5454ee8176327f4cb8db32059a9e78c, type: 3}
+  - name: Seastone Pike
+    prefab: {fileID: 5555158284736803174, guid: 8510c3bf48aff1343abc6a3d749f7f4a, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 9acc2c097af6eb54690c8701bf085981, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 5880380f68a46c74eb6b124500dbbce6, type: 3}
+  - name: Mithril Pike
+    prefab: {fileID: 5555158284736803174, guid: ca9bf3044993f4d4eaf184a0a965a8a1, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 89ef3f5578434c5459f5508712460117, type: 3}
+    worldItem: {fileID: 5439770216908109018, guid: 2cd99ccdbcdde0442ade10b73d34a39a, type: 3}
+  - name: Bronze Warhammer
+    prefab: {fileID: 1488641282898831735, guid: 48531bb8e756bb042a338780afda3955, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 3e8b9c585ca39684db1b64490ef0151a, type: 3}
+    worldItem: {fileID: 2223211017169070915, guid: 2b795600125d7e147a86fa7676e289b5, type: 3}
+  - name: Iron Warhammer
+    prefab: {fileID: 1488641282898831735, guid: 11f3e7419359a4a44870a7a28472eb16, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 64338f9296c34874ea9ef76cba6ba3f1, type: 3}
+    worldItem: {fileID: 2223211017169070915, guid: 15fd484e513ca4c419eaa049a7ca866d, type: 3}
+  - name: Silver Warhammer
+    prefab: {fileID: 1488641282898831735, guid: 2dc0bc3120e068d458c41d30a76c79e4, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 3e094e4ad1a8b9948b9569b90c0854be, type: 3}
+    worldItem: {fileID: 2223211017169070915, guid: d667abece2a135542b090894d8964317, type: 3}
+  - name: Seastone Warhammer
+    prefab: {fileID: 1488641282898831735, guid: 8190c99d3fc18b4489c9af4f4226e6f8, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 81770e74a57a9474babb54c825c48c9f, type: 3}
+    worldItem: {fileID: 2223211017169070915, guid: eb7365b148ba2aa42ad5e2316fbca44e, type: 3}
+  - name: Mithril Warhammer
+    prefab: {fileID: 1488641282898831735, guid: 31ef650f47f7a664c96a9e8c8580189d, type: 3}
+    inventoryItem: {fileID: 5642263798415338689, guid: 7671339f7d6a9924a8ae25a2d2ae6530, type: 3}
+    worldItem: {fileID: 2223211017169070915, guid: 98cc6a165afdd704886a1a5ef9bd7921, type: 3}

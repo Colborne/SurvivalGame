@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
-  m_Name: Iron Pike
+  m_Name: Silver Warhammer
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5555158284736803174, guid: 16d23f8e5558bc24a954caa35d7af8de, type: 3}
-  itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
-  itemName: Iron Pike
-  description: Pokey Stick
-  weight: 8
-  isTwoHanded: 1
+  modelPrefab: {fileID: 1488641282898831735, guid: 2dc0bc3120e068d458c41d30a76c79e4, type: 3}
+  itemIcon: {fileID: 21300000, guid: 757d8d87139888a46b1dc1d19434ef4a, type: 3}
+  itemName: Silver Warhammer
+  description: Smashy
+  weight: 20
+  isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: HeavyAttackLunge
+  Attack: Chop
   Heavy_Attack: OverheadSwing
   Left_Attack: 
-  baseStamina: 25
-  heavyAttackMultiplier: 1.2
-  attackDamage: 2.16
-  attackSpeed: 0.8
-  damageType: 1
+  baseStamina: 15
+  heavyAttackMultiplier: 1.5
+  attackDamage: 15
+  attackSpeed: 0.66
+  damageType: 0
   projectile: {fileID: 0}

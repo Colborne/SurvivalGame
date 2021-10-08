@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8603256640954934797}
   - component: {fileID: 2220947841663639704}
   m_Layer: 0
-  m_Name: Warhammer
+  m_Name: Mithril Warhammer (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223211017169070915}
-  m_Mesh: {fileID: 2534964839176971238, guid: 0e8e2737abf22704e8f1970724be1f9b, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: 0c6caca4d470736408ea7b533a3db581, type: 3}
 --- !u!23 &421810955110271638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,8 +63,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
-  - {fileID: 2100000, guid: 435fbe70041068c4ba57538738251aee, type: 2}
+  - {fileID: 2100000, guid: 0a0655186594580418d3e831a9cef688, type: 2}
+  - {fileID: 2100000, guid: cb9d5544dfd6982409dd86307f236721, type: 2}
+  - {fileID: 2100000, guid: 0e1f19761100c3d4dbc81a4f8d80c4c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,6 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 28
+  itemID: 109
   amount: 1
-  name: Warhammer
+  name: Mithril Warhammer

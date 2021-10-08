@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4830286247227161215}
   - component: {fileID: 3605126940281627814}
   m_Layer: 0
-  m_Name: Warhammer (Prefab)
+  m_Name: Silver Warhammer (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ccec5e1b7fa642917d016e52db6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: f735bed4dbd96cb4b85f71190c8d87ef, type: 2}
+  item: {fileID: 11400000, guid: 9148f5a19d800c74eb8f43758557d1cc, type: 2}
 --- !u!1 &4904163390444771636
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4904163390444771636}
-  m_Mesh: {fileID: 2534964839176971238, guid: 0e8e2737abf22704e8f1970724be1f9b, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: 0c6caca4d470736408ea7b533a3db581, type: 3}
 --- !u!23 &6849951870224447713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: d2758984bd9076f49ade6813f2ebe88f, type: 2}
   - {fileID: 2100000, guid: 435fbe70041068c4ba57538738251aee, type: 2}
+  - {fileID: 2100000, guid: b336a38a2d7a62947a33e06218f033c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,10 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a363839941167034796ecdc4f08f3d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 70
+  damageAmount: 90
   isTool: 0
   canBreak: 
   toolLevel: 0
+  range: 0
 --- !u!1 &9215655360932992223
 GameObject:
   m_ObjectHideFlags: 0

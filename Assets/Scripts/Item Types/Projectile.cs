@@ -34,10 +34,31 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider collision) 
-    {
+    { 
         if(collision.tag == "Hittable" || collision.tag == "Ground")
         {
-            if (fx != null){
+            ObjectStats stats = collision.GetComponent<ObjectStats>();
+            ResourceObject resource = collision.GetComponent<ResourceObject>();
+            SoundManager sound = FindObjectOfType<InputManager>().GetComponent<SoundManager>();
+            Tree tree = collision.GetComponent<Tree>();
+
+            if (stats != null)
+            {
+                sound.PlaySound("Sounds/chop"); 
+                stats.TakeDamage(10);
+                for(int i = 0; i < Random.Range(1,3); i++)
+                    Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
+
+                if(tree != null)
+                {   
+                    tree.timeSinceInitialization = Time.timeSinceLevelLoad - tree.timer;                
+                    if(tree.timeSinceInitialization > 1f)
+                        tree.CheckHit(true);
+                }
+            }
+
+            if (fx != null)
+            {
                 GameObject _fx = Instantiate(fx, transform.position, transform.rotation);
                 _fx.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             }

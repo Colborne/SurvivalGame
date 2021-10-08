@@ -5,7 +5,10 @@ using UnityEngine;
 public class DamagePopup : MonoBehaviour
 {
     private void Start() {
-        transform.position = FindObjectOfType<DamageCollider>().transform.position;
+        if(FindObjectOfType<DamageCollider>())
+            transform.position = FindObjectOfType<DamageCollider>().transform.position;
+        else
+            transform.position = FindObjectOfType<Projectile>().transform.position;
     }
     void Update()
     {
