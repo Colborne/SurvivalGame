@@ -128,5 +128,5 @@ MonoBehaviour:
   interactionType: 6
   interactionText: Sharpen
   item: {fileID: 7680765855121683962, guid: ef00253242e366343ac973c524156fdb, type: 3}
-  outItem: 0
+  outItem: 110
   level: 1

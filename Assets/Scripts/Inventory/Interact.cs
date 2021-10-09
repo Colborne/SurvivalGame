@@ -38,8 +38,8 @@ public class Interact : MonoBehaviour
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
         crafting2System = GameObject.Find("Crafting2System").GetComponent<CraftingSystem>();
         smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
-        //craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
-        //smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
+        crafting3System = GameObject.Find("Crafting3System").GetComponent<CraftingSystem>();
+        smithing3System = GameObject.Find("Smithing3System").GetComponent<CraftingSystem>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -91,6 +91,15 @@ public class Interact : MonoBehaviour
                 {
                     GameManager.Instance.PickUpItem(outItem, convert);
                     animatorManager.PlayTargetAnimation("Runecrafting", true);
+                }
+            }
+            else if(interactionType == Type.Sharpening)
+            {
+                int convert = GameManager.Instance.ReplaceStack(item);
+                if(convert > 0)
+                {
+                    GameManager.Instance.PickUpItem(outItem, convert);
+                    animatorManager.PlayTargetAnimation("Landing", true);
                 }
             }
             

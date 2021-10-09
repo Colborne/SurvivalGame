@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 47
+  itemID: 119
   amount: 1
   name: Seastone
 --- !u!54 &8940588388695996300
