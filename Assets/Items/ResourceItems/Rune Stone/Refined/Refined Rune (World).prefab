@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9155e5f5808abe14ea6fa7a7784a25ad, type: 2}
+  - {fileID: 2100000, guid: dd7d12a5af24022478bcb28677ef2346, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 111
+  itemID: 114
   amount: 1
   name: Refined Rune Stone

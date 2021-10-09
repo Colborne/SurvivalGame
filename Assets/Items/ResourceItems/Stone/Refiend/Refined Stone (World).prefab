@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 112
+  itemID: 113
   amount: 1
   name: Refined Stone
 --- !u!54 &8940588388695996300
@@ -129,7 +129,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 289301614986012343, guid: 6304c29e7fb7cc047b12eba990df18ec, type: 3}
+  m_Mesh: {fileID: 4711208715938537054, guid: 5c652408acea0484ea869dfdb31610a9, type: 3}
 --- !u!65 &7485625027114413854
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -100,7 +100,7 @@ MonoBehaviour:
   interactionText: Craft
   item: {fileID: 0}
   outItem: 0
-  level: 1
+  level: 2
 --- !u!65 &-3478697490381161661
 BoxCollider:
   m_ObjectHideFlags: 0

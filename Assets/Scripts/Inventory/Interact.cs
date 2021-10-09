@@ -36,7 +36,7 @@ public class Interact : MonoBehaviour
         ui = FindObjectOfType<InteractableUI>();
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
-        //craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+        crafting2System = GameObject.Find("Crafting2System").GetComponent<CraftingSystem>();
         smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
         //craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
         //smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();

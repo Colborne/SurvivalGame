@@ -193,7 +193,7 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 112
+  itemID: 113
   equipType: 0
   MaxAmount: 100
   currentAmount: 1
