@@ -5,7 +5,6 @@ using UnityEngine;
 public class Smelting : MonoBehaviour
 {
     public SmeltingRecipe[] recipes;
-    public string interactionText;
     InputManager inputManager;
     InteractableUI ui; 
     AnimatorManager animatorManager;
@@ -21,34 +20,7 @@ public class Smelting : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject)
         {
-            for(int i = 0; i < recipes.Length; i++) //Check through the recipes
-            {
-                int minAmount = 9999;
-                for(int j = 0; j < recipes[i].items.Length; j++) //Check the first recipe items
-                {
-                    if(GameManager.Instance.CheckAmount(recipes[i].items[j]) >= 1) //Check the amount for each item in that recipe
-                    {
-                        if(GameManager.Instance.CheckAmount(recipes[i].items[j]) < minAmount)
-                            minAmount = GameManager.Instance.CheckAmount(recipes[i].items[j]);
-                    }
-                    else
-                    {
-                        iter = -1;
-                        minAmount = 9999;
-                        break;
-                    }
-                }
-                
-                if(minAmount < 9999)
-                {
-                    ui.interactableText.text = "Press 'E' to " + recipes[i].output.GetComponent<Pickup>().name + " x" + minAmount;
-                    ui.transform.GetChild(0).gameObject.SetActive(true);
-                    if(iter < 0)
-                        iter = i;
-                    min = minAmount;
-                    break;
-                }
-            }
+            inventoryCheck();
         }
     }
 
@@ -71,10 +43,45 @@ public class Smelting : MonoBehaviour
             smelt.GetComponent<Pickup>().amount = min;
             iter = -1;
             min = 9999;
-            ui.interactableText.text = null;
-            ui.transform.GetChild(0).gameObject.SetActive(false);
+            inventoryCheck();
+        }
+    }
+
+
+    public void inventoryCheck()
+    {
+        for(int i = 0; i < recipes.Length; i++) //Check through the recipes
+        {
+            int minAmount = 9999;
+            for(int j = 0; j < recipes[i].items.Length; j++) //Check the first recipe items
+            {
+                if(GameManager.Instance.CheckAmount(recipes[i].items[j]) >= 1) //Check the amount for each item in that recipe
+                {
+                    if(GameManager.Instance.CheckAmount(recipes[i].items[j]) < minAmount)
+                        minAmount = GameManager.Instance.CheckAmount(recipes[i].items[j]);
+                }
+                else
+                {
+                    iter = -1;
+                    minAmount = 9999;
+                    break;
+                }
+            }
+            
+            if(minAmount < 9999)
+            {
+                ui.interactableText.text = "Press 'E' to Smelt " + recipes[i].output.GetComponent<Pickup>().name + " x" + minAmount;
+                ui.transform.GetChild(0).gameObject.SetActive(true);
+                if(iter < 0)
+                    iter = i;
+                min = minAmount;
+                break;
+            }
+            else
+            {
+                ui.interactableText.text = null;
+                ui.transform.GetChild(0).gameObject.SetActive(false);   
+            }
         }
     }
 }
-
-                    

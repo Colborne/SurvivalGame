@@ -193,7 +193,6 @@ MonoBehaviour:
   - {fileID: 4450768929677443053}
   - {fileID: 5618922609765203034}
   - {fileID: -9149843791520324470}
-  interactionText: Smelt
 --- !u!114 &4450768929677443053
 MonoBehaviour:
   m_ObjectHideFlags: 0

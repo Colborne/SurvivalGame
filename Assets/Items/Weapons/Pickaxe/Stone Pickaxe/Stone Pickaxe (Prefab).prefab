@@ -83,6 +83,7 @@ MonoBehaviour:
   isTool: 1
   canBreak: Ore
   toolLevel: 1
+  range: 0
 --- !u!1 &3819890953639528428
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ccec5e1b7fa642917d016e52db6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 577103751d7dedc4a97d2ce26a08e062, type: 2}
+  item: {fileID: 11400000, guid: c0fb5baa8ee7f1541a9f8a648826d5e2, type: 2}
 --- !u!1 &5759943302342899482
 GameObject:
   m_ObjectHideFlags: 0

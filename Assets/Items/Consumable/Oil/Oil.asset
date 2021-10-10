@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba931f362d5e9ec4aa06b84fa43c691a, type: 3}
-  m_Name: Health Potion
+  m_Name: Oil
   m_EditorClassIdentifier: 
-  itemName: Health Potion
-  description: A Basic Healing Potion
-  weight: 0.1
-  use: +10 HP
+  itemName: Oil
+  description: Useful Compound
+  weight: 0.5
+  use: Cooking/Sharpening

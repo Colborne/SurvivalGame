@@ -82,7 +82,7 @@ MonoBehaviour:
   damageAmount: 60
   isTool: 1
   canBreak: Ore
-  toolLevel: 1
+  toolLevel: 3
   range: 0
 --- !u!1 &3819890953639528428
 GameObject:
