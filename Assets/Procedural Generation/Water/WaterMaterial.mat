@@ -85,7 +85,7 @@ Material:
     - Vector1_97655d08d61e40ffa24ba5dfb2fb2508: 2.69
     - Vector1_a1303d1858b74dc3808d8b7858823843: -11.1
     - Vector1_b477c45853f247c4b3ec903cfac6b438: 1
-    - Vector1_c892da3e47c54e8a865a0935bf75ad0a: 0.07
+    - Vector1_c892da3e47c54e8a865a0935bf75ad0a: 0.055
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -117,9 +117,9 @@ Material:
     - scale: 1.49
     - sin_freq: 9.72
     m_Colors:
-    - Color_07d66dbf459a427290c7b0403283d67f: {r: 1, g: 1, b: 1, a: 1}
-    - Deep: {r: 0.13385525, g: 0.3549998, b: 0.6037736, a: 1}
-    - Shallow: {r: 0.4712975, g: 0.7763748, b: 0.8396226, a: 1}
+    - Color_07d66dbf459a427290c7b0403283d67f: {r: 1, g: 1, b: 1, a: 0.003921569}
+    - Deep: {r: 0.1338551, g: 0.35499966, b: 0.6037736, a: 0.6862745}
+    - Shallow: {r: 0.47129744, g: 0.7763748, b: 0.8396226, a: 0.6862745}
     - Vector3_a51b31a925e44bd791d49ff6a2a52c60: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_a51b31a925e44bd791d49ff6a2a52c60_1: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
