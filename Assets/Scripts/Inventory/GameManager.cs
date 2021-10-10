@@ -224,6 +224,11 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public void ClearItem(InventoryItem item)
+    {
+        Destroy(item.gameObject);
+    }
+
     public void DropItem(InventoryItem item)
     {
         Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 3, Quaternion.identity);
