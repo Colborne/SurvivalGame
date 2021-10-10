@@ -76,21 +76,21 @@ public class PlayerLocomotion : MonoBehaviour
         if(isSprinting && stats.currentStamina >= .5f)
         {
             stats.UseStamina(.5f);
-            moveDirection = moveDirection * sprintingSpeed;
+            moveDirection = moveDirection * sprintingSpeed * (((1000f - stats.inventoryWeight) / 1000f) + .1f);
         }
         else if(isSneaking)
         {
-            moveDirection = moveDirection * sneakingSpeed;
+            moveDirection = moveDirection * sneakingSpeed * (((1000f - stats.inventoryWeight) / 1000f) + .1f);
         }
         else
         {
             if(inputManager.moveAmount >= 0.5f)
             {
-                moveDirection = moveDirection * runningSpeed;
+                moveDirection = moveDirection * runningSpeed * (((1000f- stats.inventoryWeight) / 1000f) + .1f);
             }        
             else
             {
-                moveDirection = moveDirection * walkingSpeed;
+                moveDirection = moveDirection * walkingSpeed * (((1000f - stats.inventoryWeight) / 1000f) + .1f);
             }
         }
 
