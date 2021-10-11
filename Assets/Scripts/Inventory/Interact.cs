@@ -29,6 +29,8 @@ public class Interact : MonoBehaviour
     CraftingSystem smithing2System;
     CraftingSystem crafting3System;
     CraftingSystem smithing3System;
+    CraftingSystem alchemySystem;
+    CraftingSystem alchemy2System;
 
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
@@ -36,8 +38,10 @@ public class Interact : MonoBehaviour
         ui = FindObjectOfType<InteractableUI>();
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
+        alchemySystem = GameObject.Find("AlchemySystem").GetComponent<CraftingSystem>();
         crafting2System = GameObject.Find("Crafting2System").GetComponent<CraftingSystem>();
         smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
+        alchemy2System = GameObject.Find("Alchemy2System").GetComponent<CraftingSystem>();
         crafting3System = GameObject.Find("Crafting3System").GetComponent<CraftingSystem>();
         smithing3System = GameObject.Find("Smithing3System").GetComponent<CraftingSystem>();
     }
@@ -83,6 +87,13 @@ public class Interact : MonoBehaviour
                     smithing2System.WindowActive();
                 else if(level == 3)
                     smithing3System.WindowActive();
+            }
+            else if(interactionType == Type.Alchemy)
+            {
+                if(level == 1)
+                    alchemySystem.WindowActive();
+                else if(level == 2)
+                    alchemy2System.WindowActive();
             }
             else if(interactionType == Type.Runecrafting)
             {
