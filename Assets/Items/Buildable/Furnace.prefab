@@ -196,6 +196,7 @@ MonoBehaviour:
   - {fileID: 5618922609765203034}
   - {fileID: -9149843791520324470}
   - {fileID: -4222371400701811506}
+  fx: {fileID: 6171888644982421000}
 --- !u!114 &4450768929677443053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4940245170233813125
 Transform:
   m_ObjectHideFlags: 0

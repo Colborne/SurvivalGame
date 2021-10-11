@@ -5,11 +5,16 @@ using UnityEngine;
 public class Smelting : MonoBehaviour
 {
     public SmeltingRecipe[] recipes;
+    public GameObject fx;
+
+    [SerializeField]     
+    Queue<GameObject> smelt = new Queue<GameObject>();
     InputManager inputManager;
     InteractableUI ui; 
     AnimatorManager animatorManager;
     int iter = -1;
     int min = 9999;
+    float timer = 0f;
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
@@ -36,17 +41,42 @@ public class Smelting : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput && iter >= 0)
         {
+            if(min > 10)
+                min = 10 - smelt.Count;
+
             for(int i = 0; i < recipes[iter].items.Length; i++)
                 GameManager.Instance.CheckInventoryForItem(recipes[iter].items[i], min, true);
+            
+            for(int i = 0; i < min; i++)
+                smelt.Enqueue(recipes[iter].output);
 
-            GameObject smelt = Instantiate(recipes[iter].output, transform.position + transform.forward * 3, Quaternion.identity);
-            smelt.GetComponent<Pickup>().amount = min;
             iter = -1;
             min = 9999;
             inventoryCheck();
         }
     }
 
+    void Update()
+    {
+        if(smelt.Count > 0)
+        {
+            if(timer <= 15f)
+            {
+                timer += Time.deltaTime;
+                fx.SetActive(true);
+            }
+            else
+            {
+                timer = 0;
+                Instantiate(smelt.Peek(), transform.position + transform.right * 3, Quaternion.identity);
+                smelt.Dequeue();
+            }
+        }
+        else
+        {
+            fx.SetActive(false);
+        }
+    }
 
     public void inventoryCheck()
     {
@@ -58,7 +88,7 @@ public class Smelting : MonoBehaviour
                 if(GameManager.Instance.CheckAmount(recipes[i].items[j]) >= 1) //Check the amount for each item in that recipe
                 {
                     if(GameManager.Instance.CheckAmount(recipes[i].items[j]) < minAmount)
-                        minAmount = GameManager.Instance.CheckAmount(recipes[i].items[j]);
+                        minAmount = GameManager.Instance.CheckAmount(recipes[i].items[j]) - smelt.Count;
                 }
                 else
                 {
