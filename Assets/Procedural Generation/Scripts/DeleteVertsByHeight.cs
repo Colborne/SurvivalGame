@@ -9,7 +9,7 @@ using UnityEngine;
      public float heightReferenceFloatTop = 0;
      float heightCutOff;
      float heightCutOffTop;
-    float errorAdjustment=0;
+    float errorAdjustment = 2;
  
      void Start() 
      {
