@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Book
-    second: {fileID: 2100000, guid: b0f7aa95cb61f464e9b4a4ec03c497a4, type: 2}
+    second: {fileID: 2100000, guid: 8cecca5374205cb4896879779889cf0f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Book.001
-    second: {fileID: 2100000, guid: 5a269d1bd75b8f54cbb7b29391b582b4, type: 2}
+    second: {fileID: 2100000, guid: 8cecca5374205cb4896879779889cf0f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Book.002
-    second: {fileID: 2100000, guid: f69b868ad3a65724abe2f8660011301a, type: 2}
+    second: {fileID: 2100000, guid: 8cecca5374205cb4896879779889cf0f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Candle
-    second: {fileID: 2100000, guid: b336a38a2d7a62947a33e06218f033c8, type: 2}
+    second: {fileID: 2100000, guid: b8131ae60b3329e48a33c3e25af8a182, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cauldron
-    second: {fileID: 2100000, guid: 6a730f48ead666c4f92860f6c03f2acc, type: 2}
+    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -43,17 +43,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pages
-    second: {fileID: 2100000, guid: dd7d12a5af24022478bcb28677ef2346, type: 2}
+    second: {fileID: 2100000, guid: b8131ae60b3329e48a33c3e25af8a182, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pages.001
-    second: {fileID: 2100000, guid: dd7d12a5af24022478bcb28677ef2346, type: 2}
+    second: {fileID: 2100000, guid: b8131ae60b3329e48a33c3e25af8a182, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pages.002
-    second: {fileID: 2100000, guid: dd7d12a5af24022478bcb28677ef2346, type: 2}
+    second: {fileID: 2100000, guid: b8131ae60b3329e48a33c3e25af8a182, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

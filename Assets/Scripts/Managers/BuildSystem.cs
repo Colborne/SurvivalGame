@@ -26,6 +26,8 @@ public class BuildSystem : MonoBehaviour
             buildRotation++;
         else if(input.scrollInput < 0)
             buildRotation--;
+        else
+            buildRotation = buildRotation;
         
         if(buildRotation > 16)
             buildRotation = -16;
