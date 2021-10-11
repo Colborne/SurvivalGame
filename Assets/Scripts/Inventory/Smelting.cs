@@ -42,7 +42,9 @@ public class Smelting : MonoBehaviour
         if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput && iter >= 0)
         {
             if(min > 10)
-                min = 10 - smelt.Count;
+                min = 10;
+            else 
+                min -= smelt.Count;
 
             for(int i = 0; i < recipes[iter].items.Length; i++)
                 GameManager.Instance.CheckInventoryForItem(recipes[iter].items[i], min, true);

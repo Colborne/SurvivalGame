@@ -231,13 +231,13 @@ public class GameManager : MonoBehaviour
 
     public void DropItem(InventoryItem item)
     {
-        Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 3, Quaternion.identity);
+        Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 4 + PM.transform.up * 2, Quaternion.identity);
         Destroy(item.gameObject);
     }
 
     public void DropItem(InventoryItem item, int _amount)
     {
-        var _newItem = Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 3, Quaternion.identity);
+        var _newItem = Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 4 + PM.transform.up * 2, Quaternion.identity);
         _newItem.GetComponent<Pickup>().amount = _amount;
         Destroy(item.gameObject);
     }

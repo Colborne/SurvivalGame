@@ -261,6 +261,7 @@ MonoBehaviour:
   items:
   - {fileID: 7680765855121683962, guid: 12f850df406b8184e91818e367f3735b, type: 3}
   - {fileID: 7680765855121683962, guid: 2c45a30cb9617ca4dbed1ce227d0ddb4, type: 3}
+  - {fileID: 7680765855121683962, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
   output: {fileID: 7533301453620370007, guid: b32b98c1f774e224c872c4f5501ada93, type: 3}
 --- !u!1 &6171888644982421000
 GameObject:
