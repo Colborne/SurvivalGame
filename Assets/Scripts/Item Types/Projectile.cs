@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
             if (stats != null)
             {
                 sound.PlaySound("Sounds/chop"); 
-                stats.TakeDamage(10);
+                stats.TakeDamage(10);//damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel)));
                 for(int i = 0; i < Random.Range(1,3); i++)
                     Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
 
