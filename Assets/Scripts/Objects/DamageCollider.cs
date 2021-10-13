@@ -47,7 +47,7 @@ public class DamageCollider : MonoBehaviour
             ResourceObject resource = collision.GetComponent<ResourceObject>();
             SoundManager sound = FindObjectOfType<InputManager>().GetComponent<SoundManager>();
             Tree tree = collision.GetComponent<Tree>();
-            CameraShake shake = FindObjectOfType<CameraShake>();
+            //CameraShake shake = FindObjectOfType<CameraShake>();
 
             if(resource != null)
             {
@@ -61,7 +61,7 @@ public class DamageCollider : MonoBehaviour
                         else if(resource.resourceType == "Tree")
                             sound.PlaySound("Sounds/chop"); 
                         
-                        shake.Shake();
+                        //shake.Shake();
                         stats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel)));
                         for(int i = 0; i < Random.Range(1,3); i++)
                             Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
