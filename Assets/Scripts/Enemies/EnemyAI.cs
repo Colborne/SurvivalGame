@@ -28,7 +28,31 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
+    }
+
+    void Start() 
+    {
+        Invoke("MeshCreation", .5f);
+    }
+
+    void MeshCreation()
+    {
         agent = GetComponent<NavMeshAgent>();
+
+        //This will fire when you get the error you're describing.
+        if (!agent.isOnNavMesh)
+        {
+
+            Vector3 start = transform.position;
+            RaycastHit hit;
+            
+            if(Physics.Raycast(start, Vector3.down, out hit))
+            {
+                agent.transform.position = hit.point;
+                agent.enabled = false;
+                agent.enabled = true;
+            }
+        }
     }
 
     private void Update()

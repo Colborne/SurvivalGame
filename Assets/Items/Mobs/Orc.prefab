@@ -648,7 +648,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &6854615423331289312
 CapsuleCollider:
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92581c5e5f09f22408a2194ef241faac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: -2863277858719809135}
+  agent: {fileID: 0}
   player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
@@ -687,8 +687,8 @@ MonoBehaviour:
   health: 100
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
-  timeBetweenAttacks: 0.1
-  projectile: {fileID: 2959667684836456750, guid: 319487a2b76fc68408786b03b3360827, type: 3}
+  timeBetweenAttacks: 5
+  projectile: {fileID: 2959667684836456750, guid: 14c0201907b47884fada16f4103427ac, type: 3}
   sightRange: 50
   attackRange: 10
   playerInSightRange: 0
