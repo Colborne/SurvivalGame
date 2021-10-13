@@ -32528,7 +32528,7 @@ MonoBehaviour:
     amount: 010000006400000064000000
   - name: Grass
     minHeight: 1.5
-    maxHeight: 100
+    maxHeight: 75
     objectToSpawn:
     - {fileID: 910646186869756628, guid: af395ae0fe369c8478ef487d7d4aff6d, type: 3}
     - {fileID: 910646186869756628, guid: e1f645897e3428648a4ad8167e498fe2, type: 3}
@@ -32541,7 +32541,7 @@ MonoBehaviour:
     - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
     amount: e8030000e8030000e8030000900100007d0000004501000001000000f4010000f4010000
   - name: Stone
-    minHeight: 75
+    minHeight: 50
     maxHeight: 250
     objectToSpawn:
     - {fileID: 8628796761403464685, guid: 38d318d8f7ee3db4c950ab6d83977b2b, type: 3}
