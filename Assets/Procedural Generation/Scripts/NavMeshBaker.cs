@@ -10,7 +10,7 @@ public class NavMeshBaker : MonoBehaviour
 
     void Start()
     {
-        Invoke("CreateMesh", .05f);
+        Invoke("CreateMesh", .2f);
     }
 
     void CreateMesh()

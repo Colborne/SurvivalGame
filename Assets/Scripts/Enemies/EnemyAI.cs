@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start() 
     {
-        Invoke("MeshCreation", .5f);
+        Invoke("MeshCreation", 3f);
     }
 
     void MeshCreation()
@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
         if (!agent.isOnNavMesh)
         {
 
-            Vector3 start = transform.position;
+            Vector3 start = transform.position + new Vector3(0,5,0);
             RaycastHit hit;
             
             if(Physics.Raycast(start, Vector3.down, out hit))
