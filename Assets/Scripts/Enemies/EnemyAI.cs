@@ -28,22 +28,23 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
-    }
-
-    void Start() 
-    {
-        Invoke("MeshCreation", 3f);
-    }
-
-    void MeshCreation()
-    {
         agent = GetComponent<NavMeshAgent>();
-
-        //This will fire when you get the error you're describing.
-        if (!agent.isOnNavMesh)
+    }
+    private void Update()
+    {
+        if (agent.isOnNavMesh)
         {
+            //Check for sight and attack range
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-            Vector3 start = transform.position + new Vector3(0,5,0);
+            if (!playerInSightRange && !playerInAttackRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        }
+        else
+        {
+            Vector3 start = transform.position + new Vector3(0,1000,0);
             RaycastHit hit;
             
             if(Physics.Raycast(start, Vector3.down, out hit))
@@ -53,17 +54,6 @@ public class EnemyAI : MonoBehaviour
                 agent.enabled = true;
             }
         }
-    }
-
-    private void Update()
-    {
-        //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
     private void Patroling()
