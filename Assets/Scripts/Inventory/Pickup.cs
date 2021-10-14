@@ -9,11 +9,17 @@ public class Pickup : MonoBehaviour
     public string name;
     InputManager inputManager;
     InteractableUI ui; 
-    bool autoPickup = true;
+    bool autoPickup = false;
 
     private void Awake() {
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
+        Invoke("ActivatePickup", 1f);
+    }
+
+    void ActivatePickup()
+    {
+        autoPickup = true;
     }
 
     private void OnTriggerEnter(Collider other) 
