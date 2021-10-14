@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Red Mushroom
   description: Edible
   weight: 0.1
-  use: +3 HP
+  use: 0
+  amount: 3

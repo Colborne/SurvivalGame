@@ -6,7 +6,12 @@ using System.Text;
 [CreateAssetMenu(menuName = "Items/Consumable Item")]
 public class ConsumableItem : Item
 {
-    public string use;
+    public enum Use
+    {
+        heal
+    }
+    public Use use;
+    public int amount;
     public string GetTooltipInfoText()
     {
         StringBuilder builder = new StringBuilder();

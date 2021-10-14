@@ -77,6 +77,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         rectTransform.anchoredPosition += eventData.delta / GameManager.Instance.interfaceCanvas.scaleFactor;
         gameObject.transform.SetParent(GameManager.Instance.draggables);
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if(currentAmount > 1 && inputManager.modifierInput)
@@ -844,11 +845,17 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             }
             else if(this.item is ConsumableItem)
             {
+                //Uses
+                if((item as ConsumableItem ).use == ConsumableItem.Use.heal)
+                {
+                    stats.TakeDamage(-(item as ConsumableItem ).amount);
+                }
+
+                //Remove Item
                 currentSlot.isFull = false;
                 currentSlot.currentItem = null;
                 currentSlot.GetComponent<TooltipTrigger>().header = null;
                 currentSlot.GetComponent<TooltipTrigger>().content = null;
-                stats.TakeDamage(10);
                 Destroy(gameObject);
             }
         }

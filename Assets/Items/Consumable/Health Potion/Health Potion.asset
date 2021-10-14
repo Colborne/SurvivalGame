@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Health Potion
   description: A Basic Healing Potion
   weight: 0.1
-  use: +10 HP
+  use: 0
+  amount: 10
