@@ -19,6 +19,12 @@ public class StatsManager : MonoBehaviour
     public float baseDefense = 0;
     public float inventoryWeight = 0;
 
+    public float mageBonus = 0;
+    public float rangeBonus = 0;
+
+    float fireDefense;
+    float iceDefense;
+
     public HealthBar healthBar;
     public StaminaBar staminaBar;
     public GameObject FloatingText;

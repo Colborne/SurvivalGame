@@ -91,7 +91,7 @@ public class DamageCollider : MonoBehaviour
 
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(damageAmount);
+                enemyStats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel))); //fix this
             }
         }
     }

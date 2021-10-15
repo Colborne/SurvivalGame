@@ -21,7 +21,10 @@ public class Projectile : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
         transform.rotation = Quaternion.LookRotation(ray.direction);
-        speed = input.attackChargeTimer;
+        if(input.attackChargeTimer != 0f)
+            speed = input.attackChargeTimer;
+        else
+            speed = 1f;
         rb.AddForce(transform.forward * 2500f * speed);
         input.attackChargeTimer = 0f;
     }
@@ -45,9 +48,6 @@ public class Projectile : MonoBehaviour
             if (stats != null)
             {
                 sound.PlaySound("Sounds/chop"); 
-                stats.TakeDamage(10);//damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel)));
-                for(int i = 0; i < Random.Range(1,3); i++)
-                    Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
 
                 if(tree != null)
                 {   

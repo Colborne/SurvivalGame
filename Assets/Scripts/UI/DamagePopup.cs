@@ -7,7 +7,7 @@ public class DamagePopup : MonoBehaviour
     private void Start() {
         if(FindObjectOfType<DamageCollider>())
             transform.position = FindObjectOfType<DamageCollider>().transform.position;
-        else
+        else if (FindObjectOfType<Projectile>())
             transform.position = FindObjectOfType<Projectile>().transform.position;
     }
     void Update()

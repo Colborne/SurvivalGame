@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: -2863277858719809135}
   m_Layer: 0
   m_Name: Orc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -705,8 +705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796d4fedffd0b6e40944b4cc40ea0df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 250
+  currentHealth: 250
+  FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
 --- !u!195 &-2863277858719809135
 NavMeshAgent:
   m_ObjectHideFlags: 0
