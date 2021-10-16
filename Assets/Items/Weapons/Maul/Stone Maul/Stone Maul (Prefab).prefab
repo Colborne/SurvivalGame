@@ -144,7 +144,7 @@ MonoBehaviour:
   damageAmount: 27
   isTool: 0
   canBreak: 
-  toolLevel: 0
+  weaponLevel: 1
   range: 1.1
 --- !u!1 &5788834242575343590
 GameObject:
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 3180135235951337040}
   - component: {fileID: 4376431408707244516}
   m_Layer: 0
-  m_Name: Stone Maul  (Prefab)
+  m_Name: Stone Maul (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

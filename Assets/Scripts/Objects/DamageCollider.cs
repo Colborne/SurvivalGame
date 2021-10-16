@@ -8,7 +8,8 @@ public class DamageCollider : MonoBehaviour
     public int damageAmount;
     public bool isTool;
     public string canBreak;
-    public int toolLevel;
+    [Range(1,6)]
+    public int weaponLevel;
     public float range;
     private void Awake() 
     {
@@ -53,7 +54,7 @@ public class DamageCollider : MonoBehaviour
             {
                 if (stats != null)
                 {
-                    if(isTool && canBreak == resource.resourceType && toolLevel >= resource.toolRequiredLevel)
+                    if(isTool && canBreak == resource.resourceType && weaponLevel >= resource.toolRequiredLevel)
                     {
 
                         if(resource.resourceType == "Ore")
@@ -62,7 +63,7 @@ public class DamageCollider : MonoBehaviour
                             sound.PlaySound("Sounds/chop"); 
                         
                         //shake.Shake();
-                        stats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel)));
+                        stats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel)));
                         for(int i = 0; i < Random.Range(1,3); i++)
                             Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
                         
@@ -91,7 +92,10 @@ public class DamageCollider : MonoBehaviour
 
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * toolLevel), Mathf.Floor(range * toolLevel))); //fix this
+                enemyStats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel))); //fix this
+                for(int i = 0; i < Random.Range(2,4); i++){
+                    Instantiate(enemyStats.fx, transform.position + new Vector3(0,1,0), Random.rotation);
+                }
             }
         }
     }

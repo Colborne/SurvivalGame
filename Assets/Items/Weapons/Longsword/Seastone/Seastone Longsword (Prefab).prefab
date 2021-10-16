@@ -146,7 +146,7 @@ MonoBehaviour:
   damageAmount: 180
   isTool: 0
   canBreak: 
-  toolLevel: 0
+  weaponLevel: 5
   range: 0
 --- !u!65 &9157184502704155073
 BoxCollider:

@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
+    EnemyAnimatorManager enemyAnimatorManager;
 
     public float health;
 
@@ -29,8 +30,9 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (agent.isOnNavMesh)
         {
@@ -66,8 +68,10 @@ public class EnemyAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 1f){
             walkPointSet = false;
+            //enemyAnimatorManager.UpdateAnimatorValues(0, 0);
+        }
     }
     private void SearchWalkPoint()
     {
@@ -84,12 +88,14 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        //enemyAnimatorManager.UpdateAnimatorValues(1, 0);
     }
 
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
+        //enemyAnimatorManager.PlayTargetAnimation("Attack", true);
 
         transform.LookAt(player);
 

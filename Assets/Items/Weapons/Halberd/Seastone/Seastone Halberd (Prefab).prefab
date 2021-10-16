@@ -157,7 +157,7 @@ MonoBehaviour:
   damageAmount: 234
   isTool: 0
   canBreak: 
-  toolLevel: 0
+  weaponLevel: 5
   range: 0
 --- !u!1 &9215655360932992223
 GameObject:

@@ -189,5 +189,5 @@ MonoBehaviour:
   damageAmount: 8
   isTool: 0
   canBreak: 
-  toolLevel: 0
+  weaponLevel: 1
   range: 0

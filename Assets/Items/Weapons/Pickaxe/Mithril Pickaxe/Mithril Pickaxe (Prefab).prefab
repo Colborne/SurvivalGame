@@ -82,7 +82,8 @@ MonoBehaviour:
   damageAmount: 225
   isTool: 1
   canBreak: Ore
-  toolLevel: 6
+  weaponLevel: 6
+  range: 0
 --- !u!1 &3819890953639528428
 GameObject:
   m_ObjectHideFlags: 0

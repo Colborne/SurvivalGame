@@ -33,7 +33,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -87,7 +87,127 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Orc(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: Orc(Clone)
+      position: {x: 0, y: 8.9406976e-10, z: 0}
+      rotation: {x: -0, y: -0.7071067, z: 0, w: 0.7071068}
+      scale: {x: 150, y: 150, z: 150}
+    - name: Armature
+      parentName: Orc(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0, y: -0.7071067, z: 0, w: 0.7071068}
+      scale: {x: 150, y: 150, z: 150}
+    - name: Pelvis
+      parentName: Armature
+      position: {x: -0.000005443599, y: 0.00017199997, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Pelvis
+      position: {x: 0, y: 0, z: 0.00011769171}
+      rotation: {x: 6.1977057e-10, y: 0.027694756, z: 0.00000002237004, w: 0.99961644}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Neck
+      parentName: Spine
+      position: {x: 1.1181586e-12, y: 1.6647797e-20, z: 0.00009831624}
+      rotation: {x: 0.0000000026817017, y: -0.027694756, z: -0.0000001415336, w: 0.99961644}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Head
+      parentName: Neck
+      position: {x: 4.4408923e-20, y: -1.9852334e-27, z: 0.000041834588}
+      rotation: {x: -5.551115e-16, y: 0.000000001862645, z: -1.6543614e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_end
+      parentName: Head
+      position: {x: 0, y: 0, z: 0.000059879592}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoulder
+      parentName: Spine
+      position: {x: 1.1181586e-12, y: 1.6647797e-20, z: 0.00009831624}
+      rotation: {x: 0.80116653, y: -0.043022726, z: -0.013280078, w: 0.59674525}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.9999999}
+    - name: LeftBicep
+      parentName: LeftShoulder
+      position: {x: -7.450581e-13, y: -4.5661273e-11, z: 0.000076948054}
+      rotation: {x: -0.13630062, y: 0.016370365, z: 0.009833204, w: 0.99048346}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: LeftArm
+      parentName: LeftBicep
+      position: {x: -6.7520886e-13, y: 8.869634e-12, z: 0.00009814538}
+      rotation: {x: 0.0071282955, y: 0.006640524, z: -0.0003485292, w: 0.9999525}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
+    - name: LeftHand
+      parentName: LeftArm
+      position: {x: -6.984919e-13, y: -2.3511642e-11, z: 0.00009674844}
+      rotation: {x: -0.01407723, y: 0.021102175, z: 0.00029721824, w: 0.9996782}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: LeftHand_end
+      parentName: LeftHand
+      position: {x: 0, y: 0, z: 0.000028578901}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: Spine
+      position: {x: 0.0000006007791, y: -0.00000085399216, z: 0.000098349556}
+      rotation: {x: -0.80116653, y: -0.04302276, z: 0.013279968, w: 0.59674525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightBicep
+      parentName: RightShoulder
+      position: {x: 0, y: -3.3040322e-12, z: 0.00007694805}
+      rotation: {x: 0.13630058, y: 0.01637087, z: -0.009836488, w: 0.99048346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightArm
+      parentName: RightBicep
+      position: {x: -1.1641532e-12, y: -1.2467068e-11, z: 0.000098145356}
+      rotation: {x: -0.007128354, y: 0.006640453, z: 0.00034724438, w: 0.9999525}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: RightHand
+      parentName: RightArm
+      position: {x: -8.3819025e-13, y: -2.8071849e-11, z: 0.00009674844}
+      rotation: {x: -0.004967514, y: 0.024875626, z: -0.7070861, w: 0.7066723}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: RightHand_end
+      parentName: RightHand
+      position: {x: 0, y: 0, z: 0.000028578901}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHip
+      parentName: Pelvis
+      position: {x: 0.0000005990863, y: -0.000039169816, z: -0.000008780134}
+      rotation: {x: 0.62631357, y: 0.77915543, z: 0.0059687067, w: 0.024748622}
+      scale: {x: 1.000073, y: 1.0000161, z: 1}
+    - name: LeftLeg
+      parentName: LeftHip
+      position: {x: -1.1408703e-12, y: 6.5192583e-13, z: 0.00007141886}
+      rotation: {x: 0.020157458, y: 0.015548474, z: -0.000000050294705, w: 0.9996759}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: LeftLeg_end
+      parentName: LeftLeg
+      position: {x: 0, y: 0, z: 0.000074999996}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHip
+      parentName: Pelvis
+      position: {x: 0.0000012007919, y: 0.00003831582, z: -0.000008780134}
+      rotation: {x: -0.6263133, y: 0.7791557, z: -0.0059686764, w: 0.024748618}
+      scale: {x: 1.0000739, y: 1.0000163, z: 1}
+    - name: RightLeg
+      parentName: RightHip
+      position: {x: 1.816079e-12, y: 5.587935e-13, z: 0.00007141886}
+      rotation: {x: -0.02015744, y: 0.015548483, z: -0.00000002390862, w: 0.9996759}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: RightLeg_end
+      parentName: RightLeg
+      position: {x: 0, y: 0, z: 0.000074999996}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -95,10 +215,10 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: Pelvis
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

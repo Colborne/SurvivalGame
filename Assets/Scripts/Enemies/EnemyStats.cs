@@ -8,6 +8,7 @@ public class EnemyStats : MonoBehaviour
     public int currentHealth;
     
     public GameObject FloatingText;
+    public GameObject fx;
 
     void Start()
     {
