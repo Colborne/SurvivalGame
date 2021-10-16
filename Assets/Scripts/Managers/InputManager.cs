@@ -40,6 +40,8 @@ public class InputManager : MonoBehaviour
     public bool buildFlag;
     public bool buildWindowFlag;
     public bool craftWindowFlag;
+    public bool fishingFlag = false;
+    public bool hasCast = false;
 
     private void Awake() 
     {
@@ -99,8 +101,9 @@ public class InputManager : MonoBehaviour
             HandleSprintingInput();
             HandleSneakingInput();
             HandleJumpingInput();
+            HandleFishing();
             
-            if(!buildFlag)
+            if(!buildFlag && !fishingFlag)
                 HandleAttackInput();
         }
         
@@ -292,5 +295,24 @@ public class InputManager : MonoBehaviour
         {
             animatorManager.PlayTargetAnimation("Idle2H", false);
         }
+    }
+
+    private void HandleFishing()
+    {
+        if(GameManager.Instance.weaponID == 64)
+            fishingFlag = true;
+        else
+            fishingFlag = false;
+        
+        if(fishingFlag)
+            if(leftMouseInput)
+            {
+                leftMouseInput = false;
+                if(!hasCast)
+                    playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
+                else
+                    playerAttacker.HandleString("FishingEnd");
+                hasCast = !hasCast;
+            }
     }
 }

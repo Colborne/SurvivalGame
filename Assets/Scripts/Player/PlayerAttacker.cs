@@ -60,12 +60,17 @@ public class PlayerAttacker : MonoBehaviour
         }
     }
 
-        public void HandleEndBlock(WeaponItem weaponItem)
+    public void HandleEndBlock(WeaponItem weaponItem)
     {
         input.blockChargeTimer = 0f;
         equipmentManager.leftWeapon = weaponItem;
         animatorManager.PlayTargetAnimation(weaponItem.Left_Attack, true);
         animatorManager.animator.SetBool("isAttacking", true);
+    }
+
+    public void HandleString(string input)
+    {
+        animatorManager.PlayTargetAnimation(input, true);
     }
 
     public void HandleRangedAction(WeaponItem weaponItem)

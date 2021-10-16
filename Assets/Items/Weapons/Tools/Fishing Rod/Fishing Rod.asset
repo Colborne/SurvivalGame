@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Fishing Rod
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5788834242575343590, guid: 74788a42e8274654890157a3c222955b, type: 3}
-  itemIcon: {fileID: 21300000, guid: 757d8d87139888a46b1dc1d19434ef4a, type: 3}
   itemName: Fishing Rod
   description: A Fisherman's Tool
   weight: 2
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: 
+  Attack: FishingCast
   Heavy_Attack: 
   Left_Attack: 
   baseStamina: 0

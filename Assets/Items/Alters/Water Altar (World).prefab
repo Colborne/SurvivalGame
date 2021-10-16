@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1923682358328833256}
   - component: {fileID: 319807276189921359}
   m_Layer: 0
-  m_Name: Water Altar
+  m_Name: Water Altar (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,9 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339b0bde98f2b2343b747df5cea51c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction: Infuse Water Rune
+  interactionType: 2
+  interactionText: Craft Water Rune
   item: {fileID: 7680765855121683962, guid: f830757aa70adf9489cf626883be6782, type: 3}
   outItem: 23
+  level: 1
 --- !u!65 &319807276189921359
 BoxCollider:
   m_ObjectHideFlags: 0
