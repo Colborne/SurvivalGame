@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Bronze Longsword
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 1488641282898831735, guid: 8cc178f3034e64946bdd25f536d423e1, type: 3}
-  itemIcon: {fileID: 21300000, guid: 7a43ea1e1c9f4354fb97ba46dd31a92e, type: 3}
   itemName: Bronze Longsword
   description: L O N G B O I
   weight: 20
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: HeavyAttackLunge
-  Heavy_Attack: OverheadSwing
+  Attack: Slash
+  Heavy_Attack: HeavySlash
   Left_Attack: 
   baseStamina: 10
   heavyAttackMultiplier: 1.5

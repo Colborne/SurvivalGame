@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Mithril Battleaxe
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5788834242575343590, guid: 7a175c28479f6454890acc5b812ae9f3, type: 3}
-  itemIcon: {fileID: 21300000, guid: 35f64f9b279faec4092d72c4ddf491f1, type: 3}
   itemName: Mithril Battleaxe
   description: A Crude Battleaxe
   weight: 8
@@ -21,7 +19,7 @@ MonoBehaviour:
   isOffhandable: 0
   canCharge: 0
   Attack: Chop
-  Heavy_Attack: OverheadSwing
+  Heavy_Attack: HeavyCrush
   Left_Attack: 
   baseStamina: 20
   heavyAttackMultiplier: 1.5

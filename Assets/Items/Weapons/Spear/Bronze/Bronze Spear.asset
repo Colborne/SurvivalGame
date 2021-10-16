@@ -12,20 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Bronze Spear
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5555158284736803174, guid: 7a9f3786352516a4b9221df0ae2f4969, type: 3}
-  itemIcon: {fileID: 21300000, guid: cd0ea2033fb52024d867c744036ec6ca, type: 3}
   itemName: Bronze Spear
   description: Pokey Stick
   weight: 8
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: HeavyAttackLunge
-  Heavy_Attack: OverheadSwing
+  Attack: Stab
+  Heavy_Attack: 
   Left_Attack: 
   baseStamina: 25
   heavyAttackMultiplier: 1.2
   attackDamage: 1.2
   attackSpeed: 0.8
-  damageType: 0
+  damageType: 1
   projectile: {fileID: 0}

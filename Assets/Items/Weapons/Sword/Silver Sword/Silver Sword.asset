@@ -12,19 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Silver Sword
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5555158284736803174, guid: 19705ef6e4739004b90d80d910f215ce, type: 3}
-  itemIcon: {fileID: 21300000, guid: 7a43ea1e1c9f4354fb97ba46dd31a92e, type: 3}
   itemName: Silver Sword
   description: A True Knight's Weapon
   weight: 5.2
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
-  Attack: LightAttack
-  Heavy_Attack: HeavyAttackLunge
+  Attack: Slash
+  Heavy_Attack: Stab
   Left_Attack: 
   baseStamina: 10
   heavyAttackMultiplier: 1.5
   attackDamage: 1
   attackSpeed: 1
+  damageType: 0
   projectile: {fileID: 0}
