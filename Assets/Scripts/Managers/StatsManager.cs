@@ -21,6 +21,7 @@ public class StatsManager : MonoBehaviour
 
     public float mageBonus = 0;
     public float rangeBonus = 0;
+    public float strengthBonus = 0;
 
     float fireDefense;
     float iceDefense;

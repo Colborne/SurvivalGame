@@ -20,8 +20,9 @@ public class EnemyAI : MonoBehaviour
     public GameObject projectile;
 
     //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    public float alertRange, attackRange;
+    public Vector3 sightRange;
+    public bool playerInAlertRange, playerInAttackRange, playerInSight;
     public bool patrolState, idleState = true, waitingToPatrol;
 
     private void Awake()
@@ -35,19 +36,20 @@ public class EnemyAI : MonoBehaviour
     {
         if (agent.isOnNavMesh)
         {
-            //Check for sight and attack range
-            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            //Check for alert and attack range
+            playerInAlertRange = Physics.CheckSphere(transform.position, alertRange, whatIsPlayer);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+            playerInSight = Physics.CheckBox(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange, Quaternion.LookRotation(transform.forward), whatIsPlayer);
 
-            if (!playerInSightRange && !playerInAttackRange) 
+            if (!playerInAlertRange && !playerInAttackRange && !playerInSight) 
             {
                 if(patrolState)
                     Patrol();
                 else
                     Idle();  
             }
-            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-            if (playerInAttackRange && playerInSightRange) AttackPlayer();
+            if ((playerInAlertRange || playerInSight) && !playerInAttackRange) ChasePlayer();
+            if (playerInAttackRange && playerInAlertRange) AttackPlayer();
         }
         else
         {
@@ -148,7 +150,9 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.DrawWireSphere(transform.position, alertRange);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
     }
 
     public bool checkIfPosEmpty(Vector3 targetPos)
