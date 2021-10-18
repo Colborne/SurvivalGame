@@ -847,16 +847,19 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             {
                 //Uses
                 if((item as ConsumableItem ).use == ConsumableItem.Use.heal)
-                {
-                    stats.TakeDamage(-(item as ConsumableItem ).amount);
-                }
+                    stats.Heal((item as ConsumableItem ).amount);
 
-                //Remove Item
-                currentSlot.isFull = false;
-                currentSlot.currentItem = null;
-                currentSlot.GetComponent<TooltipTrigger>().header = null;
-                currentSlot.GetComponent<TooltipTrigger>().content = null;
-                Destroy(gameObject);
+                currentSlot.currentItem.currentAmount -= 1;
+
+                if(currentSlot.currentItem.currentAmount == 0)
+                {
+                    //Remove Item
+                    currentSlot.isFull = false;
+                    currentSlot.currentItem = null;
+                    currentSlot.GetComponent<TooltipTrigger>().header = null;
+                    currentSlot.GetComponent<TooltipTrigger>().content = null;
+                    Destroy(gameObject);
+                }
             }
         }
     }

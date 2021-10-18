@@ -83,6 +83,15 @@ public class StatsManager : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        currentHealth = currentHealth + amount;
+        if (currentHealth > 100)
+            currentHealth = 100;
+        healthBar.SetCurrentHealth(currentHealth);
+        ShowDamage("+" + amount.ToString());
+    }
+
     public void UseStamina(float cost)
     {
         currentStamina = currentStamina - cost;
@@ -135,7 +144,7 @@ public class StatsManager : MonoBehaviour
     void UpdateDefense()
     {
         float newDefense = 0;
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 10; i++)
         {
             if (GameManager.Instance.inventorySlots[i].isFull)
             {
