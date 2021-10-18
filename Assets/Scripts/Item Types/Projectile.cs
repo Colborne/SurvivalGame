@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision) 
     { 
-        if(collision.tag == "Hittable" || collision.tag == "Ground")
+        if(collision.tag == "Hittable" || collision.tag == "Ground" || collision.tag == "Player")
         {
             ObjectStats stats = collision.GetComponent<ObjectStats>();
             ResourceObject resource = collision.GetComponent<ResourceObject>();
@@ -57,7 +57,8 @@ public class Projectile : MonoBehaviour
             if (fx != null)
             {
                 GameObject _fx = Instantiate(fx, transform.position, transform.rotation);
-                _fx.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                if(_fx.GetComponent<Rigidbody>() != null) 
+                    _fx.GetComponent<Rigidbody>() .constraints = RigidbodyConstraints.FreezeAll;
             }
             Destroy(gameObject);
         }

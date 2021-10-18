@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         hitbox = transform.GetChild(2).gameObject;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (agent.isOnNavMesh)
         {
@@ -131,13 +131,7 @@ public class EnemyAI : MonoBehaviour
         {
             alreadyAttacked = true;
             Invoke("ResetAttack", timeBetweenAttacks);  
-
-            if(projectile != null)
-            {
-                Rigidbody rb = Instantiate(projectile, transform.position + new Vector3(2,2,0), Quaternion.identity).GetComponentInChildren<Rigidbody>();
-                rb.AddForce(transform.forward * 2500f);
-            }
-            animator.CrossFade("OrcAttack", 0.2f);
+            animator.CrossFade("Attack", 0.2f);
         }
     }
     private void ResetAttack()
@@ -169,5 +163,16 @@ public class EnemyAI : MonoBehaviour
     public void DamageCollider()
     {
         hitbox.SetActive(!hitbox.active);
+    }
+
+    public void RangedAttack()
+    {
+        if(projectile != null)
+        {
+            GameObject proj = Instantiate(projectile, transform.position + new Vector3(2,2,0), Quaternion.identity);
+            Rigidbody rb = proj.GetComponentInChildren<Rigidbody>();
+            proj.transform.LookAt(player);
+            rb.AddForce(transform.forward * 2500f);
+        }
     }
 }
