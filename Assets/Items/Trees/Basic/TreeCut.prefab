@@ -140,6 +140,7 @@ MonoBehaviour:
   treeLog: {fileID: 5333783608370816186}
   treeLogHalf: {fileID: 4587336339405856463, guid: 4bdf2cb59a0f4a6439654d41d9b1724a, type: 3}
   treeStump: {fileID: 4316459433290614995, guid: 915e50e7bf9183149927d87c2b7d6dbc, type: 3}
+  type: 0
   timeSinceInitialization: 0
   timer: 0
 --- !u!114 &341490334881973780
@@ -323,4 +324,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a884620ecbcbd9d4f85e4b46c15f91b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1
+  isTree: 1

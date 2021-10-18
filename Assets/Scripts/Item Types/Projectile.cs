@@ -21,10 +21,7 @@ public class Projectile : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
         transform.rotation = Quaternion.LookRotation(ray.direction);
-        if(input.attackChargeTimer != 0f)
-            speed = input.attackChargeTimer;
-        else
-            speed = 1f;
+        speed = input.attackChargeTimer;
         rb.AddForce(transform.forward * 2500f * speed);
         input.attackChargeTimer = 0f;
     }

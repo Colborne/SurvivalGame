@@ -21,7 +21,10 @@ public class EnemyStats : MonoBehaviour
         ShowDamage(damage.ToString());
         if(currentHealth <= 0)
         {
-            currentHealth = 0;
+            for(int i = 0; i < 20; i++)
+                Instantiate(fx, transform.position + new Vector3(Random.Range(-.5f,.5f), Random.Range(-.5f,.5f), Random.Range(-.5f,.5f)), Random.rotation);
+                
+            Destroy(gameObject);
         }
     }
 

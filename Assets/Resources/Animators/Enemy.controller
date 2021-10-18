@@ -60,7 +60,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: OrcAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -75,7 +75,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6208031253bac034ab8619c58f54e383, type: 2}
+  m_Motion: {fileID: 7400000, guid: 811f64f053e48ac48bc1a7ef7afaaf77, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddb0f8a10cdb57e4c8cee89dff9fd176, type: 3}
   m_Name: 
@@ -378,7 +378,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Override
     m_StateMachine: {fileID: 413607177824382216}
-    m_Mask: {fileID: 31900000, guid: 29f56e3f3c681fd49aa3d943f90a8f84, type: 2}
+    m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb8a48eb6db49f44b9452f2661410f0d, type: 3}
   m_Name: 
@@ -781,7 +781,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 9ff123726b5c03f459aa2298e805d2fa, type: 2}
+    m_Motion: {fileID: 7400000, guid: 4cec07bf79ce80a4ab1e80dd9aa7ad90, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -789,7 +789,7 @@ BlendTree:
     m_DirectBlendParameter: H
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ab69fab144603294794ac61dd899845a, type: 2}
+    m_Motion: {fileID: 7400000, guid: e57c2ad6005897944bfed6c43d8f8d2b, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
