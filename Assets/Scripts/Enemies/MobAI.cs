@@ -8,6 +8,7 @@ public class MobAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
     Animator animator;
     Rigidbody rigidbody;
+    Vector3 check;
 
     //Patroling
     public Vector3 walkPoint;
@@ -26,8 +27,9 @@ public class MobAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();       
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
+        check = transform.position;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         if (agent.isOnNavMesh)
         {
@@ -35,23 +37,24 @@ public class MobAI : MonoBehaviour
             playerInAlertRange = Physics.CheckSphere(transform.position, alertRange, whatIsPlayer);
             playerInSight = Physics.CheckBox(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange, Quaternion.LookRotation(transform.forward), whatIsPlayer);
 
-            if (!playerInAlertRange && !playerInSight) 
+            if (!playerInAlertRange && !playerInSight && !fleeState) 
             {
                 if(patrolState)
                     Patrol();
                 else
                     Idle();      
             }
-            else if ((playerInAlertRange || playerInSight)) Flee();
+            if ((playerInAlertRange || playerInSight)) 
+                Flee();
         }
         else
         {            
-            Vector3 start = transform.position;
+            Vector3 start = check + new Vector3(0,100,0);
             RaycastHit hit;
             
             if(Physics.Raycast(start, Vector3.down, out hit))
             {
-                agent.transform.position = hit.point;
+                transform.position = hit.point;
                 agent.enabled = false;
                 agent.enabled = true;
             }
@@ -64,7 +67,7 @@ public class MobAI : MonoBehaviour
         {
             animator.SetFloat("V", 0.0f);
         
-            if(Random.Range(0,1) == 0)
+            if(Random.Range(0,5) == 0)
             {
                 animator.CrossFade("GrazeStart", 0f);
                 grazeCheck = true;
@@ -82,6 +85,7 @@ public class MobAI : MonoBehaviour
     private void StartPatrol()
     {
         waitingToPatrol = false;
+        
         if(grazeCheck)
         {
             animator.CrossFade("GrazeEnd", 0f);
@@ -93,18 +97,23 @@ public class MobAI : MonoBehaviour
 
     private void Patrol()
     {
-        if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet){
             agent.SetDestination(walkPoint);
             animator.SetFloat("V", .5f);
         }
+        else
+        {
+            animator.SetFloat("V",0f);
+            SearchWalkPoint();
+        }
         
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 2f)
         {
+            animator.SetFloat("V", 0f);
             walkPointSet = false;
             idleState = true;
             patrolState = false;
@@ -119,7 +128,7 @@ public class MobAI : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround) && checkIfPosEmpty(walkPoint)) 
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)) 
             walkPointSet = true; 
     }
 
@@ -134,14 +143,14 @@ public class MobAI : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(start, Vector3.down, out hit) && hit.collider.CompareTag("Ground"))
         {
-            if(checkIfPosEmpty(start) && Vector3.Distance(start, player.transform.position) > 100)
+
+            walkPoint = new Vector3(transform.position.x + randomX, hit.point.y, transform.position.z + randomZ);
+            walkPointSet = true; 
+            
+            if(grazeCheck)
             {
-                walkPoint = new Vector3(transform.position.x + randomX, hit.point.y, transform.position.z + randomZ);
-                walkPointSet = true; 
-                if(grazeCheck)
-                {
-                    animator.CrossFade("GrazeEnd", 0f);
-                }
+                animator.CrossFade("GrazeEnd", 0f);
+                grazeCheck = false;
             }
         } 
     }
@@ -164,11 +173,14 @@ public class MobAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 2f)
         {
             walkPointSet = false;
-            idleState = true;
-            fleeState = false;
+            if(Vector3.Distance(player.position, transform.position) > 25)
+            {
+                idleState = true;
+                fleeState = false;
+            }
         }
     }
 
