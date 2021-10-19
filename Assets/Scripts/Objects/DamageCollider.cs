@@ -17,7 +17,10 @@ public class DamageCollider : MonoBehaviour
         damageCollider.gameObject.SetActive(true);
         damageCollider.isTrigger = true;
         damageCollider.enabled = false;
-        range = GetComponentInParent<weaponItemLoader>().item.attackDamage;
+        if(GetComponentInParent<weaponItemLoader>() != null)
+            range = GetComponentInParent<weaponItemLoader>().item.attackDamage;
+        else
+            range = 1f;   
     }
 
     public void EnableDamageCollider()

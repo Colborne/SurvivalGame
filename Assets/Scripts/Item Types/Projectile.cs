@@ -8,12 +8,12 @@ public class Projectile : MonoBehaviour
     Rigidbody rb;
     public GameObject fx;
     public InventoryItem item;
-
-    public float speed;
+    DamageCollider dc;
     private void Awake() 
     {
         input = FindObjectOfType<InputManager>();
         rb = GetComponent<Rigidbody>();
+        dc = GetComponent<DamageCollider>();
     }
     
     // Start is called before the first frame update
@@ -21,9 +21,9 @@ public class Projectile : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
         transform.rotation = Quaternion.LookRotation(ray.direction);
-        speed = input.attackChargeTimer;
-        rb.AddForce(transform.forward * 2500f * speed);
+        rb.AddForce(transform.forward * 5000f * input.attackChargeTimer);
         input.attackChargeTimer = 0f;
+        dc.EnableDamageCollider();
     }
 
     // Update is called once per frame
@@ -35,9 +35,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision) 
     { 
-        if(collision.tag == "Hittable" || collision.tag == "Ground" || collision.tag == "Player")
+        if(collision.tag == "Hittable" || collision.tag == "Ground" || collision.tag == "Enemy")
         {
             ObjectStats stats = collision.GetComponent<ObjectStats>();
+            EnemyStats enemy = collision.GetComponent<EnemyStats>();
             ResourceObject resource = collision.GetComponent<ResourceObject>();
             SoundManager sound = FindObjectOfType<InputManager>().GetComponent<SoundManager>();
             Tree tree = collision.GetComponent<Tree>();
@@ -54,11 +55,11 @@ public class Projectile : MonoBehaviour
                 }
             }
 
-            if (fx != null)
+            if (fx != null && enemy == null)
             {
                 GameObject _fx = Instantiate(fx, transform.position, transform.rotation);
                 if(_fx.GetComponent<Rigidbody>() != null) 
-                    _fx.GetComponent<Rigidbody>() .constraints = RigidbodyConstraints.FreezeAll;
+                    _fx.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             }
             Destroy(gameObject);
         }
