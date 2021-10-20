@@ -29,7 +29,7 @@ public class MobAI : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         check = transform.position;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (agent.isOnNavMesh)
         {
@@ -174,13 +174,14 @@ public class MobAI : MonoBehaviour
 
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 2f)
-        {
             walkPointSet = false;
-            if(Vector3.Distance(player.position, transform.position) > 25)
-            {
+        
+        if(Vector3.Distance(player.position, transform.position) > 25)
+        {
                 idleState = true;
                 fleeState = false;
-            }
+                agent.ResetPath();
+                walkPointSet = false;
         }
     }
 

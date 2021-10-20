@@ -776,6 +776,7 @@ MonoBehaviour:
   currentHealth: 250
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
   fx: {fileID: 1968586304485042, guid: 6c86c599d7bf3464eb4506d2584fbe57, type: 3}
+  drop: {fileID: 6058380433340147435, guid: e0e21bc78b81a5640acacf6a01210e64, type: 3}
 --- !u!195 &-2863277858719809135
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -787,9 +788,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 2
   m_Speed: 8
-  m_Acceleration: 10
+  m_Acceleration: 500
   avoidancePriority: 50
-  m_AngularSpeed: 150
+  m_AngularSpeed: 500
   m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

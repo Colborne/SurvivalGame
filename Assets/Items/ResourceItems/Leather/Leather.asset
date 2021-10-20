@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3cce3b9cb6274d299978f334a2cefde, type: 3}
-  m_Name: New Mesh Settings
+  m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
+  m_Name: Leather
   m_EditorClassIdentifier: 
-  autoUpdate: 1
-  meshScale: 50
-  useFlatShading: 0
-  chunkSizeIndex: 1
-  flatshadedChunkSizeIndex: 1
+  itemName: Leather
+  description: Animal Hide
+  weight: 0.3
+  resourceType: Craftable

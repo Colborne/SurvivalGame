@@ -19,7 +19,7 @@ MonoBehaviour:
     octaves: 2
     persistance: 0.7
     lacunarity: 5
-    seed: 810783
+    seed: 588586
     offset: {x: 0, y: 0}
   useFalloff: 1
   heightMultiplier: 400
@@ -36,8 +36,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.0056806356
-      value: -0.050391838
+      time: -0.15505545
+      value: -0.079902336
       inSlope: 0.81309336
       outSlope: 0.81309336
       tangentMode: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.51691854
-      value: 0.2145395
+      time: 0.5378841
+      value: 0.18768403
       inSlope: 0.8404857
       outSlope: 0.8404857
       tangentMode: 0
@@ -54,8 +54,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.67935014
-      value: 1.0171645
+      time: 0.96911454
+      value: 0.7909148
       inSlope: 1.012341
       outSlope: 1.012341
       tangentMode: 0

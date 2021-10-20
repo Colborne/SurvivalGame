@@ -49,7 +49,7 @@ public class EnemyAI : MonoBehaviour
                     Idle();  
             }
             if ((playerInAlertRange || playerInSight) && !playerInAttackRange) ChasePlayer();
-            if (playerInAttackRange && playerInAlertRange) AttackPlayer();
+            if (playerInAttackRange) AttackPlayer();
         }
         else
         {
@@ -79,6 +79,7 @@ public class EnemyAI : MonoBehaviour
 
     private void StartPatrol()
     {
+        waitingToPatrol = false;
         patrolState = true;
     }
 
@@ -94,13 +95,12 @@ public class EnemyAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 5f)
         {
             walkPointSet = false;
             idleState = true;
             patrolState = false;
         }
-        
     }
     private void SearchWalkPoint()
     {
@@ -108,30 +108,36 @@ public class EnemyAI : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        Vector3 start = new Vector3(transform.position.x + randomX, transform.position.y + 500f, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround) && checkIfPosEmpty(walkPoint)) 
+        RaycastHit hit;
+        if(Physics.Raycast(start, Vector3.down, out hit))
+        {
+            walkPoint = new Vector3(transform.position.x + randomX, hit.point.y, transform.position.z + randomZ);
             walkPointSet = true; 
+        }
     }
 
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        animator.SetFloat("V", 1f, .2f, Time.deltaTime);
+        walkPoint = player.position;
+        animator.SetFloat("V", 1f);
+        patrolState = false;
     }
 
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
-        agent.SetDestination(transform.position);
-        animator.SetFloat("V", 0f, .2f, Time.deltaTime);
+        agent.ResetPath();
+        animator.SetFloat("V", 0f);
         transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
             alreadyAttacked = true;
             Invoke("ResetAttack", timeBetweenAttacks);  
-            animator.CrossFade("Attack", 0.2f);
+            animator.CrossFade("Attack", 0f);
         }
     }
     private void ResetAttack()
