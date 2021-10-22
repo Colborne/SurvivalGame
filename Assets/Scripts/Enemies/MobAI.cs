@@ -83,9 +83,10 @@ public class MobAI : MonoBehaviour
                 animator.CrossFade("GrazeStart", 0f);
                 grazeCheck = true;
             }
-            else
+            else{
                 grazeAttempt = true;
-            
+                grazeCheck = false;
+            }      
         }
 
         if(!waitingToPatrol)
@@ -113,7 +114,7 @@ public class MobAI : MonoBehaviour
         {
             if(speed > 0)
             {
-                animator.SetFloat("V", .5f);
+                animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, .5f));
                 if(grazeCheck)
                 {
                     animator.CrossFade("GrazeEnd", 0f);
@@ -121,13 +122,13 @@ public class MobAI : MonoBehaviour
                 }
             }
             else
-                animator.SetFloat("V",0f);     
+                animator.SetFloat("V", 0f);     
         }     
         
         Vector3 distanceToWalkPoint = agent.transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 3f)
+        if (distanceToWalkPoint.magnitude < 1.5f)
         {
             animator.SetFloat("V", 0f);
             walkPointSet = false;
@@ -152,52 +153,25 @@ public class MobAI : MonoBehaviour
         }
     }
 
-    private void SearchFleePoint()
+    private void Flee()
     {
-        //Calculate random point in range
-        float randomZ = Random.Range(-walkPointRange * 5, walkPointRange * 5);
-        float randomX = Random.Range(-walkPointRange * 5, walkPointRange * 5);
-
-        Vector3 start = new Vector3(transform.position.x + randomX, transform.position.y + 500f, transform.position.z + randomZ);
-
-        RaycastHit hit;
-        if(Physics.Raycast(start, Vector3.down, out hit) && hit.collider.CompareTag("Ground"))
-        {
-            walkPoint = new Vector3(transform.position.x + randomX, hit.point.y, transform.position.z + randomZ);
-            walkPointSet = true; 
-            
+        if(Vector3.Distance(player.position, transform.position) < 25f)
+        {  
             if(grazeCheck)
             {
                 animator.CrossFade("GrazeEnd", 0f);
                 grazeCheck = false;
             }
-        } 
-    }
 
-    private void Flee()
-    {
-        if (!walkPointSet) SearchFleePoint();
-
-        if (walkPointSet)
-        {
             fleeState = true;
             idleState = false;
-            grazeCheck = false;
             waitingToPatrol = false;
             patrolState = false;
-            agent.SetDestination(walkPoint);
+            agent.SetDestination(transform.position + (transform.position - player.transform.position) * 10f);
             animator.SetFloat("V", 1f);
         }
-
-        Vector3 distanceToWalkPoint = agent.transform.position - walkPoint;
-
-        //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 3f)
-            walkPointSet = false;
-        
-        if(Vector3.Distance(player.position, transform.position) > 25f)
+        else
         {
-            Debug.Log(Vector3.Distance(player.position, transform.position));
             idleState = true;
             fleeState = false;
             walkPointSet = false;

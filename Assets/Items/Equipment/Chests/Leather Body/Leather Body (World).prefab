@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8992684630331685764}
   - component: {fileID: 319887251229297446}
   m_Layer: 0
-  m_Name: Wizard Robe Top (World)
+  m_Name: Leather Body (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2468126280362736176}
-  m_Mesh: {fileID: 4493585093827132993, guid: 55e73f164797d744e94b0129488a0c85, type: 3}
+  m_Mesh: {fileID: 6792840915418905879, guid: a58bbf541a53daa42bd0ac4a8bb5dce1, type: 3}
 --- !u!23 &4125428883572661221
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cb167de08261d6499b0b10b1af2eea8, type: 2}
+  - {fileID: 2100000, guid: ac22aa80d2a757b42b490bf8ea09854d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 127
+  itemID: 130
   amount: 1
-  name: Wizard Robe Top
+  name: Leather Tunic

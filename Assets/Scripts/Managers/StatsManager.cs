@@ -101,7 +101,7 @@ public class StatsManager : MonoBehaviour
 
     public void RegenerateStamina()
     {
-        if(playerManager.isInteracting || playerLocomotion.isSprinting)
+        if(playerManager.isInteracting || playerLocomotion.isSprinting || playerLocomotion.isSwimming)
         {
             staminaRegenTimer = 0;
         }

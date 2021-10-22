@@ -26,6 +26,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool isJumping;
     public bool isAttacking;
     public bool isFalling;
+    public bool isSwimming;
 
     [Header("Movement Speeds")]
     public float sneakingSpeed = 1.5f;
@@ -59,6 +60,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         HandleMovement();
         HandleRotation();
+        HandleSwimming();
     }
 
     private void HandleMovement()
@@ -83,6 +85,14 @@ public class PlayerLocomotion : MonoBehaviour
         else if(isSneaking)
         {
             moveDirection = moveDirection * sneakingSpeed * (((1000f - weight) / 1000f) + .25f);
+        }
+        else if(isSwimming)
+        {
+            stats.UseStamina(.5f);
+            moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 2);
+            
+            if(stats.currentStamina <= 0)
+                stats.TakeDamage(1);
         }
         else
         {
@@ -139,7 +149,7 @@ public class PlayerLocomotion : MonoBehaviour
         rayCastOrigin.y = rayCastOrigin.y + 1f;
         Vector3 targetPosition = transform.position;
 
-        if(!isGrounded && !isJumping)
+        if(!isGrounded && !isJumping && !isSwimming)
         {
             if(!playerManager.isInteracting)
             {
@@ -196,5 +206,24 @@ public class PlayerLocomotion : MonoBehaviour
                 playerRigidbody.velocity = playerVelocity;
             }
         }
+    }
+
+    public void HandleSwimming()
+    {
+        if(transform.position.y < -3.5f)
+        {
+            isSwimming = true;
+            isGrounded = false;
+            animatorManager.PlayTargetAnimation("Swimming", false);
+        }
+        else
+        {
+            if(animatorManager.animator.GetCurrentAnimatorStateInfo(0).IsName("Swimming"))
+                animatorManager.PlayTargetAnimation("FishingEnd", false);
+
+            isSwimming = false;
+            isGrounded = true;
+        }
+
     }
 }

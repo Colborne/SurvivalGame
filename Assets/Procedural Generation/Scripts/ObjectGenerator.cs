@@ -21,12 +21,15 @@ public class ObjectGenerator : MonoBehaviour
     public int meshHeight;
     public float meshX;
     public float meshZ;
+
+    int numberToSpawn = 0;
      
     private void Start() 
     {
         Invoke("spawn", .1f);
     }
     
+
     void spawn()
     {
         int place = 0;
@@ -69,3 +72,15 @@ public class ObjectGenerator : MonoBehaviour
         Debug.Log("There were " + place + " placed objects. Out of " + attempts + " attempts.");
     }
 }
+
+        /*
+        for(int i = 0; i < biomes.Length; i++)
+        {
+            for(int x = 0; x < biomes[i].objectToSpawn.Length; x++)
+            {
+                for(int y = 0; y < biomes[i].amount[x]; y++)
+                {
+                    numberToSpawn++;
+                }
+            }
+        }*/

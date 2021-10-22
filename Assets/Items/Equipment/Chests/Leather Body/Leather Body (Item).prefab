@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Wizard Robe Top (Item)
+  m_Name: Leather Body (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10764508, g: 0.14392775, b: 0.38679248, a: 1}
+  m_Color: {r: 0.41509432, g: 0.27556685, b: 0.18209325, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -114,12 +114,12 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 127
+  itemID: 130
   equipType: 2
   MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 7679017726264109996}
-  item: {fileID: 11400000, guid: aa87e382693fe85468d7f1f8b7c5619a, type: 2}
+  item: {fileID: 11400000, guid: c5aac6ed2cbeef949a42ccece37e75ac, type: 2}
   totalWeight: 0
 --- !u!1001 &6472327632067445471
 PrefabInstance:

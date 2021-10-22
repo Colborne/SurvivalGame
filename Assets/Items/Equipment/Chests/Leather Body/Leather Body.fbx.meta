@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: a58bbf541a53daa42bd0ac4a8bb5dce1
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -5252816984213320552
+    second: idle
+  - first:
+      74: 6200578666267062213
+    second: run
+  - first:
+      74: 4805745386581417271
+    second: Armature|Block
+  - first:
+      74: 1458000289317164528
+    second: Armature|Chop
+  - first:
+      74: 6881873686158965456
+    second: Armature|Falling
+  - first:
+      74: -277193169821484352
+    second: Armature|Fishing
+  - first:
+      74: -8126900363687391795
+    second: Armature|FishingLoop
+  - first:
+      74: 7005498501433682437
+    second: Armature|Heavy Crush
+  - first:
+      74: -8262685812334914735
+    second: Armature|Heavy Slash
+  - first:
+      74: -8945691123924629249
+    second: Armature|Idle
+  - first:
+      74: 9218157010744241517
+    second: Armature|Landing
+  - first:
+      74: -2250041716697307616
+    second: Armature|Mining
+  - first:
+      74: -3236418725922204068
+    second: Armature|Pickup
+  - first:
+      74: 1273035603342573494
+    second: Armature|RuneCrafting
+  - first:
+      74: -3828583913261678786
+    second: Armature|Running
+  - first:
+      74: -9180895774499272927
+    second: Armature|Slash
+  - first:
+      74: -8384012902117237433
+    second: Armature|Sneaking
+  - first:
+      74: -5867533670223395333
+    second: Armature|Sprinting
+  - first:
+      74: 4475962873232210025
+    second: Armature|Stab
+  - first:
+      74: -7697102463937993543
+    second: Armature|StabSlash
+  - first:
+      74: -4728361552675377119
+    second: Armature|Standing
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Belt
+    second: {fileID: 2100000, guid: 68f9d700a7c55664494d65867fbd9e4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leather
+    second: {fileID: 2100000, guid: ac22aa80d2a757b42b490bf8ea09854d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 0fdaa63bbfe7eec408810d2499e90544, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.51
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.0050999997
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
