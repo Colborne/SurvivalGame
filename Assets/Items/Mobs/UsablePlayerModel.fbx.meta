@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a7b4bff6baf9f04387de3ae55fe5301
+guid: cd9006923f90a5646a800ecc1e64cef5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -9,6 +9,63 @@ ModelImporter:
   - first:
       74: 6200578666267062213
     second: run
+  - first:
+      74: 4805745386581417271
+    second: Armature|Block
+  - first:
+      74: 1458000289317164528
+    second: Armature|Chop
+  - first:
+      74: -6788532455012819382
+    second: Armature|Damage
+  - first:
+      74: 6881873686158965456
+    second: Armature|Falling
+  - first:
+      74: -277193169821484352
+    second: Armature|Fishing
+  - first:
+      74: -8126900363687391795
+    second: Armature|FishingLoop
+  - first:
+      74: 7005498501433682437
+    second: Armature|Heavy Crush
+  - first:
+      74: -8262685812334914735
+    second: Armature|Heavy Slash
+  - first:
+      74: -8945691123924629249
+    second: Armature|Idle
+  - first:
+      74: 9218157010744241517
+    second: Armature|Landing
+  - first:
+      74: -2250041716697307616
+    second: Armature|Mining
+  - first:
+      74: -3236418725922204068
+    second: Armature|Pickup
+  - first:
+      74: 1273035603342573494
+    second: Armature|RuneCrafting
+  - first:
+      74: -3828583913261678786
+    second: Armature|Running
+  - first:
+      74: -9180895774499272927
+    second: Armature|Slash
+  - first:
+      74: -8384012902117237433
+    second: Armature|Sneaking
+  - first:
+      74: -5867533670223395333
+    second: Armature|Sprinting
+  - first:
+      74: 4475962873232210025
+    second: Armature|Stab
+  - first:
+      74: -7697102463937993543
+    second: Armature|StabSlash
   - first:
       74: -4728361552675377119
     second: Armature|Standing
@@ -31,7 +88,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -74,7 +131,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4

@@ -48,7 +48,7 @@ public class MobAI : MonoBehaviour
                 else
                     Idle();      
             }
-            if ((playerInAlertRange || playerInSight)) 
+            if (playerInAlertRange || playerInSight)
                 Flee();
         }
         else
@@ -65,12 +65,10 @@ public class MobAI : MonoBehaviour
         }
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
     {
-        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f /*adjust this number in order to make interpolation quicker or slower*/);
+        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
         lastPosition = transform.position;
-
-        print(speed);
     }
 
     private void Idle()
@@ -96,6 +94,8 @@ public class MobAI : MonoBehaviour
             waitingToPatrol = true;
         }
 
+        if(!walkPointSet)
+            SearchWalkPoint();
     }
 
     private void StartPatrol()
@@ -104,12 +104,13 @@ public class MobAI : MonoBehaviour
         idleState = false;
         grazeAttempt = false;
         patrolState = true;
+        agent.SetDestination(walkPoint);
     }
 
     private void Patrol()
     {
-        if (walkPointSet){
-            agent.SetDestination(walkPoint);
+        if (walkPointSet)
+        {
             if(speed > 0)
             {
                 animator.SetFloat("V", .5f);
@@ -121,10 +122,7 @@ public class MobAI : MonoBehaviour
             }
             else
                 animator.SetFloat("V",0f);     
-        }
-        else
-            SearchWalkPoint();
-        
+        }     
         
         Vector3 distanceToWalkPoint = agent.transform.position - walkPoint;
 
@@ -165,7 +163,6 @@ public class MobAI : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(start, Vector3.down, out hit) && hit.collider.CompareTag("Ground"))
         {
-
             walkPoint = new Vector3(transform.position.x + randomX, hit.point.y, transform.position.z + randomZ);
             walkPointSet = true; 
             
@@ -200,11 +197,10 @@ public class MobAI : MonoBehaviour
         
         if(Vector3.Distance(player.position, transform.position) > 25f)
         {
-                Debug.Log(Vector3.Distance(player.position, transform.position));
-                idleState = true;
-                fleeState = false;
-                agent.ResetPath();
-                walkPointSet = false;
+            Debug.Log(Vector3.Distance(player.position, transform.position));
+            idleState = true;
+            fleeState = false;
+            walkPointSet = false;
         }
     }
 

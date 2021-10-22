@@ -730,6 +730,7 @@ MonoBehaviour:
   inventoryWeight: 0
   mageBonus: 0
   rangeBonus: 0
+  strengthBonus: 0
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}

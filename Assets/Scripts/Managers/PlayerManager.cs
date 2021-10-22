@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject itemInteractableUIGameObject;
     
     InteractableUI interactableUI;
+    public GameObject headModel;
+    public GameObject chestModel;
+    public GameObject legsModel;
 
     public Transform rightHand;
     public Transform leftHand;
@@ -39,6 +42,7 @@ public class PlayerManager : MonoBehaviour
     {
         inputManager.HandleAllInputs();
         statsManager.RegenerateStamina();
+        setModelVisibility();
     }
 
     private void FixedUpdate() 
@@ -56,5 +60,25 @@ public class PlayerManager : MonoBehaviour
         animator.SetBool("isGrounded", playerLocomotion.isGrounded);
         
         inputManager.inventoryInput = false; //do this for all inputs to check once per frame
+    }
+
+    private void setModelVisibility()
+    {
+        /*
+        if(GameManager.Instance.helmetID != -1)
+            headModel.SetActive(false);
+        else
+            headModel.SetActive(true);
+        */
+        
+        if(GameManager.Instance.chestID != -1)
+            chestModel.SetActive(false);
+        else
+            chestModel.SetActive(true);
+
+        if(GameManager.Instance.legsID != -1)
+            legsModel.SetActive(false);
+        else
+            legsModel.SetActive(true);
     }
 }
