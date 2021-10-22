@@ -5,8 +5,13 @@ using UnityEngine;
 public class ArmorAnimator : MonoBehaviour
 {
     public SkinnedMeshRenderer TargetMeshRenderer;
-    private void Awake() {
-        TargetMeshRenderer = FindObjectOfType<InputManager>().GetComponentInChildren<SkinnedMeshRenderer>();
+    public bool isChest;
+    private void Awake() 
+    {
+        if(isChest)
+            TargetMeshRenderer = GameObject.Find("Player/Player Torso").GetComponent<SkinnedMeshRenderer>();
+        else
+            TargetMeshRenderer = GameObject.Find("Player/Player Legs").GetComponent<SkinnedMeshRenderer>();     
     }
 
     void Start()

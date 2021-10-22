@@ -61,7 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8869691854638155056}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8543585183460851998
 MonoBehaviour:
@@ -311,6 +311,105 @@ Transform:
   m_Father: {fileID: 8869691854638155056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2188176387351116844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6520367456308652084}
+  - component: {fileID: 5431074488702156433}
+  m_Layer: 0
+  m_Name: Player Hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6520367456308652084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188176387351116844}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -249.37263, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8869691854638155056}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &5431074488702156433
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188176387351116844}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0fdaa63bbfe7eec408810d2499e90544, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -4438631993003357725, guid: cd9006923f90a5646a800ecc1e64cef5, type: 3}
+  m_Bones:
+  - {fileID: 1554737267733763865}
+  - {fileID: 3810576837413084271}
+  - {fileID: 7785734334184410749}
+  - {fileID: 612105533928374598}
+  - {fileID: 6670708788071402063}
+  - {fileID: 19421643397905852}
+  - {fileID: 7183478084991750485}
+  - {fileID: 1490285789512355073}
+  - {fileID: 8086200283952093915}
+  - {fileID: 6726841738002272024}
+  - {fileID: 4579381268481934612}
+  - {fileID: 2566677041111841474}
+  - {fileID: 2814581687243726639}
+  - {fileID: 6532764338826714081}
+  - {fileID: 7998102943220366702}
+  - {fileID: 2815155870845959563}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1554737267733763865}
+  m_AABB:
+    m_Center: {x: 0.0003543041, y: -0.000057280064, z: 0.004826709}
+    m_Extent: {x: 0.0037481403, y: 0.0093127545, z: 0.009471592}
+  m_DirtyAABB: 0
 --- !u!1 &2797551190682240742
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1086,7 @@ Transform:
   - {fileID: 168953586067174949}
   - {fileID: 8621408726530739668}
   - {fileID: 6685075962840177930}
+  - {fileID: 6520367456308652084}
   - {fileID: 3053785567708925822}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1141,6 +1241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableUIGameObject: {fileID: 0}
   itemInteractableUIGameObject: {fileID: 0}
+  headModel: {fileID: 0}
+  chestModel: {fileID: 0}
+  legsModel: {fileID: 0}
   rightHand: {fileID: 1450471781271983685}
   leftHand: {fileID: 722489535495973164}
   helmet: {fileID: 612105533928374598}

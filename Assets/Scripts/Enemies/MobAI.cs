@@ -19,11 +19,10 @@ public class MobAI : MonoBehaviour
     public float alertRange;
     public Vector3 sightRange;
     public bool playerInAlertRange, playerInSight;
-    public bool patrolState, idleState = true, waitingToPatrol, grazeCheck = false, fleeState;
+    public bool patrolState, idleState = true, waitingToPatrol, grazeCheck = false, fleeState, grazeAttempt = false;
 
     float speed;
     Vector3 lastPosition;
-    bool grazeAttempt = false;
 
     private void Awake()
     {
@@ -83,9 +82,8 @@ public class MobAI : MonoBehaviour
                 grazeCheck = true;
             }
             else
-            {
                 grazeAttempt = true;
-            }
+            
         }
 
         if(!waitingToPatrol)
@@ -209,7 +207,7 @@ public class MobAI : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, alertRange);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
+        Gizmos.DrawWireCube(transform.forward + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
     }
 
     public bool checkIfPosEmpty(Vector3 targetPos)
