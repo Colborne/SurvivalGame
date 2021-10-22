@@ -23,7 +23,8 @@ public class Projectile : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(ray.direction);
         rb.AddForce(transform.forward * 5000f * input.attackChargeTimer);
         input.attackChargeTimer = 0f;
-        dc.EnableDamageCollider();
+        if(dc != null)
+            dc.EnableDamageCollider();
     }
 
     // Update is called once per frame

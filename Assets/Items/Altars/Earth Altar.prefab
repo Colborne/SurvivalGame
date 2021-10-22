@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 919132148936851712}
   - component: {fileID: 919132148936851711}
   m_Layer: 0
-  m_Name: Earth Alter
+  m_Name: Earth Altar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

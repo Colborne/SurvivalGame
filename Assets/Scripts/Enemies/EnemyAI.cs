@@ -25,14 +25,19 @@ public class EnemyAI : MonoBehaviour
     public bool playerInAlertRange, playerInAttackRange, playerInSight;
     public bool patrolState, idleState = true, waitingToPatrol;
 
+    float speed;
+    Vector3 lastPosition;
+    private Quaternion smoothTilt;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();       
         animator = GetComponent<Animator>();
         hitbox = transform.GetChild(2).gameObject;
+        smoothTilt = new Quaternion();
     }
-    private void FixedUpdate()
+    private void Update()
     {
         if (agent.isOnNavMesh)
         {
@@ -65,38 +70,76 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
+        lastPosition = transform.position;
+
+		RaycastHit rcHit;
+		Vector3 theRay = transform.TransformDirection(Vector3.down);
+		
+		if (Physics.Raycast(transform.position, theRay, out rcHit, whatIsGround))
+		{
+			float GroundDis = rcHit.distance;
+			Quaternion grndTilt = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
+
+			smoothTilt = Quaternion.Slerp(smoothTilt, grndTilt, Time.deltaTime * 2.0f);
+
+			Quaternion newRot = new Quaternion();
+			Vector3 vec = new Vector3();
+			vec.x = smoothTilt.eulerAngles.x;
+			vec.y = transform.rotation.eulerAngles.y;
+			vec.z = smoothTilt.eulerAngles.z;
+			newRot.eulerAngles = vec;
+
+			transform.rotation = newRot;
+
+			Vector3 locPos = transform.localPosition;
+			locPos.y = (transform.localPosition.y - GroundDis);
+			transform.localPosition = locPos;
+		}
+    }
+
+
     private void Idle()
     {
         animator.SetFloat("V", 0.0f);
         
-        if(idleState)
+        if(!waitingToPatrol)
         {
             Invoke("StartPatrol", Random.Range(2,6));
-            idleState = false;
             waitingToPatrol = true;
         }
+
+        if(!walkPointSet)
+            SearchWalkPoint();
     }
 
     private void StartPatrol()
     {
         waitingToPatrol = false;
         patrolState = true;
+        idleState = false;
+        agent.SetDestination(walkPoint);
     }
 
     private void Patrol()
     {
-        if (!walkPointSet) SearchWalkPoint();
-
-        if (walkPointSet){
+        if (walkPointSet)
+        {
             agent.SetDestination(walkPoint);
-            animator.SetFloat("V", .5f);
-        }
+            if(speed > 0)
+                animator.SetFloat("V", .5f);
+            else
+                animator.SetFloat("V", 0f);     
+        }     
         
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = agent.transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 5f)
+        if (distanceToWalkPoint.magnitude < 3f)
         {
+            animator.SetFloat("V", 0f);
             walkPointSet = false;
             idleState = true;
             patrolState = false;
@@ -152,7 +195,7 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, alertRange);
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
+        Gizmos.DrawWireCube(transform.forward + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
     }
 
     public bool checkIfPosEmpty(Vector3 targetPos)

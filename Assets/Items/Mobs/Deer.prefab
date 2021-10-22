@@ -437,6 +437,7 @@ MonoBehaviour:
   waitingToPatrol: 0
   grazeCheck: 0
   fleeState: 0
+  grazeAttempt: 0
 --- !u!195 &8454386785192214584
 NavMeshAgent:
   m_ObjectHideFlags: 0
