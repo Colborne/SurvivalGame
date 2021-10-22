@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetMeshRenderer: {fileID: 0}
-  isChest: 1
 --- !u!1 &3749380191955315042
 GameObject:
   m_ObjectHideFlags: 0

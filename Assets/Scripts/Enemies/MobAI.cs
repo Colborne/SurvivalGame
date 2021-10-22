@@ -70,30 +70,6 @@ public class MobAI : MonoBehaviour
     {
         speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
         lastPosition = transform.position;
-
-        RaycastHit rcHit;
-		Vector3 theRay = transform.TransformDirection(Vector3.down);
-		
-		if (Physics.Raycast(transform.position, theRay, out rcHit, whatIsGround))
-		{
-			float GroundDis = rcHit.distance;
-			Quaternion grndTilt = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
-
-			smoothTilt = Quaternion.Slerp(smoothTilt, grndTilt, Time.deltaTime * 2.0f);
-
-			Quaternion newRot = new Quaternion();
-			Vector3 vec = new Vector3();
-			vec.x = smoothTilt.eulerAngles.x;
-			vec.y = transform.rotation.eulerAngles.y;
-			vec.z = smoothTilt.eulerAngles.z;
-			newRot.eulerAngles = vec;
-
-			transform.rotation = newRot;
-
-			Vector3 locPos = transform.localPosition;
-			locPos.y = (transform.localPosition.y - GroundDis);
-			transform.localPosition = locPos;
-		}
     }
 
     private void Idle()

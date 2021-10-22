@@ -73,24 +73,26 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.Normalize();
         moveDirection.y = 0;
 
-        if(isSprinting && stats.currentStamina >= .5f)
+        float weight = Mathf.Clamp(stats.inventoryWeight, 0, 1000);
+
+        if(isSprinting && stats.currentStamina >= .25f)
         {
-            stats.UseStamina(.5f);
-            moveDirection = moveDirection * sprintingSpeed * (((1000f - stats.inventoryWeight) / 1000f) + .1f);
+            stats.UseStamina(.25f);
+            moveDirection = moveDirection * sprintingSpeed * (((1000f - weight) / 1000f) + .25f);
         }
         else if(isSneaking)
         {
-            moveDirection = moveDirection * sneakingSpeed * (((1000f - stats.inventoryWeight) / 1000f) + .1f);
+            moveDirection = moveDirection * sneakingSpeed * (((1000f - weight) / 1000f) + .25f);
         }
         else
         {
-            if(inputManager.moveAmount >= 0.5f)
+            if(inputManager.moveAmount >= 0.25f)
             {
-                moveDirection = moveDirection * runningSpeed * (((1000f- stats.inventoryWeight) / 1000f) + .1f);
+                moveDirection = moveDirection * runningSpeed * (((1000f - weight) / 1000f) + .25f);
             }        
             else
             {
-                moveDirection = moveDirection * walkingSpeed * (((1000f - stats.inventoryWeight) / 1000f) + .1f);
+                moveDirection = moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f);
             }
         }
 
