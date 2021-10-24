@@ -42,6 +42,7 @@ public class InputManager : MonoBehaviour
     public bool craftWindowFlag;
     public bool fishingFlag = false;
     public bool hasCast = false;
+    public float isTwoHanded = 0;
 
     private void Awake() 
     {
@@ -123,7 +124,13 @@ public class InputManager : MonoBehaviour
         cameraInputY = cameraInput.y;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        animatorManager.UpdateAnimatorValues(0, moveAmount, playerLocomotion.isSprinting, playerLocomotion.isSneaking, playerLocomotion.isSwimming);
+        
+        if(equipmentManager.rightWeapon != null && equipmentManager.rightWeapon.isTwoHanded)
+            isTwoHanded = 1;
+        else
+            isTwoHanded = 0;
+        
+        animatorManager.UpdateAnimatorValues(isTwoHanded, moveAmount, playerLocomotion.isSprinting, playerLocomotion.isSneaking, playerLocomotion.isSwimming);
     }
     private void HandleSprintingInput()
     {

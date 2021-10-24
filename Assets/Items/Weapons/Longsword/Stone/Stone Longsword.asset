@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Stone Longsword
   description: L O N G B O I
   weight: 20
-  isTwoHanded: 0
+  isTwoHanded: 1
   isOffhandable: 0
   canCharge: 0
   Attack: Slash
