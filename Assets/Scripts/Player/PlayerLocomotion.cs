@@ -39,6 +39,8 @@ public class PlayerLocomotion : MonoBehaviour
     public float jumpHeight = 3;
     public float gravityIntensity = -15;
 
+    public LayerMask waterLayer;
+
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -57,10 +59,10 @@ public class PlayerLocomotion : MonoBehaviour
         
         if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f && inputManager.blockChargeTimer == 0f)
             return;
-
+        
+        HandleSwimming();
         HandleMovement();
         HandleRotation();
-        HandleSwimming();
     }
 
     private void HandleMovement()
@@ -88,11 +90,11 @@ public class PlayerLocomotion : MonoBehaviour
         }
         else if(isSwimming)
         {
-            stats.UseStamina(.5f);
-            moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 2);
+            stats.UseStamina(.25f);
+            moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f));
             
-            if(stats.currentStamina <= 0)
-                stats.TakeDamage(1);
+            //if(stats.currentStamina <= 0)
+                //stats.TakeDamage(1);
         }
         else
         {
@@ -116,7 +118,6 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         if(isFalling)
             return;
-
 
         if(inputManager.attackChargeTimer == 0f)
         {
@@ -152,22 +153,17 @@ public class PlayerLocomotion : MonoBehaviour
         if(!isGrounded && !isJumping && !isSwimming)
         {
             if(!playerManager.isInteracting)
-            {
                 animatorManager.PlayTargetAnimation("Falling", true);
-            }
-
+            
             inAirTimer = inAirTimer + Time.deltaTime;
             playerRigidbody.AddForce(transform.forward * leapingVelocity);
-            playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);
+            playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);          
         }
        
         if(Physics.SphereCast(rayCastOrigin, .1f, -Vector3.up, out hit, 2f, groundLayer))
         {
-            if(!isGrounded && !playerManager.isInteracting)
-            {
+            if(!isGrounded && !playerManager.isInteracting && !isSwimming)
                 animatorManager.PlayTargetAnimation("Landing", true);
-
-            }
 
             Vector3 rayCastHitPoint = hit.point;
             targetPosition.y = rayCastHitPoint.y;
@@ -179,7 +175,7 @@ public class PlayerLocomotion : MonoBehaviour
             isGrounded = false;
         } 
 
-        if(isGrounded && !isJumping )
+        if(isGrounded && !isJumping && !isSwimming)
         {
             isFalling = false;
             if(playerManager.isInteracting || inputManager.moveAmount > 0)
@@ -187,7 +183,9 @@ public class PlayerLocomotion : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime / 0.1f);
             }
         }    
-        isFalling = !isGrounded;
+        
+        if(!isSwimming)
+            isFalling = !isGrounded;
     }
 
     public void HandleJumping()
@@ -213,17 +211,12 @@ public class PlayerLocomotion : MonoBehaviour
         if(transform.position.y < -3.5f)
         {
             isSwimming = true;
-            isGrounded = false;
-            animatorManager.PlayTargetAnimation("Swimming", false);
+            playerRigidbody.useGravity = false;
         }
         else
         {
-            if(animatorManager.animator.GetCurrentAnimatorStateInfo(0).IsName("Swimming"))
-                animatorManager.PlayTargetAnimation("FishingEnd", false);
-
             isSwimming = false;
-            isGrounded = true;
+            playerRigidbody.useGravity = true;
         }
-
     }
 }

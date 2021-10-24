@@ -21,7 +21,7 @@ public class AnimatorManager : MonoBehaviour
         animator.CrossFade(targetAnimation, 0.2f);
     }
     
-    public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement, bool isSprinting, bool isSneaking)
+    public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement, bool isSprinting, bool isSneaking, bool isSwimming)
     {
         float snappedHorizontal;
         float snappedVertical;
@@ -81,6 +81,12 @@ public class AnimatorManager : MonoBehaviour
         {
             snappedHorizontal = horizontalMovement;
             snappedVertical = 3;
+        }
+        
+        if(isSwimming)
+        {            
+            snappedHorizontal = horizontalMovement;
+            snappedVertical = 4;
         }
 
         animator.SetFloat(horizontal, snappedHorizontal, 0.1f, Time.deltaTime);
