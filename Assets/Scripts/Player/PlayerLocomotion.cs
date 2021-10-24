@@ -208,7 +208,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleSwimming()
     {
-        if(transform.position.y < -3.5f)
+        if(transform.position.y < -3f)
         {
             isSwimming = true;
             playerRigidbody.useGravity = false;
