@@ -25,6 +25,7 @@ public class StatsManager : MonoBehaviour
 
     float fireDefense;
     float iceDefense;
+    public float drownTimer = 0f;
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
@@ -167,5 +168,18 @@ public class StatsManager : MonoBehaviour
         TextMeshProUGUI[] stats = GameObject.Find("Player UI").GetComponentsInChildren<TextMeshProUGUI>(true);
         stats[0].text = inventoryWeight.ToString();
         stats[1].text = baseDefense.ToString();
+
+        if(currentStamina < 0f)
+            currentStamina = 0f;
+    }
+
+    public void Drowning()
+    {
+        drownTimer += Time.deltaTime;
+        if(drownTimer >= 1)
+        {
+            drownTimer = 0f;
+            TakeDamage(1);
+        }
     }
 }

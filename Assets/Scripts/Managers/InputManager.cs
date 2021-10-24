@@ -296,14 +296,6 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void HandleIdle()
-    {
-        if(animatorManager.animator.GetBool("isTwoHanded"))
-        {
-            animatorManager.PlayTargetAnimation("Idle2H", false);
-        }
-    }
-
     private void HandleFishing()
     {
         if(GameManager.Instance.weaponID == 64)

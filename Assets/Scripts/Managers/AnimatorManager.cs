@@ -96,7 +96,10 @@ public class AnimatorManager : MonoBehaviour
         if(isSwimming)
         {            
             snappedHorizontal = horizontalMovement;
-            snappedVertical = 4;
+            if(verticalMovement > 0)
+                snappedVertical = 5;
+            else
+                snappedVertical = 4;
         }
 
         animator.SetFloat(horizontal, snappedHorizontal, 0.1f, Time.deltaTime);

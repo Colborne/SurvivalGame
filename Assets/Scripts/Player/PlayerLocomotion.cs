@@ -90,11 +90,19 @@ public class PlayerLocomotion : MonoBehaviour
         }
         else if(isSwimming)
         {
-            stats.UseStamina(.25f);
-            moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f));
-            
-            //if(stats.currentStamina <= 0)
-                //stats.TakeDamage(1);
+            if(inputManager.verticalInput != 0 || inputManager.horizontalInput != 0) 
+            {
+                stats.UseStamina(.25f);
+                if(stats.currentStamina >= .25f){
+                    moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 2);
+                    stats.drownTimer = 0f;
+                }
+                else
+                    moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 4);
+                
+            }
+            if(stats.currentStamina <= .25f)
+                stats.Drowning();
         }
         else
         {
@@ -150,7 +158,7 @@ public class PlayerLocomotion : MonoBehaviour
         rayCastOrigin.y = rayCastOrigin.y + 1f;
         Vector3 targetPosition = transform.position;
 
-        if(!isGrounded && !isJumping && !isSwimming)
+        if(!isGrounded && !isJumping && (!isSwimming || stats.currentStamina <= 0))
         {
             if(!playerManager.isInteracting)
                 animatorManager.PlayTargetAnimation("Falling", true);
@@ -175,7 +183,7 @@ public class PlayerLocomotion : MonoBehaviour
             isGrounded = false;
         } 
 
-        if(isGrounded && !isJumping && !isSwimming)
+        if(isGrounded && !isJumping && (!isSwimming || stats.currentStamina <= 0))
         {
             isFalling = false;
             if(playerManager.isInteracting || inputManager.moveAmount > 0)
