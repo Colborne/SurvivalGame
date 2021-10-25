@@ -176,7 +176,7 @@ public class StatsManager : MonoBehaviour
     public void Drowning()
     {
         drownTimer += Time.deltaTime;
-        if(drownTimer >= 1)
+        if(drownTimer >= .5f)
         {
             drownTimer = 0f;
             TakeDamage(1);
