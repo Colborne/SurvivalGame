@@ -11,12 +11,10 @@ public class Smelting : MonoBehaviour
     Queue<GameObject> smelt = new Queue<GameObject>();
     InputManager inputManager;
     InteractableUI ui; 
-    AnimatorManager animatorManager;
     int iter = -1;
     int min = 9999;
     float timer = 0f;
     private void Awake() {
-        animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
     }
