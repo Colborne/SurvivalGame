@@ -44,8 +44,7 @@ public class FishingManager : MonoBehaviour
             {
                 var _catch = Instantiate(fish[Random.Range(0, fish.Length)], cast.transform.position, Random.rotation);
                 Rigidbody rb = _catch.GetComponentInChildren<Rigidbody>();
-                _catch.transform.LookAt(transform.position);
-                rb.AddForce(transform.up * 2000f);
+                rb.AddForce(transform.up * 1500f);
             }    
             caught = Random.Range(1f,8f);
             anim = false;

@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Mushroom (item)
+  m_Name: Fish (item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,14 +140,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.2921858, b: 0.2921858, a: 1}
+  m_Color: {r: 0.15468137, g: 0.259817, b: 0.41509432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b544bb7538c42f4cacafa58eab7b0ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: acf2f6ceb1d90ef40a013ed09ce6674c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -193,10 +193,10 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 125
+  itemID: 133
   equipType: 0
   MaxAmount: 20
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
-  item: {fileID: 11400000, guid: 982a97feee13cf84eb306259484fb1c9, type: 2}
+  item: {fileID: 11400000, guid: e9552aed2a011a545b8d76d4a152f9b8, type: 2}
   totalWeight: 0
