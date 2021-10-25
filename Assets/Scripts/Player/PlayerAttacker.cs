@@ -78,7 +78,7 @@ public class PlayerAttacker : MonoBehaviour
         equipmentManager.rightWeapon = weaponItem;
         if(!String.IsNullOrEmpty(weaponItem.Attack))
         {
-            if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina)
+            if(statsManager.currentStamina > equipmentManager.rightWeapon.baseStamina || statsManager.currentStamina == 0)
             {
                 animatorManager.PlayTargetAnimation(weaponItem.Attack, true);
                 animatorManager.animator.SetBool("isAttacking", true);

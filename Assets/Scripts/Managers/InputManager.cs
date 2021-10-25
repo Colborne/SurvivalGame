@@ -207,7 +207,10 @@ public class InputManager : MonoBehaviour
                         if(!equipmentManager.rightWeapon.canCharge)
                         {
                             leftMouseInput = false;
-                            playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
+                            if(equipmentManager.rightWeapon.projectile != null)
+                                playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
+                            else
+                                playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
                         }
                         else if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1, true))
                         {
@@ -304,6 +307,7 @@ public class InputManager : MonoBehaviour
             fishingFlag = false;
         
         if(fishingFlag)
+        {
             if(leftMouseInput)
             {
                 leftMouseInput = false;
@@ -313,5 +317,6 @@ public class InputManager : MonoBehaviour
                     playerAttacker.HandleString("FishingEnd");
                 hasCast = !hasCast;
             }
+        }
     }
 }

@@ -26,4 +26,4 @@ MonoBehaviour:
   attackDamage: 0.5
   attackSpeed: 2
   damageType: 3
-  projectile: {fileID: 1682439711449256, guid: 7a88a043df4528f498f58f435d92472d, type: 3}
+  projectile: {fileID: 2959667684836456750, guid: 319487a2b76fc68408786b03b3360827, type: 3}

@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 7834456700887363272}
   - component: {fileID: 7741865371575429618}
   - component: {fileID: -9150372807938189462}
+  - component: {fileID: 1269820929872084264}
   - component: {fileID: -554387381064430052}
   - component: {fileID: 4239016596972658081}
   - component: {fileID: 2198784506951388909}
@@ -1157,6 +1158,7 @@ MonoBehaviour:
   mageBonus: 0
   rangeBonus: 0
   strengthBonus: 0
+  drownTimer: 0
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
@@ -1227,6 +1229,7 @@ MonoBehaviour:
   craftWindowFlag: 0
   fishingFlag: 0
   hasCast: 0
+  isTwoHanded: 0
 --- !u!114 &7834456700887363272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,6 +1293,7 @@ MonoBehaviour:
   isJumping: 0
   isAttacking: 0
   isFalling: 0
+  isSwimming: 0
   sneakingSpeed: 4
   walkingSpeed: 8
   runningSpeed: 12
@@ -1297,6 +1301,27 @@ MonoBehaviour:
   rotationSpeed: 10
   jumpHeight: 8
   gravityIntensity: -18
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &1269820929872084264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8096532129649942410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1869c59aef0164186e3cc12d56328c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cast: {fileID: 0}
+  fish:
+  - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
+  water:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!82 &-554387381064430052
 AudioSource:
   m_ObjectHideFlags: 0
