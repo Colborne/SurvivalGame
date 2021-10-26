@@ -61,8 +61,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 78c40a2f18561480eab11b27ad5713aa, type: 3}
+        m_Scale: {x: 1.64, y: 1.51}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
@@ -86,7 +86,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _WindMap:
         m_Texture: {fileID: 2800000, guid: 2a80618a09ec0b44b9fbfb47279d4d98, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 1.24, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
@@ -129,8 +129,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GrassFalloff: 0
-    - _GrassThreshold: 1
+    - _GrassFalloff: 0.126
+    - _GrassThreshold: 0.721
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -142,18 +142,18 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _TesselationFactor: 8
-    - _TessellationGrassDistance: 1.4
+    - _TessellationGrassDistance: 1.2571
     - _WindFrequency: 0.005
     - _WindStrength: 0.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.42976782, g: 0.46226418, b: 0.24639553, a: 1}
+    - _BaseColor: {r: 0.32156864, g: 0.32941177, b: 0.20000002, a: 1}
     - _Color: {r: 0.11764706, g: 0.9137255, b: 0.13333334, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.5660378, g: 0.45540816, b: 0.32306874, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _TipColor: {r: 0.49801826, g: 0.5754717, b: 0.28502136, a: 1}
+    - _TipColor: {r: 0.509434, g: 0.47061646, b: 0.25711998, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
     - _WindVelocity: {r: 0.01, g: 0, b: 0.01, a: 0.4}
   m_BuildTextureStacks: []
