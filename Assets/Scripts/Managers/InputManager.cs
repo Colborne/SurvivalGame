@@ -104,7 +104,7 @@ public class InputManager : MonoBehaviour
             HandleJumpingInput();
             HandleFishing();
             
-            if(!buildFlag && !fishingFlag)
+            if(!buildFlag)
                 HandleAttackInput();
         }
         
@@ -135,13 +135,9 @@ public class InputManager : MonoBehaviour
     private void HandleSprintingInput()
     {
         if(shiftInput && moveAmount > 0.5f)
-        {
             playerLocomotion.isSprinting = true;
-        }
         else
-        {
-            playerLocomotion.isSprinting = false;
-        }
+            playerLocomotion.isSprinting = false; 
     }
 
     private void HandleSneakingInput()
@@ -197,7 +193,8 @@ public class InputManager : MonoBehaviour
         }
         else
         {
-            if(equipmentManager.rightWeapon != null){
+            if(equipmentManager.rightWeapon != null)
+            {
                 if(leftMouseInput)
                 {
                     if(!animatorManager.animator.GetBool("isAttacking") 
@@ -314,7 +311,7 @@ public class InputManager : MonoBehaviour
                 if(!hasCast)
                     playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
                 else
-                    playerAttacker.HandleString("FishingEnd");
+                    playerAttacker.HandleString("FishingEnd", "isAttacking", true, "Sounds/handleSmallLeather2");
                 hasCast = !hasCast;
             }
         }

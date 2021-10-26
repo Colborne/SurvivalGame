@@ -25,7 +25,7 @@ public class FishingManager : MonoBehaviour
     {  
         if(gm.weaponID == 64){
             cast.gameObject.SetActive(true);
-            cast.transform.position = transform.position + transform.forward * 3f;
+            cast.transform.position = transform.position + transform.forward * 4f;
         }
         else
         {
@@ -42,9 +42,7 @@ public class FishingManager : MonoBehaviour
         {
             if(fishingTimer >= caught && fishingTimer <= caught + 2f)
             {
-                var _catch = Instantiate(fish[Random.Range(0, fish.Length)], cast.transform.position, Random.rotation);
-                Rigidbody rb = _catch.GetComponentInChildren<Rigidbody>();
-                rb.AddForce(transform.up * 1500f);
+                Invoke("Spawn", .6f);
             }    
             caught = Random.Range(1f,8f);
             anim = false;
@@ -56,5 +54,12 @@ public class FishingManager : MonoBehaviour
             if(cast.transform.position.y < -2f)
                 fishingTimer += Time.deltaTime;
         }
+    }
+
+    private void Spawn()
+    {
+        var _catch = Instantiate(fish[Random.Range(0, fish.Length)], cast.transform.position, Random.rotation);
+        Rigidbody rb = _catch.GetComponentInChildren<Rigidbody>();
+        rb.AddForce(transform.up * Random.Range(1200,2800));
     }
 }        

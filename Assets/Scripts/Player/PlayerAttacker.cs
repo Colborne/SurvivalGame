@@ -68,9 +68,11 @@ public class PlayerAttacker : MonoBehaviour
         animatorManager.animator.SetBool("isAttacking", true);
     }
 
-    public void HandleString(string input)
+    public void HandleString(string input, string settable, bool state, string sound)
     {
         animatorManager.PlayTargetAnimation(input, true);
+        animatorManager.animator.SetBool(settable, state);
+        soundManager.PlaySound(sound);
     }
 
     public void HandleRangedAction(WeaponItem weaponItem)

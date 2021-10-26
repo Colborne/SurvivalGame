@@ -23,6 +23,11 @@ public class Smelting : MonoBehaviour
     {
         if (other.gameObject == GameManager.Instance.PM.gameObject)
         {
+            if(min > 10)
+                min = 10;
+            else
+                min = 10 - smelt.Count;
+
             inventoryCheck();
         }
     }
@@ -37,23 +42,26 @@ public class Smelting : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput && iter >= 0)
+        if (other.gameObject == GameManager.Instance.PM.gameObject && iter >= 0)
         {
-            if(min > 10)
-                min = 10;
-            else 
-                min -= smelt.Count;
+            if(inputManager.interactInput)
+            {
+                if(min > 10)
+                    min = 10;
+                else
+                    min = 10 - smelt.Count;
 
-            for(int i = 0; i < recipes[iter].items.Length; i++)
-                GameManager.Instance.CheckInventoryForItem(recipes[iter].items[i], min, true);
-            
-            for(int i = 0; i < min; i++)
-                smelt.Enqueue(recipes[iter].output);
+                for(int i = 0; i < recipes[iter].items.Length; i++)
+                    GameManager.Instance.CheckInventoryForItem(recipes[iter].items[i], min, true);
+                
+                for(int i = 0; i < min; i++)
+                    smelt.Enqueue(recipes[iter].output);
 
-            iter = -1;
-            min = 9999;
+                iter = -1;
+                min = 9999;
+            }
             inventoryCheck();
-        }
+        }   
     }
 
     void Update()
@@ -88,7 +96,7 @@ public class Smelting : MonoBehaviour
                 if(GameManager.Instance.CheckAmount(recipes[i].items[j]) >= 1) //Check the amount for each item in that recipe
                 {
                     if(GameManager.Instance.CheckAmount(recipes[i].items[j]) < minAmount)
-                        minAmount = GameManager.Instance.CheckAmount(recipes[i].items[j]) - smelt.Count;
+                        minAmount = GameManager.Instance.CheckAmount(recipes[i].items[j]);
                 }
                 else
                 {
@@ -100,6 +108,14 @@ public class Smelting : MonoBehaviour
             
             if(minAmount < 9999)
             {
+                if(minAmount > 10)
+                    minAmount = 10;
+                else if(minAmount < 0)
+                    minAmount = 0;
+
+                if(10 - smelt.Count < minAmount)
+                    minAmount = 10 - smelt.Count;
+                    
                 ui.interactableText.text = "Press 'E' to Smelt " + recipes[i].output.GetComponent<Pickup>().name + " x" + minAmount;
                 ui.transform.GetChild(0).gameObject.SetActive(true);
                 if(iter < 0)
