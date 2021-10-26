@@ -34,6 +34,14 @@ public class MobAI : MonoBehaviour
         check = transform.position;
         smoothTilt = new Quaternion();
     }
+
+    void Start()
+    {
+        NavMeshHit closestHit;
+ 
+        if (NavMesh.SamplePosition(transform.position, out closestHit, 500f, NavMesh.AllAreas))
+            transform.position = closestHit.position;
+    }
     private void Update()
     {
         if (agent.isOnNavMesh)
@@ -52,22 +60,7 @@ public class MobAI : MonoBehaviour
             if (playerInAlertRange || playerInSight)
                 Flee();
         }
-        else
-        {            
-            Vector3 start = check + new Vector3(0,100,0);
-            RaycastHit hit;
-            
-            if(Physics.Raycast(start, Vector3.down, out hit))
-            {
-                agent.transform.position = hit.point;
-                agent.enabled = false;
-                agent.enabled = true;
-            }
-        }
-    }
 
-    void FixedUpdate()
-    {
         speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
         lastPosition = transform.position;
     }
@@ -125,7 +118,7 @@ public class MobAI : MonoBehaviour
                 animator.SetFloat("V", 0f);     
         }     
         
-        Vector3 distanceToWalkPoint = agent.transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1.5f)
@@ -155,23 +148,32 @@ public class MobAI : MonoBehaviour
 
     private void Flee()
     {
-        if(Vector3.Distance(player.position, transform.position) < 25f)
-        {  
-            if(grazeCheck)
-            {
-                animator.CrossFade("GrazeEnd", 0f);
-                grazeCheck = false;
-            }
-
-            fleeState = true;
-            idleState = false;
-            waitingToPatrol = false;
-            patrolState = false;
-            agent.SetDestination(transform.position + (transform.position - player.transform.position) * 10f);
-            animator.SetFloat("V", 1f);
-        }
-        else
+        if(grazeCheck)
         {
+            animator.CrossFade("GrazeEnd", 0f);
+            grazeCheck = false;
+        }
+
+        fleeState = true;
+        idleState = false;
+        waitingToPatrol = false;
+        patrolState = false;
+
+        Transform startTransform = transform;
+        transform.rotation = Quaternion.LookRotation(transform.position - player.position);
+        Vector3 runTo = transform.position + transform.forward * 100f;
+        NavMeshHit hit; 
+
+        NavMesh.SamplePosition(runTo, out hit, 100, 1 << NavMesh.GetNavMeshLayerFromName("Walkable"));
+
+        transform.position = startTransform.position;
+        transform.rotation = startTransform.rotation;
+
+        agent.SetDestination(hit.position);
+        animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, 1.0f));
+        
+        if(Vector3.Distance(player.position, transform.position) > 25f)
+        {  
             idleState = true;
             fleeState = false;
             walkPointSet = false;
@@ -184,16 +186,5 @@ public class MobAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, alertRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.forward + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
-    }
-
-    public bool checkIfPosEmpty(Vector3 targetPos)
-    {
-        GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Hittable");
-        foreach(GameObject current in allMovableThings)
-        {
-            if(current.transform.position == targetPos)
-                return false;
-        }
-        return true;
     }
 }

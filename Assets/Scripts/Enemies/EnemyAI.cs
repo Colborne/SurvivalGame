@@ -64,7 +64,6 @@ public class EnemyAI : MonoBehaviour
             if(Physics.Raycast(start, Vector3.down, out hit))
             {
                 agent.transform.position = hit.point;
-                agent.enabled = false;
                 agent.enabled = true;
             }
         }
