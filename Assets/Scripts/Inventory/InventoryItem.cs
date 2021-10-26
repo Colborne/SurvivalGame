@@ -147,6 +147,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inWeaponSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedWeapon);
+                        GameManager.Instance.weaponID = -1;
                         break;
                     }
                 }
@@ -177,7 +178,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inHelmetSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedHelmet);
-
+                        GameManager.Instance.helmetID = -1;
                         break;
                     }
                 }
@@ -208,7 +209,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inChestSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedChest);
-
+                        GameManager.Instance.chestID = -1;
                         break;
                     }
                 }
@@ -239,7 +240,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inLegsSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedLegs);
-
+                        GameManager.Instance.legsID = -1;
                         break;
                     }
                 }
@@ -269,7 +270,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inBootsSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedBoots);
-
+                        GameManager.Instance.bootsID = -1;
                         break;
                     }
                 }
@@ -299,7 +300,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inBackSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedBack);
-
+                        GameManager.Instance.backID = -1;
                         break;
                     }
                 }
@@ -329,7 +330,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inShieldSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedShield);
-
+                        GameManager.Instance.shieldID = -1;
                         break;
                     }
                 }
@@ -359,7 +360,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inAccessory1Slot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory1);
-
+                        GameManager.Instance.accessory1ID = -1;
                         break;
                     }
                 }
@@ -389,7 +390,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inAccessory2Slot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory2);
-
+                        GameManager.Instance.accessory2ID = -1;
                         break;
                     }
                 }
@@ -419,6 +420,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         inAccessory3Slot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedAccessory3);
+                        GameManager.Instance.accessory3ID = -1;
                         break;
                     }
                 }
