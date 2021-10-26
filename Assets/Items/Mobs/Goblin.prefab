@@ -743,7 +743,9 @@ MonoBehaviour:
   currentHealth: 40
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
   fx: {fileID: 1968586304485042, guid: 6c86c599d7bf3464eb4506d2584fbe57, type: 3}
-  drop: {fileID: 7533301453620370007, guid: eeac5556b97a2de47baadc9070d885ea, type: 3}
+  drop:
+  - {fileID: 5205778459530054705, guid: b1e87daf292c65a4791db8da323d1ff6, type: 3}
+  - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
 --- !u!195 &-2863277858719809135
 NavMeshAgent:
   m_ObjectHideFlags: 0

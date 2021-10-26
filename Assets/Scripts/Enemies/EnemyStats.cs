@@ -9,7 +9,7 @@ public class EnemyStats : MonoBehaviour
     
     public GameObject FloatingText;
     public GameObject fx;
-    public GameObject drop;
+    public GameObject[] drop;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class EnemyStats : MonoBehaviour
         if(currentHealth <= 0)
         {
             for(int i = 0; i < Random.Range(1,5); i++)
-                Instantiate(drop, transform.position + new Vector3(Random.Range(-.5f,.5f), Random.Range(0f,1f), Random.Range(-.5f,.5f)), Random.rotation);
+                Instantiate(drop[Random.Range(0, drop.Length)], transform.position + new Vector3(Random.Range(-.5f,.5f), Random.Range(0f,1f), Random.Range(-.5f,.5f)), Random.rotation);
                 
             Destroy(gameObject);
         }

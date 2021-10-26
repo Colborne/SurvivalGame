@@ -87,7 +87,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fx: {fileID: 6518796521700374879, guid: 78d036a98f0bb3c4f83e36a29c6a2011, type: 3}
   item: {fileID: 7680765855121683962, guid: 8a2e752db34f56c49a92eb6721d3c462, type: 3}
-  speed: 1
 --- !u!114 &1899470819491731745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a363839941167034796ecdc4f08f3d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
+  damageAmount: 100
   isTool: 0
   canBreak: 
   weaponLevel: 1
