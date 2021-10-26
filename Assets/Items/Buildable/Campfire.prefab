@@ -133,9 +133,11 @@ MonoBehaviour:
   - {fileID: 6809556619685634938}
   - {fileID: 2367471469707049673}
   fx: {fileID: 2289471266134847336}
-  coal: {fileID: 7680765855121683962, guid: 2c45a30cb9617ca4dbed1ce227d0ddb4, type: 3}
+  coal: {fileID: 7680765855121683962, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
   coalCount: 0
   cooking: 0
+  timer: 0
+  cookTime: 0
 --- !u!114 &6809556619685634938
 MonoBehaviour:
   m_ObjectHideFlags: 0
