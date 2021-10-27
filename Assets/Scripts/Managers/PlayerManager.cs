@@ -27,6 +27,7 @@ public class PlayerManager : MonoBehaviour
     public Transform body;
 
     public bool isInteracting;
+    public float animSpeedControl = 1f;
 
     private void Awake() 
     {
@@ -57,8 +58,7 @@ public class PlayerManager : MonoBehaviour
         isInteracting = animator.GetBool("isInteracting");   
         playerLocomotion.isJumping = animator.GetBool("isJumping");
         playerLocomotion.isAttacking = animator.GetBool("isAttacking");
-        animator.SetBool("isGrounded", playerLocomotion.isGrounded);
-        
+        animator.SetBool("isGrounded", playerLocomotion.isGrounded);   
         inputManager.inventoryInput = false; //do this for all inputs to check once per frame
     }
 

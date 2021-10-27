@@ -50,14 +50,7 @@ public class AnimatorManager : MonoBehaviour
         #endregion
 */
 
-        if(horizontalMovement > 0)
-        {
-            snappedHorizontal = 1;
-        }
-        else
-        {
-            snappedHorizontal = 0;         
-        }
+        snappedHorizontal = horizontalMovement;
 
         #region Snapped Vertical
         if(verticalMovement > 0 && verticalMovement < 0.55f)

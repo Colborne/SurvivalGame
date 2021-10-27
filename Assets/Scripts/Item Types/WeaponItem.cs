@@ -17,6 +17,8 @@ public class WeaponItem : Item
     public bool isTwoHanded;
     public bool isOffhandable;
     public bool canCharge;
+    [Range(0,2)] //0 = hand, 1 = crossbody, 2 = shoulder
+    public int idleAnim;
 
     [Header("Attack Animations")]
     public string Attack;

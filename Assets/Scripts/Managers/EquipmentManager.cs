@@ -14,7 +14,7 @@ public class EquipmentManager : MonoBehaviour
     AnimatorManager animatorManager;
 
     public bool isTwoHanded = false;
-
+    public float animSpeedControl = 1f;
     private void Awake() 
     {
         animatorManager = GetComponent<AnimatorManager>();
@@ -24,6 +24,8 @@ public class EquipmentManager : MonoBehaviour
 
     public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
     {
+        animSpeedControl = weaponItem.attackSpeed;
+        animatorManager.animator.SetFloat("animSpeed", animSpeedControl);    
         if(weaponItem.isTwoHanded)
         {
             LoadRightWeaponDamageCollider();
