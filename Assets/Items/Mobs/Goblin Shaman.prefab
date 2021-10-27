@@ -716,7 +716,7 @@ MonoBehaviour:
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 3
   projectile: {fileID: 2959667684836456750, guid: 9a8fb80b53dee7f419a2a831ac599f8c, type: 3}
   alertRange: 15
   attackRange: 10
@@ -757,7 +757,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 8
+  m_Speed: 7
   m_Acceleration: 500
   avoidancePriority: 50
   m_AngularSpeed: 500

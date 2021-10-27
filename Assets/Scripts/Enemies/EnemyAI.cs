@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     Vector3 lastPosition;
     private Quaternion smoothTilt;
 
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -36,6 +37,14 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         hitbox = transform.GetChild(2).gameObject;
         smoothTilt = new Quaternion();
+    }
+
+    void Start()
+    {
+        NavMeshHit closestHit;
+ 
+        if (NavMesh.SamplePosition(transform.position, out closestHit, 500f, NavMesh.AllAreas))
+            transform.position = closestHit.position;
     }
     private void Update()
     {
@@ -55,24 +64,16 @@ public class EnemyAI : MonoBehaviour
             }
             if ((playerInAlertRange || playerInSight) && !playerInAttackRange) ChasePlayer();
             if (playerInAttackRange) AttackPlayer();
-        }
-        else
-        {
-            Vector3 start = transform.position + new Vector3(0,10,0);
-            RaycastHit hit;
-            
-            if(Physics.Raycast(start, Vector3.down, out hit))
-            {
-                agent.transform.position = hit.point;
-                agent.enabled = true;
-            }
+        
+        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
+        lastPosition = transform.position;
         }
     }
 
+/*
     void FixedUpdate()
     {
-        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
-        lastPosition = transform.position;
+
 
 		RaycastHit rcHit;
 		Vector3 theRay = transform.TransformDirection(Vector3.down);
@@ -98,7 +99,7 @@ public class EnemyAI : MonoBehaviour
 			transform.localPosition = locPos;
 		}
     }
-
+*/
 
     private void Idle()
     {
@@ -126,9 +127,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (walkPointSet)
         {
-            agent.SetDestination(walkPoint);
             if(speed > 0)
-                animator.SetFloat("V", .5f);
+                animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, .5f));
             else
                 animator.SetFloat("V", 0f);     
         }     
@@ -164,7 +164,7 @@ public class EnemyAI : MonoBehaviour
     {
         agent.SetDestination(player.position);
         walkPoint = player.position;
-        animator.SetFloat("V", 1f);
+        animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, 1f));
         patrolState = false;
     }
 
@@ -195,17 +195,6 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, alertRange);
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireCube(transform.forward + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
-    }
-
-    public bool checkIfPosEmpty(Vector3 targetPos)
-    {
-        GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Hittable");
-        foreach(GameObject current in allMovableThings)
-        {
-            if(current.transform.position == targetPos)
-                return false;
-        }
-        return true;
     }
 
     public void DamageCollider()

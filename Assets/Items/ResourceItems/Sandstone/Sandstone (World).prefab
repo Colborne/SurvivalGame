@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6546513858317054712}
   - component: {fileID: 2334724637391097164}
   - component: {fileID: 8940588388695996300}
-  - component: {fileID: 4088256598399113801}
   - component: {fileID: 7485625027114413854}
+  - component: {fileID: 5186971488381922903}
   m_Layer: 0
   m_Name: Sandstone (World)
   m_TagString: Untagged
@@ -116,20 +116,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!64 &4088256598399113801
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7533301453620370007}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 1b4bfac00676a4c4aa7c35e484d28711, type: 3}
 --- !u!65 &7485625027114413854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -139,6 +125,19 @@ BoxCollider:
   m_GameObject: {fileID: 7533301453620370007}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &5186971488381922903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7533301453620370007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01, z: 0.01}

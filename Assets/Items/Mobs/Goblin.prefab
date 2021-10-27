@@ -719,7 +719,7 @@ MonoBehaviour:
   timeBetweenAttacks: 2
   projectile: {fileID: 0}
   alertRange: 15
-  attackRange: 1
+  attackRange: 0.5
   sightRange: {x: 2, y: 3, z: 50}
   playerInAlertRange: 0
   playerInAttackRange: 0
