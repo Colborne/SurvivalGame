@@ -65,7 +65,7 @@ public class Smelting : MonoBehaviour
         counter = smelt.Count;
         if(smelt.Count > 0)
         {
-            if(timer <= 1f)
+            if(timer <= 15f)
             {
                 timer += Time.deltaTime;
                 fx.SetActive(true);
