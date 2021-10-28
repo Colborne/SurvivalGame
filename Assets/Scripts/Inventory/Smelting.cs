@@ -6,6 +6,7 @@ public class Smelting : MonoBehaviour
 {
     public SmeltingRecipe[] recipes;
     public GameObject fx;
+    public int counter;
 
     [SerializeField]     
     Queue<GameObject> smelt = new Queue<GameObject>();
@@ -42,15 +43,10 @@ public class Smelting : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == GameManager.Instance.PM.gameObject && iter >= 0)
+        if (other.gameObject == GameManager.Instance.PM.gameObject)
         {
-            if(inputManager.interactInput)
+            if(inputManager.interactInput && iter >= 0)
             {
-                if(min > 10)
-                    min = 10;
-                else
-                    min = 10 - smelt.Count;
-
                 for(int i = 0; i < recipes[iter].items.Length; i++)
                     GameManager.Instance.CheckInventoryForItem(recipes[iter].items[i], min, true);
                 
@@ -66,9 +62,10 @@ public class Smelting : MonoBehaviour
 
     void Update()
     {
+        counter = smelt.Count;
         if(smelt.Count > 0)
         {
-            if(timer <= 15f)
+            if(timer <= 1f)
             {
                 timer += Time.deltaTime;
                 fx.SetActive(true);
