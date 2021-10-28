@@ -231,7 +231,8 @@ public class GameManager : MonoBehaviour
 
     public void DropItem(InventoryItem item)
     {
-        Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 4 + PM.transform.up * 2, Quaternion.identity);
+        var drop = Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 4 + PM.transform.up * 2, Quaternion.identity);
+        drop.GetComponent<Pickup>().playerDropped = true;
         Destroy(item.gameObject);
     }
 

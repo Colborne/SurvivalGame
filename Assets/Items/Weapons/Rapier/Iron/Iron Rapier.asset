@@ -18,10 +18,11 @@ MonoBehaviour:
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
+  idleAnim: 0
   Attack: Stab
   Heavy_Attack: 
   Left_Attack: 
-  baseStamina: 10
+  baseStamina: 8
   heavyAttackMultiplier: 1.5
   attackDamage: 0.83
   attackSpeed: 1.2

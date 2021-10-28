@@ -18,10 +18,11 @@ MonoBehaviour:
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
+  idleAnim: 0
   Attack: Slash
   Heavy_Attack: HeavyCrush
   Left_Attack: 
-  baseStamina: 20
+  baseStamina: 12
   heavyAttackMultiplier: 1.5
   attackDamage: 1.2
   attackSpeed: 0.83

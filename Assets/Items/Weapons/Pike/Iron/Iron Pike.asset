@@ -22,7 +22,7 @@ MonoBehaviour:
   Attack: TwoHandLunge
   Heavy_Attack: 
   Left_Attack: 
-  baseStamina: 25
+  baseStamina: 12
   heavyAttackMultiplier: 1.2
   attackDamage: 2.16
   attackSpeed: 0.8

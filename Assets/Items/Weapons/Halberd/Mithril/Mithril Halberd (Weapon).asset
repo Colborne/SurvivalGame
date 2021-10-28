@@ -22,7 +22,7 @@ MonoBehaviour:
   Attack: HeavySlash
   Heavy_Attack: TwoHandSlash
   Left_Attack: 
-  baseStamina: 15
+  baseStamina: 13
   heavyAttackMultiplier: 1.5
   attackDamage: 2.34
   attackSpeed: 0.77

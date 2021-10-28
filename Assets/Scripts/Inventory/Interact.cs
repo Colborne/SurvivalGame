@@ -11,7 +11,8 @@ public class Interact : MonoBehaviour
             Smithing,
             Smelting,
             Alchemy,
-            Sharpening
+            Sharpening,
+            Pickup
     }
 
     [SerializeField] private Type interactionType;
@@ -112,6 +113,13 @@ public class Interact : MonoBehaviour
                     GameManager.Instance.PickUpItem(outItem, convert);
                     animatorManager.PlayTargetAnimation("Landing", true);
                 }
+            }
+            else if(interactionType == Type.Pickup)
+            {
+                var _drop = Instantiate(GameManager.Instance.equipment[outItem].worldItem, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(-.5f,.5f),Random.Range(-.5f,.5f)), Random.rotation);
+                _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
+                animatorManager.PlayTargetAnimation("Landing", true);
+                Destroy(gameObject);
             }
             
             inputManager.interactInput = false;

@@ -9,7 +9,8 @@ public class Pickup : MonoBehaviour
     public string name;
     InputManager inputManager;
     InteractableUI ui; 
-    bool autoPickup = false;
+    public bool autoPickup = false;
+    public bool playerDropped = false;
 
     private void Awake() {
         inputManager = FindObjectOfType<InputManager>();
@@ -19,7 +20,8 @@ public class Pickup : MonoBehaviour
 
     void ActivatePickup()
     {
-        autoPickup = true;
+        if(!playerDropped)
+            autoPickup = true;
     }
 
     private void OnTriggerEnter(Collider other) 

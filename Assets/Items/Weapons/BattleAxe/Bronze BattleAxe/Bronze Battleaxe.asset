@@ -22,7 +22,7 @@ MonoBehaviour:
   Attack: Chop
   Heavy_Attack: HeavyCrush
   Left_Attack: 
-  baseStamina: 20
+  baseStamina: 8
   heavyAttackMultiplier: 1.5
   attackDamage: 1.98
   attackSpeed: 0.91

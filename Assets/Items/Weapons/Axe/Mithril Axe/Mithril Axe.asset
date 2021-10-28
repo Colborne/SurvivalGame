@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Mithril Axe
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5788834242575343590, guid: 4c3fd26011d0a0c4899dd93ddf0179ef, type: 3}
-  itemIcon: {fileID: 21300000, guid: 35f64f9b279faec4092d72c4ddf491f1, type: 3}
   itemName: Mithril Axe
   description: A Beautiful Woodcutting Axe
   weight: 1
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
+  idleAnim: 0
   Attack: Chop
   Heavy_Attack: 
   Left_Attack: 
-  baseStamina: 10
+  baseStamina: 8
   heavyAttackMultiplier: 1.5
   attackDamage: 1.1
   attackSpeed: 0.9
+  damageType: 0
   projectile: {fileID: 0}

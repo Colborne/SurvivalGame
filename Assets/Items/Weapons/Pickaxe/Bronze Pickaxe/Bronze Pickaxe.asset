@@ -22,7 +22,7 @@ MonoBehaviour:
   Attack: OverheadSwing
   Heavy_Attack: 
   Left_Attack: 
-  baseStamina: 15
+  baseStamina: 8
   heavyAttackMultiplier: 1.5
   attackDamage: 1.5
   attackSpeed: 0.66
