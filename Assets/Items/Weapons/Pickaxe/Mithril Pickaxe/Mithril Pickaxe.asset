@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Mithril Pickaxe
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 3969463676409318601, guid: 890c357afe0d7954c9076890efc92c30, type: 3}
-  itemIcon: {fileID: 21300000, guid: 19e554e2b3fddec4a943f9043e3d85a8, type: 3}
   itemName: Mithril Pickaxe
   description: A Beautiful Mining Tool
   weight: 20
   isTwoHanded: 1
   isOffhandable: 0
   canCharge: 0
+  idleAnim: 2
   Attack: OverheadSwing
   Heavy_Attack: 
   Left_Attack: 
@@ -27,4 +26,5 @@ MonoBehaviour:
   heavyAttackMultiplier: 1.5
   attackDamage: 1.5
   attackSpeed: 0.66
+  damageType: 0
   projectile: {fileID: 0}

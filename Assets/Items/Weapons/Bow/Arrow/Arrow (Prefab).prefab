@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a363839941167034796ecdc4f08f3d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 100
+  damageAmount: 10
   isTool: 0
   canBreak: 
   weaponLevel: 1

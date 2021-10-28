@@ -18,6 +18,7 @@ MonoBehaviour:
   isTwoHanded: 0
   isOffhandable: 0
   canCharge: 0
+  idleAnim: 2
   Attack: FishingCast
   Heavy_Attack: 
   Left_Attack: 
