@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Platebody (Item)
+  m_Name: Silver Platelegs (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.30588236, g: 0.015686275, b: 0.027450982, a: 1}
+  m_Color: {r: 0.74509805, g: 0.7647059, b: 0.79607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60795c2e339804645a56db66d1e92f7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fcb3fdfbeb0af14ca8bde79b11f1db0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -113,10 +113,10 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 11
-  equipType: 2
+  itemID: 142
+  equipType: 3
   MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 8143374775445529326, guid: 78b8db0e7cf44144788685974c2d950f, type: 3}
-  item: {fileID: 11400000, guid: aa87e382693fe85468d7f1f8b7c5619a, type: 2}
+  item: {fileID: 11400000, guid: 7e1ddee68fea6d748863bd0a8b5df6de, type: 2}
   totalWeight: 0

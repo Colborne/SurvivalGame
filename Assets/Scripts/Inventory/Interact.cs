@@ -33,13 +33,14 @@ public class Interact : MonoBehaviour
     CraftingSystem alchemySystem;
     CraftingSystem alchemy2System;
 
-    CraftingSystem[] checks;
+    public CraftingSystem[] checks;
     CraftingSystem temp;
 
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
+        checks = new CraftingSystem[8];
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
         checks[0] = craftingSystem;
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
@@ -77,20 +78,21 @@ public class Interact : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
+        for(int i = 0; i < checks.Length; i++)
+        {
+            if(checks[i].CraftingWindow.active)
+            {
+                temp = checks[i];
+                Debug.Log(i + "is active, " + temp.CraftingWindow.active);
+                break;
+            }
+        }
+
         if(item != null && GameManager.Instance.CheckAmount(item) > 0)
             ui.interactableText.text = "Press 'E' to " + interactionText + " x" + GameManager.Instance.CheckAmount(item);
             
         if (other.gameObject == GameManager.Instance.PM.gameObject && (inputManager.interactInput || (inputManager.inventoryInput && temp.CraftingWindow.active)))
         {   
-            for(int i = 0; i < checks.Length; i++)
-            {
-                if(checks[i].CraftingWindow.active)
-                {
-                    temp = checks[i];
-                    break;
-                }
-            }
-
             if(interactionType == Type.Crafting)
             {
                 if(level == 1)

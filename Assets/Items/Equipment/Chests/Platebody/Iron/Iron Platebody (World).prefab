@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8992684630331685764}
   - component: {fileID: 319887251229297446}
   m_Layer: 0
-  m_Name: Platebody (World)
+  m_Name: Iron Platebody (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb9d5544dfd6982409dd86307f236721, type: 2}
+  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 11
+  itemID: 137
   amount: 1
-  name: Platebody
+  name: Iron Platebody
+  autoPickup: 0
+  playerDropped: 0
