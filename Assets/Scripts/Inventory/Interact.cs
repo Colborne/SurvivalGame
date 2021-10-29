@@ -64,15 +64,6 @@ public class Interact : MonoBehaviour
         {
             ui.interactableText.text = "Press 'E' to " + interactionText;
             ui.transform.GetChild(0).gameObject.SetActive(true);
-
-        for(int i = 0; i < checks.Length; i++)
-        {
-            if(checks[i].CraftingWindow.active)
-            {
-                temp = checks[i];
-                break;
-            }
-        }
         }
     }
 
@@ -91,6 +82,15 @@ public class Interact : MonoBehaviour
             
         if (other.gameObject == GameManager.Instance.PM.gameObject && (inputManager.interactInput || (inputManager.inventoryInput && temp.CraftingWindow.active)))
         {   
+            for(int i = 0; i < checks.Length; i++)
+            {
+                if(checks[i].CraftingWindow.active)
+                {
+                    temp = checks[i];
+                    break;
+                }
+            }
+
             if(interactionType == Type.Crafting)
             {
                 if(level == 1)
