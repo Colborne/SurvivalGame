@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CraftingSystem : MonoBehaviour
 {
-    [SerializeField] GameObject CraftingWindow;
+    [SerializeField] public GameObject CraftingWindow;
     [SerializeField] Craftable[] Craftables;
     public int iteration = 0;
 

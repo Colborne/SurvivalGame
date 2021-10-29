@@ -206,7 +206,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(projectile != null)
         {
-            GameObject proj = Instantiate(projectile, transform.position + new Vector3(2,2,0), Quaternion.identity);
+            GameObject proj = Instantiate(projectile, transform.position + transform.forward * 2f, Quaternion.identity);
             Rigidbody rb = proj.GetComponentInChildren<Rigidbody>();
             proj.transform.LookAt(player);
             rb.AddForce(transform.forward * 2500f);

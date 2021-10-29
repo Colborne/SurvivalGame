@@ -33,18 +33,29 @@ public class Interact : MonoBehaviour
     CraftingSystem alchemySystem;
     CraftingSystem alchemy2System;
 
+    CraftingSystem[] checks;
+    CraftingSystem temp;
+
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+        checks[0] = craftingSystem;
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
+        checks[1] = smithingSystem;
         alchemySystem = GameObject.Find("AlchemySystem").GetComponent<CraftingSystem>();
+        checks[2] = alchemySystem;
         crafting2System = GameObject.Find("Crafting2System").GetComponent<CraftingSystem>();
+        checks[3] = crafting2System;
         smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
+        checks[4] = smithing2System;
         alchemy2System = GameObject.Find("Alchemy2System").GetComponent<CraftingSystem>();
+        checks[5] = alchemy2System;
         crafting3System = GameObject.Find("Crafting3System").GetComponent<CraftingSystem>();
+        checks[6] = crafting3System;
         smithing3System = GameObject.Find("Smithing3System").GetComponent<CraftingSystem>();
+        checks[7] = smithing3System;
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -53,6 +64,15 @@ public class Interact : MonoBehaviour
         {
             ui.interactableText.text = "Press 'E' to " + interactionText;
             ui.transform.GetChild(0).gameObject.SetActive(true);
+
+        for(int i = 0; i < checks.Length; i++)
+        {
+            if(checks[i].CraftingWindow.active)
+            {
+                temp = checks[i];
+                break;
+            }
+        }
         }
     }
 
@@ -69,7 +89,7 @@ public class Interact : MonoBehaviour
         if(item != null && GameManager.Instance.CheckAmount(item) > 0)
             ui.interactableText.text = "Press 'E' to " + interactionText + " x" + GameManager.Instance.CheckAmount(item);
             
-        if (other.gameObject == GameManager.Instance.PM.gameObject && inputManager.interactInput)
+        if (other.gameObject == GameManager.Instance.PM.gameObject && (inputManager.interactInput || (inputManager.inventoryInput && temp.CraftingWindow.active)))
         {   
             if(interactionType == Type.Crafting)
             {
