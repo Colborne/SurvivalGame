@@ -240,6 +240,7 @@ public class GameManager : MonoBehaviour
     {
         var _newItem = Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 4 + PM.transform.up * 2, Quaternion.identity);
         _newItem.GetComponent<Pickup>().amount = _amount;
+        _newItem.GetComponent<Pickup>().playerDropped = true;
         Destroy(item.gameObject);
     }
 

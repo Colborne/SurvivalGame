@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6000174720421364710}
   - component: {fileID: 3077382705856472993}
   - component: {fileID: 9091245646106056855}
+  - component: {fileID: 8982550235340906861}
+  - component: {fileID: 5045372096330101437}
   m_Layer: 0
   m_Name: Silver Pickaxe (World)
   m_TagString: Untagged
@@ -62,6 +64,36 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!65 &8982550235340906861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226731530782889640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: -0.007, y: 0, z: 0}
+--- !u!114 &5045372096330101437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226731530782889640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 117
+  amount: 1
+  name: Silver Pickaxe
+  autoPickup: 0
+  playerDropped: 0
 --- !u!1 &1313709211160615397
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,9 +103,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1833223698515182431}
-  - component: {fileID: 5733302129900034341}
-  - component: {fileID: 3242880752040032381}
-  - component: {fileID: 9207005486249126529}
   m_Layer: 0
   m_Name: Pickaxe
   m_TagString: Untagged
@@ -97,53 +126,6 @@ Transform:
   m_Father: {fileID: 1703799845224287316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5733302129900034341
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313709211160615397}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1496c1ac72eea1e42bce838b5e5d876d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &3242880752040032381
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313709211160615397}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &9207005486249126529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313709211160615397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 117
-  amount: 1
-  name: Silver Pickaxe
 --- !u!1 &3189526936764623540
 GameObject:
   m_ObjectHideFlags: 0
