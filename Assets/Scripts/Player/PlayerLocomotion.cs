@@ -78,17 +78,8 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.y = 0;
 
         float weight = Mathf.Clamp(stats.inventoryWeight, 0, 1000);
-
-        if(isSprinting && stats.currentStamina >= .25f)
-        {
-            stats.UseStamina(.25f);
-            moveDirection = moveDirection * sprintingSpeed * (((1000f - weight) / 1000f) + .25f);
-        }
-        else if(isSneaking)
-        {
-            moveDirection = moveDirection * sneakingSpeed * (((1000f - weight) / 1000f) + .25f);
-        }
-        else if(isSwimming)
+        
+        if(isSwimming)
         {
             if(inputManager.verticalInput != 0 || inputManager.horizontalInput != 0) 
             {
@@ -98,11 +89,19 @@ public class PlayerLocomotion : MonoBehaviour
                     stats.drownTimer = 0f;
                 }
                 else
-                    moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 4);
-                
+                    moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 4); 
             }
             if(stats.currentStamina <= .25f)
                 stats.Drowning();
+        }
+        else if(isSprinting && stats.currentStamina >= .25f)
+        {
+            stats.UseStamina(.25f);
+            moveDirection = moveDirection * sprintingSpeed * (((1000f - weight) / 1000f) + .25f);
+        }
+        else if(isSneaking)
+        {
+            moveDirection = moveDirection * sneakingSpeed * (((1000f - weight) / 1000f) + .25f);
         }
         else
         {

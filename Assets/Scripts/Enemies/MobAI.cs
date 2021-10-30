@@ -5,25 +5,30 @@ public class MobAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    public GameObject[] tameables;
+    public LayerMask whatIsGround, whatIsPlayer, whatIsTameable;
     Animator animator;
     Rigidbody rigidbody;
     Vector3 check;
+    PlayerLocomotion playerLocomotion;
 
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
+    public int tamedAmount;
+    public int tameableAmount = 20;
 
     //States
     public float alertRange;
     public Vector3 sightRange;
     public bool playerInAlertRange, playerInSight;
-    public bool patrolState, idleState = true, waitingToPatrol, grazeCheck = false, fleeState, grazeAttempt = false;
+    public bool patrolState, idleState = true, waitingToPatrol, grazeCheck = false, fleeState, grazeAttempt = false, tamed = false;
 
     float speed;
     Vector3 lastPosition;
     Quaternion smoothTilt;
+    string[] desiredTameable;
 
     private void Awake()
     {
@@ -33,6 +38,10 @@ public class MobAI : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         check = transform.position;
         smoothTilt = new Quaternion();
+        playerLocomotion = player.GetComponent<PlayerLocomotion>();
+        desiredTameable = new string[tameables.Length];
+        for(int i = 0; i < tameables.Length; i++)
+            desiredTameable[i] = tameables[i].tag;
     }
 
     void Start()
@@ -49,22 +58,50 @@ public class MobAI : MonoBehaviour
             //Check for alert and attack range
             playerInAlertRange = Physics.CheckSphere(transform.position, alertRange, whatIsPlayer);
             playerInSight = Physics.CheckBox(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange, Quaternion.LookRotation(transform.forward), whatIsPlayer);
-
-            if (!playerInAlertRange && !playerInSight && !fleeState) 
+            
+            if ((!playerInAlertRange || playerLocomotion.isSneaking) && !playerInSight && !fleeState) 
             {
                 if(patrolState)
                     Patrol();
-                else
-                    Idle();      
+                else 
+                    Idle();    
+                Collider[] tameableInRange = Seek(transform.position, alertRange, whatIsTameable);
+                if (tameableInRange.Length > 0 && tamedAmount < 100)
+                {
+                    for (int i = 0; i < tameableInRange.Length; i++)
+                    {
+                        for (int j = 0; j < desiredTameable.Length; j++)
+                        {
+                            if (desiredTameable[j] == tameableInRange[i].tag && tameableInRange[i].GetComponent<Pickup>().playerDropped)
+                                Eat(tameableInRange[i].gameObject);                      
+                        }
+                    }
+                }
             }
-            if (playerInAlertRange || playerInSight)
+            if (!tamed && ((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight))
                 Flee();
         }
 
         speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
         lastPosition = transform.position;
     }
-
+    private void Eat(GameObject tameable)
+    {
+        agent.SetDestination(tameable.transform.position);
+        walkPoint = tameable.transform.position;
+        animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, 1f));
+        patrolState = false;
+        waitingToPatrol = false;
+        idleState = false;
+        grazeAttempt = false;
+        tamedAmount += tameableAmount;
+        if(tamedAmount >= 100)
+            tamed = true;
+        if(tameable.GetComponent<Pickup>().amount > 1)
+            tameable.GetComponent<Pickup>().amount--;
+        else
+            Destroy(tameable);
+    }
     private void Idle()
     {
         if(!grazeCheck && !grazeAttempt)
@@ -179,6 +216,14 @@ public class MobAI : MonoBehaviour
             walkPointSet = false;
         }
     }
+
+    Collider[] Seek(Vector3 position, float range,int layer)
+    {
+        int layerMask = 1 << layer;
+        Collider[] hitColliders = Physics.OverlapSphere(position, range);
+        return hitColliders;
+    }
+ 
 
     private void OnDrawGizmosSelected()
     {

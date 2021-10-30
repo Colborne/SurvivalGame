@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8789696139270732350}
   - component: {fileID: 9091245646106056855}
   m_Layer: 0
-  m_Name: Med Helm (World)
+  m_Name: Coif (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226731530782889640}
-  m_Mesh: {fileID: 7007958437310259466, guid: b7e14db1218068b42b8b162dbc265b2b, type: 3}
+  m_Mesh: {fileID: 7007958437310259466, guid: 98aabe78e5f740747bf92c3b2cdcc7c2, type: 3}
 --- !u!23 &3751766160280378543
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+  - {fileID: 2100000, guid: ac22aa80d2a757b42b490bf8ea09854d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 7007958437310259466, guid: b7e14db1218068b42b8b162dbc265b2b, type: 3}
+  m_Mesh: {fileID: 7007958437310259466, guid: 98aabe78e5f740747bf92c3b2cdcc7c2, type: 3}
 --- !u!65 &1065967115351176780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 9
+  itemID: 143
   amount: 1
-  name: Med Helm
+  name: Coif
   autoPickup: 0
   playerDropped: 0
 --- !u!54 &9091245646106056855

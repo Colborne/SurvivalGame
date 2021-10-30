@@ -424,12 +424,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 8454386785192214584}
   player: {fileID: 0}
+  tameables:
+  - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  whatIsTameable:
+    serializedVersion: 2
+    m_Bits: 1024
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
   alertRange: 20

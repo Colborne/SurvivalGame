@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 600090915056189933}
   - component: {fileID: 3034313488701795057}
   - component: {fileID: 6900230242804404379}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mushroom (World)
-  m_TagString: Untagged
+  m_TagString: Tameable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,8 @@ MonoBehaviour:
   itemID: 125
   amount: 1
   name: Red Mushroom
+  autoPickup: 0
+  playerDropped: 0
 --- !u!54 &6900230242804404379
 Rigidbody:
   m_ObjectHideFlags: 0

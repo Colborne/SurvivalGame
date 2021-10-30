@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     Animator animator;
+    PlayerLocomotion playerLocomotion;
 
     //Patroling
     public Vector3 walkPoint;
@@ -35,6 +36,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();       
         animator = GetComponent<Animator>();
+        playerLocomotion = player.GetComponent<PlayerLocomotion>();
         hitbox = transform.GetChild(2).gameObject;
         smoothTilt = new Quaternion();
     }
@@ -62,7 +64,7 @@ public class EnemyAI : MonoBehaviour
                 else
                     Idle();  
             }
-            if ((playerInAlertRange || playerInSight) && !playerInAttackRange) ChasePlayer();
+            if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !alreadyAttacked) ChasePlayer();
             if (playerInAttackRange) AttackPlayer();
         
         speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
@@ -179,7 +181,7 @@ public class EnemyAI : MonoBehaviour
         {
             alreadyAttacked = true;
             Invoke("ResetAttack", timeBetweenAttacks);  
-            animator.CrossFade("Attack", 0f);
+            animator.CrossFade("Attack", 0.2f);
         }
     }
     private void ResetAttack()
