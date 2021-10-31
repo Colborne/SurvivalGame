@@ -15,6 +15,7 @@ public class BuildSystem : MonoBehaviour
     InputManager input;
     int buildRotation = 0;
     public int last = -1;
+    public float distance = 22.5f;
 
 
     private void Start() 
@@ -56,7 +57,7 @@ public class BuildSystem : MonoBehaviour
             last = iteration;
         }
 
-        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 20f))
+        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, distance))
         {     
             Builder.position = new Vector3(
             Mathf.RoundToInt(Hit.point.x)  != 0 ? Mathf.RoundToInt(Hit.point.x/4) * 4: 3,
@@ -96,6 +97,5 @@ public class BuildSystem : MonoBehaviour
         input.buildWindowFlag = !input.buildWindowFlag;
         BuildWindow.SetActive(!BuildWindow.active);
         input.TooltipCanvas.SetActive(!input.TooltipCanvas.active);    
-
     }
 }
