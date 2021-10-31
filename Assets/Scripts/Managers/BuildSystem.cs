@@ -17,15 +17,23 @@ public class BuildSystem : MonoBehaviour
     public int last = -1;
 
 
-    private void Start() {
+    private void Start() 
+    {
         input = FindObjectOfType<InputManager>();
     }
+
     private void Update() 
     {
         if(input.scrollInput > 0)
+        {
             buildRotation++;
+            input.scrollInput = 0;
+        }
         else if(input.scrollInput < 0)
+        {
             buildRotation--;
+            input.scrollInput = 0;
+        }
         else
             buildRotation = buildRotation;
         
@@ -48,14 +56,14 @@ public class BuildSystem : MonoBehaviour
             last = iteration;
         }
 
-        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 22f))
+        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, 20f))
         {     
             Builder.position = new Vector3(
             Mathf.RoundToInt(Hit.point.x)  != 0 ? Mathf.RoundToInt(Hit.point.x/4) * 4: 3,
-            (Mathf.RoundToInt(Hit.point.y) != 0 ? Mathf.RoundToInt(Hit.point.y/4) * 4: 0), //+ Builder.localScale.y ,
+            Mathf.RoundToInt(Hit.point.y) != 0 ? Mathf.RoundToInt(Hit.point.y/4) * 4: 0, // + Builder.localScale.y,
             Mathf.RoundToInt(Hit.point.z)  != 0 ? Mathf.RoundToInt(Hit.point.z/4) * 4: 3);
 
-            orientation *= Quaternion.Euler(0,0, 45 * buildRotation);
+            orientation = Quaternion.Euler(0, 45 * buildRotation, 0);
             
             Builder.eulerAngles = orientation.eulerAngles; //new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0) + orientation.eulerAngles;           
 
