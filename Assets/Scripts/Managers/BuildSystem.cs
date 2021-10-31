@@ -9,6 +9,7 @@ public class BuildSystem : MonoBehaviour
     [SerializeField] GameObject BuildWindow;
     [SerializeField] Buildable[] buildables;
     public int iteration = 0;
+    public LayerMask ground;
     RaycastHit Hit;
     Quaternion orientation;
 
@@ -57,7 +58,7 @@ public class BuildSystem : MonoBehaviour
             last = iteration;
         }
 
-        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, distance))
+        if(Physics.Raycast(Cam.position, Cam.forward, out Hit, distance, ground))
         {     
             Builder.position = new Vector3(
             Mathf.RoundToInt(Hit.point.x)  != 0 ? Mathf.RoundToInt(Hit.point.x/4) * 4: 3,
