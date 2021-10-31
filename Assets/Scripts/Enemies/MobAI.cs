@@ -89,14 +89,16 @@ public class MobAI : MonoBehaviour
     {
         agent.SetDestination(tameable.transform.position);
         walkPoint = tameable.transform.position;
-        animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, 1f));
+        animator.SetFloat("V", 1f);
         patrolState = false;
         waitingToPatrol = false;
         idleState = false;
         grazeAttempt = false;
         tamedAmount += tameableAmount;
+        
         if(tamedAmount >= 100)
             tamed = true;
+        
         if(tameable.GetComponent<Pickup>().amount > 1)
             tameable.GetComponent<Pickup>().amount--;
         else

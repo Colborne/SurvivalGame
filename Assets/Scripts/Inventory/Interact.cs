@@ -33,30 +33,30 @@ public class Interact : MonoBehaviour
     CraftingSystem alchemySystem;
     CraftingSystem alchemy2System;
 
-    public CraftingSystem[] checks;
+    //public CraftingSystem[] checks;
     CraftingSystem temp;
 
     private void Awake() {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
-        checks = new CraftingSystem[8];
+        //checks = new CraftingSystem[8];
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
-        checks[0] = craftingSystem;
+        //checks[0] = craftingSystem;
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
-        checks[1] = smithingSystem;
+        //checks[1] = smithingSystem;
         alchemySystem = GameObject.Find("AlchemySystem").GetComponent<CraftingSystem>();
-        checks[2] = alchemySystem;
+        //checks[2] = alchemySystem;
         crafting2System = GameObject.Find("Crafting2System").GetComponent<CraftingSystem>();
-        checks[3] = crafting2System;
+        //checks[3] = crafting2System;
         smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
-        checks[4] = smithing2System;
+        //checks[4] = smithing2System;
         alchemy2System = GameObject.Find("Alchemy2System").GetComponent<CraftingSystem>();
-        checks[5] = alchemy2System;
+        //checks[5] = alchemy2System;
         crafting3System = GameObject.Find("Crafting3System").GetComponent<CraftingSystem>();
-        checks[6] = crafting3System;
+        //checks[6] = crafting3System;
         smithing3System = GameObject.Find("Smithing3System").GetComponent<CraftingSystem>();
-        checks[7] = smithing3System;
+        //checks[7] = smithing3System;
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -78,20 +78,10 @@ public class Interact : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        for(int i = 0; i < checks.Length; i++)
-        {
-            if(checks[i].CraftingWindow.active)
-            {
-                temp = checks[i];
-                Debug.Log(i + "is active, " + temp.CraftingWindow.active);
-                break;
-            }
-        }
-
         if(item != null && GameManager.Instance.CheckAmount(item) > 0)
             ui.interactableText.text = "Press 'E' to " + interactionText + " x" + GameManager.Instance.CheckAmount(item);
             
-        if (other.gameObject == GameManager.Instance.PM.gameObject && (inputManager.interactInput || (inputManager.inventoryInput && temp.CraftingWindow.active)))
+        if (other.gameObject == GameManager.Instance.PM.gameObject && (inputManager.interactInput)) // || (inputManager.inventoryInput && temp.CraftingWindow.active)))
         {   
             if(interactionType == Type.Crafting)
             {
@@ -138,7 +128,7 @@ public class Interact : MonoBehaviour
             }
             else if(interactionType == Type.Pickup)
             {
-                var _drop = Instantiate(GameManager.Instance.equipment[outItem].worldItem, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(-.5f,.5f),Random.Range(-.5f,.5f)), Random.rotation);
+                var _drop = Instantiate(GameManager.Instance.equipment[outItem].worldItem, transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(.5f,1f),Random.Range(-.5f,.5f)), Random.rotation);
                 _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
                 animatorManager.PlayTargetAnimation("Landing", true);
                 Destroy(gameObject);
@@ -150,4 +140,15 @@ public class Interact : MonoBehaviour
     }
 }
 
+/*
+for(int i = 0; i < checks.Length; i++)
+        {
+            if(checks[i].CraftingWindow.active)
+            {
+                temp = checks[i];
+                Debug.Log(i + "is active, " + temp.CraftingWindow.active);
+                break;
+            }
+        }
 
+*/

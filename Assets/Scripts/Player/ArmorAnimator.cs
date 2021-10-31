@@ -5,9 +5,17 @@ using UnityEngine;
 public class ArmorAnimator : MonoBehaviour
 {
     public SkinnedMeshRenderer TargetMeshRenderer;
+    PlayerManager playerManager;
     public bool isChest;
     private void Awake() 
     {
+        playerManager = FindObjectOfType<PlayerManager>();
+
+        if(isChest)
+            playerManager.chestModel.SetActive(true);
+        else
+            playerManager.legsModel.SetActive(true);
+
         if(isChest)
             TargetMeshRenderer = GameObject.Find("Player/Player Torso").GetComponent<SkinnedMeshRenderer>();
         else
@@ -33,6 +41,5 @@ public class ArmorAnimator : MonoBehaviour
             }
         }
         myRenderer.bones = newBones;
- 
     }
 }
