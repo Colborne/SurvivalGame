@@ -52,7 +52,8 @@ public class InventoryDrop : MonoBehaviour, IDropHandler
                 OriginalSlot.currentItem = null;
                 OriginalSlot.isFull = false;
                 GameManager.Instance.bootsID = -1;
-                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedBoots);
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedLeftBoot);
+                GameManager.Instance.DestroyItem(GameManager.Instance.spawnedRightBoot);
                 GameManager.Instance.DropItem(newItem);
             }
             else if (newItem.inBackSlot)

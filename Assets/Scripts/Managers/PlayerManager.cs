@@ -22,7 +22,8 @@ public class PlayerManager : MonoBehaviour
     public Transform helmet;
     public Transform chest;
     public Transform legs;
-    public Transform boots;
+    public Transform leftBoot;
+    public Transform rightBoot;
     public Transform back;
     public Transform body;
 

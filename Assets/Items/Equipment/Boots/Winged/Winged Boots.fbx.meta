@@ -1,30 +1,21 @@
 fileFormatVersion: 2
-guid: fb28b56550ef6ad449f5e6e1d4d932e3
+guid: 6b14b3864c3c7f4499528c99e4426f91
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: -5252816984213320552
-    second: idle
-  - first:
-      74: 6200578666267062213
-    second: run
-  - first:
-      74: -4374668924334883536
-    second: Armature|DrawBow
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boots
-    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+      name: Boot
+    second: {fileID: 2100000, guid: 0e1f19761100c3d4dbc81a4f8d80c4c7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boots.001
-    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+      name: Wings
+    second: {fileID: 2100000, guid: b336a38a2d7a62947a33e06218f033c8, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -50,7 +41,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 0.5
@@ -92,7 +83,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -104,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -114,7 +105,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

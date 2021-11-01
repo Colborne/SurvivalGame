@@ -142,17 +142,20 @@ public class InputManager : MonoBehaviour
     private void HandleSprintingInput()
     {
         if(shiftInput && moveAmount > 0.5f)
+        {
             playerLocomotion.isSprinting = true;
+            playerLocomotion.isSneaking = false;
+        }
         else
             playerLocomotion.isSprinting = false; 
     }
 
     private void HandleSneakingInput()
     {  
-        if(ctrlInput && moveAmount > 0.5f)
-            playerLocomotion.isSneaking = true;   
-        else
-            playerLocomotion.isSneaking = false; 
+        if(ctrlInput){
+            playerLocomotion.isSneaking = !playerLocomotion.isSneaking;   
+            ctrlInput = false;
+        }
     }
 
     private void HandleJumpingInput()
@@ -160,6 +163,7 @@ public class InputManager : MonoBehaviour
         if(jumpInput)
         {
             jumpInput = false;
+            playerLocomotion.isSneaking = false;
             if(!animatorManager.animator.GetBool("isInteracting"))
             {
                 playerLocomotion.HandleJumping();

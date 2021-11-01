@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     public GameObject spawnedHelmet;
     public GameObject spawnedChest;
     public GameObject spawnedLegs;
-    public GameObject spawnedBoots;
+    public GameObject spawnedRightBoot;
+    public GameObject spawnedLeftBoot;
     public GameObject spawnedBack;
     public GameObject spawnedAccessory1;
     public GameObject spawnedAccessory2;
@@ -99,7 +100,8 @@ public class GameManager : MonoBehaviour
         
         if(type == "Boots" && bootsID != -1)
         {
-            spawnedBoots = Instantiate(equipment[bootsID].prefab, PM.boots);
+            spawnedRightBoot = Instantiate(equipment[bootsID].prefab, PM.rightBoot);
+            spawnedLeftBoot = Instantiate(equipment[bootsID].prefab, PM.leftBoot);
         }
         
         if(type == "Back" && backID != -1)

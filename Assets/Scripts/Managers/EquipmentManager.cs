@@ -24,10 +24,10 @@ public class EquipmentManager : MonoBehaviour
 
     public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
     {
-        animSpeedControl = weaponItem.attackSpeed;
-        animatorManager.animator.SetFloat("animSpeed", animSpeedControl);    
         if(weaponItem.isTwoHanded)
-        {
+        {        
+            animSpeedControl = weaponItem.attackSpeed;
+            animatorManager.animator.SetFloat("animSpeed", animSpeedControl); 
             LoadRightWeaponDamageCollider();
             animatorManager.animator.SetBool("isTwoHanded", true);
         }
@@ -36,8 +36,11 @@ public class EquipmentManager : MonoBehaviour
             animatorManager.animator.SetBool("isTwoHanded", false);
             if(isLeft)
                 LoadLeftWeaponDamageCollider();
-            else
+            else{
                 LoadRightWeaponDamageCollider();
+                animSpeedControl = weaponItem.attackSpeed;
+                animatorManager.animator.SetFloat("animSpeed", animSpeedControl); 
+            }
         }
     }
     #region Damage Colliders

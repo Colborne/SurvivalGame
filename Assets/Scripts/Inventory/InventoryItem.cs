@@ -269,7 +269,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                         // Changing 
                         inBootsSlot = false;
                         transform.SetParent(GameManager.Instance.inventorySlots[i].transform);
-                        GameManager.Instance.DestroyItem(GameManager.Instance.spawnedBoots);
+                        GameManager.Instance.DestroyItem(GameManager.Instance.spawnedRightBoot);
+                        GameManager.Instance.DestroyItem(GameManager.Instance.spawnedLeftBoot);
                         GameManager.Instance.bootsID = -1;
                         break;
                     }
@@ -631,7 +632,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     inBootsSlot = true;
                     transform.SetParent(GameManager.Instance.inventorySlots[6].transform);
                     GameManager.Instance.bootsID = itemID;
-                    GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
+                    GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedRightBoot);
                 }
                 else
                 {
@@ -648,7 +649,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     inBootsSlot = true;
                     gameObject.transform.SetParent(GameManager.Instance.inventorySlots[6].transform);
                     GameManager.Instance.bootsID = itemID;
-                    GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedBoots);
+                    GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedRightBoot);
                 }
             }
             else if (!currentSlot.backSlot && equipType == equipment.Back)
