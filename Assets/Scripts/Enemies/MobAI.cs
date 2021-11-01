@@ -6,7 +6,8 @@ public class MobAI : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public GameObject[] tameables;
-    public LayerMask whatIsGround, whatIsPlayer, whatIsTameable;
+    public GameObject offspring;
+    public LayerMask whatIsGround, whatIsPlayer, whatIsTameable, whatIsMate;
     Animator animator;
     Rigidbody rigidbody;
     Vector3 check;
@@ -18,6 +19,8 @@ public class MobAI : MonoBehaviour
     public float walkPointRange;
     public int tamedAmount;
     public int tameableAmount = 20;
+    public bool isHungry = false;
+    public float hungerTimer = 0f;
 
     //States
     public float alertRange;
@@ -55,10 +58,15 @@ public class MobAI : MonoBehaviour
     {
         if (agent.isOnNavMesh)
         {
+            hungerTimer += Time.deltaTime;
             //Check for alert and attack range
             playerInAlertRange = Physics.CheckSphere(transform.position, alertRange, whatIsPlayer);
             playerInSight = Physics.CheckBox(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange, Quaternion.LookRotation(transform.forward), whatIsPlayer);
             
+            if(hungerTimer > 60f){
+                isHungry = true;
+            }
+
             if ((!playerInAlertRange || playerLocomotion.isSneaking) && !playerInSight && !fleeState) 
             {
                 if(patrolState)
@@ -66,7 +74,7 @@ public class MobAI : MonoBehaviour
                 else 
                     Idle();    
                 Collider[] tameableInRange = Seek(transform.position, alertRange, whatIsTameable);
-                if (tameableInRange.Length > 0 && tamedAmount < 100)
+                if (tameableInRange.Length > 0 && tamedAmount < 100 && isHungry)
                 {
                     for (int i = 0; i < tameableInRange.Length; i++)
                     {
@@ -76,6 +84,17 @@ public class MobAI : MonoBehaviour
                                 Eat(tameableInRange[i].gameObject);                      
                         }
                     }
+                }
+                else if (tamed && isHungry)
+                {
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Collider[] mateInRange = Seek(transform.position, alertRange, whatIsMate);
+                    for (int i = 0; i < mateInRange.Length; i++)
+                    {
+                        if (mateInRange[i].gameObject.name == gameObject.name && mateInRange[i].GetComponent<MobAI>().isHungry)
+                            Mate(mateInRange[i].gameObject);                      
+                    }
+                    gameObject.GetComponent<BoxCollider>().enabled = true;
                 }
             }
             if (!tamed && ((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight))
@@ -103,6 +122,25 @@ public class MobAI : MonoBehaviour
             tameable.GetComponent<Pickup>().amount--;
         else
             Destroy(tameable);
+    }
+
+    private void Mate(GameObject mate)
+    {
+        agent.SetDestination(mate.transform.position);
+        walkPoint = mate.transform.position;
+        animator.SetFloat("V", 1f);
+        patrolState = false;
+        waitingToPatrol = false;
+        idleState = false;
+        grazeAttempt = false;
+
+        Vector3 distanceToWalkPoint = transform.position - mate.transform.position;
+        if (distanceToWalkPoint.magnitude < 3f)
+        {
+            Instantiate(offspring, mate.transform.position, Quaternion.identity);
+            isHungry = false;
+            hungerTimer = 0f;
+        }
     }
     private void Idle()
     {

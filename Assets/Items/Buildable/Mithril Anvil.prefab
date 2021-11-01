@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 2724409878328659568}
   - component: {fileID: 3609598166180293041}
   - component: {fileID: -5096625167580110962}
+  - component: {fileID: 4107553432436790508}
   m_Layer: 0
   m_Name: Mithril Anvil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2021905839753718316
 Transform:
@@ -128,3 +129,19 @@ MonoBehaviour:
   item: {fileID: 0}
   outItem: 0
   level: 3
+--- !u!208 &4107553432436790508
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676623336219521174}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.013, y: 0.015000001, z: 0.027}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.015000001, z: -0.003}
+  m_TimeToStationary: 0.5

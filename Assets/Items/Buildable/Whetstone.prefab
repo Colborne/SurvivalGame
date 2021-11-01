@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 949501820816575415}
   - component: {fileID: 6175853224993452617}
   - component: {fileID: 6189306781464432500}
+  - component: {fileID: 4400796165136148308}
   m_Layer: 0
   m_Name: Whetstone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &784052503625221383
 Transform:
@@ -130,3 +131,19 @@ MonoBehaviour:
   item: {fileID: 7680765855121683962, guid: ef00253242e366343ac973c524156fdb, type: 3}
   outItem: 110
   level: 1
+--- !u!208 &4400796165136148308
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119999829482282941}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.010000001, y: 0.016, z: 0.025}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.016, z: 0}
+  m_TimeToStationary: 0.5
