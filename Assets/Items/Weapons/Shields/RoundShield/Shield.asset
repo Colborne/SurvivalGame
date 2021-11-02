@@ -17,7 +17,7 @@ MonoBehaviour:
   weight: 10
   isTwoHanded: 0
   isOffhandable: 1
-  canCharge: 0
+  canCharge: 1
   idleAnim: 0
   Attack: 
   Heavy_Attack: 

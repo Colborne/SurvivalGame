@@ -141,9 +141,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2187202483406825298, guid: 07ee972bd7414cd48ac9b0ca27cc9535, type: 3}
-  - {fileID: 4362259636216324762, guid: 07ee972bd7414cd48ac9b0ca27cc9535, type: 3}
-  - {fileID: -1789026911529549233, guid: 07ee972bd7414cd48ac9b0ca27cc9535, type: 3}
+  - {fileID: 2100000, guid: ac22aa80d2a757b42b490bf8ea09854d, type: 2}
+  - {fileID: 2100000, guid: dd7d12a5af24022478bcb28677ef2346, type: 2}
+  - {fileID: 2100000, guid: b8131ae60b3329e48a33c3e25af8a182, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,6 +436,9 @@ MonoBehaviour:
   whatIsTameable:
     serializedVersion: 2
     m_Bits: 1024
+  whatIsMate:
+    serializedVersion: 2
+    m_Bits: 0
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 20
   tamedAmount: 0

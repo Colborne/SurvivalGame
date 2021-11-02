@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2d6b966c79e045f42af9a5eb67b1cca0
+guid: 31a2c505601f94843a2b903be06d61c4
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,27 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Accent
-    second: {fileID: 2100000, guid: 435fbe70041068c4ba57538738251aee, type: 2}
+    second: {fileID: 2100000, guid: 0e1f19761100c3d4dbc81a4f8d80c4c7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Belt
-    second: {fileID: 2100000, guid: 55673e6baf8b55a44b28fe0b60bba21c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Skin
-    second: {fileID: 2100000, guid: 0fdaa63bbfe7eec408810d2499e90544, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Spike
-    second: {fileID: 2100000, guid: b336a38a2d7a62947a33e06218f033c8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stone
-    second: {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+      name: Helmet
+    second: {fileID: 2100000, guid: bc546593b68102d46922b8bdbc01917a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

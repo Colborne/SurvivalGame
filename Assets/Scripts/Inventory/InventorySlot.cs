@@ -156,7 +156,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         // Spawning Helmet
                         GameManager.Instance.bootsID = OriginalSlot.currentItem.itemID;
                         GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedRightBoot);
-                        GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedLeftBoot);
                     }
                     // Dragging Into Back Slot From Normal Slot
                     else if (backSlot && newItem.equipType == InventoryItem.equipment.Back && OriginalSlot.currentItem.equipType == InventoryItem.equipment.Back)
@@ -345,7 +344,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         // Spawning Helmet
                         GameManager.Instance.bootsID = OriginalSlot.currentItem.itemID;
                         GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedRightBoot);
-                        GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedLeftBoot);
                     }
                     // Dragging Into Normal Slot From Back Slot
                     else if (!backSlot && currentItem.equipType == InventoryItem.equipment.Back && newItem.equipType == InventoryItem.equipment.Back 
@@ -634,7 +632,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         // Spawning Boots
                         GameManager.Instance.bootsID = currentItem.itemID;                     
                         GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedRightBoot);
-                        GameManager.Instance.SpawnItem("Boots", GameManager.Instance.spawnedLeftBoot);
                     }
                     // Moving Into Back Slot
                     else if (backSlot && newItem.equipType == InventoryItem.equipment.Back)
