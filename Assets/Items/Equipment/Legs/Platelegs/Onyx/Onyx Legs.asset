@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
-  m_Name: Winged Boots (Equipment)
+  m_Name: Onyx Legs
   m_EditorClassIdentifier: 
-  itemName: Winged Boots
-  description: Golden Winged Boots
-  weight: 0
-  baseDefense: 2
-  resistanceType: None
+  itemName: Onyx Legs
+  description: Dragonglass
+  weight: 30
+  baseDefense: 50
+  resistanceType: 
   specialDefense: 0
-  jumpBonus: 50
+  jumpBonus: 1
   baseSpeedBonus: 1
   swimSpeedBonus: 1
