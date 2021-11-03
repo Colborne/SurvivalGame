@@ -37,6 +37,7 @@ public class StatsManager : MonoBehaviour
     public float baseSpeedBonus = 1f;
     public float swimSpeedBonus = 1f;
 
+    [Header("Components")]
     public HealthBar healthBar;
     public StaminaBar staminaBar;
     public GameObject FloatingText;
@@ -177,6 +178,9 @@ public class StatsManager : MonoBehaviour
         float newJump = 1f;
         float newSpeed = 1f;
         float newSwim = 1f;
+        float newStrength = 1f;
+        float newMage = 1f;
+        float newRange = 1f;
         for (int i = 0; i < 10; i++)
         {
             if (GameManager.Instance.inventorySlots[i].isFull)
@@ -186,6 +190,9 @@ public class StatsManager : MonoBehaviour
                     newJump *= eq.jumpBonus;
                     newSpeed *= eq.baseSpeedBonus;
                     newSwim *= eq.swimSpeedBonus;
+                    newStrength *= eq.strengthBonus;
+                    newMage *= eq.mageBonus;
+                    newRange *= eq.rangeBonus;
                 }
             }
         }
@@ -198,6 +205,15 @@ public class StatsManager : MonoBehaviour
         
         if(swimSpeedBonus != newSwim)
             swimSpeedBonus = newSwim;
+
+        if(strengthBonus != newStrength)
+            strengthBonus = newStrength;
+        
+        if(mageBonus!= newMage)
+            mageBonus = newMage;
+        
+        if(rangeBonus != newRange)
+            rangeBonus = newRange;
     }
 
     void UpdateStats()

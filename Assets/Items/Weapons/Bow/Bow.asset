@@ -18,6 +18,7 @@ MonoBehaviour:
   isTwoHanded: 1
   isOffhandable: 0
   canCharge: 1
+  idleAnim: 0
   Attack: Release
   Heavy_Attack: 
   Left_Attack: 

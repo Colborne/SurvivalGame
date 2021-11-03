@@ -9,7 +9,12 @@ public class EquipmentItem : Item
     public string resistanceType;
     public int specialDefense;
 
-    [Header("Bonuses")]
+    [Header("Attack Bonuses")]
+    public float strengthBonus = 0f;
+    public float rangeBonus = 0f;
+    public float mageBonus = 0f;
+
+    [Header("Movement Bonuses")]
     public float jumpBonus = 1f;
     public float baseSpeedBonus = 1f;
     public float swimSpeedBonus = 1f;

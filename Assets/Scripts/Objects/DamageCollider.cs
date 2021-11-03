@@ -36,24 +36,22 @@ public class DamageCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision) 
     {
-        /*
-        if(collision.tag == "Player")
-        {
-            StatsManager stats = collision.GetComponent<StatsManager>();
-
-            if (stats != null)
-            {
-                stats.TakeDamage(damageAmount);
-            }
-        }*/
-
         if(collision.tag == "Hittable")
         {
             ObjectStats stats = collision.GetComponent<ObjectStats>();
             ResourceObject resource = collision.GetComponent<ResourceObject>();
             SoundManager sound = FindObjectOfType<InputManager>().GetComponent<SoundManager>();
             Tree tree = collision.GetComponent<Tree>();
-            //CameraShake shake = FindObjectOfType<CameraShake>();
+            WeaponItem.DamageType damageType = FindObjectOfType<EquipmentManager>().rightWeapon.damageType;
+            StatsManager statsManager = FindObjectOfType<StatsManager>();
+            int bonusDamage = 0;
+
+            if(damageType == WeaponItem.DamageType.magic)
+                bonusDamage = (int)Mathf.Floor(statsManager.mageBonus);
+            else if(damageType == WeaponItem.DamageType.range)
+                bonusDamage = (int)Mathf.Floor(statsManager.rangeBonus);
+            else
+                bonusDamage = (int)Mathf.Floor(statsManager.strengthBonus);
 
             if(resource != null)
             {
@@ -61,14 +59,12 @@ public class DamageCollider : MonoBehaviour
                 {
                     if(isTool && canBreak == resource.resourceType && weaponLevel >= resource.toolRequiredLevel)
                     {
-
                         if(resource.resourceType == "Ore")
                             sound.PlaySound("Sounds/metalLatch");
                         else if(resource.resourceType == "Tree")
                             sound.PlaySound("Sounds/chop"); 
                         
-                        //shake.Shake();
-                        stats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel)));
+                        stats.TakeDamage(damageAmount + bonusDamage + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel)));
                         for(int i = 0; i < Random.Range(1,3); i++)
                             Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
                         
@@ -94,10 +90,20 @@ public class DamageCollider : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
+            WeaponItem.DamageType damageType = FindObjectOfType<EquipmentManager>().rightWeapon.damageType;
+            StatsManager statsManager = FindObjectOfType<StatsManager>();
+            int bonusDamage = 0;
+
+            if(damageType == WeaponItem.DamageType.magic)
+                bonusDamage = (int)Mathf.Floor(statsManager.mageBonus);
+            else if(damageType == WeaponItem.DamageType.range)
+                bonusDamage = (int)Mathf.Floor(statsManager.rangeBonus);
+            else
+                bonusDamage = (int)Mathf.Floor(statsManager.strengthBonus);
 
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(damageAmount + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel))); //fix this
+                enemyStats.TakeDamage(damageAmount + bonusDamage + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel))); //fix this
                 for(int i = 0; i < Random.Range(2,4); i++){
                     Instantiate(enemyStats.fx, transform.position + new Vector3(0,1,0), Random.rotation);
                 }

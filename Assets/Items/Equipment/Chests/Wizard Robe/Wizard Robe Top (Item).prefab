@@ -119,7 +119,7 @@ MonoBehaviour:
   MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 7679017726264109996}
-  item: {fileID: 11400000, guid: aa87e382693fe85468d7f1f8b7c5619a, type: 2}
+  item: {fileID: 11400000, guid: 1c71aecb9c39d4442bc4350be6e6aef2, type: 2}
   totalWeight: 0
 --- !u!1001 &6472327632067445471
 PrefabInstance:
