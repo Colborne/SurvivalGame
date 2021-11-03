@@ -5,27 +5,37 @@ using TMPro;
 
 public class StatsManager : MonoBehaviour
 {
+    public float drownTimer = 0f;
+
+    [Header("Health")]
     public int healthLevel = 1;
     public int maxHealth;
     public int currentHealth;
 
+    [Header("Stamina")]
     public int staminaLevel = 1;
     public float maxStamina;
     public float currentStamina;
-
     public float staminaRegenAmount = 30f;
     private float staminaRegenTimer = 0f;
 
+    [Header("Stats")]
     public float baseDefense = 0;
     public float inventoryWeight = 0;
 
-    public float mageBonus = 0;
-    public float rangeBonus = 0;
-    public float strengthBonus = 0;
+    [Header("Attack Bonuses")]
+    public float mageBonus = 1f;
+    public float rangeBonus = 1f;
+    public float strengthBonus = 1f;
 
-    float fireDefense;
-    float iceDefense;
-    public float drownTimer = 0f;
+    [Header("Defense Bonuses")]
+    float fireDefense = 1f;
+    float iceDefense = 1f;
+
+    [Header("Movement Bonuses")]
+    public float jumpBonus = 1f;
+    public float baseSpeedBonus = 1f;
+    public float swimSpeedBonus = 1f;
 
     public HealthBar healthBar;
     public StaminaBar staminaBar;
@@ -75,7 +85,8 @@ public class StatsManager : MonoBehaviour
     {
         currentHealth = currentHealth - damage;
         healthBar.SetCurrentHealth(currentHealth);
-        animatorManager.PlayTargetAnimation("Damage", true);
+        if(currentHealth > 0)
+            animatorManager.PlayTargetAnimation("Damage", true);
         ShowDamage(damage.ToString());
 
         if(currentHealth <= 0)
@@ -161,10 +172,39 @@ public class StatsManager : MonoBehaviour
             baseDefense = newDefense;
     }
 
+    void UpdateBonuses()
+    {
+        float newJump = 1f;
+        float newSpeed = 1f;
+        float newSwim = 1f;
+        for (int i = 0; i < 10; i++)
+        {
+            if (GameManager.Instance.inventorySlots[i].isFull)
+            {
+                if(GameManager.Instance.inventorySlots[i].currentItem.item is EquipmentItem){
+                    EquipmentItem eq = GameManager.Instance.inventorySlots[i].currentItem.item as EquipmentItem;
+                    newJump *= eq.jumpBonus;
+                    newSpeed *= eq.baseSpeedBonus;
+                    newSwim *= eq.swimSpeedBonus;
+                }
+            }
+        }
+
+        if(jumpBonus != newJump)
+            jumpBonus = newJump;
+        
+        if(baseSpeedBonus!= newSpeed)
+            baseSpeedBonus = newSpeed;
+        
+        if(swimSpeedBonus != newSwim)
+            swimSpeedBonus = newSwim;
+    }
+
     void UpdateStats()
     {
         UpdateWeight();
         UpdateDefense();
+        UpdateBonuses();
         TextMeshProUGUI[] stats = GameObject.Find("Player UI").GetComponentsInChildren<TextMeshProUGUI>(true);
         stats[0].text = inventoryWeight.ToString();
         stats[1].text = baseDefense.ToString();

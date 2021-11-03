@@ -8,4 +8,9 @@ public class EquipmentItem : Item
     public int baseDefense;
     public string resistanceType;
     public int specialDefense;
+
+    [Header("Bonuses")]
+    public float jumpBonus = 1f;
+    public float baseSpeedBonus = 1f;
+    public float swimSpeedBonus = 1f;
 }

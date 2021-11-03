@@ -33,13 +33,13 @@ public class PlayerLocomotion : MonoBehaviour
     public float walkingSpeed = 2.5f;
     public float runningSpeed = 5;
     public float sprintingSpeed = 7;
+     public float swimmingSpeed = 1.25f;
     public float rotationSpeed = 15;
 
     [Header("Jump Speeds")]
     public float jumpHeight = 3;
     public float gravityIntensity = -15;
 
-    public LayerMask waterLayer;
 
     private void Awake()
     {
@@ -85,11 +85,11 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 stats.UseStamina(.25f);
                 if(stats.currentStamina >= .25f){
-                    moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 2);
+                    moveDirection = (moveDirection * swimmingSpeed  * stats.swimSpeedBonus * (((1000f - weight) / 1000f) + .25f));
                     stats.drownTimer = 0f;
                 }
                 else
-                    moveDirection = (moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f) / 4); 
+                    moveDirection = (moveDirection * swimmingSpeed * stats.swimSpeedBonus * (((1000f - weight) / 1000f) + .25f) / 2); 
             }
             if(stats.currentStamina <= .25f)
                 stats.Drowning();
@@ -97,21 +97,21 @@ public class PlayerLocomotion : MonoBehaviour
         else if(isSprinting && stats.currentStamina >= .25f)
         {
             stats.UseStamina(.25f);
-            moveDirection = moveDirection * sprintingSpeed * (((1000f - weight) / 1000f) + .25f);
+            moveDirection = moveDirection * sprintingSpeed * stats.baseSpeedBonus * (((1000f - weight) / 1000f) + .25f);
         }
         else if(isSneaking)
         {
-            moveDirection = moveDirection * sneakingSpeed * (((1000f - weight) / 1000f) + .25f);
+            moveDirection = moveDirection * sneakingSpeed * stats.baseSpeedBonus * (((1000f - weight) / 1000f) + .25f);
         }
         else
         {
             if(inputManager.moveAmount >= 0.25f)
             {
-                moveDirection = moveDirection * runningSpeed * (((1000f - weight) / 1000f) + .25f);
+                moveDirection = moveDirection * runningSpeed * stats.baseSpeedBonus * (((1000f - weight) / 1000f) + .25f);
             }        
             else
             {
-                moveDirection = moveDirection * walkingSpeed * (((1000f - weight) / 1000f) + .25f);
+                moveDirection = moveDirection * walkingSpeed * stats.baseSpeedBonus * (((1000f - weight) / 1000f) + .25f);
             }
         }
 
@@ -205,7 +205,7 @@ public class PlayerLocomotion : MonoBehaviour
                 animatorManager.animator.SetBool("isJumping", true);
                 animatorManager.PlayTargetAnimation("Jumping", true);
                 
-                float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+                float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight * stats.jumpBonus);
                 Vector3 playerVelocity = moveDirection;
                 playerVelocity.y = jumpingVelocity;
                 playerRigidbody.velocity = playerVelocity;

@@ -11,6 +11,7 @@ public class DamageCollider : MonoBehaviour
     [Range(1,6)]
     public int weaponLevel;
     public float range;
+    
     private void Awake() 
     {
         damageCollider = GetComponent<Collider>();   
@@ -20,7 +21,7 @@ public class DamageCollider : MonoBehaviour
         if(GetComponentInParent<weaponItemLoader>() != null)
             range = GetComponentInParent<weaponItemLoader>().item.attackDamage;
         else
-            range = 1f;   
+            range = 1f;
     }
 
     public void EnableDamageCollider()
@@ -35,6 +36,7 @@ public class DamageCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision) 
     {
+        /*
         if(collision.tag == "Player")
         {
             StatsManager stats = collision.GetComponent<StatsManager>();
@@ -43,7 +45,7 @@ public class DamageCollider : MonoBehaviour
             {
                 stats.TakeDamage(damageAmount);
             }
-        }
+        }*/
 
         if(collision.tag == "Hittable")
         {

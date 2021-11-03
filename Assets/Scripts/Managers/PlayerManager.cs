@@ -65,13 +65,6 @@ public class PlayerManager : MonoBehaviour
 
     private void setModelVisibility()
     {
-        /*
-        if(GameManager.Instance.helmetID != -1)
-            headModel.SetActive(false);
-        else
-            headModel.SetActive(true);
-        */
-        
         if(GameManager.Instance.chestID != -1)
             chestModel.SetActive(false);
         else
