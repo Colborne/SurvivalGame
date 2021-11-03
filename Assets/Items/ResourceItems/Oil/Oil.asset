@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba931f362d5e9ec4aa06b84fa43c691a, type: 3}
-  m_Name: Magic Essence
+  m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
+  m_Name: Oil
   m_EditorClassIdentifier: 
-  itemName: Magic Essence
-  description: A Magical Brew
-  weight: 0.5
-  use: The Infusing of Magical Glass
+  itemName: Oil
+  description: Slick
+  weight: 1
+  resourceType: Craftable

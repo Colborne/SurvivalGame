@@ -198,5 +198,5 @@ MonoBehaviour:
   MaxAmount: 10
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
-  item: {fileID: 11400000, guid: aea81ef3b0d1cbd499eb1f6f88456f43, type: 2}
+  item: {fileID: 11400000, guid: 81b2460c36e78c04086bdb3699d77b33, type: 2}
   totalWeight: 0
