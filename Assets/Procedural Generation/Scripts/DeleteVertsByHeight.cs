@@ -13,7 +13,7 @@ using UnityEngine;
  
      void Start() 
      {
-         Invoke("MeshCreation", .1f);
+         Invoke("MeshCreation", 4f);
      }
      public void MeshCreation()
      {

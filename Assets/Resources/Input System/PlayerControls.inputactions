@@ -364,6 +364,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Systems",
+            "id": "ef3a05a7-3ba8-48f6-b566-f4c6af0a415a",
+            "actions": [
+                {
+                    "name": "Save",
+                    "type": "Button",
+                    "id": "130dacd7-0924-412f-9d86-3521734160eb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Load",
+                    "type": "Button",
+                    "id": "15700602-e8c5-4f1c-a6fd-896f012c3548",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "aeaacb88-fe6a-49db-b5c4-6d7c57225fbc",
+                    "path": "<Keyboard>/numpad7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Save",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80d57a3b-278a-45dd-a537-9541736d4576",
+                    "path": "<Keyboard>/numpad9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Load",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

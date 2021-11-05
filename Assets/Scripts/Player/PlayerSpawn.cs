@@ -7,7 +7,7 @@ public class PlayerSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Spawn", .5f);
+        Invoke("Spawn", 8f);
     }
 
     void Spawn()

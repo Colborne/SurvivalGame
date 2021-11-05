@@ -8,7 +8,7 @@ public class GameObjectActivator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Activate", .5f);
+        Invoke("Activate", 10f);
     }
 
     void Activate()

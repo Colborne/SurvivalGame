@@ -1065,6 +1065,7 @@ GameObject:
   - component: {fileID: 4239016596972658081}
   - component: {fileID: 2198784506951388909}
   - component: {fileID: 2900014922706190148}
+  - component: {fileID: 6806074923831203824}
   m_Layer: 9
   m_Name: UsablePlayerModel
   m_TagString: Player
@@ -1134,6 +1135,7 @@ MonoBehaviour:
   leftHandDamageCollider: {fileID: 0}
   rightHandDamageCollider: {fileID: 0}
   isTwoHanded: 0
+  animSpeedControl: 1
 --- !u!114 &-4813691385335571838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,6 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1810385f4a5404d8c380f0e5c0d58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drownTimer: 0
   healthLevel: 1
   maxHealth: 0
   currentHealth: 0
@@ -1158,7 +1161,9 @@ MonoBehaviour:
   mageBonus: 0
   rangeBonus: 0
   strengthBonus: 0
-  drownTimer: 0
+  jumpBonus: 1
+  baseSpeedBonus: 1
+  swimSpeedBonus: 1
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
@@ -1229,7 +1234,7 @@ MonoBehaviour:
   craftWindowFlag: 0
   fishingFlag: 0
   hasCast: 0
-  isTwoHanded: 0
+  idleAnim: 0
 --- !u!114 &7834456700887363272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,10 +1257,12 @@ MonoBehaviour:
   helmet: {fileID: 612105533928374598}
   chest: {fileID: 3810576837413084271}
   legs: {fileID: 1554737267733763865}
-  boots: {fileID: 1554737267733763865}
+  leftBoot: {fileID: 0}
+  rightBoot: {fileID: 0}
   back: {fileID: 7785734334184410749}
   body: {fileID: 551599615167288750}
   isInteracting: 0
+  animSpeedControl: 1
 --- !u!114 &7741865371575429618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,12 +1305,10 @@ MonoBehaviour:
   walkingSpeed: 8
   runningSpeed: 12
   sprintingSpeed: 16
+  swimmingSpeed: 1.25
   rotationSpeed: 10
   jumpHeight: 8
   gravityIntensity: -18
-  waterLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1269820929872084264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,9 +1324,8 @@ MonoBehaviour:
   cast: {fileID: 0}
   fish:
   - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
-  water:
-    serializedVersion: 2
-    m_Bits: 16
+  fishingTimer: 0
+  caught: 0
 --- !u!82 &-554387381064430052
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1467,6 +1471,19 @@ CapsuleCollider:
   m_Height: 3.4
   m_Direction: 1
   m_Center: {x: 0, y: 1.7, z: 0}
+--- !u!114 &6806074923831203824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8096532129649942410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29188e32bf0a79c40b5231bc44bdb3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sm: {fileID: -4813691385335571838}
 --- !u!1 &8667535292149653832
 GameObject:
   m_ObjectHideFlags: 0

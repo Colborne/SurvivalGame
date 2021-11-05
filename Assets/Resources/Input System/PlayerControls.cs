@@ -377,6 +377,52 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Systems"",
+            ""id"": ""ef3a05a7-3ba8-48f6-b566-f4c6af0a415a"",
+            ""actions"": [
+                {
+                    ""name"": ""Save"",
+                    ""type"": ""Button"",
+                    ""id"": ""130dacd7-0924-412f-9d86-3521734160eb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Load"",
+                    ""type"": ""Button"",
+                    ""id"": ""15700602-e8c5-4f1c-a6fd-896f012c3548"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""aeaacb88-fe6a-49db-b5c4-6d7c57225fbc"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Save"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80d57a3b-278a-45dd-a537-9541736d4576"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Load"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -402,6 +448,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MousePosition = m_UI.FindAction("MousePosition", throwIfNotFound: true);
+        // Systems
+        m_Systems = asset.FindActionMap("Systems", throwIfNotFound: true);
+        m_Systems_Save = m_Systems.FindAction("Save", throwIfNotFound: true);
+        m_Systems_Load = m_Systems.FindAction("Load", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -642,6 +692,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Systems
+    private readonly InputActionMap m_Systems;
+    private ISystemsActions m_SystemsActionsCallbackInterface;
+    private readonly InputAction m_Systems_Save;
+    private readonly InputAction m_Systems_Load;
+    public struct SystemsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public SystemsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Save => m_Wrapper.m_Systems_Save;
+        public InputAction @Load => m_Wrapper.m_Systems_Load;
+        public InputActionMap Get() { return m_Wrapper.m_Systems; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SystemsActions set) { return set.Get(); }
+        public void SetCallbacks(ISystemsActions instance)
+        {
+            if (m_Wrapper.m_SystemsActionsCallbackInterface != null)
+            {
+                @Save.started -= m_Wrapper.m_SystemsActionsCallbackInterface.OnSave;
+                @Save.performed -= m_Wrapper.m_SystemsActionsCallbackInterface.OnSave;
+                @Save.canceled -= m_Wrapper.m_SystemsActionsCallbackInterface.OnSave;
+                @Load.started -= m_Wrapper.m_SystemsActionsCallbackInterface.OnLoad;
+                @Load.performed -= m_Wrapper.m_SystemsActionsCallbackInterface.OnLoad;
+                @Load.canceled -= m_Wrapper.m_SystemsActionsCallbackInterface.OnLoad;
+            }
+            m_Wrapper.m_SystemsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Save.started += instance.OnSave;
+                @Save.performed += instance.OnSave;
+                @Save.canceled += instance.OnSave;
+                @Load.started += instance.OnLoad;
+                @Load.performed += instance.OnLoad;
+                @Load.canceled += instance.OnLoad;
+            }
+        }
+    }
+    public SystemsActions @Systems => new SystemsActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -665,5 +756,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IUIActions
     {
         void OnMousePosition(InputAction.CallbackContext context);
+    }
+    public interface ISystemsActions
+    {
+        void OnSave(InputAction.CallbackContext context);
+        void OnLoad(InputAction.CallbackContext context);
     }
 }

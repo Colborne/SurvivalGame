@@ -26,10 +26,9 @@ public class ObjectGenerator : MonoBehaviour
      
     private void Start() 
     {
-        Invoke("spawn", .1f);
+        Invoke("spawn", 4f);
     }
     
-
     void spawn()
     {
         int place = 0;

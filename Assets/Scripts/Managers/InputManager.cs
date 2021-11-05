@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {    
+    Player player;
     PlayerControls playerControls;
     PlayerManager playerManager;
     PlayerLocomotion playerLocomotion;
@@ -34,6 +35,8 @@ public class InputManager : MonoBehaviour
     public bool confirmInput;
     public bool cancelInput;
     public bool buildInput;
+    public bool saveInput;
+    public bool loadInput;
     public float attackChargeTimer = 0f;
     public float blockChargeTimer = 0f;
     public bool inventoryFlag;
@@ -46,6 +49,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake() 
     {
+        player = GetComponent<Player>();
         animatorManager = GetComponent<AnimatorManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         stats = GetComponent<StatsManager>();
@@ -86,6 +90,10 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.MiddleMouse.canceled += i => middleMouseInput = false;
             playerControls.PlayerActions.Build.performed += i => buildInput = true;
             playerControls.PlayerActions.Build.canceled += i => buildInput = false;
+            playerControls.Systems.Save.performed += i => saveInput = true;
+            playerControls.Systems.Save.canceled += i => saveInput = false;
+            playerControls.Systems.Load.performed += i => loadInput = true;
+            playerControls.Systems.Load.canceled += i => loadInput = false;
         }
         playerControls.Enable();
     }
@@ -97,6 +105,8 @@ public class InputManager : MonoBehaviour
 
     public void HandleAllInputs()
     {
+        HandleSaveAndLoad();
+
         if(!inventoryFlag){
             HandleMovementInput();
             HandleSprintingInput();
@@ -326,5 +336,16 @@ public class InputManager : MonoBehaviour
                 hasCast = !hasCast;
             }
         }
+    }
+
+    private void HandleSaveAndLoad()
+    {
+        if(saveInput)
+            player.SaveGame();
+        if(loadInput)
+            player.Load();
+
+        saveInput = false;
+        loadInput = false;
     }
 }
