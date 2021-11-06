@@ -6,11 +6,6 @@ public class Player : MonoBehaviour
 {
     public StatsManager sm;
 
-    void Start()
-    {
-
-    }
-
     public void SaveGame()
     {
         SaveLoad.SaveData(this);

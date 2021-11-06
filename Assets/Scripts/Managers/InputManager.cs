@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {    
     Player player;
+    ObjectManager om;
     PlayerControls playerControls;
     PlayerManager playerManager;
     PlayerLocomotion playerLocomotion;
@@ -50,6 +51,7 @@ public class InputManager : MonoBehaviour
     private void Awake() 
     {
         player = GetComponent<Player>();
+        om = FindObjectOfType<ObjectManager>();
         animatorManager = GetComponent<AnimatorManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         stats = GetComponent<StatsManager>();
@@ -340,10 +342,15 @@ public class InputManager : MonoBehaviour
 
     private void HandleSaveAndLoad()
     {
-        if(saveInput)
+        if(saveInput){
             player.SaveGame();
+            om.SaveObjects();
+        }
         if(loadInput)
+        {
             player.Load();
+            om.LoadObjects();
+        }
 
         saveInput = false;
         loadInput = false;
