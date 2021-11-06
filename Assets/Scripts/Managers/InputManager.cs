@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {    
     Player player;
     ObjectManager om;
+    World world;
     PlayerControls playerControls;
     PlayerManager playerManager;
     PlayerLocomotion playerLocomotion;
@@ -52,6 +53,7 @@ public class InputManager : MonoBehaviour
     {
         player = GetComponent<Player>();
         om = FindObjectOfType<ObjectManager>();
+        world = FindObjectOfType<World>();
         animatorManager = GetComponent<AnimatorManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         stats = GetComponent<StatsManager>();
@@ -345,11 +347,11 @@ public class InputManager : MonoBehaviour
         if(saveInput){
             player.SaveGame();
             om.SaveObjects();
+            world.SaveGame();
         }
         if(loadInput)
         {
             player.Load();
-            om.LoadObjects();
         }
 
         saveInput = false;

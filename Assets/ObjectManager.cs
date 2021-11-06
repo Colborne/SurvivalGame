@@ -30,7 +30,8 @@ public class ObjectManager : MonoBehaviour
             Vector3 localScale = new Vector3(data.objectDatas[i].scale[0],data.objectDatas[i].scale[1],data.objectDatas[i].scale[2]);
 
             Debug.Log(data.objectDatas[i].localPath);
-            Instantiate(Resources.Load(data.objectDatas[i].localPath), position, rotation);
+            GameObject Spawn = Instantiate(Resources.Load(data.objectDatas[i].localPath) as GameObject , position, rotation);
+            Spawn.transform.localScale = localScale;
         }
         
         GatherData();

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
 
 public class ObjectGenerator : MonoBehaviour
 {
@@ -23,10 +25,18 @@ public class ObjectGenerator : MonoBehaviour
     public float meshZ;
 
     int numberToSpawn = 0;
+    ObjectManager om;
+
+    private void Awake() {
+        om = FindObjectOfType<ObjectManager>();
+    }
      
     private void Start() 
     {
-        Invoke("spawn", 4f);
+        if(File.Exists(Application.persistentDataPath + "/mako.objs"))
+            om.LoadObjects();
+        else
+            Invoke("spawn", 4f);
     }
     
     void spawn()

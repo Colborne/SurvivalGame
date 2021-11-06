@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class TerrainGenerator : MonoBehaviour {
 
 	const float viewerMoveThresholdForChunkUpdate = 25f;
 	const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
 
-
+	public World world;
 	public int colliderLODIndex;
 	public LODInfo[] detailLevels;
 
@@ -27,9 +28,18 @@ public class TerrainGenerator : MonoBehaviour {
 	Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
 	List<TerrainChunk> visibleTerrainChunks = new List<TerrainChunk>();
 
-	void Start() {
-
-		heightMapSettings.noiseSettings.seed = Random.Range(0,999999);
+	void Start() 
+	{
+        if(File.Exists(Application.persistentDataPath + "/mako.seed"))
+			world.Load();
+		
+		if(world.seed == 0 || world.seed == null){
+			heightMapSettings.noiseSettings.seed = Random.Range(1,999999);
+			world.seed = heightMapSettings.noiseSettings.seed;
+		}
+		else
+			heightMapSettings.noiseSettings.seed = world.seed;		
+		
 		textureSettings.ApplyToMaterial (mapMaterial);
 		textureSettings.UpdateMeshHeights (mapMaterial, heightMapSettings.minHeight, heightMapSettings.maxHeight);
 

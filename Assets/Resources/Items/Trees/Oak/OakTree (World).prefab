@@ -16,10 +16,9 @@ GameObject:
   - component: {fileID: 7417874836205428656}
   - component: {fileID: -2715114139002397119}
   - component: {fileID: -8060822379630316345}
-  - component: {fileID: 6515852048453227095}
   - component: {fileID: -7829369793836700094}
   m_Layer: 0
-  m_Name: Oak Tree (World)
+  m_Name: OakTree (World)
   m_TagString: Hittable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,20 +254,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 7.7970004, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &6515852048453227095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910646186869756628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AssetPath: 
-  folder: 8
 --- !u!114 &-7829369793836700094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,5 +266,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Oak/Oak Tree
-  folder: 0
+  AssetPath: Oak/OakTree
+  folder: 8

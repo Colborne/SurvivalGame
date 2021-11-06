@@ -11,7 +11,19 @@ public class ObjectData
 
     public ObjectData(SaveableObject so) 
     {
-        localPath = "Items" + so.AssetPath + " (World)";
+        string temp = "";
+        if(so.folder == SaveableObject.itemType.Altars) temp = "Altars/";
+        else if(so.folder == SaveableObject.itemType.Buildable) temp = "Buildable/";
+        else if(so.folder == SaveableObject.itemType.Consumable) temp = "Consumable/";
+        else if(so.folder == SaveableObject.itemType.Equipment) temp = "Equipment/";
+        else if(so.folder == SaveableObject.itemType.Mobs) temp = "Mobs/";
+        else if(so.folder == SaveableObject.itemType.Ores) temp = "Ores/";
+        else if(so.folder == SaveableObject.itemType.Others) temp = "Others/";
+        else if(so.folder == SaveableObject.itemType.ResourceItems) temp = "ResourceItems/";
+        else if(so.folder == SaveableObject.itemType.Trees) temp = "Trees/";
+        else if(so.folder == SaveableObject.itemType.Weapons) temp = "Weapons/";
+
+        localPath = "Items/" + temp + so.AssetPath + " (World)";
 
         pos = new float[3];
         rot = new float[3];

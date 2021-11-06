@@ -813,8 +813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: /Items/Mobs/Goblin
-  folder: 5
+  AssetPath: Goblin
+  folder: 4
 --- !u!1 &7479231876983945254
 GameObject:
   m_ObjectHideFlags: 0
