@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: 
+  AssetPath: Legs/Wizard Robe Bottoms/Wizard Robe Bottoms
   folder: 3
 --- !u!1001 &1101908854934984928
 PrefabInstance:

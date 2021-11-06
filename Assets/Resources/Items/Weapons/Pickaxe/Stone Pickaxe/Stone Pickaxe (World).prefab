@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: 
+  AssetPath: Pickaxe/Stone Pickaxe/Stone Pickaxe
   folder: 9
 --- !u!1 &1313709211160615397
 GameObject:
