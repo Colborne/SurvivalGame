@@ -59,9 +59,6 @@ public class StatsManager : MonoBehaviour
 
     void Start()
     {
-        if(File.Exists(Application.persistentDataPath + "/mako.plyr"))
-            player.Load();
-
         maxHealth = SetMaxHealthFromLevel();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -72,6 +69,7 @@ public class StatsManager : MonoBehaviour
         staminaBar.SetMaxStamina(maxStamina);
         staminaBar.SetCurrentStamina(currentStamina);
     }
+    
     private void Update() 
     { 
         UpdateStats();

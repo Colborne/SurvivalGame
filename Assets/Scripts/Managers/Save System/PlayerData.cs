@@ -31,6 +31,7 @@ public class PlayerData
     public bool[] acc1;
     public bool[] acc2;
     public bool[] acc3;
+    
     public PlayerData(Player player) 
     {
         pos = new float[3];

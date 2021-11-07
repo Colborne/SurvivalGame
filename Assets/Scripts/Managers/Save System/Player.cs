@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     public StatsManager sm;
     public InventorySaveManager ism;
 
+    private void Awake() {
+        ism = FindObjectOfType<InventorySaveManager>();
+    }
+
     public void SaveGame()
     {
         SaveLoad.SaveData(this);

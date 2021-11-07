@@ -1,19 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class PlayerSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Player player;
+    private void Awake() 
+    {
+        player = GetComponent<Player>();
+    }
     void Start()
     {
-        Invoke("Spawn", 8f);
+        Invoke("Spawn", 6f);
     }
 
     void Spawn()
     {
-        GameObject spawner = GameObject.Find("Spawn Location(Clone)");
-        transform.position = spawner.transform.position;
+        if(File.Exists(Application.persistentDataPath + "/mako.plyr"))
+            player.Load();
+        else
+        {
+            GameObject spawner = GameObject.Find("Spawn Location(Clone)");
+            transform.position = spawner.transform.position;
+        }
+
     }
 
 }
