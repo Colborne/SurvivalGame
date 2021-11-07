@@ -10,7 +10,7 @@ public class GameObjectActivator : MonoBehaviour
     void Start()
     {
         if(File.Exists(Application.persistentDataPath + "/mako.seed"))
-            Invoke("Activate", 2f);
+            Invoke("Activate", 4f);
         else
             Invoke("Activate", 6f);
     }
