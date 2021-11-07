@@ -793,7 +793,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         GameManager.Instance.weaponID = -1;
                         GameManager.Instance.DestroyItem(GameManager.Instance.spawnedWeapon);
                     }
-                    else if (OriginalSlot.helmetSlot == true && newItem.inHelmetSlot == true && !weaponSlot && !chestSlot && !legsSlot && !bootsSlot && !backSlot && !shieldSlot&& !accessory1Slot && !accessory2Slot && !accessory3Slot)
+                    else if (OriginalSlot.helmetSlot == true && newItem.inHelmetSlot == true && !weaponSlot && !chestSlot && !legsSlot && !bootsSlot && !backSlot && !shieldSlot && !accessory1Slot && !accessory2Slot && !accessory3Slot)
                     {
                         Debug.Log("Dropped Item: Empty Inventory Slot");
 

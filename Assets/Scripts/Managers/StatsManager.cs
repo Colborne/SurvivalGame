@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class StatsManager : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class StatsManager : MonoBehaviour
     AnimatorManager animatorManager;
     PlayerManager playerManager;
     PlayerLocomotion playerLocomotion;
+    Player player;
 
     private void Awake() 
     {
@@ -52,10 +54,14 @@ public class StatsManager : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
         healthBar = FindObjectOfType<HealthBar>();
         staminaBar = FindObjectOfType<StaminaBar>();
+        player = GetComponent<Player>();
     }
 
     void Start()
     {
+        if(File.Exists(Application.persistentDataPath + "/mako.plyr"))
+            player.Load();
+
         maxHealth = SetMaxHealthFromLevel();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);

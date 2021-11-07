@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class InputManager : MonoBehaviour
 {    
@@ -345,13 +346,10 @@ public class InputManager : MonoBehaviour
     private void HandleSaveAndLoad()
     {
         if(saveInput){
+            player.ism.Save();
             player.SaveGame();
             om.SaveObjects();
             world.SaveGame();
-        }
-        if(loadInput)
-        {
-            player.Load();
         }
 
         saveInput = false;

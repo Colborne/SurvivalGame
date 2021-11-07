@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4212460227844959274}
   - component: {fileID: 3103858239847214445}
   m_Layer: 0
-  m_Name: Earth Rune(World)
+  m_Name: Earth Rune (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

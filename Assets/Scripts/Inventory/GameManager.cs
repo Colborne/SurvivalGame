@@ -380,4 +380,88 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+
+    public void LoadItem(string type)
+    {
+        if(type == "Weapon" && weaponID != -1)
+        {
+            spawnedWeapon = Instantiate(equipment[weaponID].prefab, PM.rightHand);
+            equipmentManager.rightWeapon = spawnedWeapon.GetComponent<weaponItemLoader>().item;
+            equipmentManager.LoadWeaponOnSlot(equipmentManager.rightWeapon, false);
+        }
+
+        if(type == "Shield" && shieldID != -1)
+        {
+            spawnedShield = Instantiate(equipment[shieldID].prefab, PM.leftHand);
+            equipmentManager.leftWeapon = spawnedShield.GetComponent<weaponItemLoader>().item;
+            equipmentManager.LoadWeaponOnSlot(equipmentManager.leftWeapon, true);
+        }
+
+        if(type == "Helmet" && helmetID != -1)
+        {
+            spawnedHelmet = Instantiate(equipment[helmetID].prefab, PM.helmet);
+        }
+         
+        if(type == "Chest" && chestID != -1)
+        {
+            spawnedChest = Instantiate(equipment[chestID].prefab, PM.chest);
+        }
+        
+        if(type == "Legs" && legsID != -1)
+        {
+            spawnedLegs = Instantiate(equipment[legsID].prefab, PM.legs);
+        }
+        
+        if(type == "Boots" && bootsID != -1)
+        {
+            spawnedRightBoot = Instantiate(equipment[bootsID].prefab, PM.rightBoot);
+            spawnedLeftBoot = Instantiate(equipment[bootsID].prefab, PM.leftBoot);
+        }
+        
+        if(type == "Back" && backID != -1)
+        {
+            spawnedBack = Instantiate(equipment[backID].prefab, PM.back);
+        }
+        
+        if(type == "Accessory1" && accessory1ID != -1)
+        {
+            spawnedAccessory1 = Instantiate(equipment[accessory1ID].prefab, PM.body);
+        }
+        
+        if(type == "Accessory2" && accessory2ID != -1)
+        {
+            spawnedAccessory2 = Instantiate(equipment[accessory2ID].prefab, PM.body);
+        }
+        
+        if(type == "Accessory3" && accessory3ID != -1)
+        {
+            spawnedAccessory3 = Instantiate(equipment[accessory3ID].prefab, PM.body);
+        }
+    }
+
+    public void LoadInventoryItem(int slot, int itemID, int amount)
+    {
+        GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[slot].gameObject.transform);
+        GO.GetComponent<InventoryItem>().originalSlot = inventorySlots[slot].transform;
+        inventorySlots[slot].currentItem = GO.GetComponent<InventoryItem>();
+        inventorySlots[slot].isFull = true;
+        inventorySlots[slot].currentItem.currentAmount = amount;
+
+        inventorySlots[slot].GetComponent<TooltipTrigger>().header =  inventorySlots[slot].currentItem.item.itemName;
+        inventorySlots[slot].GetComponent<TooltipTrigger>().content =  inventorySlots[slot].currentItem.item.GetTooltipInfoText();
+    }
+
+        public void LoadEquipmentItem(int slot, int itemID, int amount, string type)
+    {
+        GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[slot].gameObject.transform);
+        GO.GetComponent<InventoryItem>().originalSlot = inventorySlots[slot].transform;
+        inventorySlots[slot].currentItem = GO.GetComponent<InventoryItem>();
+        inventorySlots[slot].isFull = true;
+        inventorySlots[slot].currentItem.currentAmount = amount;
+
+        inventorySlots[slot].GetComponent<TooltipTrigger>().header =  inventorySlots[slot].currentItem.item.itemName;
+        inventorySlots[slot].GetComponent<TooltipTrigger>().content =  inventorySlots[slot].currentItem.item.GetTooltipInfoText();
+
+        LoadItem(type);
+    }
 }

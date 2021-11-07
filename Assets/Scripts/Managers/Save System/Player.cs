@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public StatsManager sm;
+    public InventorySaveManager ism;
 
     public void SaveGame()
     {
@@ -23,5 +24,31 @@ public class Player : MonoBehaviour
         sm.staminaLevel = data.staminaLevel;
         sm.maxStamina = data.maxStamina;
         sm.currentStamina = data.currentStamina;
+
+        string itemType = "";
+
+        for(int i = 0; i < 10; i++)
+        {
+            if(data.helmet[i]) itemType = "Helmet";
+            else if(data.weapon[i]) itemType = "Weapon";
+            else if(data.chest[i]) itemType = "Chest";
+            else if(data.legs[i]) itemType = "Legs";
+            else if(data.boots[i]) itemType = "Boots";
+            else if(data.back[i]) itemType = "Back";
+            else if(data.shield[i]) itemType = "Shield";
+            else if(data.acc1[i]) itemType = "Accessory1";
+            else if(data.acc2[i]) itemType = "Accessory2";
+            else if(data.acc3[i]) itemType = "Accessory3";
+
+            if(data.slot[i] != 0)
+                GameManager.Instance.LoadEquipmentItem(data.slot[i], data.id[i], data.amount[i], itemType);  
+        }
+        
+        for(int i = 10; i < 42; i++)
+        {
+            if(data.slot[i] != 0)
+                GameManager.Instance.LoadInventoryItem(data.slot[i], data.id[i], data.amount[i]);  
+        }
+            
     }
 }
