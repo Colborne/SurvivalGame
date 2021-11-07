@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(ray.direction);
         if(input.attackChargeTimer > 0)
             rb.AddForce(transform.forward * 5000f * input.attackChargeTimer);
-        else
+        else if(GetComponent<DamagePlayer>() == null)
             rb.AddForce(transform.forward * 5000f);
         
         input.attackChargeTimer = 0f;

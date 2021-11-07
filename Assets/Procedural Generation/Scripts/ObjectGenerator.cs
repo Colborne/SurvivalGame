@@ -23,27 +23,24 @@ public class ObjectGenerator : MonoBehaviour
     public int meshHeight;
     public float meshX;
     public float meshZ;
-
-    int numberToSpawn = 0;
     ObjectManager om;
+    GameObjectActivator act;
+    PlayerSpawn playerSpawn;
 
     private void Awake() {
         om = FindObjectOfType<ObjectManager>();
+        playerSpawn = FindObjectOfType<PlayerSpawn>();
+        act = GetComponent<GameObjectActivator>();
     }
      
-    private void Start() 
-    {
-        if(File.Exists(Application.persistentDataPath + "/mako.objs"))
-            Invoke("load", 4f);
-        else
-            Invoke("spawn", 4f);
-    }
-    void load()
+    public void load()
     {
         om.LoadObjects();
+        act.Activate();
+        playerSpawn.Spawn();
     }
 
-    void spawn()
+    public void spawn()
     {
         int place = 0;
         int attempts = 0;
@@ -83,6 +80,8 @@ public class ObjectGenerator : MonoBehaviour
         }
 
         Debug.Log("There were " + place + " placed objects. Out of " + attempts + " attempts.");
+        act.Activate();
+        playerSpawn.Spawn();
     }
 }
 

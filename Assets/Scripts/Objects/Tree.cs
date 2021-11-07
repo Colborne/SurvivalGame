@@ -126,11 +126,24 @@ public class Tree : ResourceObject
     }
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.TryGetComponent<ObjectStats>(out ObjectStats treeDamageable)) {
-            if (collision.relativeVelocity.magnitude > 1f) {
+            if (collision.relativeVelocity.magnitude > 2f) {
                 int damageAmount = Random.Range(5, 20);
                 treeDamageable.TakeDamage(damageAmount);
+                Debug.Log(treeDamageable.name);
                 CheckHit(false);
             }
         }
+
+        if (collision.gameObject.TryGetComponent<StatsManager>(out StatsManager player)) {
+            if (collision.relativeVelocity.magnitude > 5f) {
+                int damageAmount = (int)Mathf.Floor(collision.relativeVelocity.magnitude);
+                player.TakeDamage(damageAmount);
+            }
+        }
+    }
+
+    public static float KineticEnergy(Rigidbody rb)
+    {
+        return 0.5f*rb.mass*Mathf.Pow(rb.velocity.magnitude,2);
     }
 }

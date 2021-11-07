@@ -10,12 +10,8 @@ public class PlayerSpawn : MonoBehaviour
     {
         player = GetComponent<Player>();
     }
-    void Start()
-    {
-        Invoke("Spawn", 6f);
-    }
 
-    void Spawn()
+    public void Spawn()
     {
         if(File.Exists(Application.persistentDataPath + "/mako.plyr"))
             player.Load();

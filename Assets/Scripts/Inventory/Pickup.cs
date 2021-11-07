@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour
 {
     public int itemID;
     public int amount;
-    public string name;
+    public string _name;
     InputManager inputManager;
     InteractableUI ui; 
     public bool autoPickup = false;
@@ -29,9 +29,9 @@ public class Pickup : MonoBehaviour
         if (other.gameObject == GameManager.Instance.PM.gameObject)
         {
             if(amount > 1)
-                ui.interactableText.text = "Press 'E' to pickup " + name + " x" + amount;
+                ui.interactableText.text = "Press 'E' to pickup " + _name + " x" + amount;
             else
-                ui.interactableText.text = "Press 'E' to pickup " + name;
+                ui.interactableText.text = "Press 'E' to pickup " + _name;
  
             ui.transform.GetChild(0).gameObject.SetActive(true);
         }     

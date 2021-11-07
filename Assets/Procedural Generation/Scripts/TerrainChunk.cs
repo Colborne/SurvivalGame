@@ -21,12 +21,13 @@ public class TerrainChunk {
 	HeightMap heightMap;
 	bool heightMapReceived;
 	int previousLODIndex = -1;
-	bool hasSetCollider;
+	public bool hasSetCollider;
 	float maxViewDst;
 
 	HeightMapSettings heightMapSettings;
 	MeshSettings meshSettings;
 	Transform viewer;
+
 
 	public TerrainChunk(Vector2 coord, HeightMapSettings heightMapSettings, MeshSettings meshSettings, LODInfo[] detailLevels, int colliderLODIndex, Transform parent, Transform viewer, Material material) {
 		this.coord = coord;
@@ -39,7 +40,6 @@ public class TerrainChunk {
 		sampleCentre = coord * meshSettings.meshWorldSize / meshSettings.meshScale;
 		Vector2 position = coord * meshSettings.meshWorldSize ;
 		bounds = new Bounds(position,Vector2.one * meshSettings.meshWorldSize );
-
 
 		meshObject = new GameObject("Terrain Chunk");
 		meshRenderer = meshObject.AddComponent<MeshRenderer>();
@@ -62,8 +62,7 @@ public class TerrainChunk {
 			}
 		}
 
-		maxViewDst = detailLevels [detailLevels.Length - 1].visibleDstThreshold;
-
+		maxViewDst = detailLevels [detailLevels.Length - 1].visibleDstThreshold;		
 	}
 
 	public void Load() {

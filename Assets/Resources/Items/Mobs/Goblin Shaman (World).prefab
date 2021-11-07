@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a884620ecbcbd9d4f85e4b46c15f91b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 0
   isTree: 0
   spDamage: 0
 --- !u!1 &1391609377022168904
@@ -709,16 +709,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
   timeBetweenAttacks: 3
-  projectile: {fileID: 2959667684836456750, guid: 9a8fb80b53dee7f419a2a831ac599f8c, type: 3}
+  projectile: {fileID: 1083513822352973650, guid: 220509526f6e0f2469326dc2818667b6, type: 3}
   alertRange: 15
   attackRange: 10
   sightRange: {x: 2, y: 3, z: 50}

@@ -16,18 +16,19 @@ public class DamagePlayer : MonoBehaviour
     {
         StatsManager stats = other.GetComponent<StatsManager>();
 
-        if(stats != null)
+        if(stats != null && damage > 0)
         {
+            if(stats.isTakingDamage == false)
+            {
             //DAMAGE EQUATION
             float reduction = 1 - ((stats.baseDefense * .025f) / ( 1 + (stats.baseDefense * .025f)));
             if(isTree)
             {
-                Rigidbody rb = GetComponentInParent<Rigidbody>();
-                if(rb.velocity.magnitude > 7f)
-                    stats.TakeDamage(damage * (int)rb.velocity.magnitude);
+                //stats.TakeDamage((int)damage);
             }
             else
                 stats.TakeDamage((int)Mathf.Floor((damage + Random.Range(-damage/10f, damage/10f)) * reduction));
+            }
         }
     }
 }

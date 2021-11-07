@@ -5,7 +5,7 @@ public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsPlayer;
     Animator animator;
     PlayerLocomotion playerLocomotion;
 
@@ -28,7 +28,6 @@ public class EnemyAI : MonoBehaviour
 
     float speed;
     Vector3 lastPosition;
-    private Quaternion smoothTilt;
 
 
     private void Awake()
@@ -38,7 +37,6 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         playerLocomotion = player.GetComponent<PlayerLocomotion>();
         hitbox = transform.GetChild(2).gameObject;
-        smoothTilt = new Quaternion();
     }
 
     void Start()
@@ -71,37 +69,6 @@ public class EnemyAI : MonoBehaviour
         lastPosition = transform.position;
         }
     }
-
-/*
-    void FixedUpdate()
-    {
-
-
-		RaycastHit rcHit;
-		Vector3 theRay = transform.TransformDirection(Vector3.down);
-		
-		if (Physics.Raycast(transform.position, theRay, out rcHit, whatIsGround))
-		{
-			float GroundDis = rcHit.distance;
-			Quaternion grndTilt = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
-
-			smoothTilt = Quaternion.Slerp(smoothTilt, grndTilt, Time.deltaTime * 2.0f);
-
-			Quaternion newRot = new Quaternion();
-			Vector3 vec = new Vector3();
-			vec.x = smoothTilt.eulerAngles.x;
-			vec.y = transform.rotation.eulerAngles.y;
-			vec.z = smoothTilt.eulerAngles.z;
-			newRot.eulerAngles = vec;
-
-			transform.rotation = newRot;
-
-			Vector3 locPos = transform.localPosition;
-			locPos.y = (transform.localPosition.y - GroundDis);
-			transform.localPosition = locPos;
-		}
-    }
-*/
 
     private void Idle()
     {
@@ -175,7 +142,7 @@ public class EnemyAI : MonoBehaviour
         //Make sure enemy doesn't move
         agent.ResetPath();
         animator.SetFloat("V", 0f);
-        transform.LookAt(player);
+        transform.LookAt(player.position);
 
         if (!alreadyAttacked)
         {
@@ -206,12 +173,19 @@ public class EnemyAI : MonoBehaviour
 
     public void RangedAttack()
     {
+
         if(projectile != null)
         {
-            GameObject proj = Instantiate(projectile, transform.position + transform.forward * 2f, Quaternion.identity);
-            Rigidbody rb = proj.GetComponentInChildren<Rigidbody>();
+            Rigidbody rb;
+            GameObject proj = Instantiate(projectile, transform.position + transform.forward * 2f + transform.up * 2f, Quaternion.identity);
+            if(proj.GetComponent<Rigidbody>() == null)
+                rb = proj.GetComponentInChildren<Rigidbody>();
+            else
+                rb = proj.GetComponent<Rigidbody>();
             proj.transform.LookAt(player);
+            
             rb.AddForce(transform.forward * 2500f);
         }
+        
     }
 }

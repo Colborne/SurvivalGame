@@ -6,16 +6,7 @@ using System.IO;
 public class GameObjectActivator : MonoBehaviour
 {
     public GameObject objectToActivate;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(File.Exists(Application.persistentDataPath + "/mako.seed"))
-            Invoke("Activate", 4f);
-        else
-            Invoke("Activate", 6f);
-    }
-
-    void Activate()
+    public void Activate()
     {
         objectToActivate.SetActive(true);
     }

@@ -7,6 +7,7 @@ using System.IO;
 public class StatsManager : MonoBehaviour
 {
     public float drownTimer = 0f;
+    public bool isTakingDamage = false;
 
     [Header("Health")]
     public int healthLevel = 1;
@@ -74,6 +75,10 @@ public class StatsManager : MonoBehaviour
     { 
         UpdateStats();
     }
+    private void LateUpdate() 
+    {
+        isTakingDamage = animatorManager.animator.GetBool("isTakingDamage");
+    }
     private int SetMaxHealthFromLevel()
     {
         maxHealth = healthLevel * 100;
@@ -88,6 +93,7 @@ public class StatsManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        animatorManager.animator.SetBool("isTakingDamage", true);
         currentHealth = currentHealth - damage;
         healthBar.SetCurrentHealth(currentHealth);
         if(currentHealth > 0)
@@ -98,7 +104,7 @@ public class StatsManager : MonoBehaviour
         {
             currentHealth = 0;
             animatorManager.PlayTargetAnimation("Dying", true);
-        }
+        } 
     }
 
     public void Heal(int amount)

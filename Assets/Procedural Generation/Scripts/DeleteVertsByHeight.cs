@@ -11,10 +11,6 @@ using UnityEngine;
      float heightCutOffTop;
     float errorAdjustment = 2;
  
-     void Start() 
-     {
-         Invoke("MeshCreation", 4f);
-     }
      public void MeshCreation()
      {
         Transform grassMesh = Instantiate(transform.Find("Terrain Chunk"));

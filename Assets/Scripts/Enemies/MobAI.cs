@@ -7,9 +7,8 @@ public class MobAI : MonoBehaviour
     public Transform player;
     public GameObject[] tameables;
     public GameObject offspring;
-    public LayerMask whatIsGround, whatIsPlayer, whatIsTameable, whatIsMate;
+    public LayerMask whatIsPlayer, whatIsTameable, whatIsMate;
     Animator animator;
-    Rigidbody rigidbody;
     Vector3 check;
     PlayerLocomotion playerLocomotion;
 
@@ -30,7 +29,6 @@ public class MobAI : MonoBehaviour
 
     float speed;
     Vector3 lastPosition;
-    Quaternion smoothTilt;
     string[] desiredTameable;
 
     private void Awake()
@@ -38,9 +36,7 @@ public class MobAI : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();       
         animator = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
         check = transform.position;
-        smoothTilt = new Quaternion();
         playerLocomotion = player.GetComponent<PlayerLocomotion>();
         desiredTameable = new string[tameables.Length];
         for(int i = 0; i < tameables.Length; i++)
@@ -241,7 +237,7 @@ public class MobAI : MonoBehaviour
         Vector3 runTo = transform.position + transform.forward * 100f;
         NavMeshHit hit; 
 
-        NavMesh.SamplePosition(runTo, out hit, 100, 1 << NavMesh.GetNavMeshLayerFromName("Walkable"));
+        NavMesh.SamplePosition(runTo, out hit, 100, 1 << NavMesh.GetAreaFromName("Walkable")); //GetNavMeshLayerFromName
 
         transform.position = startTransform.position;
         transform.rotation = startTransform.rotation;
