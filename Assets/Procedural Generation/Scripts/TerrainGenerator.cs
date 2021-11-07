@@ -33,7 +33,8 @@ public class TerrainGenerator : MonoBehaviour {
         if(File.Exists(Application.persistentDataPath + "/mako.seed"))
 			world.Load();
 		
-		if(world.seed == 0 || world.seed == null){
+		if(world.seed == 0 || world.seed == null)
+		{
 			heightMapSettings.noiseSettings.seed = Random.Range(1,999999);
 			world.seed = heightMapSettings.noiseSettings.seed;
 		}

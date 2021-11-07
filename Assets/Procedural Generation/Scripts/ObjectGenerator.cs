@@ -34,11 +34,15 @@ public class ObjectGenerator : MonoBehaviour
     private void Start() 
     {
         if(File.Exists(Application.persistentDataPath + "/mako.objs"))
-            om.LoadObjects();
+            Invoke("load", 4f);
         else
             Invoke("spawn", 4f);
     }
-    
+    void load()
+    {
+        om.LoadObjects();
+    }
+
     void spawn()
     {
         int place = 0;

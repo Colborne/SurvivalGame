@@ -37,16 +37,19 @@ public class InventorySaveManager : MonoBehaviour
     {
         for(int i = 0; i < eq.Length; i++)
         {
-            eq[i].helmet = GameManager.Instance.inventorySlots[i].helmetSlot;
-            eq[i].weapon = GameManager.Instance.inventorySlots[i].weaponSlot;
-            eq[i].chest = GameManager.Instance.inventorySlots[i].chestSlot;
-            eq[i].legs = GameManager.Instance.inventorySlots[i].legsSlot;
-            eq[i].boots = GameManager.Instance.inventorySlots[i].bootsSlot;
-            eq[i].back = GameManager.Instance.inventorySlots[i].backSlot;
-            eq[i].shield = GameManager.Instance.inventorySlots[i].shieldSlot;
-            eq[i].acc1 = GameManager.Instance.inventorySlots[i].accessory1Slot;
-            eq[i].acc2 = GameManager.Instance.inventorySlots[i].accessory2Slot;
-            eq[i].acc3 = GameManager.Instance.inventorySlots[i].accessory3Slot;
+            if(GameManager.Instance.inventorySlots[i].currentItem != null)
+            {
+                eq[i].helmet = GameManager.Instance.inventorySlots[i].helmetSlot;
+                eq[i].weapon = GameManager.Instance.inventorySlots[i].weaponSlot;
+                eq[i].chest = GameManager.Instance.inventorySlots[i].chestSlot;
+                eq[i].legs = GameManager.Instance.inventorySlots[i].legsSlot;
+                eq[i].boots = GameManager.Instance.inventorySlots[i].bootsSlot;
+                eq[i].back = GameManager.Instance.inventorySlots[i].backSlot;
+                eq[i].shield = GameManager.Instance.inventorySlots[i].shieldSlot;
+                eq[i].acc1 = GameManager.Instance.inventorySlots[i].accessory1Slot;
+                eq[i].acc2 = GameManager.Instance.inventorySlots[i].accessory2Slot;
+                eq[i].acc3 = GameManager.Instance.inventorySlots[i].accessory3Slot;
+            }
         }
 
         for(int i = 0; i < inv.Length; i++)

@@ -381,60 +381,70 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public void LoadItem(string type)
+    public void LoadItem(int itemID, string type)
     {
-        if(type == "Weapon" && weaponID != -1)
+        if(type == "Weapon")
         {
+            weaponID = itemID;
             spawnedWeapon = Instantiate(equipment[weaponID].prefab, PM.rightHand);
             equipmentManager.rightWeapon = spawnedWeapon.GetComponent<weaponItemLoader>().item;
             equipmentManager.LoadWeaponOnSlot(equipmentManager.rightWeapon, false);
         }
 
-        if(type == "Shield" && shieldID != -1)
+        if(type == "Shield" )
         {
+            shieldID = itemID;
             spawnedShield = Instantiate(equipment[shieldID].prefab, PM.leftHand);
             equipmentManager.leftWeapon = spawnedShield.GetComponent<weaponItemLoader>().item;
             equipmentManager.LoadWeaponOnSlot(equipmentManager.leftWeapon, true);
         }
 
-        if(type == "Helmet" && helmetID != -1)
+        if(type == "Helmet")
         {
+            helmetID = itemID;
             spawnedHelmet = Instantiate(equipment[helmetID].prefab, PM.helmet);
         }
          
-        if(type == "Chest" && chestID != -1)
+        if(type == "Chest")
         {
+            chestID = itemID;
             spawnedChest = Instantiate(equipment[chestID].prefab, PM.chest);
         }
         
-        if(type == "Legs" && legsID != -1)
+        if(type == "Legs")
         {
+            legsID = itemID;
             spawnedLegs = Instantiate(equipment[legsID].prefab, PM.legs);
         }
         
-        if(type == "Boots" && bootsID != -1)
+        if(type == "Boots")
         {
+            bootsID = itemID;
             spawnedRightBoot = Instantiate(equipment[bootsID].prefab, PM.rightBoot);
             spawnedLeftBoot = Instantiate(equipment[bootsID].prefab, PM.leftBoot);
         }
         
-        if(type == "Back" && backID != -1)
+        if(type == "Back")
         {
+            backID = itemID;
             spawnedBack = Instantiate(equipment[backID].prefab, PM.back);
         }
         
-        if(type == "Accessory1" && accessory1ID != -1)
+        if(type == "Accessory1")
         {
+            accessory1ID = itemID;
             spawnedAccessory1 = Instantiate(equipment[accessory1ID].prefab, PM.body);
         }
         
-        if(type == "Accessory2" && accessory2ID != -1)
+        if(type == "Accessory2")
         {
+            accessory2ID = itemID;
             spawnedAccessory2 = Instantiate(equipment[accessory2ID].prefab, PM.body);
         }
         
-        if(type == "Accessory3" && accessory3ID != -1)
+        if(type == "Accessory3" )
         {
+            accessory3ID = itemID;
             spawnedAccessory3 = Instantiate(equipment[accessory3ID].prefab, PM.body);
         }
     }
@@ -462,6 +472,13 @@ public class GameManager : MonoBehaviour
         inventorySlots[slot].GetComponent<TooltipTrigger>().header =  inventorySlots[slot].currentItem.item.itemName;
         inventorySlots[slot].GetComponent<TooltipTrigger>().content =  inventorySlots[slot].currentItem.item.GetTooltipInfoText();
 
-        LoadItem(type);
+        LoadItem(itemID, type);
+
+/*
+        if(type == "Chest")
+            spawnedChest = Instantiate(equipment[itemID].prefab, PM.chest);
+        else if(type == "Weapon")
+            spawnedWeapon = Instantiate(equipment[itemID].prefab, PM.rightHand);
+            */
     }
 }
