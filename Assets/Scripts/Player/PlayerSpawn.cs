@@ -20,7 +20,5 @@ public class PlayerSpawn : MonoBehaviour
             GameObject spawner = GameObject.Find("Spawn Location(Clone)");
             transform.position = spawner.transform.position;
         }
-
     }
-
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 
 public class ObjectGenerator : MonoBehaviour
@@ -83,6 +84,8 @@ public class ObjectGenerator : MonoBehaviour
         act.Activate();
         playerSpawn.Spawn();
     }
+
+
 }
 
         /*

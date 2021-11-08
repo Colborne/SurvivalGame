@@ -10,11 +10,13 @@ public class NavMeshBaker : MonoBehaviour
     GameObject chunk;
     ObjectGenerator objectGenerator;
     DeleteVertsByHeight deleteVerts;
+    LevelManager level;
 
     void Start()
     {
         objectGenerator = GetComponent<ObjectGenerator>();
         deleteVerts = GetComponent<DeleteVertsByHeight>();
+        level = FindObjectOfType<LevelManager>();
     }
     private void Update() 
     {
@@ -30,12 +32,13 @@ public class NavMeshBaker : MonoBehaviour
         navMeshSurface.BuildNavMesh();
 
         deleteVerts.MeshCreation();
-
+  
         if(File.Exists(Application.persistentDataPath + "/mako.objs"))
             objectGenerator.load();
         else
             objectGenerator.spawn();
-
+            
+        level.Loaded();
         Destroy(this);
     }
 }

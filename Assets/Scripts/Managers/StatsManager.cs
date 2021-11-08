@@ -61,21 +61,25 @@ public class StatsManager : MonoBehaviour
     void Start()
     {
         maxHealth = SetMaxHealthFromLevel();
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-        healthBar.SetCurrentHealth(currentHealth);
-
         maxStamina = SetMaxStaminaFromLevel();
-        currentStamina = maxStamina;
-        staminaBar.SetMaxStamina(maxStamina);
-        staminaBar.SetCurrentStamina(currentStamina);
+
+        if(File.Exists(Application.persistentDataPath + "/mako.plyr"))
+        {
+            currentHealth = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
+            healthBar.SetCurrentHealth(currentHealth);
+
+            currentStamina = maxStamina;
+            staminaBar.SetMaxStamina(maxStamina);
+            staminaBar.SetCurrentStamina(currentStamina);
+        }
     }
     
     private void Update() 
     { 
         UpdateStats();
     }
-    private void LateUpdate() 
+    private void FixedUpdate() 
     {
         isTakingDamage = animatorManager.animator.GetBool("isTakingDamage");
     }
