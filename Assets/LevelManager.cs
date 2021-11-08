@@ -13,4 +13,9 @@ public class LevelManager : MonoBehaviour
     {
         _loaderCanvas.SetActive(false);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
