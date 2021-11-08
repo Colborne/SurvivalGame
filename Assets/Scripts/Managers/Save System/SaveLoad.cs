@@ -45,6 +45,7 @@ public static class SaveLoad
         formatter.Serialize(stream, worldData);
         stream.Close();
     }
+    
     public static PlayerData LoadData()
     {
         string path = Application.persistentDataPath + "/Mako.plyr";

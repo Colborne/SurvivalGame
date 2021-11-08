@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class ObjectStats : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class ObjectStats : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        if(!File.Exists(Application.persistentDataPath + "/mako.objs"))
+            currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)

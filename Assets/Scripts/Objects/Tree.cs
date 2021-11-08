@@ -133,13 +133,12 @@ public class Tree : ResourceObject
                 CheckHit(false);
             }
         }
-
+        /*
         if (collision.gameObject.TryGetComponent<StatsManager>(out StatsManager player)) {
-            if (collision.relativeVelocity.magnitude > 5f) {
-                int damageAmount = (int)Mathf.Floor(collision.relativeVelocity.magnitude);
-                player.TakeDamage(damageAmount);
-            }
+            if (collision.relativeVelocity.magnitude > 5f && collision.relativeVelocity.magnitude < 10f) 
+                player.TakeDamage((int)Mathf.Floor(collision.relativeVelocity.magnitude)/5);
         }
+        */
     }
 
     public static float KineticEnergy(Rigidbody rb)

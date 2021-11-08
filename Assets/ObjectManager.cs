@@ -32,6 +32,17 @@ public class ObjectManager : MonoBehaviour
             Debug.Log(data.objectDatas[i].localPath);
             GameObject Spawn = Instantiate(Resources.Load(data.objectDatas[i].localPath) as GameObject , position, rotation);
             Spawn.transform.localScale = localScale;
+
+            if(Spawn.GetComponent<ObjectStats>())
+                Spawn.GetComponent<ObjectStats>().currentHealth = data.objectDatas[i].amount;
+            else if(Spawn.GetComponent<EnemyStats>())
+                Spawn.GetComponent<EnemyStats>().currentHealth = data.objectDatas[i].amount;
+            else if(Spawn.GetComponent<Pickup>())
+            {
+                Spawn.GetComponent<Pickup>().amount = data.objectDatas[i].amount;
+                Spawn.GetComponent<Pickup>().name = data.objectDatas[i]._name;
+            }
+                
         }
         
         GatherData();

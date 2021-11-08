@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 [System.Serializable]
 public class ObjectData
 {
@@ -8,6 +9,8 @@ public class ObjectData
     public float[] rot;
     public float[] scale;
     public string localPath;
+    public int amount;
+    public string _name;
 
     public ObjectData(SaveableObject so) 
     {
@@ -39,7 +42,17 @@ public class ObjectData
         
         scale[0] = so.transform.localScale.x;
         scale[1] = so.transform.localScale.y;
-        scale[2] = so.transform.localScale.z;       
+        scale[2] = so.transform.localScale.z;      
+
+        if(so.GetComponent<ObjectStats>())//!(ReferenceEquals(so.objectStats, null) ? false : (so.objectStats ? false : true)))
+            amount = so.GetComponent<ObjectStats>().currentHealth;
+        else if(so.GetComponent<EnemyStats>())
+            amount = so.GetComponent<EnemyStats>().currentHealth;
+        else if(so.GetComponent<Pickup>())
+        {
+            amount = so.GetComponent<Pickup>().amount;
+            _name = so.AssetPath.Split('/').Where(x => !string.IsNullOrWhiteSpace(x)).LastOrDefault();
+        }
     }
 }
 

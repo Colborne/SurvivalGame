@@ -20,5 +20,4 @@ public class SaveableObject : MonoBehaviour
     
     public string AssetPath;
     public itemType folder;
-
 }
