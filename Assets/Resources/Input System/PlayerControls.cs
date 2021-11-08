@@ -203,6 +203,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8748432-91a6-4219-8259-51452d0ffcb9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -348,6 +356,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MouseWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea3508ae-2446-4485-a29f-2ba30536277f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -445,6 +464,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_MiddleMouse = m_PlayerActions.FindAction("MiddleMouse", throwIfNotFound: true);
         m_PlayerActions_Build = m_PlayerActions.FindAction("Build", throwIfNotFound: true);
         m_PlayerActions_MouseWheel = m_PlayerActions.FindAction("MouseWheel", throwIfNotFound: true);
+        m_PlayerActions_Pause = m_PlayerActions.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MousePosition = m_UI.FindAction("MousePosition", throwIfNotFound: true);
@@ -554,6 +574,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_MiddleMouse;
     private readonly InputAction m_PlayerActions_Build;
     private readonly InputAction m_PlayerActions_MouseWheel;
+    private readonly InputAction m_PlayerActions_Pause;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -570,6 +591,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @MiddleMouse => m_Wrapper.m_PlayerActions_MiddleMouse;
         public InputAction @Build => m_Wrapper.m_PlayerActions_Build;
         public InputAction @MouseWheel => m_Wrapper.m_PlayerActions_MouseWheel;
+        public InputAction @Pause => m_Wrapper.m_PlayerActions_Pause;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -615,6 +637,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MouseWheel.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMouseWheel;
                 @MouseWheel.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMouseWheel;
                 @MouseWheel.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMouseWheel;
+                @Pause.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -655,6 +680,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MouseWheel.started += instance.OnMouseWheel;
                 @MouseWheel.performed += instance.OnMouseWheel;
                 @MouseWheel.canceled += instance.OnMouseWheel;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -752,6 +780,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMiddleMouse(InputAction.CallbackContext context);
         void OnBuild(InputAction.CallbackContext context);
         void OnMouseWheel(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

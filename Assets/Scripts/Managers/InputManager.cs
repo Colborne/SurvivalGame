@@ -37,9 +37,8 @@ public class InputManager : MonoBehaviour
     public bool modifierInput;
     public bool confirmInput;
     public bool cancelInput;
+    public bool pauseInput;
     public bool buildInput;
-    public bool saveInput;
-    public bool loadInput;
     public float attackChargeTimer = 0f;
     public float blockChargeTimer = 0f;
     public bool inventoryFlag;
@@ -49,6 +48,7 @@ public class InputManager : MonoBehaviour
     public bool fishingFlag = false;
     public bool hasCast = false;
     public int idleAnim = 0;
+    public bool isPaused;
 
     private void Awake() 
     {
@@ -85,6 +85,8 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Confirm.canceled += i => confirmInput = false;
             playerControls.PlayerActions.Cancel.performed += i => cancelInput = true;
             playerControls.PlayerActions.Cancel.canceled += i => cancelInput = false;
+            playerControls.PlayerActions.Pause.performed += i => pauseInput = true;
+            playerControls.PlayerActions.Pause.canceled += i => pauseInput = false;
             playerControls.PlayerActions.Interact.performed += i => interactInput = true;
             playerControls.PlayerActions.Interact.canceled += i => interactInput = false;
             playerControls.PlayerActions.LeftMouse.performed += i => leftMouseInput = true;
@@ -95,10 +97,6 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.MiddleMouse.canceled += i => middleMouseInput = false;
             playerControls.PlayerActions.Build.performed += i => buildInput = true;
             playerControls.PlayerActions.Build.canceled += i => buildInput = false;
-            playerControls.Systems.Save.performed += i => saveInput = true;
-            playerControls.Systems.Save.canceled += i => saveInput = false;
-            playerControls.Systems.Load.performed += i => loadInput = true;
-            playerControls.Systems.Load.canceled += i => loadInput = false;
         }
         playerControls.Enable();
     }
@@ -110,17 +108,20 @@ public class InputManager : MonoBehaviour
 
     public void HandleAllInputs()
     {
-        HandleSaveAndLoad();
+        HandlePauseInput();
 
-        if(!inventoryFlag){
-            HandleMovementInput();
-            HandleSprintingInput();
-            HandleSneakingInput();
-            HandleJumpingInput();
-            HandleFishing();
-            
-            if(!buildFlag)
-                HandleAttackInput();
+        if(!isPaused)
+        {
+            if(!inventoryFlag){
+                HandleMovementInput();
+                HandleSprintingInput();
+                HandleSneakingInput();
+                HandleJumpingInput();
+                HandleFishing();
+                
+                if(!buildFlag)
+                    HandleAttackInput();
+            }
         }
         
         HandleMouse();
@@ -278,7 +279,7 @@ public class InputManager : MonoBehaviour
 
     private void HandleMouse()
     {
-        if(!inventoryFlag && !buildWindowFlag)
+        if(!inventoryFlag && !buildWindowFlag && !isPaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -342,17 +343,19 @@ public class InputManager : MonoBehaviour
             }
         }
     }
-
-    private void HandleSaveAndLoad()
+    private void HandlePauseInput()
     {
-        if(saveInput){
-            player.ism.Save();
-            player.SaveGame();
-            om.SaveObjects();
-            world.SaveGame();
+        if(pauseInput)
+        {
+            pauseInput = false;
         }
+    }
 
-        saveInput = false;
-        loadInput = false;
+    public void HandleSave()
+    {
+        player.ism.Save();
+        player.SaveGame();
+        om.SaveObjects();
+        world.SaveGame();
     }
 }
