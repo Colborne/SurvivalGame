@@ -54,11 +54,18 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleFallingAndLanding();
 
-        if(inputManager.inventoryFlag)
+        if(inputManager.inventoryFlag){
+            if(!isFalling)
+                playerRigidbody.velocity = Vector3.zero;
             return;
+        }
         
         if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f && inputManager.blockChargeTimer == 0f)
+        {
+            if(isAttacking)
+                playerRigidbody.velocity = Vector3.zero;
             return;
+        }
         
         HandleSwimming();
         HandleMovement();

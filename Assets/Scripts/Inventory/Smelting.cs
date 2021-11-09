@@ -73,7 +73,7 @@ public class Smelting : MonoBehaviour
             else
             {
                 timer = 0;
-                Instantiate(smelt.Peek(), transform.position + transform.right * 3, Quaternion.identity);
+                Instantiate(smelt.Peek(), transform.position + transform.up * 2 + transform.right * 3, Quaternion.identity);
                 smelt.Dequeue();
             }
         }

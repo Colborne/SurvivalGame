@@ -29,6 +29,12 @@ public class Player : MonoBehaviour
         sm.maxStamina = data.maxStamina;
         sm.currentStamina = data.currentStamina;
 
+        sm.healthBar.SetMaxHealth(data.maxHealth);
+        sm.healthBar.SetCurrentHealth(data.currentHealth);
+
+        sm.staminaBar.SetMaxStamina(data.maxStamina);
+        sm.staminaBar.SetCurrentStamina(data.currentStamina);
+
         string itemType = "";
 
         for(int i = 0; i < 10; i++)

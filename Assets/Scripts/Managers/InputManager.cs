@@ -128,7 +128,7 @@ public class InputManager : MonoBehaviour
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
         
-        if(!buildWindowFlag)
+        if(!buildWindowFlag && !isPaused)
             HandleInventoryInput();
     }
     private void HandleMovementInput()
@@ -163,7 +163,10 @@ public class InputManager : MonoBehaviour
             playerLocomotion.isSneaking = false;
         }
         else
-            playerLocomotion.isSprinting = false; 
+            playerLocomotion.isSprinting = false;
+
+        if(stats.currentStamina < .25f)
+            shiftInput = false;
     }
 
     private void HandleSneakingInput()

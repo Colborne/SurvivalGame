@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
   m_Name: Torch
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 5788834242575343590, guid: cc1f8bd7f268dc741a6674245fdb9635, type: 3}
-  itemIcon: {fileID: 21300000, guid: 8211053675fd7014686bc8a1e4d42963, type: 3}
   itemName: Torch
   description: It's a Torch
   weight: 0.2
   isTwoHanded: 0
   isOffhandable: 1
   canCharge: 0
+  idleAnim: 0
   Attack: 
   Heavy_Attack: 
-  Left_Attack: LeftAttack
-  baseStamina: 10
-  heavyAttackMultiplier: 1.5
+  Left_Attack: 
+  baseStamina: 0
+  heavyAttackMultiplier: 0
   attackDamage: 0
   attackSpeed: 0
+  damageType: 0
   projectile: {fileID: 0}

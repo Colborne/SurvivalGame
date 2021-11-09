@@ -40,7 +40,7 @@ public class ObjectManager : MonoBehaviour
             else if(Spawn.GetComponent<Pickup>())
             {
                 Spawn.GetComponent<Pickup>().amount = data.objectDatas[i].amount;
-                Spawn.GetComponent<Pickup>().name = data.objectDatas[i]._name;
+                Spawn.GetComponent<Pickup>()._name = data.objectDatas[i]._name;
             }
                 
         }
