@@ -7640,34 +7640,40 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'v0.0.0.7
+  m_text: 'v0.0.0.8
+
+    -Multiple Save Files
 
 
-    -Player shouldn''t instantly drown when touching water
-    without stamina.
+    v0.0.0.7
 
-    -Healthbar and Staminabar have been corrected.
 
-    -The
-    Player no longer slides down angles when in menus or interacting.
+    -Player shouldn''t
+    instantly drown when touching water without stamina.
 
-    -Pickup
-    Script Autoloads names.
+    -Healthbar and Staminabar
+    have been corrected.
 
-    -Torch Right Click fix.
+    -The Player no longer slides down angles when in menus
+    or interacting.
 
-    -Sprint input auto
-    turns off when stamina drops to 0.
+    -Pickup Script Autoloads names.
 
-    -Camera rotation locked when in pause
-    menu.
+    -Torch Right Click
+    fix.
 
-    -Camera properly tracks player even if in menus.
+    -Sprint input auto turns off when stamina drops to 0.
 
-    -Return to Game
-    button added.
+    -Camera
+    rotation locked when in pause menu.
 
-    -Furnace drops items high enough to not get stuck in the ground.'
+    -Camera properly tracks player even
+    if in menus.
+
+    -Return to Game button added.
+
+    -Furnace drops items high
+    enough to not get stuck in the ground.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
