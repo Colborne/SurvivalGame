@@ -63,7 +63,7 @@ public class StatsManager : MonoBehaviour
         maxHealth = SetMaxHealthFromLevel();
         maxStamina = SetMaxStaminaFromLevel();
 
-        if(!File.Exists(Application.persistentDataPath + "/mako.plyr"))
+        if(!File.Exists(Application.persistentDataPath  + "/" + PersistentData.name + ".plyr"))
         {
             currentHealth = maxHealth;
             currentStamina = maxStamina;

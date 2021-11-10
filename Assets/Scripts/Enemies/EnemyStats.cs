@@ -14,7 +14,7 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
-        if(!File.Exists(Application.persistentDataPath + "/mako.objs"))
+        if(!File.Exists(Application.persistentDataPath + "/" + PersistentData.name + ".objs"))
             currentHealth = maxHealth;
     }
 

@@ -13,7 +13,7 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        if(File.Exists(Application.persistentDataPath + "/mako.plyr"))
+        if(File.Exists(Application.persistentDataPath + "/" + PersistentData.name + ".plyr"))
             player.Load();
         else
         {

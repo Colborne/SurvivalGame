@@ -7,7 +7,7 @@ public static class SaveLoad
     public static void SaveData(Player player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Mako.plyr";
+        string path = Application.persistentDataPath + "/" + PersistentData.name + ".plyr";
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
@@ -19,7 +19,7 @@ public static class SaveLoad
     public static void SaveData(SaveableObject[] allGameObjects)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Mako.objs";
+        string path = Application.persistentDataPath + "/" + PersistentData.name + ".objs";
 
         FileStream stream = new FileStream(path, FileMode.Create);
         
@@ -36,7 +36,7 @@ public static class SaveLoad
     public static void SaveData(World world)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Mako.seed";
+        string path = Application.persistentDataPath + "/" + PersistentData.name + ".seed";
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
@@ -48,7 +48,7 @@ public static class SaveLoad
     
     public static PlayerData LoadData()
     {
-        string path = Application.persistentDataPath + "/Mako.plyr";
+        string path = Application.persistentDataPath + "/" + PersistentData.name + ".plyr";
 
         if(File.Exists(path))
         {
@@ -69,7 +69,7 @@ public static class SaveLoad
 
     public static WorldData LoadWorld()
     {
-        string path = Application.persistentDataPath + "/mako.seed";
+        string path = Application.persistentDataPath + "/" + PersistentData.name + ".seed";
 
         if(File.Exists(path))
         {
@@ -90,7 +90,7 @@ public static class SaveLoad
 
     public static AllObjectData LoadObjects()
     {
-        string path = Application.persistentDataPath + "/Mako.objs";
+        string path = Application.persistentDataPath + "/" + PersistentData.name + ".objs";
 
         if(File.Exists(path))
         {

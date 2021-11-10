@@ -33,7 +33,7 @@ public class NavMeshBaker : MonoBehaviour
 
         deleteVerts.MeshCreation();
   
-        if(File.Exists(Application.persistentDataPath + "/mako.objs"))
+        if(File.Exists(Application.persistentDataPath + "/" + PersistentData.name + ".objs"))
             objectGenerator.load();
         else
             objectGenerator.spawn();

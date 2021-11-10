@@ -30,7 +30,7 @@ public class TerrainGenerator : MonoBehaviour {
 
 	void Start() 
 	{
-        if(File.Exists(Application.persistentDataPath + "/mako.seed"))
+        if(File.Exists(Application.persistentDataPath + "/" + PersistentData.name + ".seed"))
 			world.Load();
 		
 		if(world.seed == 0)
