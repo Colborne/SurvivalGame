@@ -717,8 +717,8 @@ MonoBehaviour:
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
-  timeBetweenAttacks: 3
-  projectile: {fileID: 0}
+  timeBetweenAttacks: 1.6
+  projectile: {fileID: 1083513822352973650, guid: b996626a863bf0344abe668440f46095, type: 3}
   alertRange: 25
   attackRange: 2
   sightRange: {x: 4, y: 8, z: 50}
@@ -728,6 +728,10 @@ MonoBehaviour:
   patrolState: 0
   idleState: 1
   waitingToPatrol: 0
+  canRange: 1
+  ranging: 0
+  meleeCount: 2
+  rangedCount: 1
 --- !u!114 &3287890240944057848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +784,7 @@ Animator:
   m_GameObject: {fileID: 7260858356432284582}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9922a0be5aabab346bfb5bda8dafe6aa, type: 2}
+  m_Controller: {fileID: 9100000, guid: bd8eb8a36f6823845a92d41f6773675b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

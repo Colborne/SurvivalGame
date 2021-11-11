@@ -25,10 +25,12 @@ public class EnemyAI : MonoBehaviour
     public Vector3 sightRange;
     public bool playerInAlertRange, playerInAttackRange, playerInSight;
     public bool patrolState, idleState = true, waitingToPatrol;
+    public bool canRange, ranging;
 
     float speed;
     Vector3 lastPosition;
-
+    [Range(1,5)] public int meleeCount;
+    [Range(1,5)] public int rangedCount;
 
     private void Awake()
     {
@@ -62,11 +64,22 @@ public class EnemyAI : MonoBehaviour
                 else
                     Idle();  
             }
-            if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !alreadyAttacked) ChasePlayer();
+            if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !alreadyAttacked) 
+            {
+                if(canRange && Random.Range(0,100) == 0)
+                {
+                    ranging = true;
+                    AttackPlayer();
+                }
+                else
+                    ChasePlayer(); 
+            }
+            
+            
             if (playerInAttackRange) AttackPlayer();
         
-        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
-        lastPosition = transform.position;
+            speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
+            lastPosition = transform.position;
         }
     }
 
@@ -147,8 +160,12 @@ public class EnemyAI : MonoBehaviour
         if (!alreadyAttacked)
         {
             alreadyAttacked = true;
-            Invoke("ResetAttack", timeBetweenAttacks);  
-            animator.CrossFade("Attack", 0.2f);
+            Invoke("ResetAttack", timeBetweenAttacks);
+            if(ranging)
+                animator.CrossFade("RangedAttack" + Random.Range(1, rangedCount + 1).ToString(), 0.2f);
+            else
+                animator.CrossFade("Attack" + Random.Range(1, meleeCount + 1).ToString(), 0.2f);
+            ranging = false;
         }
     }
     private void ResetAttack()
@@ -173,11 +190,10 @@ public class EnemyAI : MonoBehaviour
 
     public void RangedAttack()
     {
-
         if(projectile != null)
         {
             Rigidbody rb;
-            GameObject proj = Instantiate(projectile, transform.position + transform.forward * 2f + transform.up * 2f, Quaternion.identity);
+            GameObject proj = Instantiate(projectile, transform.position + transform.forward * 4f + transform.up * 4f, Quaternion.identity);
             if(proj.GetComponent<Rigidbody>() == null)
                 rb = proj.GetComponentInChildren<Rigidbody>();
             else
@@ -186,6 +202,5 @@ public class EnemyAI : MonoBehaviour
             
             rb.AddForce(transform.forward * 2500f);
         }
-        
     }
 }

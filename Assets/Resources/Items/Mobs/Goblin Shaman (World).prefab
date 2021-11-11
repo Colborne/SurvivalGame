@@ -725,6 +725,10 @@ MonoBehaviour:
   patrolState: 0
   idleState: 1
   waitingToPatrol: 0
+  canRange: 0
+  ranging: 0
+  meleeCount: 1
+  rangedCount: 0
 --- !u!114 &8827981420848893656
 MonoBehaviour:
   m_ObjectHideFlags: 0
