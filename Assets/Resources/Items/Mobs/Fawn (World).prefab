@@ -403,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796d4fedffd0b6e40944b4cc40ea0df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 30
+  currentHealth: 30
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
   fx: {fileID: 1968586304485042, guid: 6c86c599d7bf3464eb4506d2584fbe57, type: 3}
   drop:
@@ -428,9 +428,6 @@ MonoBehaviour:
   tameables:
   - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
   offspring: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512

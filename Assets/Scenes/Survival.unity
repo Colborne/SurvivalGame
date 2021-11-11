@@ -36820,7 +36820,7 @@ MonoBehaviour:
     - {fileID: 3613473264478383677, guid: 9a084e34359b6f94f93e38a97bd78ac7, type: 3}
     - {fileID: 7533301453620370007, guid: a12f3d111dbf67b45863ba87be42737f, type: 3}
     - {fileID: 7260858356432284582, guid: 9674bd97d9fe59249a5c9560ddd8f7a8, type: 3}
-    amount: 0200000064000000fa00000032000000
+    amount: 0200000064000000fa000000f4010000
   - name: Grass
     minHeight: 1.5
     maxHeight: 75
@@ -64120,6 +64120,10 @@ PrefabInstance:
       propertyPath: equipment.Array.data[2].worldItem
       value: 
       objectReference: {fileID: 226731530782889640, guid: 0a36416399357b34398df85cf719b94b, type: 3}
+    - target: {fileID: 8814101643745254440, guid: 6340ade0c2714344da1cf9490d3b0131, type: 3}
+      propertyPath: equipment.Array.data[19].worldItem
+      value: 
+      objectReference: {fileID: 3505931141139192131, guid: 0d74543a6153db9419654bac3e6309a3, type: 3}
     - target: {fileID: 8814101643745254440, guid: 6340ade0c2714344da1cf9490d3b0131, type: 3}
       propertyPath: equipment.Array.data[24].worldItem
       value: 
