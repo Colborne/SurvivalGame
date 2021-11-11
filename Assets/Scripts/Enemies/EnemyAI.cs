@@ -193,7 +193,7 @@ public class EnemyAI : MonoBehaviour
         if(projectile != null)
         {
             Rigidbody rb;
-            GameObject proj = Instantiate(projectile, transform.position + transform.forward * 4f + transform.up * 4f, Quaternion.identity);
+            GameObject proj = Instantiate(projectile, transform.position + transform.forward * sightRange.y/2 + transform.up * sightRange.y/2, Quaternion.identity);
             if(proj.GetComponent<Rigidbody>() == null)
                 rb = proj.GetComponentInChildren<Rigidbody>();
             else

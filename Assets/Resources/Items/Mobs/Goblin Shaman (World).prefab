@@ -718,7 +718,7 @@ MonoBehaviour:
   projectile: {fileID: 1083513822352973650, guid: 220509526f6e0f2469326dc2818667b6, type: 3}
   alertRange: 15
   attackRange: 10
-  sightRange: {x: 2, y: 3, z: 50}
+  sightRange: {x: 2, y: 4, z: 50}
   playerInAlertRange: 0
   playerInAttackRange: 0
   playerInSight: 0
