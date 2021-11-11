@@ -750,6 +750,9 @@ MonoBehaviour:
   - {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
   - {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
   - {fileID: 1624659956748352869, guid: 4c79f62700aaa0b448c8d3151b5dcad7, type: 3}
+  - {fileID: 6010797225960032382, guid: ea4a38c152aff8d40a214bdbe51e3953, type: 3}
+  - {fileID: 7533301453620370007, guid: 4fe83e659dc71bb429d563fd7b8f2f2e, type: 3}
+  - {fileID: 6058380433340147435, guid: e0e21bc78b81a5640acacf6a01210e64, type: 3}
 --- !u!195 &-2863277858719809135
 NavMeshAgent:
   m_ObjectHideFlags: 0

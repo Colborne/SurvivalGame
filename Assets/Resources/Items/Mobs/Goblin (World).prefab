@@ -748,6 +748,9 @@ MonoBehaviour:
   drop:
   - {fileID: 5205778459530054705, guid: b1e87daf292c65a4791db8da323d1ff6, type: 3}
   - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
+  - {fileID: 6058380433340147435, guid: 80399381f9179f946a57448c481cc2aa, type: 3}
+  - {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
+  - {fileID: 6518796521700374879, guid: 78d036a98f0bb3c4f83e36a29c6a2011, type: 3}
 --- !u!195 &-2863277858719809135
 NavMeshAgent:
   m_ObjectHideFlags: 0

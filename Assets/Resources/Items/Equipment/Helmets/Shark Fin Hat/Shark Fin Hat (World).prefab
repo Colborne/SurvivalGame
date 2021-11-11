@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9091245646106056855}
   - component: {fileID: -6534526747412350392}
   m_Layer: 0
-  m_Name: Shark Fin Hat  (World)
+  m_Name: Shark Fin Hat (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

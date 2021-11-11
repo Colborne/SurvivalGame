@@ -744,14 +744,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796d4fedffd0b6e40944b4cc40ea0df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
-  currentHealth: 250
+  maxHealth: 400
+  currentHealth: 400
   FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
   fx: {fileID: 1968586304485042, guid: 6c86c599d7bf3464eb4506d2584fbe57, type: 3}
   drop:
-  - {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
-  - {fileID: 7533301453620370007, guid: be53d4730f8171b4d9b311478bc1c8fc, type: 3}
-  - {fileID: 1624659956748352869, guid: 4c79f62700aaa0b448c8d3151b5dcad7, type: 3}
+  - {fileID: 7533301453620370007, guid: a12f3d111dbf67b45863ba87be42737f, type: 3}
+  - {fileID: 7250630547947749259, guid: aac81971b554573448a76c192382892e, type: 3}
+  - {fileID: 6058380433340147435, guid: e0e21bc78b81a5640acacf6a01210e64, type: 3}
+  - {fileID: 4968665625565541622, guid: 2f3d2bb708ecc884ba810884636f1e4d, type: 3}
+  - {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
+  - {fileID: 7250630547947749259, guid: aac81971b554573448a76c192382892e, type: 3}
+  - {fileID: 7250630547947749259, guid: aac81971b554573448a76c192382892e, type: 3}
+  - {fileID: 7250630547947749259, guid: aac81971b554573448a76c192382892e, type: 3}
+  - {fileID: 7533301453620370007, guid: 3035b24544eed074baa3196f76d9f540, type: 3}
+  - {fileID: 226731530782889640, guid: 5cc0cb6033b3aca429ab98aefe87c31f, type: 3}
 --- !u!195 &-2863277858719809135
 NavMeshAgent:
   m_ObjectHideFlags: 0
