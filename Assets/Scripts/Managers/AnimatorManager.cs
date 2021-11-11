@@ -82,8 +82,11 @@ public class AnimatorManager : MonoBehaviour
         }
         else if(isSneaking)
         {
-            snappedHorizontal = horizontalMovement;
-            snappedVertical = 3;
+            if(verticalMovement > 0)
+            {
+                snappedHorizontal = horizontalMovement;
+                snappedVertical = 3;
+            }
         }
         
         if(isSwimming)
