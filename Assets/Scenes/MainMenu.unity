@@ -7646,36 +7646,15 @@ MonoBehaviour:
 
     -Trees Look Less Ass
 
+    -Collision
+    Fixes
 
-    v0.0.0.7
+    -More Stone Spawns
 
+    -Differentiated Stone, Tin, and Silver
 
-    -Player
-    shouldn''t instantly drown when touching water without stamina.
-
-    -Healthbar
-    and Staminabar have been corrected.
-
-    -The Player no longer slides down angles
-    when in menus or interacting.
-
-    -Pickup Script Autoloads names.
-
-    -Torch
-    Right Click fix.
-
-    -Sprint input auto turns off when stamina drops to 0.
-
-    -Camera
-    rotation locked when in pause menu.
-
-    -Camera properly tracks player even
-    if in menus.
-
-    -Return to Game button added.
-
-    -Furnace drops items high
-    enough to not get stuck in the ground.'
+    -Rotate
+    to Face Mouse During Attack'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}

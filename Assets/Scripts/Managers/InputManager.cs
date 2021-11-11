@@ -233,6 +233,10 @@ public class InputManager : MonoBehaviour
                     {
                         if(!equipmentManager.rightWeapon.canCharge)
                         {
+                            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+                            var look = ray.direction;
+                            look.y = 0;
+                            transform.rotation = Quaternion.LookRotation(look);
                             leftMouseInput = false;
                             if(equipmentManager.rightWeapon.projectile != null)
                                 playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
@@ -252,6 +256,10 @@ public class InputManager : MonoBehaviour
                         && !animatorManager.animator.GetBool("isInteracting") 
                         && !animatorManager.animator.GetBool("isJumping") )
                     {
+                        Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+                        var look = ray.direction;
+                        look.y = 0;
+                        transform.rotation = Quaternion.LookRotation(look);
                         middleMouseInput = false;
                         playerAttacker.HandleHeavyAttack(equipmentManager.rightWeapon);
                     }
