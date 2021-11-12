@@ -57,29 +57,32 @@ public class EnemyAI : MonoBehaviour
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
             playerInSight = Physics.CheckBox(transform.position + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange, Quaternion.LookRotation(transform.forward), whatIsPlayer);
 
-            if (!playerInAlertRange && !playerInAttackRange && !playerInSight) 
+            if(!animator.GetBool("takingDamage"))
             {
-                if(patrolState)
-                    Patrol();
-                else
-                    Idle();  
-            }
-            if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !alreadyAttacked) 
-            {
-                if(canRange && Random.Range(0,100) == 0)
+                if (!playerInAlertRange && !playerInAttackRange && !playerInSight) 
                 {
-                    ranging = true;
-                    AttackPlayer();
+                    if(patrolState)
+                        Patrol();
+                    else
+                        Idle();  
                 }
-                else
-                    ChasePlayer(); 
+                if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !alreadyAttacked) 
+                {
+                    if(canRange && Random.Range(0,100) == 0)
+                    {
+                        ranging = true;
+                        AttackPlayer();
+                    }
+                    else
+                        ChasePlayer(); 
+                }
+                
+                
+                if (playerInAttackRange) AttackPlayer();
+            
+                speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
+                lastPosition = transform.position;
             }
-            
-            
-            if (playerInAttackRange) AttackPlayer();
-        
-            speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
-            lastPosition = transform.position;
         }
     }
 
@@ -202,5 +205,12 @@ public class EnemyAI : MonoBehaviour
             
             rb.AddForce(transform.forward * 2500f);
         }
+    }
+
+    public void TakeDamage()
+    {
+        animator.SetBool("takingDamage", true);
+        animator.CrossFade("Damage", 0.2f);
+        hitbox.SetActive(false);
     }
 }

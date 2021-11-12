@@ -12,6 +12,13 @@ public class EnemyStats : MonoBehaviour
     public GameObject fx;
     public GameObject[] drop;
 
+    EnemyAI enemyAI;
+
+    private void Awake() 
+    {
+        enemyAI = GetComponent<EnemyAI>();
+    }
+
     void Start()
     {
         if(!File.Exists(Application.persistentDataPath + "/" + PersistentData.name + ".objs"))
@@ -20,6 +27,7 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        enemyAI.TakeDamage();
         currentHealth = currentHealth - damage;
         ShowDamage(damage.ToString());
         if(currentHealth <= 0)
