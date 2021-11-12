@@ -15,6 +15,12 @@ ModelImporter:
   - first:
       74: 5152524018116331999
     second: Armature|TPose
+  - first:
+      74: 4723146814002874508
+    second: Armature|Attack
+  - first:
+      74: -7551964380084998518
+    second: Armature|Run
   externalObjects:
   - first:
       type: UnityEngine:Material

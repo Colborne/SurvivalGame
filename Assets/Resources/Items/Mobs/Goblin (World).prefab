@@ -714,10 +714,10 @@ MonoBehaviour:
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 1.5
   projectile: {fileID: 0}
   alertRange: 15
-  attackRange: 0.5
+  attackRange: 0.2
   sightRange: {x: 2, y: 3, z: 50}
   playerInAlertRange: 0
   playerInAttackRange: 0

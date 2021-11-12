@@ -29,8 +29,8 @@ public class EnemyAI : MonoBehaviour
 
     float speed;
     Vector3 lastPosition;
-    [Range(1,5)] public int meleeCount;
-    [Range(1,5)] public int rangedCount;
+    [Range(0,5)] public int meleeCount;
+    [Range(0,5)] public int rangedCount;
 
     private void Awake()
     {
@@ -66,7 +66,8 @@ public class EnemyAI : MonoBehaviour
                     else
                         Idle();  
                 }
-                if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !alreadyAttacked) 
+
+                if (((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight) && !playerInAttackRange && !animator.GetBool("isAttacking")) 
                 {
                     if(canRange && Random.Range(0,100) == 0)
                     {
@@ -77,8 +78,11 @@ public class EnemyAI : MonoBehaviour
                         ChasePlayer(); 
                 }
                 
-                
-                if (playerInAttackRange) AttackPlayer();
+                if (playerInAttackRange)
+                {
+                    if(!alreadyAttacked)
+                        AttackPlayer(); 
+                }
             
                 speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
                 lastPosition = transform.position;
@@ -156,6 +160,7 @@ public class EnemyAI : MonoBehaviour
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
+        animator.SetBool("isAttacking", true);
         agent.ResetPath();
         animator.SetFloat("V", 0f);
         transform.LookAt(player.position);
@@ -164,7 +169,7 @@ public class EnemyAI : MonoBehaviour
         {
             alreadyAttacked = true;
             Invoke("ResetAttack", timeBetweenAttacks);
-            if(ranging)
+            if(ranging || meleeCount == 0)
                 animator.CrossFade("RangedAttack" + Random.Range(1, rangedCount + 1).ToString(), 0.2f);
             else
                 animator.CrossFade("Attack" + Random.Range(1, meleeCount + 1).ToString(), 0.2f);

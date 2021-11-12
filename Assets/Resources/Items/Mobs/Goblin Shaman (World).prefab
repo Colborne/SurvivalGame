@@ -607,7 +607,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4787faab8e2d986479acd23da692df46, type: 2}
+  - {fileID: 2100000, guid: 8cecca5374205cb4896879779889cf0f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
-  timeBetweenAttacks: 3
+  timeBetweenAttacks: 2
   projectile: {fileID: 1083513822352973650, guid: 220509526f6e0f2469326dc2818667b6, type: 3}
   alertRange: 15
   attackRange: 10
@@ -725,10 +725,10 @@ MonoBehaviour:
   patrolState: 0
   idleState: 1
   waitingToPatrol: 0
-  canRange: 0
+  canRange: 1
   ranging: 0
-  meleeCount: 1
-  rangedCount: 0
+  meleeCount: 0
+  rangedCount: 1
 --- !u!114 &8827981420848893656
 MonoBehaviour:
   m_ObjectHideFlags: 0
