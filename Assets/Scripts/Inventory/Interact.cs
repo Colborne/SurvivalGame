@@ -12,7 +12,8 @@ public class Interact : MonoBehaviour
             Smelting,
             Alchemy,
             Sharpening,
-            Pickup
+            Pickup,
+            Chest
     }
 
     [SerializeField] private Type interactionType;
@@ -32,31 +33,23 @@ public class Interact : MonoBehaviour
     CraftingSystem smithing3System;
     CraftingSystem alchemySystem;
     CraftingSystem alchemy2System;
-
-    //public CraftingSystem[] checks;
+    ChestManager chestManager;
     CraftingSystem temp;
 
-    private void Awake() {
+    private void Awake() 
+    {
         animatorManager = FindObjectOfType<AnimatorManager>();
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
-        //checks = new CraftingSystem[8];
         craftingSystem = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
-        //checks[0] = craftingSystem;
         smithingSystem = GameObject.Find("SmithingSystem").GetComponent<CraftingSystem>();
-        //checks[1] = smithingSystem;
         alchemySystem = GameObject.Find("AlchemySystem").GetComponent<CraftingSystem>();
-        //checks[2] = alchemySystem;
         crafting2System = GameObject.Find("Crafting2System").GetComponent<CraftingSystem>();
-        //checks[3] = crafting2System;
         smithing2System = GameObject.Find("Smithing2System").GetComponent<CraftingSystem>();
-        //checks[4] = smithing2System;
         alchemy2System = GameObject.Find("Alchemy2System").GetComponent<CraftingSystem>();
-        //checks[5] = alchemy2System;
         crafting3System = GameObject.Find("Crafting3System").GetComponent<CraftingSystem>();
-        //checks[6] = crafting3System;
         smithing3System = GameObject.Find("Smithing3System").GetComponent<CraftingSystem>();
-        //checks[7] = smithing3System;
+        chestManager = GameObject.Find("ChestManager").GetComponent<ChestManager>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -132,6 +125,10 @@ public class Interact : MonoBehaviour
                 _drop.GetComponentInChildren<Rigidbody>().AddForce(transform.up * 20f);
                 animatorManager.PlayTargetAnimation("Landing", true);
                 Destroy(gameObject);
+            }
+            else if(interactionType == Type.Chest)
+            {
+                chestManager.WindowActive(GetComponent<ChestWindowManager>().iter);
             }
             
             inputManager.interactInput = false;
