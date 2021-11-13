@@ -29,7 +29,7 @@ public class ObjectManager : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(new Vector3(data.objectDatas[i].rot[0],data.objectDatas[i].rot[1],data.objectDatas[i].rot[2]));
             Vector3 localScale = new Vector3(data.objectDatas[i].scale[0],data.objectDatas[i].scale[1],data.objectDatas[i].scale[2]);
 
-            Debug.Log(data.objectDatas[i].localPath);
+            //Debug.Log(data.objectDatas[i].localPath);
             GameObject Spawn = Instantiate(Resources.Load(data.objectDatas[i].localPath) as GameObject , position, rotation);
             Spawn.transform.localScale = localScale;
 
@@ -42,9 +42,18 @@ public class ObjectManager : MonoBehaviour
                 Spawn.GetComponent<Pickup>().amount = data.objectDatas[i].amount;
                 Spawn.GetComponent<Pickup>()._name = data.objectDatas[i]._name;
             }
-                
-        }
-        
+            else if (Spawn.GetComponent<ChestWindowManager>())
+            {
+                Spawn.GetComponent<ChestWindowManager>().iter = data.objectDatas[i].amount;  
+                Spawn.GetComponent<ChestWindowManager>().load = true;
+                for(int j = 0; j < 16; j++)
+                {
+                    if(data.objectDatas[i].count[j] != 0){
+                        Spawn.GetComponent<ChestWindowManager>().LoadInventoryItem(data.objectDatas[i].slot[j], data.objectDatas[i].id[j], data.objectDatas[i].count[j]);  
+                    }
+                }
+            }
+        }    
         GatherData();
     }
 }

@@ -13,10 +13,11 @@ public class ChestManager : MonoBehaviour
         chests = new List<GameObject>();
     }
 
-    public void WindowActive(int iter)
+    public void WindowActive(GameObject window)
     {
         FindObjectOfType<InputManager>().inventoryFlag = !FindObjectOfType<InputManager>().inventoryFlag;
-        chests[iter].SetActive(!chests[iter].active);
+        FindObjectOfType<InputManager>().chestFlag = !FindObjectOfType<InputManager>().chestFlag;
+        window.SetActive(!window.active);
         FindObjectOfType<InputManager>().InventoryWindow.SetActive(!FindObjectOfType<InputManager>().InventoryWindow.active);
         FindObjectOfType<InputManager>().TooltipCanvas.SetActive(!FindObjectOfType<InputManager>().TooltipCanvas.active);
     }

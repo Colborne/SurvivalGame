@@ -49,6 +49,7 @@ public class InputManager : MonoBehaviour
     public bool hasCast = false;
     public int idleAnim = 0;
     public bool isPaused;
+    public bool chestFlag = false;
 
     private void Awake() 
     {
@@ -128,7 +129,7 @@ public class InputManager : MonoBehaviour
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
         
-        if(!buildWindowFlag && !isPaused)
+        if(!buildWindowFlag && !isPaused && !chestFlag)
             HandleInventoryInput();
     }
     private void HandleMovementInput()

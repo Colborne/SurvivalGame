@@ -50,15 +50,14 @@ public class Player : MonoBehaviour
             else if(data.acc2[i]) itemType = "Accessory2";
             else if(data.acc3[i]) itemType = "Accessory3";
 
-            if(data.slot[i] != 0)
+            if(data.amount[i] != 0)
                 GameManager.Instance.LoadEquipmentItem(data.slot[i], data.id[i], data.amount[i], itemType);  
         }
         
         for(int i = 10; i < 42; i++)
         {
-            if(data.slot[i] != 0)
+            if(data.amount[i] != 0)
                 GameManager.Instance.LoadInventoryItem(data.slot[i], data.id[i], data.amount[i]);  
-        }
-            
+        }        
     }
 }

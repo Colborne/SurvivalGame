@@ -128,7 +128,7 @@ public class Interact : MonoBehaviour
             }
             else if(interactionType == Type.Chest)
             {
-                chestManager.WindowActive(GetComponent<ChestWindowManager>().iter);
+                chestManager.WindowActive(GetComponent<ChestWindowManager>().window);
             }
             
             inputManager.interactInput = false;

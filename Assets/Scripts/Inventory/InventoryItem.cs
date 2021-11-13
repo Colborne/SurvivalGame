@@ -89,19 +89,20 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             _item.currentAmount = (int)Mathf.Floor(currentAmount/2);
             _item.transform.SetParent(newItem.originalSlot);
             OriginalSlot.currentItem = _item;
+            OriginalSlot.currentItem.rectTransform.localScale = new Vector3(1f, 1f, 1f);
 
             currentAmount -= _item.currentAmount;
         }
  
         canvasGroup.blocksRaycasts = false;
-        rectTransform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+        rectTransform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         originalSlot = transform.parent.transform;  
     } 
     public void OnEndDrag(PointerEventData eventData)
     {
         // Revert State //
         canvasGroup.blocksRaycasts = true;
-        rectTransform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+        rectTransform.localScale = new Vector3(1f, 1f, 1f);
         if (transform.parent == GameManager.Instance.draggables)
         {
             if(originalSlot.GetComponentInChildren<InventoryItem>() != null)

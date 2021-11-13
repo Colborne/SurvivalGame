@@ -13,6 +13,10 @@ public class ObjectData
     public int amount;
     public string _name;
 
+    public int[] slot;
+    public int[] id;
+    public int[] count;
+
     public ObjectData(SaveableObject so) 
     {
         string temp = "";
@@ -54,6 +58,26 @@ public class ObjectData
             amount = so.GetComponent<Pickup>().amount;
             _name = so.AssetPath.Split('/').Where(x => !string.IsNullOrWhiteSpace(x)).LastOrDefault();
         }
+        else if(so.GetComponent<ChestWindowManager>())
+        {
+            amount = so.GetComponent<ChestWindowManager>().iter; 
+            so.GetComponent<ChestWindowManager>().Save();
+
+            slot = new int[16];
+            id = new int[16];
+            count = new int[16];
+
+            for(int i = 0; i < 16; i++)
+            {
+                slot[i] = so.GetComponent<ChestWindowManager>().chest[i].slot;
+                id[i] = so.GetComponent<ChestWindowManager>().chest[i].itemID;
+                count[i] = so.GetComponent<ChestWindowManager>().chest[i].currentAmount;
+
+                Debug.Log(slot[i]);
+                Debug.Log(id[i]);
+                Debug.Log(count[i]);
+            }
+        } 
     }
 }
 
