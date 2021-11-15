@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 6
   amount: 1
-  name: Arrow
+  _name: 
   autoPickup: 0
   playerDropped: 0
 --- !u!65 &6934491695230074734
@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Weapons/Bow/Arrow/Arrow
+  AssetPath: Bow/Arrow/Arrow
   folder: 9

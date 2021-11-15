@@ -29,7 +29,7 @@ public class ObjectManager : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(new Vector3(data.objectDatas[i].rot[0],data.objectDatas[i].rot[1],data.objectDatas[i].rot[2]));
             Vector3 localScale = new Vector3(data.objectDatas[i].scale[0],data.objectDatas[i].scale[1],data.objectDatas[i].scale[2]);
 
-            //Debug.Log(data.objectDatas[i].localPath);
+            Debug.Log(data.objectDatas[i].localPath);
             GameObject Spawn = Instantiate(Resources.Load(data.objectDatas[i].localPath) as GameObject , position, rotation);
             Spawn.transform.localScale = localScale;
 

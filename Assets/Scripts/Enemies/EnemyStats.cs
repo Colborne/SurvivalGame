@@ -13,10 +13,12 @@ public class EnemyStats : MonoBehaviour
     public GameObject[] drop;
 
     EnemyAI enemyAI;
+    MobAI mobAI;
 
     private void Awake() 
     {
         enemyAI = GetComponent<EnemyAI>();
+        mobAI = GetComponent<MobAI>();
     }
 
     void Start()
@@ -27,7 +29,11 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        enemyAI.TakeDamage();
+        if(enemyAI != null)
+            enemyAI.TakeDamage();
+        else if (mobAI != null)
+            mobAI.TakeDamage();
+
         currentHealth = currentHealth - damage;
         ShowDamage(damage.ToString());
         if(currentHealth <= 0)

@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 118
   amount: 1
-  name: Seastone Pickaxe
+  _name: 
   autoPickup: 0
   playerDropped: 0
 --- !u!65 &2275795935023398786
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Pickaxe/Seastone Pickaxe/Sestone Pickaxe
+  AssetPath: Pickaxe/Seastone Pickaxe/Seastone Pickaxe
   folder: 9
 --- !u!1 &1313709211160615397
 GameObject:

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 45
   amount: 1
-  name: Iron Ore
+  _name: 
   autoPickup: 0
   playerDropped: 0
 --- !u!54 &8940588388695996300
@@ -158,5 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Iron Ore/Irone Ore
+  AssetPath: Iron Ore/Iron Ore
   folder: 7

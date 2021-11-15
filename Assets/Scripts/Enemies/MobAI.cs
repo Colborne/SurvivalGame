@@ -268,4 +268,10 @@ public class MobAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.forward + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
     }
+
+    public void TakeDamage()
+    {
+        animator.SetBool("takingDamage", true);
+        animator.CrossFade("Damage", 0.2f);
+    }
 }
