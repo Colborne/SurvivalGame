@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9092473781662332920}
   - component: {fileID: 7680765855121683962}
   m_Layer: 5
-  m_Name: Med Helm (Item)
+  m_Name: Silver Full Helm (Item)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,14 +140,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.33041117, b: 0.33041117, a: 1}
+  m_Color: {r: 0.74509805, g: 0.7647059, b: 0.79607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44ad0e024aa875d48bf007c92541a4b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb25d1a893526a647b0ead1e6708cc4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -193,9 +193,10 @@ MonoBehaviour:
   inAccessory1Slot: 0
   inAccessory2Slot: 0
   inAccessory3Slot: 0
-  itemID: 9
+  itemID: 165
   equipType: 1
   MaxAmount: 1
   currentAmount: 1
   textAmount: {fileID: 4632269930774777919}
-  item: {fileID: 11400000, guid: 613782935bd3c564b9de63dd17f842a6, type: 2}
+  item: {fileID: 11400000, guid: adf395d06b2dba245b852cbd36823af2, type: 2}
+  totalWeight: 0

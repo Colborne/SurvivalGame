@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2174446319703779931}
   m_Layer: 9
-  m_Name: Med Helm (Prefab)
+  m_Name: Bronze Med Helm (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0a46660bfe181741ab4c921a3a319de, type: 2}
+  - {fileID: 2100000, guid: f9496b7579aaea240ac7bf5969b9e50e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6039449100814533511}
   m_Layer: 9
-  m_Name: Full Helm (Prefab)
+  m_Name: Mithril Full Helm (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

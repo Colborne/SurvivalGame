@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 235233590037842093}
   - component: {fileID: 6568404801519048611}
   m_Layer: 0
-  m_Name: Full Helm (World)
+  m_Name: Mithril Full Helm (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 20
   amount: 1
-  name: Full Helm
+  _name: 
   autoPickup: 0
   playerDropped: 0
 --- !u!114 &6568404801519048611
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Helmets/Full Helmet/Full Helmet
+  AssetPath: Helmets/Full Helmet/Mithril/Mithril Full Helmet
   folder: 3
 --- !u!1 &6480096565539555408
 GameObject:

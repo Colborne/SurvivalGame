@@ -64,9 +64,19 @@ public class DamageCollider : MonoBehaviour
                         else if(resource.resourceType == "Tree")
                             sound.PlaySound("Sounds/chop"); 
                         
-                        stats.TakeDamage(damageAmount + bonusDamage + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel)));
-                        for(int i = 0; i < Random.Range(1,3); i++)
-                            Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
+                        int dmg = damageAmount + bonusDamage + (int)Random.Range(Mathf.Floor(-range * weaponLevel), Mathf.Floor(range * weaponLevel));
+                        stats.TakeDamage(dmg);
+                        
+                        if(resource.GetComponent<SaveableObject>().AssetPath == "Rune")
+                        {
+                            for(int i = 0; i < dmg/10; i++)
+                                Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
+                        }
+                        else
+                        {
+                            for(int i = 0; i < Random.Range(1,3); i++)
+                                Instantiate(resource.fx, transform.position + new Vector3(0,1,0), Random.rotation);
+                        }
                         
                         if(!tree)
                             resource.checkHit();
