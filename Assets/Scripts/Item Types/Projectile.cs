@@ -8,7 +8,8 @@ public class Projectile : MonoBehaviour
     Rigidbody rb;
     public GameObject fx;
     public InventoryItem item;
-    DamageCollider dc;
+    public DamageCollider dc;
+
     private void Awake() 
     {
         input = FindObjectOfType<InputManager>();
@@ -22,13 +23,14 @@ public class Projectile : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
         transform.rotation = Quaternion.LookRotation(ray.direction);
         if(input.attackChargeTimer > 0)
-            rb.AddForce(transform.forward * 5000f * input.attackChargeTimer);
+            rb.AddForce(transform.forward * 3000f * input.attackChargeTimer);
         else if(GetComponent<DamagePlayer>() == null)
             rb.AddForce(transform.forward * 5000f);
         
         input.attackChargeTimer = 0f;
-        if(dc != null)
+        if(dc != null){
             dc.EnableDamageCollider();
+        }
     }
 
     // Update is called once per frame

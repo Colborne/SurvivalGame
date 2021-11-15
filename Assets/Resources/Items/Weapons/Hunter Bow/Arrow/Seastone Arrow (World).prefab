@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6934491695230074734}
   - component: {fileID: 8494493118913066140}
   m_Layer: 0
-  m_Name: Arrow (World)
+  m_Name: Seastone Arrow (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,8 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
-  - {fileID: 2100000, guid: 123c5c6c043810745a05bbf53b13fdd6, type: 2}
+  - {fileID: 2100000, guid: 0a0655186594580418d3e831a9cef688, type: 2}
+  - {fileID: 2100000, guid: 98cddcf98b5149f44a42dce47d6fd14f, type: 2}
   - {fileID: 2100000, guid: 9155e5f5808abe14ea6fa7a7784a25ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 6
+  itemID: 162
   amount: 1
   _name: 
   autoPickup: 0
@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Bow/Arrow/Arrow
+  AssetPath: Hunter Bow/Arrow/Seastone Arrow
   folder: 9

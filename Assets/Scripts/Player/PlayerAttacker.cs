@@ -86,7 +86,10 @@ public class PlayerAttacker : MonoBehaviour
                 animatorManager.animator.SetBool("isAttacking", true);
                 soundManager.PlaySound("Sounds/drawKnife2");
                 
-                Instantiate(weaponItem.projectile, transform.position + transform.forward + new Vector3(0,2,0), transform.rotation);
+                var proj = Instantiate(weaponItem.projectile, transform.position + transform.forward + new Vector3(0,2,0), transform.rotation);
+                float dm = proj.GetComponentInChildren<Projectile>().dc.damageAmount * equipmentManager.rightWeapon.attackDamage;
+                proj.GetComponentInChildren<Projectile>().dc.damageAmount = (int)Mathf.Floor(dm);
+                proj.GetComponentInChildren<Projectile>().dc.range = dm/10f;
             }
         }
     }
