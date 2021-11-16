@@ -8,6 +8,7 @@ public class MobAI : MonoBehaviour
     public GameObject[] tameables;
     public GameObject offspring;
     public LayerMask whatIsPlayer, whatIsTameable, whatIsMate;
+    public string mobType;
     Animator animator;
     Vector3 check;
     PlayerLocomotion playerLocomotion;
@@ -93,7 +94,7 @@ public class MobAI : MonoBehaviour
                     gameObject.GetComponent<BoxCollider>().enabled = true;
                 }
             }
-            if (!tamed && ((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight))
+            if ((mobType == "Deer" && GameManager.Instance.helmetID != 173) && !tamed && ((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight))
                 Flee();
         }
 

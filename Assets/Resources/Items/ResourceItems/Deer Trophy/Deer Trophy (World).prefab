@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &285386989593545026
+--- !u!1 &888955376435412549
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 629999653719217144}
-  - component: {fileID: 4544676066022825053}
-  - component: {fileID: 1798371682215422103}
-  - component: {fileID: 817271535425937619}
-  - component: {fileID: 2211648545789001439}
-  - component: {fileID: 2999135474903784592}
-  - component: {fileID: 6948276864171961717}
-  - component: {fileID: 3727325182178181847}
+  - component: {fileID: 512817277887538431}
+  - component: {fileID: 3508936387512789850}
+  - component: {fileID: 1681751706581639056}
+  - component: {fileID: 3175815267728449153}
+  - component: {fileID: 622013882174450856}
+  - component: {fileID: 5572872848360711792}
+  - component: {fileID: -7684607148148012175}
+  - component: {fileID: -4846063409914429970}
   m_Layer: 0
-  m_Name: Silver Boots (World)
+  m_Name: Deer Trophy (World)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &629999653719217144
+--- !u!4 &512817277887538431
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
+  m_GameObject: {fileID: 888955376435412549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.3, z: 0}
-  m_LocalScale: {x: 250, y: 250, z: 250}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4544676066022825053
+--- !u!33 &3508936387512789850
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
-  m_Mesh: {fileID: -4090778014134075199, guid: fb28b56550ef6ad449f5e6e1d4d932e3, type: 3}
---- !u!23 &1798371682215422103
+  m_GameObject: {fileID: 888955376435412549}
+  m_Mesh: {fileID: 1816843661807209135, guid: c3adce5ae3b815749ab119ea6da2c06f, type: 3}
+--- !u!23 &1681751706581639056
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
+  m_GameObject: {fileID: 888955376435412549}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +64,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 435fbe70041068c4ba57538738251aee, type: 2}
+  - {fileID: 2100000, guid: cc38b9af55fafd349a8ed82987d8c9f9, type: 2}
+  - {fileID: 2100000, guid: dd7d12a5af24022478bcb28677ef2346, type: 2}
+  - {fileID: 2100000, guid: ac22aa80d2a757b42b490bf8ea09854d, type: 2}
+  - {fileID: 2100000, guid: d43aa38641d21364ea74664b89d1fce4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,13 +89,57 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &817271535425937619
+--- !u!114 &3175815267728449153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888955376435412549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 174
+  amount: 1
+  _name: 
+  autoPickup: 0
+  playerDropped: 0
+--- !u!65 &622013882174450856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888955376435412549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0.0003111884, y: -0.0002315226, z: -0.00018057955}
+--- !u!64 &5572872848360711792
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888955376435412549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1816843661807209135, guid: c3adce5ae3b815749ab119ea6da2c06f, type: 3}
+--- !u!54 &-7684607148148012175
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
+  m_GameObject: {fileID: 888955376435412549}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -102,60 +149,17 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &2211648545789001439
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0023926648, y: 0.002428269, z: 0.009902881}
-  m_Center: {x: -0.000061144936, y: -0.019475296, z: -0.000044812914}
---- !u!114 &2999135474903784592
+--- !u!114 &-4846063409914429970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 170
-  amount: 1
-  _name: 
-  autoPickup: 0
-  playerDropped: 0
---- !u!65 &6948276864171961717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.005, z: 0.012}
-  m_Center: {x: -0.000061144936, y: -0.019475296, z: -0.000044812914}
---- !u!114 &3727325182178181847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285386989593545026}
+  m_GameObject: {fileID: 888955376435412549}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Boots/Silver/Silver Boots
-  folder: 3
+  AssetPath: Deer Trophy/Deer Trophy
+  folder: 7

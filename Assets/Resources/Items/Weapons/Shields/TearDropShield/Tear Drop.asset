@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb23a29f265cc7478a315361c201e34, type: 3}
+  m_Name: Tear Drop
+  m_EditorClassIdentifier: 
+  itemName: Teardrop Shield
+  description: It's a Teardrop
+  weight: 25
+  isTwoHanded: 0
+  isOffhandable: 1
+  canCharge: 1
+  idleAnim: 0
+  Attack: 
+  Heavy_Attack: 
+  Left_Attack: EndBlock
+  baseStamina: 0
+  heavyAttackMultiplier: 0
+  attackDamage: 0
+  attackSpeed: 0
+  damageType: 0
+  projectile: {fileID: 0}

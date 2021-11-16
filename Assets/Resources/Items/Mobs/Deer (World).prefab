@@ -411,6 +411,10 @@ MonoBehaviour:
   - {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
   - {fileID: 6058380433340147435, guid: 6f42c8b65721ecc44ae2d5cc79dd4332, type: 3}
   - {fileID: 888955376435412549, guid: bb1ae64dd4253cc41a70edcbbec53f18, type: 3}
+  - {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
+  - {fileID: 6058380433340147435, guid: 6f42c8b65721ecc44ae2d5cc79dd4332, type: 3}
+  - {fileID: 888955376435412549, guid: bb1ae64dd4253cc41a70edcbbec53f18, type: 3}
+  - {fileID: 888955376435412549, guid: cd8f73c3d6b121f4d89c1d96249be544, type: 3}
 --- !u!114 &8738346775274339597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +441,7 @@ MonoBehaviour:
   whatIsMate:
     serializedVersion: 2
     m_Bits: 4096
+  mobType: Deer
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
   tamedAmount: 0

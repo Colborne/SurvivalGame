@@ -437,6 +437,7 @@ MonoBehaviour:
   whatIsMate:
     serializedVersion: 2
     m_Bits: 0
+  mobType: Deer
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 20
   tamedAmount: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
+  m_Name: Trophy Hat
+  m_EditorClassIdentifier: 
+  itemName: Trophy Hat
+  description: Trophy Hat
+  weight: 3
+  baseDefense: 1
+  resistanceType: 
+  specialDefense: 0
+  strengthBonus: 0
+  rangeBonus: 0
+  mageBonus: 0
+  jumpBonus: 1.2
+  baseSpeedBonus: 1.2
+  swimSpeedBonus: 1
