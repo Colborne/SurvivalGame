@@ -53,6 +53,25 @@ public class ObjectManager : MonoBehaviour
                     }
                 }
             }
+            else if(Spawn.GetComponent<Smelting>())
+            {
+                Spawn.GetComponent<Smelting>().load = true;
+                for(int j = 0; j < data.objectDatas[i].id.Length; j++)
+                    Spawn.GetComponent<Smelting>().smelt.Enqueue(GameManager.Instance.equipment[data.objectDatas[i].id[j]].worldItem);  
+                Spawn.GetComponent<Smelting>().min = data.objectDatas[i].count[0];  
+                Spawn.GetComponent<Smelting>().timer = data.objectDatas[i].timer[0]; 
+            }
+            else if(Spawn.GetComponent<Cooking>())
+            {
+                Spawn.GetComponent<Cooking>().load = true;
+                Spawn.GetComponent<Cooking>().iter = data.objectDatas[i].amount;  
+                Spawn.GetComponent<Cooking>().min = data.objectDatas[i].count[0];
+                Spawn.GetComponent<Cooking>().woodCount = data.objectDatas[i].count[1];  
+                Spawn.GetComponent<Cooking>().timer = data.objectDatas[i].timer[0];  
+                Spawn.GetComponent<Cooking>().cookTime = data.objectDatas[i].timer[1];
+                if(Spawn.GetComponent<Cooking>().iter != -1)
+                    Spawn.GetComponent<Cooking>().cooking = true;
+            }
         }    
         GatherData();
     }

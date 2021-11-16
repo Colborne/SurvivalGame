@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
         transform.rotation = Quaternion.LookRotation(ray.direction);
         if(input.attackChargeTimer > 0)
-            rb.AddForce(transform.forward * 3000f * input.attackChargeTimer);
+            rb.AddForce(transform.forward * 3500f * input.attackChargeTimer);
         else if(GetComponent<DamagePlayer>() == null)
             rb.AddForce(transform.forward * 5000f);
         

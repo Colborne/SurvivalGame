@@ -12,6 +12,7 @@ public class ObjectData
     public string localPath;
     public int amount;
     public string _name;
+    public float[] timer;
 
     public int[] slot;
     public int[] id;
@@ -77,7 +78,32 @@ public class ObjectData
                 Debug.Log(id[i]);
                 Debug.Log(count[i]);
             }
-        } 
+        }
+        else if (so.GetComponent<Smelting>())
+        {
+            amount = so.GetComponent<Smelting>().iter;
+            GameObject[] items = so.GetComponent<Smelting>().smelt.ToArray();
+            id = new int[items.Length];
+            for(int i = 0; i < items.Length; i++){
+                id[i] = items[i].GetComponent<Pickup>().itemID;
+                Debug.Log(id[i]);
+            }
+            
+            count = new int[1];
+            count[0] = so.GetComponent<Smelting>().min;
+            timer = new float[1];
+            timer[0] = so.GetComponent<Smelting>().timer;
+        }
+        else if (so.GetComponent<Cooking>())
+        {
+            amount = so.GetComponent<Cooking>().iter;
+            count = new int[2];
+            count[0] = so.GetComponent<Cooking>().min;
+            count[1] = so.GetComponent<Cooking>().woodCount;
+            timer = new float[2];
+            timer[0] = so.GetComponent<Cooking>().timer;
+            timer[0] = so.GetComponent<Cooking>().cookTime;
+        }
     }
 }
 

@@ -136,16 +136,3 @@ public class Interact : MonoBehaviour
         }
     }
 }
-
-/*
-for(int i = 0; i < checks.Length; i++)
-        {
-            if(checks[i].CraftingWindow.active)
-            {
-                temp = checks[i];
-                Debug.Log(i + "is active, " + temp.CraftingWindow.active);
-                break;
-            }
-        }
-
-*/

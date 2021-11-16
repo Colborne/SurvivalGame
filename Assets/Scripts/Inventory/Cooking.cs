@@ -11,13 +11,21 @@ public class Cooking : MonoBehaviour
     public bool cooking = false;
     InputManager inputManager;
     InteractableUI ui; 
-    int iter = -1;
-    int min = 9999;
-    public float timer = 0f;
-    public float cookTime = 0f;
+    public int iter;    
+    public int min;
+    public float timer;
+    public float cookTime;
+    public bool load = false;
     private void Awake() {
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
+        if(!load){
+            iter = -1;
+            min = 9999;
+            timer = 0f;
+            cookTime = 0f;
+            cooking = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -88,14 +96,16 @@ public class Cooking : MonoBehaviour
 
             if(cooking)
             {
+                transform.GetChild(iter + 1).gameObject.SetActive(true);
                 if(cookTime <= 10f)
                     cookTime += Time.deltaTime;          
                 else
                 {
                     cookTime = 0;
                     Instantiate(recipes[iter].cooked, transform.position + transform.up * 3, Quaternion.identity);
+                    transform.GetChild(iter + 1).gameObject.SetActive(false);
                     iter = -1;
-                    cooking = false;
+                    cooking = false;               
                 }
             }
         }

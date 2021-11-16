@@ -6,18 +6,24 @@ public class Smelting : MonoBehaviour
 {
     public SmeltingRecipe[] recipes;
     public GameObject fx;
-    public int counter;
 
-    [SerializeField]     
-    Queue<GameObject> smelt = new Queue<GameObject>();
+    [SerializeField] public Queue<GameObject> smelt = new Queue<GameObject>();
     InputManager inputManager;
     InteractableUI ui; 
-    int iter = -1;
-    int min = 9999;
-    float timer = 0f;
-    private void Awake() {
+    public int iter;
+    public int min;
+    public float timer;
+    public bool load = false;
+    
+    private void Awake() 
+    {
         inputManager = FindObjectOfType<InputManager>();
         ui = FindObjectOfType<InteractableUI>();
+        if(!load){
+            iter = -1;
+            min = 9999;
+            timer = 0f;
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -62,7 +68,6 @@ public class Smelting : MonoBehaviour
 
     void Update()
     {
-        counter = smelt.Count;
         if(smelt.Count > 0)
         {
             if(timer <= 15f)
