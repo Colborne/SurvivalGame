@@ -82,9 +82,9 @@ GameObject:
   - component: {fileID: -4222371400701811506}
   - component: {fileID: 661906922749875616}
   - component: {fileID: 2327539349135103698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Furnace (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -199,7 +199,10 @@ MonoBehaviour:
   - {fileID: -9149843791520324470}
   - {fileID: -4222371400701811506}
   fx: {fileID: 6171888644982421000}
-  counter: 0
+  iter: 0
+  min: 0
+  timer: 0
+  load: 0
 --- !u!114 &4450768929677443053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4940245170233813125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
       propertyPath: m_Name
       value: Fire03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -429,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 1376905856516238, guid: 3b89a0b81c18f8548ae1e630445434b9, type: 3}
       propertyPath: m_Name
       value: Smoke01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376905856516238, guid: 3b89a0b81c18f8548ae1e630445434b9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1376905856516238, guid: 3b89a0b81c18f8548ae1e630445434b9, type: 3}
       propertyPath: m_IsActive

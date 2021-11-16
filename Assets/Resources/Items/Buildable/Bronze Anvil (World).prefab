@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: -5096625167580110962}
   - component: {fileID: -88941080437516085}
   - component: {fileID: 5259646174700788121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bronze Anvil (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

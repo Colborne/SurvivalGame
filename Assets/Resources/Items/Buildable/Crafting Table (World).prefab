@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 7957503438314495873}
   - component: {fileID: -7528176597197665384}
   - component: {fileID: 4321796819420335351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Crafting Table (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

@@ -36,7 +36,7 @@ public class CameraManager : MonoBehaviour
     {       
         FollowTarget();
         HandleCameraCollision();
-        if(!inputManager.inventoryFlag && !inputManager.buildWindowFlag && !inputManager.isPaused)
+        if(!inputManager.inventoryFlag && !inputManager.buildWindowFlag && !inputManager.farmWindowFlag && !inputManager.isPaused)
             RotateCamera();
     }
     

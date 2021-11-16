@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1311238811876399014}
   - component: {fileID: 4645639266649886305}
   - component: {fileID: -9086267981584843575}
+  - component: {fileID: 3641917609313121342}
   m_Layer: 0
   m_Name: Coal Deposit (World)
   m_TagString: Hittable
@@ -144,3 +145,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Coal Deposit
   folder: 5
+--- !u!208 &3641917609313121342
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975001130729236790}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.013, y: 0.018000001, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.001, y: 0.012, z: 0}
+  m_TimeToStationary: 0.5

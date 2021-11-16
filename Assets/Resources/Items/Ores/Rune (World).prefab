@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4568895463835510489}
   - component: {fileID: 7252608228484866572}
   - component: {fileID: 1553148123886348863}
+  - component: {fileID: -1720907463505343941}
   m_Layer: 0
   m_Name: Rune (World)
   m_TagString: Hittable
@@ -144,3 +145,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Rune
   folder: 5
+--- !u!208 &-1720907463505343941
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312959680448277591}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.016, y: 0.015000001, z: 0.013}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: 0.012, z: 0.001}
+  m_TimeToStationary: 0.5

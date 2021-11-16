@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 616212591142583513}
   - component: {fileID: 747450748269776633}
   - component: {fileID: 747329140695852099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4827,7 +4827,7 @@ GameObject:
   - component: {fileID: 616179472118216331}
   - component: {fileID: 747032177450362495}
   - component: {fileID: 745587580055501495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9615,9 +9615,9 @@ GameObject:
   - component: {fileID: 4000454522838466808}
   - component: {fileID: -5661100304248291486}
   - component: {fileID: 3614939452408376329}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Campfire (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9737,8 +9737,11 @@ MonoBehaviour:
   wood: {fileID: 7680765855121683962, guid: 3292e69abce85554fb38f7cbd9165ce2, type: 3}
   woodCount: 0
   cooking: 0
+  iter: 0
+  min: 0
   timer: 0
   cookTime: 0
+  load: 0
 --- !u!114 &5322952778931460427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9865,6 +9868,10 @@ PrefabInstance:
       value: Fish
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1796318fcc464a43b4586af0010e27a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1796318fcc464a43b4586af0010e27a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -9885,6 +9892,10 @@ PrefabInstance:
     - target: {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
       propertyPath: m_Name
       value: Raw Meat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
       propertyPath: m_IsActive

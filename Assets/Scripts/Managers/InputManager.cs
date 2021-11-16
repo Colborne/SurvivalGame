@@ -44,6 +44,8 @@ public class InputManager : MonoBehaviour
     public bool inventoryFlag;
     public bool buildFlag;
     public bool buildWindowFlag;
+    public bool farmFlag;
+    public bool farmWindowFlag;
     public bool craftWindowFlag;
     public bool fishingFlag = false;
     public bool hasCast = false;
@@ -120,7 +122,7 @@ public class InputManager : MonoBehaviour
                 HandleJumpingInput();
                 HandleFishing();
                 
-                if(!buildFlag)
+                if(!buildFlag && !farmFlag)
                     HandleAttackInput();
             }
         }
@@ -129,7 +131,7 @@ public class InputManager : MonoBehaviour
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
         
-        if(!buildWindowFlag && !isPaused && !chestFlag)
+        if(!buildWindowFlag && !farmWindowFlag && !isPaused && !chestFlag)
             HandleInventoryInput();
     }
     private void HandleMovementInput()
@@ -291,7 +293,7 @@ public class InputManager : MonoBehaviour
 
     private void HandleMouse()
     {
-        if(!inventoryFlag && !buildWindowFlag && !isPaused)
+        if(!inventoryFlag && !buildWindowFlag && !farmWindowFlag && !isPaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

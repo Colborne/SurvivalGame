@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7977470192679184690}
   - component: {fileID: 4466432262711241638}
   - component: {fileID: -7029985154829017315}
+  - component: {fileID: -2698846099625706483}
   m_Layer: 0
   m_Name: Silver Deposit (World)
   m_TagString: Hittable
@@ -144,3 +145,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Silver Deposit
   folder: 5
+--- !u!208 &-2698846099625706483
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494902225155760971}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.016, y: 0.015000001, z: 0.013}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: 0.012, z: 0.001}
+  m_TimeToStationary: 0.5

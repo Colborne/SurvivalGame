@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 6860645896220804967}
   - component: {fileID: 5123861126051285929}
   - component: {fileID: -7521242688009878693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Alchemy Table 2 (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -184,8 +184,16 @@ PrefabInstance:
       value: Fire01
       objectReference: {fileID: 0}
     - target: {fileID: 1053203839010120, guid: a9f3cc968bdb1cd4d800ee747b078afc, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053203839010120, guid: a9f3cc968bdb1cd4d800ee747b078afc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623226520601082, guid: a9f3cc968bdb1cd4d800ee747b078afc, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1623226520601082, guid: a9f3cc968bdb1cd4d800ee747b078afc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -320,6 +328,10 @@ PrefabInstance:
     - target: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
       propertyPath: m_Name
       value: Fire03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
       propertyPath: m_StaticEditorFlags

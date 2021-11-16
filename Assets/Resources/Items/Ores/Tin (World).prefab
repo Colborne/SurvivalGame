@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4568895463835510489}
   - component: {fileID: 7252608228484866572}
   - component: {fileID: -5048230947077761786}
+  - component: {fileID: 9037709736765928723}
   m_Layer: 0
   m_Name: Tin (World)
   m_TagString: Hittable
@@ -144,3 +145,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Tin
   folder: 5
+--- !u!208 &9037709736765928723
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312959680448277591}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.019000001, y: 0.019000001, z: 0.020000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.002, y: 0.012, z: 0.002}
+  m_TimeToStationary: 0.5

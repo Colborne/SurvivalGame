@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: -5096625167580110962}
   - component: {fileID: -7294706233322419027}
   - component: {fileID: 4191962663889189215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Iron Anvil (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

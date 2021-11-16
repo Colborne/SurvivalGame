@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 6189306781464432500}
   - component: {fileID: 4400796165136148308}
   - component: {fileID: 5059537877285684688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Whetstone (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

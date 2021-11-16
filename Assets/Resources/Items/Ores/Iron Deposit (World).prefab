@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7543029450322238973}
   - component: {fileID: 3050321522928690784}
   - component: {fileID: 2647573894072766815}
+  - component: {fileID: 8912698145173357561}
   m_Layer: 0
   m_Name: Iron Deposit (World)
   m_TagString: Hittable
@@ -145,3 +146,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Iron Deposit
   folder: 5
+--- !u!208 &8912698145173357561
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628796761403464685}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.019000001, y: 0.024, z: 0.018000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.016, z: 0}
+  m_TimeToStationary: 0.5

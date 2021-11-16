@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: -5096625167580110962}
   - component: {fileID: 4107553432436790508}
   - component: {fileID: -5993385451335885203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mithril Anvil (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

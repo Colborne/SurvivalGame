@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: -2093668745112607090}
   - component: {fileID: -1126593442823306132}
   - component: {fileID: 4311218581402421661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest (World)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,9 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3436a52269e3a74b95b461db9e683f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chest: []
   iter: 0
   window: {fileID: 0}
   cm: {fileID: 0}
+  load: 0
 --- !u!114 &4311218581402421661
 MonoBehaviour:
   m_ObjectHideFlags: 0
