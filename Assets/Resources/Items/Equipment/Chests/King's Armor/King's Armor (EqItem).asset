@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
   m_Name: King's Armor (EqItem)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 7656005128227235175, guid: 81832a13c3026e049adfef148cfeec8e, type: 3}
-  itemIcon: {fileID: 21300000, guid: b41e7d1f95ee6fc43987f5851852b2dc, type: 3}
   itemName: King's Armor
   description: The King's Golden Armor
   weight: 10
   baseDefense: 15
   resistanceType: 
   specialDefense: 0
+  strengthBonus: 1
+  rangeBonus: 1
+  mageBonus: 1
+  jumpBonus: 1
+  baseSpeedBonus: 1
+  swimSpeedBonus: 1

@@ -33,7 +33,13 @@ public class ObjectManager : MonoBehaviour
             GameObject Spawn = Instantiate(Resources.Load(data.objectDatas[i].localPath) as GameObject , position, rotation);
             Spawn.transform.localScale = localScale;
 
-            if(Spawn.GetComponent<ObjectStats>())
+            if(Spawn.GetComponent<GrowingObject>())
+            {
+                Spawn.GetComponent<GrowingObject>().load = true;
+                Spawn.GetComponent<GrowingObject>().currentHealth = data.objectDatas[i].amount;
+                Spawn.GetComponent<GrowingObject>().timer = data.objectDatas[i].timer[0];
+            }
+            else if(Spawn.GetComponent<ObjectStats>())
                 Spawn.GetComponent<ObjectStats>().currentHealth = data.objectDatas[i].amount;
             else if(Spawn.GetComponent<EnemyStats>())
                 Spawn.GetComponent<EnemyStats>().currentHealth = data.objectDatas[i].amount;

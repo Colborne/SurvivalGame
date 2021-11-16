@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -2715114139002397119}
   - component: {fileID: -8060822379630316345}
   - component: {fileID: -7829369793836700094}
+  - component: {fileID: -2859949922239143833}
   m_Layer: 0
   m_Name: OakTree (World)
   m_TagString: Hittable
@@ -268,3 +269,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Oak/OakTree
   folder: 8
+--- !u!114 &-2859949922239143833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910646186869756628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260218e3d148984ba31051bf91c306d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 5243321244233328224, guid: 1ca3a64c3a2b7354c989ec0f00afaac1, type: 3}
+  rarity: 03000000

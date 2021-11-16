@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6516585554338416113}
   - component: {fileID: 7734880407932242442}
   - component: {fileID: 3210956734517416007}
+  - component: {fileID: 1722983071071071914}
   m_Layer: 0
   m_Name: MahoganyTree (World)
   m_TagString: Hittable
@@ -283,3 +284,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Mahogany/MahoganyTree
   folder: 8
+--- !u!114 &1722983071071071914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910646186869756628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260218e3d148984ba31051bf91c306d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 4296486644501972682, guid: af2aee1c643a4a247bf0b777c197c616, type: 3}
+  rarity: 0a000000

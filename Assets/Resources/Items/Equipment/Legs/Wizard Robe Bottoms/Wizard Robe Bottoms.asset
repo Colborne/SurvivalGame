@@ -20,7 +20,7 @@ MonoBehaviour:
   specialDefense: 0
   strengthBonus: 1
   rangeBonus: 1
-  mageBonus: 10
+  mageBonus: 3
   jumpBonus: 1
   baseSpeedBonus: 1
   swimSpeedBonus: 1

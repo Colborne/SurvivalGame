@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrowingObject : MonoBehaviour
+public class GrowingObject : ObjectStats
 {
-    public float timeSinceInitialization;
     public float timer;
     public float growthTime;
     public GameObject grown;
@@ -13,14 +12,14 @@ public class GrowingObject : MonoBehaviour
     void Start()
     {
         if(!load)
-            timer = Time.timeSinceLevelLoad;
+            timer = 0f;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        timeSinceInitialization = Time.timeSinceLevelLoad - timer;
-        if(timeSinceInitialization > growthTime){
+        timer += Time.deltaTime;
+        if(timer > growthTime){
             Instantiate(grown, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

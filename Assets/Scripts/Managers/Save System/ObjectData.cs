@@ -49,8 +49,14 @@ public class ObjectData
         scale[0] = so.transform.localScale.x;
         scale[1] = so.transform.localScale.y;
         scale[2] = so.transform.localScale.z;      
-
-        if(so.GetComponent<ObjectStats>())//!(ReferenceEquals(so.objectStats, null) ? false : (so.objectStats ? false : true)))
+        
+        if (so.GetComponent<GrowingObject>())
+        {
+            amount = so.GetComponent<ObjectStats>().currentHealth;
+            timer = new float[1];
+            timer[0] = so.GetComponent<GrowingObject>().timer;
+        }
+        else if(so.GetComponent<ObjectStats>())//!(ReferenceEquals(so.objectStats, null) ? false : (so.objectStats ? false : true)))
             amount = so.GetComponent<ObjectStats>().currentHealth;
         else if(so.GetComponent<EnemyStats>())
             amount = so.GetComponent<EnemyStats>().currentHealth;

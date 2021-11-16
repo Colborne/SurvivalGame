@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 2445048810342513806}
   - component: {fileID: -5253604539497567299}
   - component: {fileID: 6393872506943554625}
+  - component: {fileID: -6640598672619768137}
   m_Layer: 0
   m_Name: Orc (World)
   m_TagString: Enemy
@@ -821,6 +822,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Orc
   folder: 4
+--- !u!114 &-6640598672619768137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7260858356432284582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260218e3d148984ba31051bf91c306d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 5641967266906390293, guid: 57f28ac272b1b644a95e994aa7ef9214, type: 3}
+  - {fileID: 5258623613596908196, guid: 886b84829307f1247aeb2c587261354a, type: 3}
+  rarity: 0a0000000a000000
 --- !u!1 &7479231876983945254
 GameObject:
   m_ObjectHideFlags: 0

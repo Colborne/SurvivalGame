@@ -18,3 +18,9 @@ MonoBehaviour:
   baseDefense: 12
   resistanceType: 
   specialDefense: 0
+  strengthBonus: 1
+  rangeBonus: 1.5
+  mageBonus: 1
+  jumpBonus: 1
+  baseSpeedBonus: 1
+  swimSpeedBonus: 1

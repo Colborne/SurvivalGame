@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af059acdbe5fbb41aeccf2c1f0590e7, type: 3}
   m_Name: Barbarian Top (Equipment)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 3749380191955315042, guid: b6aff55ebd163b1478d7ace132ce0d1d, type: 3}
-  itemIcon: {fileID: 21300000, guid: 60795c2e339804645a56db66d1e92f7f, type: 3}
   itemName: Barbarian Chestplate
   description: Yergy Shmergy
   weight: 5
-  baseDefense: 10
+  baseDefense: 5
   resistanceType: 
   specialDefense: 0
+  strengthBonus: 2
+  rangeBonus: 1
+  mageBonus: 1
+  jumpBonus: 1
+  baseSpeedBonus: 1
+  swimSpeedBonus: 1
