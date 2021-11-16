@@ -2367,7 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 107768770}
   iteration: 53
   item: {fileID: 7680765855121683962, guid: 2357c3c6899fca8478415e996c94c1f1, type: 3}
@@ -5876,7 +5876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 244442953}
   iteration: 66
   item: {fileID: 7680765855121683962, guid: 69a42c3cd2401854bbb4e5718a882d69, type: 3}
@@ -12784,7 +12784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 440473055}
   iteration: 65
   item: {fileID: 7680765855121683962, guid: 5ecaac844a3b1d14ba06f7f5234c553c, type: 3}
@@ -13267,7 +13267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 454334149}
   iteration: 69
   item: {fileID: 7680765855121683962, guid: cb3efb6b1223c4d4a8324dcbd5dd14df, type: 3}
@@ -14769,7 +14769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 511371821}
   iteration: 59
   item: {fileID: 7680765855121683962, guid: 9df3c08c98f9bb744bff6e75ff9edb00, type: 3}
@@ -16783,7 +16783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 604516307}
   iteration: 63
   item: {fileID: 7680765855121683962, guid: 9455da2032edc854eaceb1f20c84a223, type: 3}
@@ -17142,7 +17142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 613571617}
   iteration: 55
   item: {fileID: 7680765855121683962, guid: 189e76c0eec1bbe45bf01e27b3b34a4f, type: 3}
@@ -18442,7 +18442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 665625167}
   iteration: 58
   item: {fileID: 7680765855121683962, guid: 1bac7d81b1ddbe44da425eedcdd64216, type: 3}
@@ -18956,7 +18956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 684589665}
   iteration: 75
   item: {fileID: 7680765855121683962, guid: f2b374e929ac2cb4394f467769c0473d, type: 3}
@@ -21204,7 +21204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 718577537}
   iteration: 67
   item: {fileID: 7680765855121683962, guid: 07bcfd48106e7704d960757abdbf37fc, type: 3}
@@ -22130,7 +22130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 758015228}
   iteration: 73
   item: {fileID: 7680765855121683962, guid: 61318c7711dc96b43bda3dd90ebd794d, type: 3}
@@ -22258,7 +22258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 769480215}
   iteration: 60
   item: {fileID: 7680765855121683962, guid: 58411794b43e567489508fc6eb200c95, type: 3}
@@ -22998,7 +22998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 787353719}
   iteration: 61
   item: {fileID: 7680765855121683962, guid: d8185746ea256a64f9a28d704bf90e2d, type: 3}
@@ -24430,7 +24430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 819052714}
   iteration: 74
   item: {fileID: 7680765855121683962, guid: 91b18857c40e49048ba538c13cc391bb, type: 3}
@@ -26903,7 +26903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 917312510}
   iteration: 72
   item: {fileID: 7680765855121683962, guid: 610043d237a43a242ad7eb3b9e4590cf, type: 3}
@@ -29362,7 +29362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1018475928}
   iteration: 68
   item: {fileID: 7680765855121683962, guid: be6adc0487c0ab34ca2bc34b43f8fcdc, type: 3}
@@ -29746,7 +29746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1030897343}
   iteration: 57
   item: {fileID: 7680765855121683962, guid: a9d87fe9b4f64f643b1faf750a3f096d, type: 3}
@@ -30241,7 +30241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1048349060}
   iteration: 54
   item: {fileID: 7680765855121683962, guid: 7058ffb1e74ed814f9537a974f496491, type: 3}
@@ -32024,7 +32024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1128346263}
   iteration: 64
   item: {fileID: 7680765855121683962, guid: 2b83eab44b203024e948a05485b61aad, type: 3}
@@ -35575,7 +35575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1280619664}
   iteration: 76
   item: {fileID: 7680765855121683962, guid: 26a45aa3e3052744b9e658a073afc977, type: 3}
@@ -44160,7 +44160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1612690916}
   iteration: 52
   item: {fileID: 7680765855121683962, guid: 6dbf44ff63d354944bc90b96402cd070, type: 3}
@@ -49157,7 +49157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1843675422}
   iteration: 62
   item: {fileID: 7680765855121683962, guid: da3071256e07297438c380e8a143838d, type: 3}
@@ -54270,7 +54270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1967633183}
   iteration: 56
   item: {fileID: 7680765855121683962, guid: 1be6e2fbeed80ec4da96f519118d4073, type: 3}
@@ -54654,7 +54654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 1970489134}
   iteration: 71
   item: {fileID: 7680765855121683962, guid: a400b40c385686548a03a300351922e2, type: 3}
@@ -57217,7 +57217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71f6e9a7235d4a872c71bb0fb2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSystem: {fileID: 250722434}
+  craftingSystem: {fileID: 1419909928}
   recipe: {fileID: 2037286808}
   iteration: 70
   item: {fileID: 7680765855121683962, guid: 3e72a497684463743ba4d3830a598a2a, type: 3}
