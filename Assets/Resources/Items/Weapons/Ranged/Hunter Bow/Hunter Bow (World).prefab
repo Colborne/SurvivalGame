@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Weapons/Ranged/Hunter Bow/Hunter Bow
+  AssetPath: Ranged/Hunter Bow/Hunter Bow
   folder: 9
