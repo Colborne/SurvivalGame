@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimatorManager : MonoBehaviour
 {    
+    SoundManager soundManager;
     public Animator animator;
     int horizontal;
     int vertical;
@@ -12,7 +13,8 @@ public class AnimatorManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         horizontal = Animator.StringToHash("H");
-        vertical = Animator.StringToHash("V");
+        vertical = Animator.StringToHash("V");   
+        soundManager = GetComponent<SoundManager>();
     }
 
     public void PlayTargetAnimation(string targetAnimation, bool isInteracting)
@@ -68,6 +70,7 @@ public class AnimatorManager : MonoBehaviour
         else if(verticalMovement < -0.55f)
         {
             snappedVertical = -1;
+            
         }
         else
         {
@@ -97,6 +100,9 @@ public class AnimatorManager : MonoBehaviour
             else
                 snappedVertical = 4;
         }
+
+        //if(snappedVertical > 0 && snappedVertical < 3)
+            //soundManager.PlaySound("Sounds/Footstep_Dirt_0" + Random.Range(0,8).ToString());
 
         animator.SetFloat(horizontal, snappedHorizontal);//, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, snappedVertical, 0.1f, Time.deltaTime);

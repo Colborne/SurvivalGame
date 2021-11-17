@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
         var Clip = Resources.Load(audio) as AudioClip;
         if(!audioSource.isPlaying)
         {
-            audioSource.PlayOneShot(Clip);
+            audioSource.PlayOneShot(Clip, Random.Range(.3f,1f));
         }
     }
 }

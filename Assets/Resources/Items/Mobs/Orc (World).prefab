@@ -837,7 +837,7 @@ MonoBehaviour:
   items:
   - {fileID: 5641967266906390293, guid: 57f28ac272b1b644a95e994aa7ef9214, type: 3}
   - {fileID: 5258623613596908196, guid: 886b84829307f1247aeb2c587261354a, type: 3}
-  rarity: 0a0000000a000000
+  rarity: 8000000080000000
 --- !u!1 &7479231876983945254
 GameObject:
   m_ObjectHideFlags: 0

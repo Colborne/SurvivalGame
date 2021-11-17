@@ -197,10 +197,11 @@ public class InputManager : MonoBehaviour
     {
         if(attackChargeTimer > 0f)
         {
+            stats.UseStamina(.25f);
             if(attackChargeTimer < 1f)
                 attackChargeTimer += 1f * Time.deltaTime;
-            
-            if(!leftMouseInput)
+
+            if(!leftMouseInput || stats.currentStamina < .25f)
             {
                 playerAttacker.HandleRangedAction(equipmentManager.rightWeapon);
             }
@@ -246,10 +247,13 @@ public class InputManager : MonoBehaviour
                             else
                                 playerAttacker.HandleLightAttack(equipmentManager.rightWeapon);
                         }
-                        else if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1, true))
+                        else if(stats.currentStamina > equipmentManager.rightWeapon.baseStamina)
                         {
-                            attackChargeTimer += 1f * Time.deltaTime;
-                            playerAttacker.HandleChargeAction(equipmentManager.rightWeapon);
+                            if(GameManager.Instance.CheckInventoryForItem(equipmentManager.rightWeapon.projectile.GetComponentInChildren<Projectile>().item, 1, true))
+                            {
+                                attackChargeTimer += 1f * Time.deltaTime;
+                                playerAttacker.HandleChargeAction(equipmentManager.rightWeapon);
+                            }
                         }
                     }
                 }
