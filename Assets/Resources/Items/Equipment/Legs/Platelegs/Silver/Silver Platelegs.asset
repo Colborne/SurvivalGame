@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Silver Platelegs
   description: Silver Platelegs
-  weight: 97.5
+  weight: 76.5
   baseDefense: 21
   resistanceType: 
   specialDefense: 0

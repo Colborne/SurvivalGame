@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Refined Seastone
   description: Smooth Seastone
-  weight: 6
+  weight: 3.5
   resourceType: Ore

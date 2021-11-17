@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Iron Platebody
   description: An Iron Platebody
-  weight: 98
+  weight: 80
   baseDefense: 18
   resistanceType: 
   specialDefense: 0

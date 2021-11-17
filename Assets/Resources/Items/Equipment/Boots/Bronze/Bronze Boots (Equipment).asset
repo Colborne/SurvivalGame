@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bronze Boots
   description: Boots Made of Bronze
-  weight: 21
+  weight: 22
   baseDefense: 2
   resistanceType: None
   specialDefense: 0

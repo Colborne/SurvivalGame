@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Silver Platebody
   description: A Silver Platebody
-  weight: 130
+  weight: 102
   baseDefense: 32
   resistanceType: 
   specialDefense: 0

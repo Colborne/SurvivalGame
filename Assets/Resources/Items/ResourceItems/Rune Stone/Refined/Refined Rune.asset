@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Refined Rune Stone
   description: Can be magically imbued
-  weight: 1
+  weight: 0.2
   resourceType: Ore

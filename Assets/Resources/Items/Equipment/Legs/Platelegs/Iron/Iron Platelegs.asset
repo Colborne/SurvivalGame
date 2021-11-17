@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Iron Platelegs
   description: Iron Platelegs
-  weight: 73.5
+  weight: 60
   baseDefense: 12
   resistanceType: 
   specialDefense: 0

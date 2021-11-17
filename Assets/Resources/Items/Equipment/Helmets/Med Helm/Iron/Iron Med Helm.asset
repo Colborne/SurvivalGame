@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Iron Med Helm
   description: An Average Medium Helmet
-  weight: 25
+  weight: 20
   baseDefense: 3
   resistanceType: 
   specialDefense: 0

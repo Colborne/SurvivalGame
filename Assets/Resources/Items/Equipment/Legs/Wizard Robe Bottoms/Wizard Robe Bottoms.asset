@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wizard Robe Bottoms
   description: Basic Robe Bottoms
-  weight: 1
+  weight: 2
   baseDefense: 5
   resistanceType: 
   specialDefense: 0

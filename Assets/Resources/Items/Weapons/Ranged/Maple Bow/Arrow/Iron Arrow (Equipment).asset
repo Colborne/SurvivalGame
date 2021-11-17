@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Iron Arrow
   description: woosh
-  weight: 0.1
+  weight: 0.2
   resourceType: Projectile

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Iron Full Helm
   description: A True Knight's Helmet
-  weight: 39
+  weight: 32
   baseDefense: 6
   resistanceType: 
   specialDefense: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Magic Essence
   description: Magical Brew
-  weight: 0.5
+  weight: 0.2
   resourceType: Craftable

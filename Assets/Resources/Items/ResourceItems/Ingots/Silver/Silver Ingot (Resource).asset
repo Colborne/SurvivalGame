@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
   m_Name: Silver Ingot (Resource)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 6010797225960032382, guid: c2467b0eb2f67f040a1fcd841953401c, type: 3}
-  itemIcon: {fileID: 21300000, guid: c2359bb338a2d114784d06a0356b45d4, type: 3}
   itemName: Silver Ingot
   description: An Ingot of Refined Silver
-  weight: 3
+  weight: 5.1
   resourceType: Metal

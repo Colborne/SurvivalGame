@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Staghelm
   description: "hj\xF6rtr"
-  weight: 10
+  weight: 25
   baseDefense: 10
   resistanceType: 
   specialDefense: 0

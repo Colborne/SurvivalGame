@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Silver Chainmail
   description: A Silver Chainmail
-  weight: 78
+  weight: 61.2
   baseDefense: 15
   resistanceType: 
   specialDefense: 0

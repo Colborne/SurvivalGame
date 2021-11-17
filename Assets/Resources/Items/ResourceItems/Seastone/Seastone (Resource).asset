@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3158bed70a97fd47988da322b4e0bcf, type: 3}
   m_Name: Seastone (Resource)
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 7533301453620370007, guid: 3035b24544eed074baa3196f76d9f540, type: 3}
-  itemIcon: {fileID: 21300000, guid: 9acc7d4db65fd3640b6004df97bfc411, type: 3}
   itemName: Seastone
   description: A Seastone
-  weight: 8
+  weight: 5.1
   resourceType: Ore

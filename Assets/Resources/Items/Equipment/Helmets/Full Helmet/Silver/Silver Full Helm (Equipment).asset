@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Silver Full Helm
   description: A True Knight's Helmet
-  weight: 52
+  weight: 40.8
   baseDefense: 11
   resistanceType: 
   specialDefense: 0

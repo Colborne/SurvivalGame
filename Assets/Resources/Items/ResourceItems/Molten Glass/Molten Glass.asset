@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Molten Glass
   description: A Lump of Molten Glass
-  weight: 0.05
+  weight: 0.1
   resourceType: Ore

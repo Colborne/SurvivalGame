@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Iron Boots
   description: Boots Made Of Iron
-  weight: 10
-  baseDefense: 10
+  weight: 16
+  baseDefense: 4
   resistanceType: None
   specialDefense: 0
   strengthBonus: 1

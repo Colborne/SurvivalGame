@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Silver Med Helm
   m_EditorClassIdentifier: 
   itemName: Silver Med Helm
-  description: An Average Medium Helmet
+  description: 25.5
   weight: 33
   baseDefense: 5
   resistanceType: 

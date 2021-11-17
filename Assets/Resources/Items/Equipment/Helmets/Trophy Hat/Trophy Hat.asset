@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Trophy Hat
   description: Trophy Hat
-  weight: 3
+  weight: 15
   baseDefense: 1
   resistanceType: 
   specialDefense: 0
