@@ -31,6 +31,7 @@ public class MobAI : MonoBehaviour
     float speed;
     Vector3 lastPosition;
     string[] desiredTameable;
+    float topSpeed = 1f;
 
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class MobAI : MonoBehaviour
         if (NavMesh.SamplePosition(transform.position, out closestHit, 500f, NavMesh.AllAreas))
             transform.position = closestHit.position;
     }
+
     private void Update()
     {
         if (agent.isOnNavMesh)
@@ -70,6 +72,7 @@ public class MobAI : MonoBehaviour
                     Patrol();
                 else 
                     Idle();    
+                
                 Collider[] tameableInRange = Seek(transform.position, alertRange, whatIsTameable);
                 if (tameableInRange.Length > 0 && tamedAmount < 100 && isHungry)
                 {
@@ -94,18 +97,21 @@ public class MobAI : MonoBehaviour
                     gameObject.GetComponent<BoxCollider>().enabled = true;
                 }
             }
+            
             if ((mobType == "Deer" && GameManager.Instance.helmetID != 173) && !tamed && ((playerInAlertRange && !playerLocomotion.isSneaking) || playerInSight))
                 Flee();
         }
 
         speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
+        animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, topSpeed));
         lastPosition = transform.position;
     }
+
     private void Eat(GameObject tameable)
     {
+        topSpeed = 1f;
         agent.SetDestination(tameable.transform.position);
         walkPoint = tameable.transform.position;
-        animator.SetFloat("V", 1f);
         patrolState = false;
         waitingToPatrol = false;
         idleState = false;
@@ -125,7 +131,7 @@ public class MobAI : MonoBehaviour
     {
         agent.SetDestination(mate.transform.position);
         walkPoint = mate.transform.position;
-        animator.SetFloat("V", 1f);
+        topSpeed = 1f;
         patrolState = false;
         waitingToPatrol = false;
         idleState = false;
@@ -141,16 +147,16 @@ public class MobAI : MonoBehaviour
     }
     private void Idle()
     {
+        topSpeed = 0f;
         if(!grazeCheck && !grazeAttempt)
         {
-            animator.SetFloat("V", 0.0f);
-        
             if(Random.Range(0,2) == 0)
             {
                 animator.CrossFade("GrazeStart", 0f);
                 grazeCheck = true;
             }
-            else{
+            else
+            {
                 grazeAttempt = true;
                 grazeCheck = false;
             }      
@@ -177,19 +183,17 @@ public class MobAI : MonoBehaviour
 
     private void Patrol()
     {
+        topSpeed = .5f;
         if (walkPointSet)
         {
             if(speed > 0)
             {
-                animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, .5f));
                 if(grazeCheck)
                 {
                     animator.CrossFade("GrazeEnd", 0f);
                     grazeCheck = false;
                 }
-            }
-            else
-                animator.SetFloat("V", 0f);     
+            } 
         }     
         
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -197,7 +201,6 @@ public class MobAI : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1.5f)
         {
-            animator.SetFloat("V", 0f);
             walkPointSet = false;
             idleState = true;
             patrolState = false;
@@ -222,6 +225,7 @@ public class MobAI : MonoBehaviour
 
     private void Flee()
     {
+        topSpeed = 1f;
         if(grazeCheck)
         {
             animator.CrossFade("GrazeEnd", 0f);
@@ -244,8 +248,7 @@ public class MobAI : MonoBehaviour
         transform.rotation = startTransform.rotation;
 
         agent.SetDestination(hit.position);
-        animator.SetFloat("V", Mathf.Clamp(speed * 10f, 0f, 1.0f));
-        
+
         if(Vector3.Distance(player.position, transform.position) > 25f)
         {  
             idleState = true;
@@ -272,6 +275,7 @@ public class MobAI : MonoBehaviour
 
     public void TakeDamage()
     {
+        speed = 0f;
         animator.SetBool("takingDamage", true);
         animator.CrossFade("Damage", 0.2f);
     }

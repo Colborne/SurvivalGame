@@ -48,6 +48,7 @@ public class EnemyAI : MonoBehaviour
         if (NavMesh.SamplePosition(transform.position, out closestHit, 500f, NavMesh.AllAreas))
             transform.position = closestHit.position;
     }
+
     private void Update()
     {
         if (agent.isOnNavMesh)
@@ -79,10 +80,8 @@ public class EnemyAI : MonoBehaviour
                 }
                 
                 if (playerInAttackRange)
-                {
-                    if(!alreadyAttacked)
-                        AttackPlayer(); 
-                }
+                    AttackPlayer(); 
+                
             
                 speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude, 0.7f);
                 lastPosition = transform.position;
@@ -160,13 +159,13 @@ public class EnemyAI : MonoBehaviour
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
-        animator.SetBool("isAttacking", true);
         agent.ResetPath();
         animator.SetFloat("V", 0f);
         transform.LookAt(player.position);
 
         if (!alreadyAttacked)
         {
+            animator.SetBool("isAttacking", true);
             alreadyAttacked = true;
             Invoke("ResetAttack", timeBetweenAttacks);
             if(ranging || meleeCount == 0)
@@ -175,6 +174,9 @@ public class EnemyAI : MonoBehaviour
                 animator.CrossFade("Attack" + Random.Range(1, meleeCount + 1).ToString(), 0.2f);
             ranging = false;
         }
+        else
+            animator.SetBool("isAttacking", false);
+        
     }
     private void ResetAttack()
     {
@@ -214,8 +216,11 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage()
     {
-        animator.SetBool("takingDamage", true);
-        animator.CrossFade("Damage", 0.2f);
-        hitbox.SetActive(false);
+        if(!animator.GetBool("isAttacking"))
+        {
+            animator.SetBool("takingDamage", true);
+            animator.CrossFade("Damage", 0.2f);
+            hitbox.SetActive(false);
+        }
     }
 }
