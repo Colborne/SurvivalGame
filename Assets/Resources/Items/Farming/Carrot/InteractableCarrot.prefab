@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 6036222715581876149}
   - component: {fileID: 243732345298352869}
   - component: {fileID: 89041732455871004}
-  - component: {fileID: -2929323415922424317}
   - component: {fileID: -7088744473263633731}
+  - component: {fileID: -7631680963178096175}
   m_Layer: 0
-  m_Name: Acorn (World)
+  m_Name: InteractableCarrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5243321244233328224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.86096, y: 254.64384, z: -26.935951}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5243321244233328224}
-  m_Mesh: {fileID: 5623691753684549296, guid: f9757cb96a3e6fc44869c63299593808, type: 3}
+  m_Mesh: {fileID: 4970989848755135003, guid: 7c34a95e6c74a404a86888c2f1d452f3, type: 3}
 --- !u!23 &6036222715581876149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,8 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
-  - {fileID: 2100000, guid: f69b868ad3a65724abe2f8660011301a, type: 2}
+  - {fileID: 2100000, guid: 4889cfd021560d845a3514e5a03b3e8c, type: 2}
+  - {fileID: 2100000, guid: 4787faab8e2d986479acd23da692df46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,24 +112,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 5623691753684549296, guid: f9757cb96a3e6fc44869c63299593808, type: 3}
---- !u!114 &-2929323415922424317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243321244233328224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef91f53f1f3ca9c4bbd15b1ce3287929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 178
-  amount: 1
-  _name: 
-  autoPickup: 0
-  playerDropped: 0
+  m_Mesh: {fileID: 4970989848755135003, guid: 7c34a95e6c74a404a86888c2f1d452f3, type: 3}
 --- !u!114 &-7088744473263633731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,5 +125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Farming/Acorn
-  folder: 8
+  AssetPath: Carrot/InteractableCarrot
+  folder: 10
+--- !u!114 &-7631680963178096175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243321244233328224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339b0bde98f2b2343b747df5cea51c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 7
+  interactionText: Pick Carrot
+  item: {fileID: 0}
+  outItem: 182
+  level: 0

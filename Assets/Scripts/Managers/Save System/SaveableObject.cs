@@ -15,7 +15,8 @@ public class SaveableObject : MonoBehaviour
         Others,
         ResourceItems,
         Trees,
-        Weapons
+        Weapons,
+        Farming
     }
     
     public string AssetPath;

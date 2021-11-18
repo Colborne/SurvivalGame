@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6058380433340147435
+--- !u!1 &3016639193769682516
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6870347108165811281}
-  - component: {fileID: 7563720661749068788}
-  - component: {fileID: 5697982169235130174}
-  - component: {fileID: 600090915056189933}
-  - component: {fileID: 4156832973287601393}
-  - component: {fileID: -8910409063668405260}
+  - component: {fileID: 2492339911065730286}
+  - component: {fileID: 1529335345929712459}
+  - component: {fileID: 3665293673232729985}
+  - component: {fileID: 8867388206243418771}
+  - component: {fileID: -8407020191255858066}
+  - component: {fileID: 3768523005556374945}
+  - component: {fileID: -7511705857374182457}
   m_Layer: 0
-  m_Name: InteractableMushroom (World)
-  m_TagString: Untagged
+  m_Name: Oak Sapling (World)
+  m_TagString: Hittable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6870347108165811281
+--- !u!4 &2492339911065730286
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058380433340147435}
+  m_GameObject: {fileID: 3016639193769682516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 80, y: 100, z: 80}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7563720661749068788
+--- !u!33 &1529335345929712459
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058380433340147435}
-  m_Mesh: {fileID: 7682724294687611154, guid: 5c4a6977fc326764d8344e7851ca501b, type: 3}
---- !u!23 &5697982169235130174
+  m_GameObject: {fileID: 3016639193769682516}
+  m_Mesh: {fileID: -5495902117074765545, guid: b31b42838f06ef344801ba38658c56ce, type: 3}
+--- !u!23 &3665293673232729985
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058380433340147435}
+  m_GameObject: {fileID: 3016639193769682516}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,8 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8131ae60b3329e48a33c3e25af8a182, type: 2}
-  - {fileID: 2100000, guid: 5a269d1bd75b8f54cbb7b29391b582b4, type: 2}
+  - {fileID: 2100000, guid: 4787faab8e2d986479acd23da692df46, type: 2}
+  - {fileID: 2100000, guid: bc018e915db89e54abc9fcbe1c7cdf94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,47 +86,66 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &600090915056189933
-BoxCollider:
+--- !u!64 &8867388206243418771
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058380433340147435}
+  m_GameObject: {fileID: 3016639193769682516}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.05, z: 0.05}
-  m_Center: {x: 4.656613e-10, y: 0.0010999697, z: 0.00030153664}
---- !u!114 &4156832973287601393
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: b31b42838f06ef344801ba38658c56ce, type: 3}
+--- !u!114 &-8407020191255858066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058380433340147435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 339b0bde98f2b2343b747df5cea51c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionType: 7
-  interactionText: Pick 'Mushroom'
-  item: {fileID: 0}
-  outItem: 125
-  level: 1
---- !u!114 &-8910409063668405260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058380433340147435}
+  m_GameObject: {fileID: 3016639193769682516}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6460085cc593d2440afe2cd1bfc5bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetPath: Mushroom/InteractableMushroom
-  folder: 2
+  AssetPath: Oak Tree/Oak Sapling
+  folder: 10
+--- !u!208 &3768523005556374945
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016639193769682516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.007, y: 0.010000001, z: 0.007}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.009000001, z: 0.001}
+  m_TimeToStationary: 0.5
+--- !u!114 &-7511705857374182457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016639193769682516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdc9cd52624925499a3fbf00161d13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 15
+  currentHealth: 15
+  FloatingText: {fileID: 0}
+  timer: 0
+  growthTime: 120
+  grown: {fileID: 910646186869756628, guid: e1f645897e3428648a4ad8167e498fe2, type: 3}
+  load: 0
