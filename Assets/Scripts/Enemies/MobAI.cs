@@ -278,6 +278,6 @@ public class MobAI : MonoBehaviour
     {
         topSpeed = .2f;
         animator.SetBool("takingDamage", true);
-        animator.CrossFade("Damage", 0.2f);
+        animator.CrossFade("Damage", 0f);
     }
 }
