@@ -25,6 +25,7 @@ public class ObjectData
         else if(so.folder == SaveableObject.itemType.Buildable) temp = "Buildable/";
         else if(so.folder == SaveableObject.itemType.Consumable) temp = "Consumable/";
         else if(so.folder == SaveableObject.itemType.Equipment) temp = "Equipment/";
+        else if(so.folder == SaveableObject.itemType.Farming) temp = "Farming/";
         else if(so.folder == SaveableObject.itemType.Mobs) temp = "Mobs/";
         else if(so.folder == SaveableObject.itemType.Ores) temp = "Ores/";
         else if(so.folder == SaveableObject.itemType.Others) temp = "Others/";

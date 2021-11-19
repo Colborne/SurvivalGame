@@ -173,10 +173,7 @@ public class EnemyAI : MonoBehaviour
             else
                 animator.CrossFade("Attack" + Random.Range(1, meleeCount + 1).ToString(), 0.2f);
             ranging = false;
-        }
-        else
-            animator.SetBool("isAttacking", false);
-        
+        }       
     }
     private void ResetAttack()
     {
