@@ -362,12 +362,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3009438285391656348}
-  - component: {fileID: 6295121498259019555}
   - component: {fileID: 6699151787860834384}
   - component: {fileID: 312204621970993531}
   - component: {fileID: 1896039051543909359}
   - component: {fileID: 8556070769129690149}
+  - component: {fileID: 6295121498259019555}
   - component: {fileID: -4623061355702239093}
+  - component: {fileID: -5051303910703148732}
   m_Layer: 12
   m_Name: Fawn (World)
   m_TagString: Enemy
@@ -391,26 +392,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6295121498259019555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2488375690241158950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796d4fedffd0b6e40944b4cc40ea0df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 30
-  FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
-  fx: {fileID: 1968586304485042, guid: 6c86c599d7bf3464eb4506d2584fbe57, type: 3}
-  drop:
-  - {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
-  - {fileID: 6058380433340147435, guid: 6f42c8b65721ecc44ae2d5cc79dd4332, type: 3}
-  - {fileID: 888955376435412549, guid: bb1ae64dd4253cc41a70edcbbec53f18, type: 3}
 --- !u!114 &6699151787860834384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +490,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 3}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6295121498259019555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488375690241158950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796d4fedffd0b6e40944b4cc40ea0df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 30
+  FloatingText: {fileID: 6898103163939748576, guid: 6fa2cb8dc4dcf154db422cc996aaaae4, type: 3}
+  fx: {fileID: 1968586304485042, guid: 6c86c599d7bf3464eb4506d2584fbe57, type: 3}
+  drop:
+  - {fileID: 7250630547947749259, guid: 98e3620729efba4488710304da26b71d, type: 3}
+  - {fileID: 6058380433340147435, guid: 6f42c8b65721ecc44ae2d5cc79dd4332, type: 3}
+  - {fileID: 888955376435412549, guid: bb1ae64dd4253cc41a70edcbbec53f18, type: 3}
 --- !u!114 &-4623061355702239093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +524,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Fawn
   folder: 4
+--- !u!114 &-5051303910703148732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488375690241158950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdc9cd52624925499a3fbf00161d13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  FloatingText: {fileID: 0}
+  timer: 0
+  growthTime: 240
+  grown: {fileID: 2846415316367086479, guid: f3cf2ee29c5c36a4a9a95d3b6b146cd2, type: 3}
+  load: 0
 --- !u!1 &3114830048041045056
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,4 +24,14 @@ public class GrowingObject : ObjectStats
             Destroy(gameObject);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+
+    }
+
+    void ShowDamage(string text)
+    {
+
+    }
 }

@@ -140,7 +140,8 @@ public class MobAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - mate.transform.position;
         if (distanceToWalkPoint.magnitude < 3f)
         {
-            Instantiate(offspring, mate.transform.position, Quaternion.identity);
+            var _offspring = Instantiate(offspring, mate.transform.position, Quaternion.identity);
+            _offspring.GetComponent<MobAI>().tamedAmount = 100;
             isHungry = false;
             hungerTimer = 0f;
         }

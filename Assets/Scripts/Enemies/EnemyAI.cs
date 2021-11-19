@@ -193,9 +193,14 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireCube(transform.forward + new Vector3(0, sightRange.y/2, sightRange.z/2), sightRange);
     }
 
-    public void DamageCollider()
+    public void DamageColliderOn()
     {
-        hitbox.SetActive(!hitbox.active);
+        hitbox.SetActive(true);
+    }
+
+    public void DamageColliderOff()
+    {
+        hitbox.SetActive(false);
     }
 
     public void RangedAttack()
