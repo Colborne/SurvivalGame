@@ -5,10 +5,8 @@ using UnityEngine;
 public class MobSoundManager : MonoBehaviour
 {
     AudioSource audioSource;
-    PlayerLocomotion playerLocomotion;
     private void Awake() 
     {
-        playerLocomotion = GetComponent<PlayerLocomotion>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -19,6 +17,12 @@ public class MobSoundManager : MonoBehaviour
         {
             audioSource.PlayOneShot(Clip);
         }
+    }
+
+    public void PlaySoundInterrupt(string audio)
+    {
+        var Clip = Resources.Load("Sounds/" + audio) as AudioClip;
+        audioSource.PlayOneShot(Clip);     
     }
 
     public void FootstepLarge(AnimationEvent animationEvent)

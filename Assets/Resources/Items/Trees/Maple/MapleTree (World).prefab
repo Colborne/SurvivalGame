@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8036042991126484369}
   - component: {fileID: 2120397368470925503}
   - component: {fileID: 2770296480123954133}
+  - component: {fileID: -5491071465190790931}
   m_Layer: 0
   m_Name: MapleTree (World)
   m_TagString: Hittable
@@ -284,3 +285,15 @@ MonoBehaviour:
   items:
   - {fileID: 6788735350023770405, guid: 703c8015e4b98c64e913ff1c6678383c, type: 3}
   rarity: 05000000
+--- !u!114 &-5491071465190790931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910646186869756628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c80fbea2366664d890599861bc77db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

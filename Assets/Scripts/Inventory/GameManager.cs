@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnItem(string type, GameObject item)
     {
+        PM.GetComponent<SoundManager>().PlaySound("Sounds/Equip");
         DestroyItem(item);
 
         if(type == "Weapon" && weaponID != -1)
@@ -236,6 +237,7 @@ public class GameManager : MonoBehaviour
         var drop = Instantiate(equipment[item.itemID].worldItem, PM.transform.position + PM.transform.forward * 4 + PM.transform.up * 2, Quaternion.identity);
         drop.GetComponent<Pickup>().playerDropped = true;
         Destroy(item.gameObject);
+        PM.GetComponent<SoundManager>().PlaySound("Sounds/Break");
     }
 
     public void DropItem(InventoryItem item, int _amount)
@@ -244,6 +246,7 @@ public class GameManager : MonoBehaviour
         _newItem.GetComponent<Pickup>().amount = _amount;
         _newItem.GetComponent<Pickup>().playerDropped = true;
         Destroy(item.gameObject);
+        PM.GetComponent<SoundManager>().PlaySound("Sounds/Break");
     }
 
     #region PickUp Stack

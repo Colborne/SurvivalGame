@@ -79,11 +79,9 @@ public class StatsManager : MonoBehaviour
     private void Update() 
     { 
         UpdateStats();
-    }
-    private void FixedUpdate() 
-    {
         isTakingDamage = animatorManager.animator.GetBool("isTakingDamage");
     }
+
     private int SetMaxHealthFromLevel()
     {
         maxHealth = healthLevel * 100;
@@ -98,11 +96,13 @@ public class StatsManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        animatorManager.animator.SetBool("isTakingDamage", true);
+        
         currentHealth = currentHealth - damage;
         healthBar.SetCurrentHealth(currentHealth);
-        if(currentHealth > 0)
+        if(currentHealth > 0 && GetComponent<InputManager>().attackChargeTimer == 0f){
             animatorManager.PlayTargetAnimation("Damage", true);
+            animatorManager.animator.SetBool("isTakingDamage", true);
+        }
         ShowDamage(damage.ToString());
 
         if(currentHealth <= 0)

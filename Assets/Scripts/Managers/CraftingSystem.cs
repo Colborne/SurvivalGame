@@ -7,6 +7,8 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] public GameObject CraftingWindow;
     [SerializeField] Craftable[] Craftables;
     public int iteration = 0;
+    public string sound;
+
 
     private void Update() 
     {
@@ -16,7 +18,7 @@ public class CraftingSystem : MonoBehaviour
             GameManager.Instance.Craft(Craftables[iteration].GetComponent<CraftingRecipe>().items, Craftables[iteration].GetComponent<CraftingRecipe>().amountRequired);
             GameManager.Instance.PickUpItem(Craftables[iteration].item.itemID, Craftables[iteration].amount);
             Craftables[iteration].timer = 0f;
-            FindObjectOfType<SoundManager>().PlaySound("Sounds/Pickup_Gold_02");
+            FindObjectOfType<Player>().GetComponent<SoundManager>().PlaySound("Sounds/" + sound);
         }     
     }
 

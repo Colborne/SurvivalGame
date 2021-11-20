@@ -9,6 +9,8 @@ public class DamagePopup : MonoBehaviour
             transform.position = FindObjectOfType<DamageCollider>().transform.position;
         else if (FindObjectOfType<Projectile>())
             transform.position = FindObjectOfType<Projectile>().transform.position;
+        else if (FindObjectOfType<EnemyProjectile>())
+            transform.position = FindObjectOfType<EnemyProjectile>().transform.position;
     }
     void Update()
     {

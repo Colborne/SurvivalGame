@@ -14,10 +14,10 @@ public class FarmSystem : MonoBehaviour
     Quaternion orientation;
 
     InputManager input;
+    public SoundManager soundManager;
     int farmRotation = 0;
     public int last = -1;
     public float distance = 22.5f;
-
 
     private void Start() 
     {
@@ -72,9 +72,11 @@ public class FarmSystem : MonoBehaviour
                 input.leftMouseInput = false;
 
                 if (checkIfPosEmpty(Farmer.position, Farmer.rotation) 
-                && GameManager.Instance.CraftingCheck(farmables[iteration].seed, new int[1] {1})){ //if(GameManager.Instance.CheckInventoryForItem(GetComponent<FarmRecipe>().item, GetComponent<FarmRecipe>().amountRequired, true))
+                && GameManager.Instance.CraftingCheck(farmables[iteration].seed, new int[1] {1}))
+                {
                     Instantiate(farmables[iteration].prefab, Farmer.position, Farmer.rotation);
                     GameManager.Instance.Craft(farmables[iteration].seed, new int[1] {1});
+                    soundManager.PlaySound("Sounds/Farming");
                 }
             }
         }

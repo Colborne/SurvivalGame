@@ -35,6 +35,7 @@ public class Interact : MonoBehaviour
     CraftingSystem alchemy2System;
     ChestManager chestManager;
     CraftingSystem temp;
+    MobSoundManager soundManager;
 
     private void Awake() 
     {
@@ -50,6 +51,7 @@ public class Interact : MonoBehaviour
         crafting3System = GameObject.Find("Crafting3System").GetComponent<CraftingSystem>();
         smithing3System = GameObject.Find("Smithing3System").GetComponent<CraftingSystem>();
         chestManager = GameObject.Find("ChestManager").GetComponent<ChestManager>();
+        soundManager = GetComponent<MobSoundManager>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -78,6 +80,7 @@ public class Interact : MonoBehaviour
         {   
             if(interactionType == Type.Crafting)
             {
+                soundManager.PlaySound("Cloth3");
                 if(level == 1)
                     craftingSystem.WindowActive();
                 else if(level == 2)
@@ -87,6 +90,7 @@ public class Interact : MonoBehaviour
             }
             else if(interactionType == Type.Smithing)
             {
+                soundManager.PlaySound("Cloth3");
                 if(level == 1)
                     smithingSystem.WindowActive();
                 else if(level == 2)
@@ -96,6 +100,7 @@ public class Interact : MonoBehaviour
             }
             else if(interactionType == Type.Alchemy)
             {
+                soundManager.PlaySound("Cloth3");
                 if(level == 1)
                     alchemySystem.WindowActive();
                 else if(level == 2)
@@ -128,6 +133,7 @@ public class Interact : MonoBehaviour
             }
             else if(interactionType == Type.Chest)
             {
+                soundManager.PlaySound("OpenChest");
                 chestManager.WindowActive(GetComponent<ChestWindowManager>().window);
             }
             

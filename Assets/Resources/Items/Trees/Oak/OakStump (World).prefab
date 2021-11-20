@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 4354309593557806906}
   - component: {fileID: 7834654487839830069}
   - component: {fileID: 235437089882192694}
-  - component: {fileID: -5289658556952509158}
   - component: {fileID: 5581584196734640769}
+  - component: {fileID: -6271889204069861217}
   m_Layer: 8
   m_Name: OakStump (World)
   m_TagString: Hittable
@@ -237,18 +237,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-5289658556952509158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507446837237486185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cb742d32e67494684105caf2c12466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5581584196734640769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +251,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Oak/OakStump
   folder: 8
+--- !u!114 &-6271889204069861217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507446837237486185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c80fbea2366664d890599861bc77db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

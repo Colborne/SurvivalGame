@@ -60,11 +60,12 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         }
         
-        if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f && inputManager.blockChargeTimer == 0f)
+        if(playerManager.isInteracting && inputManager.attackChargeTimer == 0f)
         {
             if(isAttacking)
+            {
                 playerRigidbody.velocity = Vector3.zero;
-            return;
+            }
         }
         
         HandleSwimming();

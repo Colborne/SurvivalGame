@@ -12,6 +12,7 @@ public class DamagePlayer : MonoBehaviour
     public int damage;
     public bool isTree;
     [SerializeField] private SpecialDamageType spDamage;
+    
     private void OnTriggerEnter(Collider other) 
     {
         StatsManager stats = other.GetComponent<StatsManager>();

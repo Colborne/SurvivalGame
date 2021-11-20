@@ -14,6 +14,7 @@ public class BuildSystem : MonoBehaviour
     Quaternion orientation;
 
     InputManager input;
+    public SoundManager soundManager;
     int buildRotation = 0;
     public int last = -1;
     public float distance = 22.5f;
@@ -71,21 +72,49 @@ public class BuildSystem : MonoBehaviour
             {
                 input.leftMouseInput = false;
 
-                if (checkIfPosEmpty(Builder.position, Builder.rotation) 
-                && GameManager.Instance.CraftingCheck(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired)){ //if(GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
+                if (checkIfPosEmpty(Builder.position, Builder.rotation, Builder.GetComponent<MeshFilter>().mesh) 
+                && GameManager.Instance.CraftingCheck(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired))
+                { //if(GameManager.Instance.CheckInventoryForItem(GetComponent<BuildRecipe>().item, GetComponent<BuildRecipe>().amountRequired, true))
                     Instantiate(buildables[iteration].prefab, Builder.position, Builder.rotation);
                     GameManager.Instance.Craft(buildables[iteration].GetComponent<CraftingRecipe>().items, buildables[iteration].GetComponent<CraftingRecipe>().amountRequired);
+                    soundManager.PlaySound("Sounds/Building");
                 }
+            }
+            else if(input.middleMouseInput && !input.inventoryFlag && !input.buildWindowFlag)
+            {   
+                input.middleMouseInput = false;
+                Break(Hit);
             }
         }
         
     }
-    public bool checkIfPosEmpty(Vector3 targetPos, Quaternion targetRot)
+
+    public void Break(RaycastHit hit)
+    {
+        if(hit.transform.gameObject.tag == "Build")
+        {
+            for(int i = 0; i < buildables.Length; i++)
+            {
+                if(hit.transform.gameObject.name == buildables[i].prefab.name || hit.transform.gameObject.name == buildables[i].prefab.name + "(Clone)")
+                {
+                    for(int j = 0; j < buildables[i].GetComponent<CraftingRecipe>().items.Length; j++)
+                    {
+                        for(int k = 0; k < buildables[i].GetComponent<CraftingRecipe>().amountRequired[j]; k++)
+                            Instantiate(GameManager.Instance.equipment[buildables[i].GetComponent<CraftingRecipe>().items[j].itemID].worldItem, hit.transform.position + new Vector3(0,Random.Range(.5f,2.5f),0), Random.rotation);
+                    }
+                }
+            }
+            Destroy(hit.transform.gameObject);
+            soundManager.PlaySound("Sounds/Break");
+        }
+    }
+    
+    public bool checkIfPosEmpty(Vector3 targetPos, Quaternion targetRot, Mesh targetMesh)
     {
         GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Build");
         foreach(GameObject current in allMovableThings)
         {
-            if(current.transform.position == targetPos && current.transform.rotation == targetRot)
+            if(current.transform.position == targetPos && current.transform.rotation == targetRot && current.GetComponent<MeshFilter>().mesh == targetMesh)
                 return false;
         }
         return true;

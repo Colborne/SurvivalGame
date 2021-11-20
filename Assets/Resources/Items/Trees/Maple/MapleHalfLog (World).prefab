@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 4045296130961684778}
   - component: {fileID: 5176386498091071841}
   - component: {fileID: 3386918394630500643}
-  - component: {fileID: -8925639184310289574}
   - component: {fileID: -1786326498455302444}
+  - component: {fileID: 843943433010070098}
   m_Layer: 8
   m_Name: MapleHalfLog (World)
   m_TagString: Hittable
@@ -255,18 +255,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-8925639184310289574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3810800323182101621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cb742d32e67494684105caf2c12466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1786326498455302444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +269,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Maple/MapleHalfLog
   folder: 8
+--- !u!114 &843943433010070098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810800323182101621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c80fbea2366664d890599861bc77db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6593139832899614603
 GameObject:
   m_ObjectHideFlags: 0

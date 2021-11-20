@@ -155,6 +155,10 @@ public class InputManager : MonoBehaviour
             if(equipmentManager.rightWeapon.idleAnim == 0) 
                 idleAnim = 0;
         }
+        else
+        {
+            idleAnim = 0;
+        }
         
         animatorManager.UpdateAnimatorValues(idleAnim, moveAmount, playerLocomotion.isSprinting, playerLocomotion.isSneaking, playerLocomotion.isSwimming);
     }

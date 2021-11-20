@@ -9528,7 +9528,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: PlaySound
+    functionName: PlaySoundInterrupt
     data: SharkDamage
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

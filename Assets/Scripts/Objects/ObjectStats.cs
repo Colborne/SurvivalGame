@@ -22,6 +22,7 @@ public class ObjectStats : MonoBehaviour
         if(currentHealth <= 0)
         {
             currentHealth = 0;
+            GetComponent<MobSoundManager>().PlaySound("Break");
         }
     }
 

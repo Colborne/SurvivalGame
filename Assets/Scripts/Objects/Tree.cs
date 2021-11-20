@@ -117,7 +117,7 @@ public class Tree : ResourceObject
 
     public void CheckHit(bool axe) {
         if(!axe)
-            GetComponent<AudioSource>().Play();  
+            GetComponent<MobSoundManager>().PlaySound("Break");  
 
         if(objectStats.currentHealth <= 0)
         {

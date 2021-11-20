@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 993543409826135050}
   - component: {fileID: 6262923077803729064}
   - component: {fileID: 3200403456910046798}
-  - component: {fileID: 388804191253942544}
   - component: {fileID: 120227647552203279}
+  - component: {fileID: 2313851091930402370}
   m_Layer: 0
   m_Name: Shark Blast (Prefab)
   m_TagString: Untagged
@@ -4867,20 +4867,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &388804191253942544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083513822352973650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d324626c618b0c04c9d99890e93dfc39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fx: {fileID: 1742013225946848, guid: b3d8264aa7d2d824a8a503e45291ddf4, type: 3}
-  item: {fileID: 7680765855121683962, guid: 5421c60f86bee634da281e0f8b289a0a, type: 3}
 --- !u!114 &120227647552203279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4896,3 +4882,16 @@ MonoBehaviour:
   damage: 20
   isTree: 0
   spDamage: 0
+--- !u!114 &2313851091930402370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083513822352973650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb692a976d01f44986b3dfb112e7d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fx: {fileID: 1742013225946848, guid: b3d8264aa7d2d824a8a503e45291ddf4, type: 3}

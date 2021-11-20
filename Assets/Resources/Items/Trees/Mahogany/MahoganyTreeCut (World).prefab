@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 5588930389206041431}
   - component: {fileID: 341490334881973780}
   - component: {fileID: -8578266380318820735}
-  - component: {fileID: -448871741656403129}
   - component: {fileID: -1803254551012259278}
+  - component: {fileID: 8077578732934499418}
   m_Layer: 8
   m_Name: MahoganyTreeCut (World)
   m_TagString: Hittable
@@ -255,18 +255,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-448871741656403129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705900155802369536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cb742d32e67494684105caf2c12466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1803254551012259278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +269,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetPath: Mahogany/MahoganyTreeCut
   folder: 8
+--- !u!114 &8077578732934499418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705900155802369536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c80fbea2366664d890599861bc77db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4707793012016171064
 GameObject:
   m_ObjectHideFlags: 0

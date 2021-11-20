@@ -14,6 +14,7 @@ public class Smelting : MonoBehaviour
     public int min;
     public float timer;
     public bool load = false;
+    MobSoundManager soundManager;
     
     private void Awake() 
     {
@@ -24,6 +25,7 @@ public class Smelting : MonoBehaviour
             min = 9999;
             timer = 0f;
         }
+        soundManager = GetComponent<MobSoundManager>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -79,6 +81,7 @@ public class Smelting : MonoBehaviour
             {
                 timer = 0;
                 Instantiate(smelt.Peek(), transform.position + transform.up * 2 + transform.right * 3, Quaternion.identity);
+                soundManager.PlaySound("Smelting");
                 smelt.Dequeue();
             }
         }

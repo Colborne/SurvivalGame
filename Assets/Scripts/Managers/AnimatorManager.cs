@@ -101,9 +101,6 @@ public class AnimatorManager : MonoBehaviour
                 snappedVertical = 4;
         }
 
-        //if(snappedVertical > 0 && snappedVertical < 3)
-            //soundManager.PlaySound("Sounds/Footstep_Dirt_0" + Random.Range(0,8).ToString());
-
         animator.SetFloat(horizontal, snappedHorizontal);//, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, snappedVertical, 0.1f, Time.deltaTime);
     }

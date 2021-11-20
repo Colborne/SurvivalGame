@@ -73,6 +73,7 @@ public class Cooking : MonoBehaviour
                     inputManager.interactInput = false;
                     GameManager.Instance.CheckInventoryForItem(wood, min, true);
                     woodCount += min;
+                    
                 }       
             }
 
