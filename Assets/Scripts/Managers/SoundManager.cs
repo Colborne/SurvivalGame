@@ -25,7 +25,7 @@ public class SoundManager : MonoBehaviour
     {
         var Clip = Resources.Load("Sounds/Footstep_Dirt_0" + Random.Range(0,1).ToString()) as AudioClip;
         if(!footstepSource.isPlaying && animationEvent.animatorClipInfo.weight > 0.5 && playerLocomotion.isGrounded)
-            footstepSource.PlayOneShot(Clip,Random.Range(.3f,.5f));
+            footstepSource.PlayOneShot(Clip,Random.Range(.2f,.3f));
     }
 
     public void Sneak(AnimationEvent animationEvent)

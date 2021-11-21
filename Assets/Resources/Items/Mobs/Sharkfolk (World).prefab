@@ -937,6 +937,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c80fbea2366664d890599861bc77db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: SharkDamage
+  misc: 
+  dying: 
+  attack1: SharkAttack
+  attack2: SharkBite
+  attack3: 
 --- !u!1 &7479231876983945254
 GameObject:
   m_ObjectHideFlags: 0
