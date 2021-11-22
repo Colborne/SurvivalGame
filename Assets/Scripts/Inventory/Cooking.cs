@@ -73,7 +73,7 @@ public class Cooking : MonoBehaviour
                     inputManager.interactInput = false;
                     GameManager.Instance.CheckInventoryForItem(wood, 1, true);
                     woodCount += 1;
-                    
+                    GetComponent<AudioSource>().Play();
                 }       
             }
 
@@ -104,6 +104,7 @@ public class Cooking : MonoBehaviour
                 {
                     cookTime = 0;
                     Instantiate(recipes[iter].cooked, transform.position + transform.up * 3, Quaternion.identity);
+                    GetComponent<AudioSource>().Play();
                     transform.GetChild(iter + 1).gameObject.SetActive(false);
                     iter = -1;
                     cooking = false;               
