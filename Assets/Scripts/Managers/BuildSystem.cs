@@ -68,7 +68,7 @@ public class BuildSystem : MonoBehaviour
             
             Builder.eulerAngles = orientation.eulerAngles; //new Vector3(0,Mathf.RoundToInt(Cam.eulerAngles.y) != 0 ? Mathf.RoundToInt(Cam.eulerAngles.y / 90f) * 90 : 0, 0) + orientation.eulerAngles;           
 
-            if(input.leftMouseInput && !input.inventoryFlag && !input.buildWindowFlag)
+            if(input.leftMouseInput && !input.inventoryFlag && !input.buildWindowFlag && !input.isPaused)
             {
                 input.leftMouseInput = false;
 
@@ -80,7 +80,7 @@ public class BuildSystem : MonoBehaviour
                     soundManager.PlaySound("Sounds/Building");
                 }
             }
-            else if(input.middleMouseInput && !input.inventoryFlag && !input.buildWindowFlag)
+            else if(input.middleMouseInput && !input.inventoryFlag && !input.buildWindowFlag&& !input.isPaused)
             {   
                 input.middleMouseInput = false;
                 Break(Hit);

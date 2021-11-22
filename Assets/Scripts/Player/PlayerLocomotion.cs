@@ -9,7 +9,7 @@ public class PlayerLocomotion : MonoBehaviour
     InputManager inputManager;
     StatsManager stats;
     Vector3 moveDirection;
-    Transform cameraObject;
+    public Transform cameraObject;
     Rigidbody playerRigidbody;
     
     [Header("Falling")]
@@ -39,6 +39,7 @@ public class PlayerLocomotion : MonoBehaviour
     [Header("Jump Speeds")]
     public float jumpHeight = 3;
     public float gravityIntensity = -15;
+    Vector3 normalVector;
 
 
     private void Awake()
@@ -48,8 +49,9 @@ public class PlayerLocomotion : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         stats = GetComponent<StatsManager>();
-        cameraObject = Camera.main.transform;
+        //cameraObject = Camera.main.transform;
     }
+    
     public void HandleAllMovement()
     {
         HandleFallingAndLanding();
@@ -64,7 +66,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             if(isAttacking)
             {
-                playerRigidbody.velocity = Vector3.zero;
+                //playerRigidbody.velocity = Vector3.zero;
             }
         }
         
@@ -79,11 +81,12 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         if(isFalling)
             return;
+        if(animatorManager.animator.GetBool("isInteracting") && inputManager.attackChargeTimer == 0)
+            return;
 
         moveDirection = cameraObject.forward * inputManager.verticalInput;
-        moveDirection = moveDirection + cameraObject.right * inputManager.horizontalInput;
+        moveDirection += cameraObject.right * inputManager.horizontalInput;
         moveDirection.Normalize();
-        moveDirection.y = 0;
 
         float weight = Mathf.Clamp(stats.inventoryWeight, 0, 1000);
         
@@ -123,7 +126,7 @@ public class PlayerLocomotion : MonoBehaviour
             }
         }
 
-        Vector3 movementVelocity = moveDirection;
+        Vector3 movementVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
         playerRigidbody.velocity = movementVelocity;
     }
 
@@ -162,22 +165,22 @@ public class PlayerLocomotion : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 rayCastOrigin = transform.position;
-        rayCastOrigin.y = rayCastOrigin.y + 1f;
+        rayCastOrigin.y = rayCastOrigin.y + .5f;//1.6f;
         Vector3 targetPosition = transform.position;
 
-        if(!isGrounded && !isJumping && (!isSwimming || stats.currentStamina <= 0))
+        if(!isGrounded)// && !isJumping)// && (!isSwimming || stats.currentStamina <= 0))
         {
             if(!playerManager.isInteracting)
                 animatorManager.PlayTargetAnimation("Falling", true);
             
-            inAirTimer = inAirTimer + Time.deltaTime;
+            inAirTimer += Time.deltaTime;
             playerRigidbody.AddForce(transform.forward * leapingVelocity);
             playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);          
         }
        
-        if(Physics.SphereCast(rayCastOrigin, .1f, -Vector3.up, out hit, 2f, groundLayer))
+        if(Physics.SphereCast(rayCastOrigin, .2f, -Vector3.up, out hit, 1f, groundLayer))
         {
-            if(!isGrounded && !playerManager.isInteracting && !isSwimming)
+            if(!isGrounded && !playerManager.isInteracting)// && !isSwimming)
                 animatorManager.PlayTargetAnimation("Landing", true);
 
             Vector3 rayCastHitPoint = hit.point;
@@ -190,17 +193,19 @@ public class PlayerLocomotion : MonoBehaviour
             isGrounded = false;
         } 
 
-        if(isGrounded && !isJumping && (!isSwimming || stats.currentStamina <= 0))
+        if(isGrounded && !isJumping)// && (!isSwimming || stats.currentStamina <= 0))
         {
-            isFalling = false;
             if(playerManager.isInteracting || inputManager.moveAmount > 0)
             {
                 transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime / 0.1f);
             }
+            else
+            {
+                transform.position = targetPosition;
+            }
         }    
         
-        if(!isSwimming)
-            isFalling = !isGrounded;
+
     }
 
     public void HandleJumping()
@@ -223,6 +228,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleSwimming()
     {
+        /*
         if(transform.position.y < -3f)
         {
             isSwimming = true;
@@ -231,7 +237,8 @@ public class PlayerLocomotion : MonoBehaviour
         else
         {
             isSwimming = false;
-            playerRigidbody.useGravity = true;
+            //playerRigidbody.useGravity = true;
         }
+        */
     }
 }

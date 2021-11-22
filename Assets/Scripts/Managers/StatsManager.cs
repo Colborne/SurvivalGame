@@ -99,10 +99,13 @@ public class StatsManager : MonoBehaviour
         
         currentHealth = currentHealth - damage;
         healthBar.SetCurrentHealth(currentHealth);
-        if(currentHealth > 0 && GetComponent<InputManager>().attackChargeTimer == 0f){
+
+        if(currentHealth > 0 && GetComponent<InputManager>().attackChargeTimer == 0f)
+        {
             animatorManager.PlayTargetAnimation("Damage", true);
             animatorManager.animator.SetBool("isTakingDamage", true);
         }
+        
         ShowDamage(damage.ToString());
 
         if(currentHealth <= 0)
