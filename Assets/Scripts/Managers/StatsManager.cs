@@ -45,6 +45,7 @@ public class StatsManager : MonoBehaviour
     public GameObject FloatingText;
     AnimatorManager animatorManager;
     PlayerManager playerManager;
+    InputManager inputManager;
     PlayerLocomotion playerLocomotion;
     Player player;
 
@@ -56,6 +57,7 @@ public class StatsManager : MonoBehaviour
         healthBar = FindObjectOfType<HealthBar>();
         staminaBar = FindObjectOfType<StaminaBar>();
         player = GetComponent<Player>();
+        inputManager = GetComponent<InputManager>();
     }
 
     void Start()
@@ -112,6 +114,7 @@ public class StatsManager : MonoBehaviour
         {
             currentHealth = 0;
             animatorManager.PlayTargetAnimation("Dying", true);
+            inputManager.isAlive = false;
         } 
     }
 

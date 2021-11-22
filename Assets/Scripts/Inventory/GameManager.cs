@@ -464,7 +464,7 @@ public class GameManager : MonoBehaviour
         inventorySlots[slot].GetComponent<TooltipTrigger>().content =  inventorySlots[slot].currentItem.item.GetTooltipInfoText();
     }
 
-        public void LoadEquipmentItem(int slot, int itemID, int amount, string type)
+    public void LoadEquipmentItem(int slot, int itemID, int amount, string type)
     {
         GameObject GO = Instantiate(equipment[itemID].inventoryItem, inventorySlots[slot].gameObject.transform);
         GO.GetComponent<InventoryItem>().originalSlot = inventorySlots[slot].transform;

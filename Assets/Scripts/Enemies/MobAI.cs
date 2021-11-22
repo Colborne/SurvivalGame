@@ -217,7 +217,7 @@ public class MobAI : MonoBehaviour
         Vector3 start = new Vector3(transform.position.x + randomX, transform.position.y + 500f, transform.position.z + randomZ);
 
         RaycastHit hit;
-        if(Physics.Raycast(start, Vector3.down, out hit) && hit.collider.CompareTag("Ground"))
+        if(Physics.Raycast(start, Vector3.down, out hit) && hit.collider.CompareTag("Ground") && hit.point.y > -1)
         {
             walkPoint = new Vector3(transform.position.x + randomX, hit.point.y, transform.position.z + randomZ);
             walkPointSet = true; 

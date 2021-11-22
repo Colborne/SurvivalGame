@@ -52,6 +52,7 @@ public class InputManager : MonoBehaviour
     public int idleAnim = 0;
     public bool isPaused;
     public bool chestFlag = false;
+    public bool isAlive = true;
 
     private void Awake() 
     {
@@ -111,9 +112,9 @@ public class InputManager : MonoBehaviour
 
     public void HandleAllInputs()
     {
-        HandlePauseInput();
 
-        if(!isPaused)
+        HandlePauseInput();
+        if(isAlive && !isPaused)
         {
             if(!inventoryFlag){
                 HandleMovementInput();
@@ -131,7 +132,7 @@ public class InputManager : MonoBehaviour
         HandleConfirmButtonInput();
         HandleCancelButtonInput();
         
-        if(!buildWindowFlag && !farmWindowFlag && !isPaused && !chestFlag)
+        if(!buildWindowFlag && !farmWindowFlag && !isPaused && !chestFlag && isAlive)
             HandleInventoryInput();
     }
     private void HandleMovementInput()
