@@ -476,12 +476,5 @@ public class GameManager : MonoBehaviour
         inventorySlots[slot].GetComponent<TooltipTrigger>().content =  inventorySlots[slot].currentItem.item.GetTooltipInfoText();
 
         LoadItem(itemID, type);
-
-/*
-        if(type == "Chest")
-            spawnedChest = Instantiate(equipment[itemID].prefab, PM.chest);
-        else if(type == "Weapon")
-            spawnedWeapon = Instantiate(equipment[itemID].prefab, PM.rightHand);
-            */
     }
 }

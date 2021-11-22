@@ -55,6 +55,7 @@ public class Smelting : MonoBehaviour
         {
             if(inputManager.interactInput && iter >= 0)
             {
+                inputManager.interactInput = false;
                 for(int i = 0; i < recipes[iter].items.Length; i++)
                     GameManager.Instance.CheckInventoryForItem(recipes[iter].items[i], min, true);
                 

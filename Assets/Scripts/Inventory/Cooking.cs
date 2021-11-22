@@ -71,8 +71,8 @@ public class Cooking : MonoBehaviour
                 if(inputManager.interactInput)
                 {
                     inputManager.interactInput = false;
-                    GameManager.Instance.CheckInventoryForItem(wood, min, true);
-                    woodCount += min;
+                    GameManager.Instance.CheckInventoryForItem(wood, 1, true);
+                    woodCount += 1;
                     
                 }       
             }
@@ -116,35 +116,17 @@ public class Cooking : MonoBehaviour
 
     public void WoodCheck()
     {
-        //Wood Check
-        int minAmount = 9999;
-        if(GameManager.Instance.CheckAmount(wood) >= 1) //Check the amount for each item in that recipe
-            minAmount = GameManager.Instance.CheckAmount(wood);
-        else
-            minAmount = 9999;
-             
-        if(minAmount < 9999)
+        if(woodCount < 10)
         {
-            if(minAmount > 10)
-                minAmount = 10;
-            else if(minAmount < 0)
-                minAmount = 0;
-
-            if(10 - woodCount < minAmount)
-                minAmount = 10 - woodCount;
-                
-            ui.interactableText.text = "Press 'E' to Add Wood x" + minAmount;
+            ui.interactableText.text = "Press 'E' to Add Wood (" + woodCount + "/10)";
             ui.transform.GetChild(0).gameObject.SetActive(true);
-            min = minAmount;
         }
         else
         {
             ui.interactableText.text = null;
             ui.transform.GetChild(0).gameObject.SetActive(false);
-            min = 0;
         }
     }
-
     public void RecipeCheck()
     {
         for(int i = 0; i < recipes.Length; i++) //Check through the recipes

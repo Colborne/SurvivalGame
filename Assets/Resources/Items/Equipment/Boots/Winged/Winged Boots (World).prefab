@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 148
   amount: 1
-  name: Winged Boots
+  _name: 
   autoPickup: 0
   playerDropped: 0
 --- !u!65 &6948276864171961717
