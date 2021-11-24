@@ -25,14 +25,14 @@ public class SoundManager : MonoBehaviour
     {
         var Clip = Resources.Load("Sounds/Footstep_Dirt_0" + Random.Range(0,1).ToString()) as AudioClip;
         if(!footstepSource.isPlaying && animationEvent.animatorClipInfo.weight > 0.5 && playerLocomotion.isGrounded)
-            footstepSource.PlayOneShot(Clip,Random.Range(.2f,.3f));
+            footstepSource.PlayOneShot(Clip,Random.Range(.15f,.225f));
     }
 
     public void Sneak(AnimationEvent animationEvent)
     {
         var Clip = Resources.Load("Sounds/Footstep_Dirt_0" + Random.Range(0,1).ToString()) as AudioClip;
         if(!footstepSource.isPlaying&& animationEvent.animatorClipInfo.weight > 0.5)
-            footstepSource.PlayOneShot(Clip,Random.Range(.1f,.2f));
+            footstepSource.PlayOneShot(Clip,Random.Range(.1f,.15f));
     }
 
     public void Jump(AnimationEvent animationEvent)

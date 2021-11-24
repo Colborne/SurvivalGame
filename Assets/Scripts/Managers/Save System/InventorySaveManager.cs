@@ -17,7 +17,7 @@ public class InventorySaveManager : MonoBehaviour
     private void Start() 
     {
         eq = new SaveEquipment[10];
-        inv = new SaveItem[42];
+        inv = new SaveItem[32];
 
         for(int i = 0; i < eq.Length; i++)
             eq[i] = new SaveEquipment();
@@ -45,11 +45,11 @@ public class InventorySaveManager : MonoBehaviour
 
         for(int i = 0; i < inv.Length; i++)
         {
-            if(GameManager.Instance.inventorySlots[i].currentItem != null)
+            if(GameManager.Instance.inventorySlots[i+10].currentItem != null)
             {
-                inv[i].slot = i;
-                inv[i].itemID = GameManager.Instance.inventorySlots[i].currentItem.itemID;
-                inv[i].currentAmount = GameManager.Instance.inventorySlots[i].currentItem.currentAmount;
+                inv[i].slot = i+10;
+                inv[i].itemID = GameManager.Instance.inventorySlots[i+10].currentItem.itemID;
+                inv[i].currentAmount = GameManager.Instance.inventorySlots[i+10].currentItem.currentAmount;
             }
         }
     }

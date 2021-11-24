@@ -54,10 +54,10 @@ public class Player : MonoBehaviour
                 GameManager.Instance.LoadEquipmentItem(data.slot[i], data.id[i], data.amount[i], itemType);  
         }
         
-        for(int i = 10; i < 42; i++)
+        for(int i = 0; i < 32; i++)
         {
-            if(data.slot[i] != 0)
-                GameManager.Instance.LoadInventoryItem(data.slot[i], data.id[i], data.amount[i]);  
+            if(data.slot[i] + 10 != 0)
+                GameManager.Instance.LoadInventoryItem(data.slot[i] + 10, data.id[i] + 10, data.amount[i] + 10);  
         }        
     }
 }
