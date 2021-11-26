@@ -13,7 +13,8 @@ public class Interact : MonoBehaviour
             Alchemy,
             Sharpening,
             Pickup,
-            Chest
+            Chest,
+            Door
     }
 
     [SerializeField] private Type interactionType;
@@ -22,6 +23,7 @@ public class Interact : MonoBehaviour
     public int outItem; //Make this an array to match ^ 
     [Range(1,3)]
 	public int level;
+    bool open = false;
     InputManager inputManager;
     InteractableUI ui; 
     AnimatorManager animatorManager;
@@ -135,6 +137,15 @@ public class Interact : MonoBehaviour
             {
                 soundManager.PlaySound("OpenChest");
                 chestManager.WindowActive(GetComponent<ChestWindowManager>().window);
+            }
+            else if(interactionType == Type.Door)
+            {
+                if(!open)
+                    GetComponent<Animator>().Play("DoorOpen");
+                else
+                    GetComponent<Animator>().Play("DoorClose");
+                
+                open = !open;
             }
             
             inputManager.interactInput = false;

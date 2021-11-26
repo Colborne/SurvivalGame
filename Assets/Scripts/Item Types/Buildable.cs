@@ -18,7 +18,8 @@ public class Buildable : MonoBehaviour, IPointerClickHandler
     TooltipTrigger tooltipTrigger;
 
     private void Awake() {
-        mesh = prefab.GetComponentInChildren<MeshFilter>().sharedMesh;  
+        if(mesh == null)
+            mesh = prefab.GetComponentInChildren<MeshFilter>().sharedMesh;  
         buildSystem = FindObjectOfType<BuildSystem>();
         tooltipTrigger = GetComponent<TooltipTrigger>();
     }
